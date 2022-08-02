@@ -1,6 +1,6 @@
 ---
 template: blog-post
-title: POROVNÁNÍ IMERZIVNÍ A NEIMERZIVNÍ VIRTUÁLNÍ REALITY V HODNOCENÍ PAMĚŤOVÝCH SCHOPNOSTÍ U SENIORŮ
+title: Porovnání imerzivní a neimerzivní virtuální reality v hodnocení paměťových schopností u seniorů
 slug: /vr-vs-monitor
 date: 2020-05-13 12:46
 description: Studie věnující se vlivu imerze ve virtuální realitě na paměťový výkon stárnoucí populace

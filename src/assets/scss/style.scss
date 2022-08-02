@@ -24,6 +24,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    
   }
   ul li {
     display: inline-block;
@@ -33,18 +34,18 @@
     color: #004ca3;
     text-decoration: none;
     &:hover {
-      color: #994ca3
+      color: #001d3d
     }
   }
   a[aria-current="page"] {
-    color: rgba(255, 255, 255, 1);
+    color: #001d3d
   }
   .menu-trigger {
     display: none;
     font-size: 24px;
     background: none;
     border: none;
-    color: white;
+    color: #004ca3;
     padding: 0;
     cursor: pointer;
   }
@@ -76,7 +77,10 @@
       z-index: 1;
       width: 100%;
       max-width: 320px;
-      border-radius: 0 0 0 12px;
+      border-color: #004ca3;
+      border-width: 2px;
+      border-style: solid;
+      border-radius: 0 0 0 0px;
       overflow: hidden;
     }
     ul li {
@@ -101,11 +105,11 @@
     color: #004ca3;
     text-decoration: none;
     &:hover {
-      color: #994ca3;
+      color: #001d3d;
     }
   }
   @media (max-width: $breakpoint-lg) {
-    font-size: 20px;
+    font-size: 35px;
   }
 }
 .home-banner {
@@ -139,10 +143,13 @@
 .social-icons {
   font-size: 35px;
   display: flex;
+  justify-content: center;
   gap: 16px;
-  margin-top: 80px;
+  margin-top: 20px;
+  margin-left: 20px;
   @media (max-width: $breakpoint-md) {
-    margin-top: 40px;
+    margin-top: 10px;
+    margin-left: 0px;
   }
 }
 .home-posts {
@@ -271,13 +278,14 @@ article img {
   font-size: 16px;
   line-height: 1;
   transition: background 0.3s linear;
+  background-color: #004ca3;
+  color: #fff;
   &.-outline {
-    color: var(--primary-color);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
-    background: #fff;
+    background-color: #001d3d;
     &:hover {
       box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
-      background: #f2f2f2;
+      background-color: #001d3d;
     }
   }
   & + .button {

@@ -7,16 +7,12 @@ import Theme from "../components/theme"
 
 const MenuItems = [
   {
-    path: "/",
-    title: "Home",
-  },
-  {
     path: "/about",
-    title: "About",
+    title: "O nás",
   },
   {
     path: "/blog",
-    title: "Blog",
+    title: "Projekty",
   },
   {
     path: "/team",
@@ -24,7 +20,7 @@ const MenuItems = [
   },
   {
     path: "/contact",
-    title: "Contact",
+    title: "Kontakt",
   },
 ]
 
