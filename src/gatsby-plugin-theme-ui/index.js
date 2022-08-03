@@ -50,11 +50,11 @@ const theme = {
   },
   variants: {
     button: {
-      bg: "siteColor",
-      color: "buttonColor",
+      bg: "#004ca3",
+      color: "#fff",
       "&:hover": {
-        bg: "buttonHoverBg",
-        color: "buttonHoverColor",
+        bg: "#001d3d",
+        color: "#fff",
       },
     },
     socialIcons: {
