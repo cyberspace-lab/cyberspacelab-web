@@ -1,10 +1,13 @@
 const path = require("path")
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { Console } = require("console")
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   const blogList = path.resolve(`./src/templates/blog-list.js`)
+
+  const teamList = path.resolve(`./src/templates/team-list.js`)
 
   const result = await graphql(`
     {
@@ -32,6 +35,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create markdown pages
   const posts = result.data.allMarkdownRemark.edges
   let blogPostsCount = 0
+  let teamMembersCount = 0
 
   posts.forEach((post, index) => {
     const id = post.node.id
@@ -55,6 +59,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     if (post.node.frontmatter.template === "blog-post") {
       blogPostsCount++
     }
+    if (post.node.frontmatter.template === "team-member") {
+      teamMembersCount++
+    }
   })
 
   // Create blog-list pages
@@ -72,6 +79,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         currentPage: i + 1,
       },
     })
+  })
+
+
+
+  // Create team-members pages
+  const membersPerPage = 6
+  const numMemPages = Math.ceil(teamMembersCount / membersPerPage)
+
+  Array.from({ length: numMemPages }).forEach((_, i) => {
+    console.log("asdf")
+    createPage({
+      path: i === 0 ? `/team` : `/team/${i + 1}`,
+      component: teamList,
+      context: {
+        limit: membersPerPage,
+        skip: i * membersPerPage,
+        numMemPages,
+        currentPage: i + 1,
+      },
+    })
+    console.log("gfsd")
   })
 }
 
