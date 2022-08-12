@@ -24,6 +24,7 @@ const styles = {
 export const teamListQuery = graphql`
   query teamListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
+      sort: { order: ASC, fields: [frontmatter___order] }
       filter: { frontmatter: { template: { eq: "team-member" } } }
       limit: $limit
       skip: $skip
@@ -35,9 +36,10 @@ export const teamListQuery = graphql`
           frontmatter {
             slug
             title
+            description
             featuredImage {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, width: 345, height: 260)
+                gatsbyImageData(layout: CONSTRAINED, width: 64, height: 64)
               }
             }
           }

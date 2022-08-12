@@ -3,7 +3,6 @@ import { jsx } from "theme-ui"
 import React from "react"
 import { Link } from "gatsby"
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri"
-import Theme from "../components/theme"
 
 const MenuItems = [
   {
@@ -17,6 +16,10 @@ const MenuItems = [
   {
     path: "/team",
     title: "Tým",
+  },
+  {
+    path: "/publications",
+    title: "Publikace",
   },
   {
     path: "/contact",
@@ -65,10 +68,6 @@ class Navigation extends React.Component {
         </button>
         <ul>
           {listMenuItems}
-          <div sx={navStyle.border}></div>
-          <div sx={navStyle.theme}>
-            <Theme />
-          </div>
         </ul>
       </nav>
     )

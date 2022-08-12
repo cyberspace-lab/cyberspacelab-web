@@ -15,7 +15,7 @@ export default function TeamListHome(props) {
 const MemberMaker = ({ data }) => (
   <section className="home-posts">
     <h2>
-      Latest in <strong>Blog</strong>{" "}
+      <strong>Náš tým</strong>{" "}
       <span className="icon -right">
         <RiArrowDownLine />
       </span>
@@ -28,7 +28,7 @@ const MemberMaker = ({ data }) => (
         variant: "variants.button",
       }}
     >
-      See more
+      Všichni členové týmu
       <span className="icon -right">
         <RiArrowRightSLine />
       </span>

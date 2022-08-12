@@ -69,6 +69,7 @@ export const pageQuery = graphql`
       }
     }
     members: allMarkdownRemark(
+      sort: { order: ASC, fields: [frontmatter___order] }
       filter: { frontmatter: { template: { eq: "team-member" } } }
       limit: 6
     ) {
@@ -79,9 +80,10 @@ export const pageQuery = graphql`
           frontmatter {
             slug
             title
+            description
             featuredImage {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, width: 345, height: 260)
+                gatsbyImageData(layout: CONSTRAINED, width: 64, height: 64)
               }
             }
           }

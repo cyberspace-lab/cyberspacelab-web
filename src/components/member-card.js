@@ -5,10 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 const MemberCard = ({ data }) => (
   <article
-    className="post-card"
-    sx={{
-      bg: "cardBg",
-    }}
+    className="member-card"
   >
     {data.frontmatter.featuredImage ? (
       <Link to={data.frontmatter.slug}>
@@ -21,7 +18,7 @@ const MemberCard = ({ data }) => (
     ) : (
       ""
     )}
-    <div className="post-content">
+    <div className="member-card-content">
       <h2 className="title">
         <Link
           to={data.frontmatter.slug}
@@ -34,10 +31,8 @@ const MemberCard = ({ data }) => (
       </h2>
       <p
         className="meta"
-        sx={{
-          color: "muted",
-        }}
       >
+        {data.frontmatter.description}
       </p>
     </div>
   </article>
