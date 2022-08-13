@@ -4,12 +4,7 @@ import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 const PostCard = ({ data }) => (
-  <article
-    className="post-card"
-    sx={{
-      bg: "cardBg",
-    }}
-  >
+  <article className="post-card">
     {data.frontmatter.featuredImage ? (
       <Link to={data.frontmatter.slug}>
         <GatsbyImage

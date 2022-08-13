@@ -9,6 +9,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const teamList = path.resolve(`./src/templates/team-list.js`)
 
+  const publicationsList = path.resolve(`./src/templates/publications-list.js`)
+
   const result = await graphql(`
     {
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
@@ -36,6 +38,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const posts = result.data.allMarkdownRemark.edges
   let blogPostsCount = 0
   let teamMembersCount = 0
+  let publicationCount = 0
 
   posts.forEach((post, index) => {
     const id = post.node.id
@@ -61,6 +64,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
     if (post.node.frontmatter.template === "team-member") {
       teamMembersCount++
+    }
+    if (post.node.frontmatter.template === "publication") {
+      publicationCount++
     }
   })
 
@@ -100,6 +106,25 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
     console.log("gfsd")
+  })
+
+
+  const publicationsPerPage = 6
+  const pubPostPages = Math.ceil(publicationCount / publicationsPerPage)
+
+  Array.from({ length: pubPostPages }).forEach((_, i) => {
+    console.log("publicccccccc")
+    createPage({
+      path: i === 0 ? `/publications` : `/publications/${i + 1}`,
+      component: publicationsList,
+      context: {
+        limit: publicationsPerPage,
+        skip: i * publicationsPerPage,
+        pubPostPages,
+        currentPage: i + 1,
+      },
+    })
+    console.log("publiweeeeeee")
   })
 }
 

@@ -24,6 +24,7 @@ import { FaWordpress, FaVk } from "react-icons/fa"
 import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
 import TeamListHome from "../components/team-list-home"
+import PublicationsListHome from "../components/publications-list-home"
 import Seo from "../components/seo"
 import Icons from "../util/socialmedia.json"
 
@@ -37,7 +38,7 @@ export const pageQuery = graphql`
         tagline
         featuredImage {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED)
+            gatsbyImageData(layout: CONSTRAINED, width: 264, height: 264)
           }
         }
         cta {
@@ -61,7 +62,7 @@ export const pageQuery = graphql`
             title
             featuredImage {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, width: 345, height: 260)
+                gatsbyImageData(layout: CONSTRAINED, width: 128, height: 128)
               }
             }
           }
@@ -90,11 +91,28 @@ export const pageQuery = graphql`
         }
       }
     }
+    publications: allMarkdownRemark(
+      filter: { frontmatter: { template: { eq: "publication" } } }
+      limit: 6
+    ) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+            authors
+          }
+        }
+      }
+    }
   }
 `
 
 const HomePage = ({ data }) => {
-  const { markdownRemark, posts, members } = data // data.markdownRemark holds your post data
+  const { markdownRemark, posts, members, publications } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   const Image = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
@@ -220,7 +238,7 @@ const HomePage = ({ data }) => {
   return (
     <Layout>
       <Seo />
-      <div className="home-banner grids col-1 sm-2">
+      <div className="home-banner grids">
         <div>
           <h1 className="title">{frontmatter.title}</h1>
           <p
@@ -256,7 +274,7 @@ const HomePage = ({ data }) => {
             {sIcons}
           </div>
         </div>
-        <div>
+        <div className="home-banner-img">
           {Image ? (
             <GatsbyImage
               image={Image}
@@ -271,6 +289,7 @@ const HomePage = ({ data }) => {
       </div>
       <BlogListHome data={posts} />
       <TeamListHome data={members} />
+      <PublicationsListHome data={publications} />
     </Layout>
   )
 }

@@ -13,7 +13,7 @@ export default function TeamListHome(props) {
 }
 
 const MemberMaker = ({ data }) => (
-  <section className="home-posts">
+  <section className="home-posts team-home-posts">
     <h2>
       <strong>Náš tým</strong>{" "}
       <span className="icon -right">
