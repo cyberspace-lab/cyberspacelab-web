@@ -4,7 +4,7 @@ import { lightness } from "@theme-ui/color"
 const theme = {
   colors: {
     ...defaultColors,
-    text: "#000",
+    text: "#001d3d",
     background: "#fff",
     primary: "#004ca3",
     accent: "#fff",
@@ -42,7 +42,7 @@ const theme = {
   },
   links: {
     postLink: {
-      color: "muted",
+      color: "#001d3d",
       "&:hover": {
         color: "text",
       },

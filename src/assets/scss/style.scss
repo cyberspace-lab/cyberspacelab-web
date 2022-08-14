@@ -145,6 +145,14 @@
   }
 }
 
+.home-banner .description a {
+  color:#004ca3;
+}
+
+.home-banner .description a:hover {
+  color:#001d3d;
+}
+
 .home-banner.grids{
   column-gap: 0;
 }
@@ -282,7 +290,7 @@
   }
 }
 article{
-  color: #004ca3;;
+  color: #001d3d;
 }
 article figure {
   margin: 40px 0;
