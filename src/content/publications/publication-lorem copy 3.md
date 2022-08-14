@@ -1,6 +1,6 @@
 ---
 template: publication
-title: Etiam dictum tincidunt diam. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+title: In enim a arcu imperdiet malesuada. Etiam quis quam. Nam sed tellus id magna elementum tincidunt. Duis viverra diam non justo
 slug: /publication-lorem
 date: 2015-01
 authors: Plechata A., Fajnerova I., Hejtmanek L., Sahula V.

@@ -18,7 +18,7 @@ const Member = ({ data, pageContext }) => {
   const { previous, next } = pageContext
 
   return (
-    <Layout className="page">
+    <Layout className="page member-page">
       <Seo
         title={frontmatter.title}
         description={
@@ -66,7 +66,7 @@ export const pageQuery = graphql`
         description
         featuredImage {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(layout: CONSTRAINED, width: 264, height: 264)
           }
         }
       }

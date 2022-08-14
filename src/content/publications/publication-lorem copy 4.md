@@ -1,6 +1,6 @@
 ---
 template: publication
-title: Etiam dictum tincidunt diam. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+title: Et harum quidem rerum facilis est et expedita distinctio. In sem justo
 slug: /publication-lorem
 date: 2015-01
 authors: Plechata A., Fajnerova I., Hejtmanek L., Sahula V.

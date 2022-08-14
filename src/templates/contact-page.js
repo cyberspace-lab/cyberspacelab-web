@@ -29,7 +29,7 @@ const Contact = ({ data }) => {
   const { frontmatter, html } = markdownRemark
 
   return (
-    <Layout className="contact-page" sx={contactStyles.contactPage}>
+    <Layout className="contact-page">
       <Seo
         title={frontmatter.title}
         description={frontmatter.title + " " + site.siteMetadata.title}
@@ -48,10 +48,11 @@ const Contact = ({ data }) => {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
+          <p className="formDescription">Nebo nám zanechte zprávu:</p>
           <input type="hidden" name="form-name" value="contact" />
           <p>
             <label>
-              Name
+              Jméno
               <input type="text" name="name" required />
             </label>
           </p>
@@ -63,13 +64,13 @@ const Contact = ({ data }) => {
           </p>
           <p>
             <label>
-              Subject
+              Předmět
               <input type="text" name="subject" required />
             </label>
           </p>
           <p>
             <label>
-              Message<textarea name="message" required></textarea>
+              Zpráva<textarea name="message" required></textarea>
             </label>
           </p>
           <p className="text-align-right">
@@ -80,7 +81,7 @@ const Contact = ({ data }) => {
               }}
               type="submit"
             >
-              Send Message{" "}
+              Poslat{" "}
               <span className="icon -right">
                 <RiSendPlane2Line />
               </span>
@@ -94,19 +95,3 @@ const Contact = ({ data }) => {
 
 export default Contact
 
-const contactStyles = {
-  contactPage: {
-    input: {
-      border: "6px solid",
-      borderColor: "inputBorder",
-      bg: "inputBackground",
-      outline: "none",
-    },
-    textarea: {
-      border: "6px solid",
-      borderColor: "inputBorder",
-      bg: "inputBackground",
-      outline: "none",
-    },
-  },
-}

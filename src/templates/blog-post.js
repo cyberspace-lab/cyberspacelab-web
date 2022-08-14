@@ -97,15 +97,6 @@ const Post = ({ data, pageContext }) => {
             <h1>{frontmatter.title}</h1>
             <time sx={{color: "muted"}}>{frontmatter.date}</time>
           </section>
-          {Image ? (
-            <GatsbyImage
-              image={Image}
-              alt={frontmatter.title + " - Featured image"}
-              className="featured-image"
-            />
-          ) : (
-            ""
-          )}
         </header>
 
         <div

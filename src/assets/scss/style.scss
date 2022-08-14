@@ -78,7 +78,7 @@
       z-index: 1;
       width: 100%;
       border-color: #004ca3;
-      border-width: 6px;
+      border-width: 10px;
       border-style: none none solid none;
       border-radius: 0 0 0 0px;
       overflow: hidden;
@@ -178,7 +178,12 @@
 
 .home-banner-img{
   margin: auto;
+
+  @media (max-width: $breakpoint-md) {
+    max-width: 180px;
+  }
 }
+
 
 .home-posts {
 
@@ -224,6 +229,10 @@
 
 .publication-grid{
   row-gap: 5px;
+}
+
+.publications-home-posts .publication-card .meta {
+  color: #004ca3;
 }
 
 .team-home-posts{
@@ -276,7 +285,7 @@
   }
 }
 .article-header {
-  padding: 35px 0;
+  padding: 15px 0 10px 0;
   text-align: center;
   margin: 0 auto;
   h1 {
@@ -296,6 +305,19 @@
     //min-height: 300px;
   }
 }
+
+.team-member .featured-banner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+.team-member .featured-banner .gatsby-image-wrapper{
+  border-radius: 50%;
+  max-width: 256px;
+}
+
 article{
   color: #001d3d;
 }
@@ -422,7 +444,7 @@ article img {
 .contact-page,
 .thanks-page,
 .not-found-page {
-  padding: 50px 20px;
+  padding: 5px 20px 50px 20px;
   .wrapper {
     max-width: 768px;
     margin: 0 auto;
@@ -447,25 +469,42 @@ article img {
   }
   .description {
     line-height: 1.5;
+
   }
 }
+
+.contact-page .description a {
+  color: #001d3d;
+}
+
+.formDescription{
+  margin: 35px 0 20px 0;
+}
+
 .contact-form {
   margin-top: 36px;
+  p{
+    margin: 0 0 5px 0;
+  }
+
   label {
-    color: var(--label-text);
+    color:#001d3d
   }
   input,
   textarea {
     width: 100%;
     max-width: 100%;
-    margin: 8px 0 16px;
-    padding: 16px;
-    border-radius: 12px;
+    margin: 5px 0 5px 0;
+    padding: 10px;
     appearance: none;
     font-size: 18px;
     font-weight: 600;
+    border-color: #004ca3;
+    border-width: 3px;
+
     &:focus {
-      border-color: var(--input-focus-border);
+      border-color: #004ca3;
+      border-radius: 0;
     }
   }
   textarea {
@@ -475,7 +514,6 @@ article img {
 .site-footer {
   display: flex;
   align-items: center;
-  background: #eee;
   text-align: center;
   font-size: 14px;
   margin: 0 auto;
@@ -483,13 +521,14 @@ article img {
   padding: 20px 20px;
   p {
     margin: 0;
-    color: #fff;
+    color: #001d3d;
   }
   a {
     font-weight: normal;
+    color: #004ca3;
   }
   a:hover {
-    color: #fff;
+    color: #001d3d;
   }
 }
 
