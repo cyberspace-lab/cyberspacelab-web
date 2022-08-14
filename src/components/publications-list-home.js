@@ -15,12 +15,12 @@ export default function PublicationsListHome(props) {
 const PublicationsMaker = ({ data }) => (
   <section className="home-posts publications-home-posts">
     <h2>
-      Poslední <strong>Publikace</strong>{" "}
+      Vybrané <strong>Publikace</strong>{" "}
       <span className="icon -right">
         <RiArrowDownLine />
       </span>
     </h2>
-    <div className="grids col-1 sm-1 lg-1">{data}</div>
+    <div className="grids col-1 sm-1 lg-1 publication-grid">{data}</div>
     <Link
       className="button"
       to="/publications"

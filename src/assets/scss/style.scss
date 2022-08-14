@@ -144,6 +144,11 @@
     }
   }
 }
+
+.home-banner.grids{
+  column-gap: 0;
+}
+
 .social-icons {
   font-size: 35px;
   display: flex;
@@ -162,26 +167,57 @@
 }
 
 .home-posts {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 25px 40px 25px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+
   .grids {
     padding-bottom: 30px;
   }
 
   > h2{
+    font-size: xx-large;
     text-align: center;
     color:#004ca3;
+    margin-top: 0px;
   }
 
-  padding: 25px 25px 25px 25px;
-
-  border-radius: 20px;
+  .button{
+    max-width: 275px;
+    text-align: center;
+  }
 }
 
 .blog-home-posts{
   background-color: #f5fcff;
 }
 
+.blog-home-posts .grids{
+  padding-bottom: 15px;
+}
+
 .publications-home-posts{
+  .grids{
+    row-gap: 0px;
+    padding-bottom: 10px;
+  }
+}
+
+.publication-grid{
+  row-gap: 5px;
+}
+
+.team-home-posts{
   background-color: #f5fcff;
+
+  .grids{
+    width: 95%;
+    row-gap: 50px;
+  }
 }
 
 .post-card {
@@ -220,7 +256,7 @@
       margin-top: 0;
     }
     .featured-image {
-      border-radius: 12px 12px 0 0;
+      border-radius: 12px;
     }
   }
 }
@@ -242,7 +278,7 @@
 }
 @media (max-width: $breakpoint-sm) {
   .post-card .featured-image {
-    min-height: 300px;
+    //min-height: 300px;
   }
 }
 article{
@@ -298,6 +334,7 @@ article img {
 }
 
 .member-card img{
+  height: auto;
   border-radius: 50%;
 }
 
@@ -356,10 +393,10 @@ article img {
   .icon {
     display: inline-flex;
     &.-right {
-      margin-left: var(--margin);
+      margin-left: 5px;
     }
     &.-left {
-      margin-right: var(--margin);
+      margin-right: 5px;
     }
   }
 }
@@ -376,6 +413,17 @@ article img {
     margin: 0 auto;
   }
 }
+
+.blog-page{
+  padding: 0px 20px 20px 20px;
+
+}
+
+.blog-page > h1{
+  margin-top: 0;
+  text-align: center;
+}
+
 // Contact page
 .contact-page {
   .wrapper {

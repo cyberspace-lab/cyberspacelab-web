@@ -111,7 +111,7 @@ class PublicationsIndex extends React.Component {
           }
         />
         <h1>Publikace</h1>
-        <div className="grids col-1 sm-1 lg-1">{posts}</div>
+        <div className="grids col-1 sm-1 lg-1 publication-grid">{posts}</div>
         <Pagination {...props} />
       </Layout>
     )

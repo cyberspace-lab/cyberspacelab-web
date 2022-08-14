@@ -288,8 +288,8 @@ const HomePage = ({ data }) => {
         </div>
       </div>
       <BlogListHome data={posts} />
-      <TeamListHome data={members} />
       <PublicationsListHome data={publications} />
+      <TeamListHome data={members} />
     </Layout>
   )
 }
