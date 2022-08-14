@@ -31,6 +31,7 @@
     margin-left: 20px;
   }
   a {
+    font-weight: bold;
     color: #004ca3;
     text-decoration: none;
     &:hover {
@@ -157,6 +158,11 @@
   column-gap: 0;
 }
 
+.home-banner .button:hover{
+  color: #fff;
+  background-color: #001d3d;
+}
+
 .social-icons {
   font-size: 35px;
   display: flex;
@@ -206,6 +212,7 @@
 
 .blog-home-posts .grids{
   padding-bottom: 15px;
+  row-gap: 10px;
 }
 
 .publications-home-posts{
