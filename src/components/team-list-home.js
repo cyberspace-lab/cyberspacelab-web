@@ -16,9 +16,6 @@ const MemberMaker = ({ data }) => (
   <section className="home-posts team-home-posts">
     <h2>
       <strong>Náš tým</strong>{" "}
-      <span className="icon -right">
-        <RiArrowDownLine />
-      </span>
     </h2>
     <div className="grids col-1 sm-2 lg-3">{data}</div>
     <Link

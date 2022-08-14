@@ -16,9 +16,6 @@ const PublicationsMaker = ({ data }) => (
   <section className="home-posts publications-home-posts">
     <h2>
       Vybrané <strong>Publikace</strong>{" "}
-      <span className="icon -right">
-        <RiArrowDownLine />
-      </span>
     </h2>
     <div className="grids col-1 sm-1 lg-1 publication-grid">{data}</div>
     <Link
