@@ -22,9 +22,6 @@ const MemberCard = ({ data }) => (
       <h2 className="title">
         <Link
           to={data.frontmatter.slug}
-          sx={{
-            variant: "links.postLink",
-          }}
         >
           {data.frontmatter.title}
         </Link>
