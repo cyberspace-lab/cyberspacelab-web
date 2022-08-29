@@ -5,6 +5,7 @@ slug: /vr-vs-monitor
 date: 2020-05-13 12:46
 description: Studie věnující se vlivu imerze ve virtuální realitě na paměťový výkon stárnoucí populace
 featuredImage: /assets/vr-vs-monitor-thumb.jpg
+isActive: true
 ---
 
 ![vr vs monitor thumb](/assets/vr-vs-monitor-thumb.jpg "vr vs monitor thumb")
