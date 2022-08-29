@@ -6,9 +6,6 @@ import { RiHeart2Line } from "react-icons/ri"
 const Footer = () => (
   <footer
     className="site-footer"
-    sx={{
-      bg: "siteColor",
-    }}
   >
     <div className="container">
       <p>

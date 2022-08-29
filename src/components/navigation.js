@@ -53,7 +53,7 @@ class Navigation extends React.Component {
       </ListLink>
     ))
     return (
-      <nav className="site-navigation" sx={navStyle.menu}>
+      <nav className="site-navigation" >
         <button
           aria-label="toggle menu"
           onClick={this.handleToggleClick}
@@ -78,16 +78,12 @@ export default Navigation
 
 const navStyle = {
   menu: {
-    ul: {
-      bg: "siteColor",
-    },
   },
   theme: {
     display: ["block", "block", "block", "none"],
     p: " 25px 20px 20px",
   },
   border: {
-    bg: "borderColor",
     borderTop: "1px solid transparent",
     display: ["block", "block", "block", "none"],
   },
