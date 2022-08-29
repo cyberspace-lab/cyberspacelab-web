@@ -39,14 +39,7 @@ module.exports = {
         plugins: [
           netlifyCmsPaths,
           {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1024,
-              showCaptions: true,
-              linkImagesToOriginal: false,
-              tracedSVG: true,
-              loading: "lazy",
-            },
+            
             resolve: "gatsby-remark-embed-video",
             options: {
               width: 800,
@@ -65,6 +58,14 @@ module.exports = {
               containerClass: "embedVideo-container", //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
               iframeId: false, //Optional: if true, iframe's id will be set to what is provided after 'video:' (YouTube IFrame player API requires iframe id)
             },//Optional: Must be loaded after gatsby-remark-embed-video
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1024,
+              showCaptions: true,
+              linkImagesToOriginal: false,
+              tracedSVG: true,
+              loading: "lazy",
+            },
           },
           {
             resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
