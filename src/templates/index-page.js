@@ -60,6 +60,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
+            isActive
             featuredImage {
               childImageSharp {
                 gatsbyImageData(layout: CONSTRAINED, width: 128, height: 128)
