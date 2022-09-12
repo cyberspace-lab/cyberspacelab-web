@@ -3,12 +3,6 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-const netlifyCmsPaths = {
-  resolve: `gatsby-plugin-netlify-cms-paths`,
-  options: {
-    cmsConfig: `/static/admin/config.yml`,
-  },
-}
 
 const settings = require("./src/util/site.json")
 
@@ -37,7 +31,6 @@ module.exports = {
       options: {
         gfm: true,
         plugins: [
-          netlifyCmsPaths,
           {
             resolve: "gatsby-remark-embed-video",
             options: {
@@ -114,7 +107,6 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-theme-ui",
-    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -135,19 +127,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-offline",
-    `gatsby-plugin-netlify`,
-    {
-      resolve: `gatsby-plugin-netlify`,
-      options: {
-        headers: {},
-        allPageHeaders: [],
-        mergeSecurityHeaders: true,
-        mergeLinkHeaders: true,
-        mergeCachingHeaders: true,
-        transformHeaders: (headers, path) => headers,
-        generateMatchPathRewrites: true,
-      },
-    },
     `gatsby-plugin-react-helmet`,
   ],
 }
