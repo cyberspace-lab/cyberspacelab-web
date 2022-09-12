@@ -4,7 +4,7 @@ title: Lorem ipsum dolor sit amet, consectetuer adipiscing elit
 slug: /blog-lorem
 date: 2015-01-01 12:00
 description: Nullam sapien sem, ornare ac, nonummy non, lobortis a enim, tiam sapien elit
-featuredImage: /assets/emt-thumb.jpg
+featuredImage: ./../../assets/images/emt-thumb.jpg
 isActive: false
 ---
 
