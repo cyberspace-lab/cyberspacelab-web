@@ -84,6 +84,7 @@ const Publication = ({ data, pageContext }) => {
         title={frontmatter.title}
         article={true}
       />
+
       <article className="blog-post">
         <header className="featured-banner">
           <section className="article-header">

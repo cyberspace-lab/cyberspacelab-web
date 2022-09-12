@@ -148,5 +148,6 @@ module.exports = {
         generateMatchPathRewrites: true,
       },
     },
+    `gatsby-plugin-react-helmet`,
   ],
 }

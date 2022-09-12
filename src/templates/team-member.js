@@ -27,27 +27,113 @@ const Member = ({ data, pageContext }) => {
         image={Image}
         article={true}
       />
-      <article className="team-member">
-        <header className="featured-banner">
-          <section className="article-header">
-            <h1>{frontmatter.title}</h1>
-          </section>
-          {Image ? (
-            <GatsbyImage
-              image={Image}
-              alt={frontmatter.title + " - Featured image"}
-              className="featured-image"
-            />
-          ) : (
-            ""
-          )}
-        </header>
 
-        <div
-          className="team-member-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </article>
+    <section class="page-title" style={{ backgroundImage: `url("assets/images/background/page-title-2.jpg")` }}>
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
+                    <div class="content-box clearfix">
+                        <div class="title pull-left">
+                            <h1>Team Details</h1>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="team-details">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-8 col-md-12 col-sm-12 left-column">
+                    <div class="left-content">
+                        <div class="upper-box">
+                            <div class="title">
+                                <h3>{frontmatter.title}</h3>
+                                <p>{frontmatter.description}</p>
+                            </div>
+                            <ul class="list-item clearfix">
+                                <li><span>Expertise</span>Some Expertise <br />Some Expertise, Some Expertise</li>
+                                <li><span>Education</span>Some Education Here (19xx)<br />Some Major Education Here (19xx)</li>
+                                <li><span>Experience</span>15 years of Experience in This Field</li>
+                                <li><span>Profession</span>Profession Details Goes Here <br />More Profession Details Goes Here <br />Profession Details.</li>
+                            </ul>
+                        </div>
+                        
+						
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 team-block right-column">
+                    <div class="right-content">
+                        <div class="team-block-one">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image"><img src="assets/images/team/team-9.jpg" alt=""/></figure>
+                                    <ul class="social-links clearfix">
+                                        <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-details" id="Personal-Experience">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 left-column">
+                    <div class="left-content">
+                        <div class="lower-box">
+                            <h3>Personal Experience</h3>
+                            <div class="text" dangerouslySetInnerHTML={{ __html: html }}/>
+                        </div>
+						<div class="lower-box">
+                            <h3>Projects</h3>
+                            <div class="row clearfix">
+                <div class="col-lg-4 col-md-6 col-sm-12 project-block">
+                    <div class="project-block-one wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="line-one"></div>
+                            <div class="line-two"></div>
+                            <figure class="image-box"><img src="assets/images/gallery/project-1.jpg" alt=""/></figure>
+                            <div class="content-box">
+                                <h3><a href="#">Project Title</a></h3>
+                                <span>Project Sub Details</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 project-block">
+                    <div class="project-block-one wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="line-one"></div>
+                            <div class="line-two"></div>
+                            <figure class="image-box"><img src="assets/images/gallery/project-2.jpg" alt=""/></figure>
+                            <div class="content-box">
+                                <h3><a href="#">Project Title</a></h3>
+                                <span>Project Sub Details</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
     </Layout>
   )
 }

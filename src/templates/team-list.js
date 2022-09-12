@@ -7,27 +7,11 @@ import Layout from "../components/layout"
 import MemberCard from "../components/member-card"
 import Seo from "../components/seo"
 
-const styles = {
-  pagination: {
-    a: {
-      color: "muted",
-      "&.is-active": {
-        color: "text",
-      },
-      "&:hover": {
-        color: "text",
-      },
-    },
-  },
-}
-
 export const teamListQuery = graphql`
-  query teamListQuery($skip: Int!, $limit: Int!) {
+  query teamListQuery {
     allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___order] }
       filter: { frontmatter: { template: { eq: "team-member" } } }
-      limit: $limit
-      skip: $skip
     ) {
       edges {
         node {
@@ -48,65 +32,15 @@ export const teamListQuery = graphql`
     }
   }
 `
-const Pagination = props => (
-  <div className="pagination" sx={styles.pagination}>
-    <ul>
-      {!props.isFirst && (
-        <li>
-          <Link to={props.prevPage} rel="prev">
-            <span className="icon -left">
-              <RiArrowLeftLine />
-            </span>{" "}
-            Previous
-          </Link>
-        </li>
-      )}
-      {Array.from({ length: props.numPages }, (_, i) => (
-        <li key={`pagination-number${i + 1}`}>
-          <Link
-            to={`${props.teamSlug}${i === 0 ? "" : i + 1}`}
-            className={props.currentPage === i + 1 ? "is-active num" : "num"}
-          >
-            {i + 1}
-          </Link>
-        </li>
-      ))}
-      {!props.isLast && (
-        <li>
-          <Link to={props.nextPage} rel="next">
-            Next{" "}
-            <span className="icon -right">
-              <RiArrowRightLine />
-            </span>
-          </Link>
-        </li>
-      )}
-    </ul>
-  </div>
-)
 
 class TeamIndex extends React.Component {
   render() {
     const { data } = this.props
     const { currentPage, numPages } = this.props.pageContext
-    const teamSlug = "/team/"
-    const isFirst = currentPage === 1
-    const isLast = currentPage === numPages
-    const prevPage =
-      currentPage - 1 === 1 ? teamSlug : teamSlug + (currentPage - 1).toString()
-    const nextPage = teamSlug + (currentPage + 1).toString()
 
     const posts = data.allMarkdownRemark.edges
       .map(edge => <MemberCard key={edge.node.id} data={edge.node} />)
-    let props = {
-      isFirst,
-      prevPage,
-      numPages,
-      teamSlug,
-      currentPage,
-      isLast,
-      nextPage,
-    }
+
 
     return (
       <Layout className="blog-page">
@@ -116,8 +50,27 @@ class TeamIndex extends React.Component {
             "Stackrole base blog page " + currentPage + " of " + numPages
           }
         />
-        <h1>Náš tým</h1>
-        <div className="grids col-1 sm-2 lg-3">{posts}</div>
+    <section class="page-title" style={{ backgroundImage: `url("assets/images/background/page-title-2.jpg")` }}>
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
+                    <div class="content-box clearfix">
+                        <div class="title pull-left">
+                            <h1>Our Team</h1>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="team-section team-page-section">
+        <div class="auto-container">
+          <div class="row clearfix">
+            {posts}
+          </div>
+        </div>
+    </section>
       </Layout>
     )
   }

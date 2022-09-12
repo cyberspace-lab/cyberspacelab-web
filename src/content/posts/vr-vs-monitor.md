@@ -8,7 +8,6 @@ featuredImage: /assets/vr-vs-monitor-thumb.jpg
 isActive: true
 ---
 
-![vr vs monitor thumb](/assets/vr-vs-monitor-thumb.jpg "vr vs monitor thumb")
 
 Pokles paměti spojený s fyziologickým stárnutím a neurologickými poruchami souvisejícími s věkem má přímý dopad na kvalitu života seniorů. S demografickým stárnutím získává diagnostika kognitivních funkcí na důležitosti, jelikož včasná diagnóza může vést k efektivnějším kognitivním intervencím. Ve srovnání s klasickými přístupy tužka-papír by virtuální realita (VR) mohla nabídnout ekologicky validní nástroj pro hodnocení kognitivního deficitu a jeho následnou rehabilitaci. VR lze prezentovat s různou mírou imerze (míru pohlcení), která ovlinuje vnímanou míru přítomnosti ve virtuálním prostoru. VR tak lze prezentovat v méně imerzivní podobě, s využítím monitoru počítače, nebo s pokročilejšími technologiemi jako jsou virtuální brýle, které poskytují vysoce imerzivní zobrazení. Obě tyto VR platformy jsou spojeny s určitými výhodami a nevýhodami. Výsledky studií zaměřených na roli imerze při hodnocení kognitivního výkonu a využití imerzivní VR u stárnoucí populace jsou nejednoznačné.
 

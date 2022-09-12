@@ -36,9 +36,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Create markdown pages
   const posts = result.data.allMarkdownRemark.edges
-  let blogPostsCount = 0
-  let teamMembersCount = 0
-  let publicationCount = 0
 
   posts.forEach((post, index) => {
     const id = post.node.id
@@ -57,75 +54,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         next,
       },
     })
-
-    // Count blog posts.
-    if (post.node.frontmatter.template === "blog-post") {
-      blogPostsCount++
-    }
-    if (post.node.frontmatter.template === "team-member") {
-      teamMembersCount++
-    }
-    if (post.node.frontmatter.template === "publication") {
-      publicationCount++
-    }
   })
 
-  // Create blog-list pages
-  const postsPerPage = 6
-  const numPages = Math.ceil(blogPostsCount / postsPerPage)
-
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: blogList,
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    })
+  //blog
+  createPage({
+    path: `/blog`,
+    component: blogList,
   })
 
-
-
-  // Create team-members pages
-  const membersPerPage = 6
-  const numMemPages = Math.ceil(teamMembersCount / membersPerPage)
-
-  Array.from({ length: numMemPages }).forEach((_, i) => {
-    console.log("asdf")
-    createPage({
-      path: i === 0 ? `/team` : `/team/${i + 1}`,
-      component: teamList,
-      context: {
-        limit: membersPerPage,
-        skip: i * membersPerPage,
-        numMemPages,
-        currentPage: i + 1,
-      },
-    })
-    console.log("gfsd")
+  // team-members
+  createPage({
+    path: `/team`,
+    component: teamList
   })
 
+  //publications
 
-  const publicationsPerPage = 6
-  const pubPostPages = Math.ceil(publicationCount / publicationsPerPage)
-
-  Array.from({ length: pubPostPages }).forEach((_, i) => {
-    console.log("publicccccccc")
-    createPage({
-      path: i === 0 ? `/publications` : `/publications/${i + 1}`,
-      component: publicationsList,
-      context: {
-        limit: publicationsPerPage,
-        skip: i * publicationsPerPage,
-        pubPostPages,
-        currentPage: i + 1,
-      },
-    })
-    console.log("publiweeeeeee")
+  createPage({
+    path: `/publications`,
+    component: publicationsList,
   })
+  
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {

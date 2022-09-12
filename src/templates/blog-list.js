@@ -7,27 +7,12 @@ import Layout from "../components/layout"
 import PostCard from "../components/post-card"
 import Seo from "../components/seo"
 
-const styles = {
-  pagination: {
-    a: {
-      color: "muted",
-      "&.is-active": {
-        color: "text",
-      },
-      "&:hover": {
-        color: "text",
-      },
-    },
-  },
-}
 
 export const blogListQuery = graphql`
-  query blogListQuery($skip: Int!, $limit: Int!) {
+  query blogListQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { template: { eq: "blog-post" } } }
-      limit: $limit
-      skip: $skip
     ) {
       edges {
         node {
@@ -37,9 +22,10 @@ export const blogListQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
+            isActive
             featuredImage {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, width: 345, height: 260)
+                gatsbyImageData(layout: CONSTRAINED, width: 370, height: 370)
               }
             }
           }
@@ -48,42 +34,8 @@ export const blogListQuery = graphql`
     }
   }
 `
-const Pagination = props => (
-  <div className="pagination" sx={styles.pagination}>
-    <ul>
-      {!props.isFirst && (
-        <li>
-          <Link to={props.prevPage} rel="prev">
-            <span className="icon -left">
-              <RiArrowLeftLine />
-            </span>{" "}
-            Previous
-          </Link>
-        </li>
-      )}
-      {Array.from({ length: props.numPages }, (_, i) => (
-        <li key={`pagination-number${i + 1}`}>
-          <Link
-            to={`${props.blogSlug}${i === 0 ? "" : i + 1}`}
-            className={props.currentPage === i + 1 ? "is-active num" : "num"}
-          >
-            {i + 1}
-          </Link>
-        </li>
-      ))}
-      {!props.isLast && (
-        <li>
-          <Link to={props.nextPage} rel="next">
-            Next{" "}
-            <span className="icon -right">
-              <RiArrowRightLine />
-            </span>
-          </Link>
-        </li>
-      )}
-    </ul>
-  </div>
-)
+
+
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
@@ -116,9 +68,40 @@ class BlogIndex extends React.Component {
             "Stackrole base blog page " + currentPage + " of " + numPages
           }
         />
-        <h1>Projekty</h1>
-        <div className="grids col-1 sm-2 lg-3">{posts}</div>
-        <Pagination {...props} />
+        <section class="page-title" style={{ backgroundImage: `url("assets/images/background/page-title-2.jpg")`}}>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
+                        <div class="content-box clearfix">
+                            <div class="title pull-left">
+                                <h1>Our Projects</h1>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="project-section">
+            <div class="auto-container">
+		        <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 content-column">
+                        <div id="content_block_01">
+                            <div class="content-box">
+                                <div class="sec-title left">
+                                    <p>Our Projects</p>
+                                    <h2>Past Projects.</h2>
+                                    <span class="separator"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-container">
+                    {posts}
+                </div>
+            </div>
+        </section>
       </Layout>
     )
   }
