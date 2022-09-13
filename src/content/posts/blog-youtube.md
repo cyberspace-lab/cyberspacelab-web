@@ -4,7 +4,7 @@ title: YouTube embeded example, very nice
 slug: /blog-youtube
 date: 2017-01-01 12:00
 description: Exaple of embeded youtube video
-featuredImage: /../assets/images/emt-thumb.jpg
+featuredImage: ./../../assets/images/emt-thumb.jpg
 isActive: true
 ---
 
