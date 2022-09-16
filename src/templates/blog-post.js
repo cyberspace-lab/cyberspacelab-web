@@ -6,9 +6,10 @@ import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import TeamListBlog from "../components/team-list-blog"
 
 const Post = ({ data, pageContext }) => {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { markdownRemark, members } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
 
   const Image = frontmatter.featuredImage
@@ -56,62 +57,19 @@ const Post = ({ data, pageContext }) => {
                                 </figure>
                                 <div class="lower-content">
                                     <ul class="post-info clearfix">
-                                        </ul>
+                                    </ul>
                                     <h3>{frontmatter.title}</h3>
                                     <div class="text" dangerouslySetInnerHTML={{ __html: html }}>
                                     </div>
 									 <h3 >Team Members</h3>
-									<div class="row clearfix">
-                <div class="col-lg-8 col-md-8 col-sm-12 team-block" id="cstmmemberskew">
-                    <div class="team-block-one wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/team/team-1.jpg" alt=""/></figure>
-                                <ul class="social-links clearfix">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                </ul>
-                                <div class="link"><a href="team-details.html"><i class="fas fa-link"></i></a></div>
-                            </div>
-                            <div class="lower-content" id="memberscstmnoborder">
-                                <h3><a href="team-details.html">Member Title Here</a></h3>
-                                <span class="designation">Designation Here</span>
+                                     <TeamListBlog data={members} />
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-12 team-block"id="cstmmemberskew">
-                    <div class="team-block-one wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/team/team-2.jpg" alt=""/></figure>
-                                <ul class="social-links clearfix">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                </ul>
-                                <div class="link"><a href="team-details.html"><i class="fas fa-link"></i></a></div>
-                            </div>
-                            <div class="lower-content" id="memberscstmnoborder">
-                                <h3><a href="team-details.html">Member Title Here</a></h3>
-                                <span class="designation">Designation Here</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-               
-            </div>
-                                </div>
-                            </div>
-                        </div>
                        
                         
                         
-                    </div>
+                </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                     <div class="sidebar blog-sidebar">
@@ -172,5 +130,27 @@ export const pageQuery = graphql`
         }
       }
     }
+    members: allMarkdownRemark(
+        sort: { order: ASC, fields: [frontmatter___order] }
+        filter: { frontmatter: { template: { eq: "team-member" } } }
+        limit: 2
+    ) {
+        edges {
+          node {
+            id
+            excerpt(pruneLength: 250)
+            frontmatter {
+              slug
+              title
+              description
+              featuredImage {
+                childImageSharp {
+                  gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400)
+                }
+              }
+            }
+          }
+        }
+      }
   }
 `

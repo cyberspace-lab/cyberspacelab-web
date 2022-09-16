@@ -4,8 +4,6 @@ import {Helmet} from "react-helmet";
 import { useStaticQuery, graphql, Script } from "gatsby"
 
 import Header from "./header"
-import Logo from "./logo"
-import Navigation from "./navigation"
 
 import "../assets/css/animate.css"
 import "../assets/css/bootstrap.css"
@@ -16,7 +14,6 @@ import "../assets/css/responsive.css"
 import "../assets/css/style.css"
 import "../assets/css/switcher-style.css"
 import Footer from "./footer"
-import Theme from "../components/theme"
 import Search from "../components/search"
 
 const query = graphql`

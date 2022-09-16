@@ -8322,3 +8322,30 @@ h4 a{
     width: 100%;
   }
 }
+
+.team-list-blog{
+  justify-content: center;
+}
+
+.team-list-blog .team-block{
+  width: 40% ;
+  max-width: none;
+  flex: none;
+  margin-bottom: 25px;
+}
+
+@media (max-width:700px){
+  .team-list-blog .team-block{
+    width: 90% ;
+  }
+}
+
+.blog-list-member > a {
+  width: 50%;
+}
+
+@media (max-width:700px){
+  .blog-list-member > a {
+    width: 100%;
+  }
+}

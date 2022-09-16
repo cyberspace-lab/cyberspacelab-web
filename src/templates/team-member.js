@@ -6,10 +6,11 @@ import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import BlogListMember from "../components/blog-list-member"
 
 
 const Member = ({ data, pageContext }) => {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { markdownRemark, posts } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
 
   const Image = frontmatter.featuredImage
@@ -101,39 +102,7 @@ const Member = ({ data, pageContext }) => {
                             <h3>Personal Experience</h3>
                             <div class="text" dangerouslySetInnerHTML={{ __html: html }}/>
                         </div>
-						<div class="lower-box">
-                            <h3>Projects</h3>
-                            <div class="row clearfix">
-                <div class="col-lg-4 col-md-6 col-sm-12 project-block">
-                    <div class="project-block-one wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="line-one"></div>
-                            <div class="line-two"></div>
-                            <figure class="image-box"><img src="assets/images/gallery/project-1.jpg" alt=""/></figure>
-                            <div class="content-box">
-                                <h3><a href="#">Project Title</a></h3>
-                                <span>Project Sub Details</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 project-block">
-                    <div class="project-block-one wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="line-one"></div>
-                            <div class="line-two"></div>
-                            <figure class="image-box"><img src="assets/images/gallery/project-2.jpg" alt=""/></figure>
-                            <div class="content-box">
-                                <h3><a href="#">Project Title</a></h3>
-                                <span>Project Sub Details</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-                            
-                        </div>
+						<BlogListMember data={posts} />
                     </div>
                 </div>
                 
@@ -163,5 +132,28 @@ export const pageQuery = graphql`
         }
       }
     }
+    posts: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        filter: { frontmatter: { template: { eq: "blog-post" } } }
+        limit: 2
+      ) {
+        edges {
+          node {
+            id
+            excerpt(pruneLength: 250)
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              slug
+              title
+              isActive
+              featuredImage {
+                childImageSharp {
+                  gatsbyImageData(layout: CONSTRAINED, width: 370, height: 370)
+                }
+              }
+            }
+          }
+        }
+      }
   }
 `
