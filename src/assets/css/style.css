@@ -8291,3 +8291,34 @@ h4 a{
   }
 }
 **/
+
+
+.project-block-one{
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 11%,89% 0)
+}
+
+.projects-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-block {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.projects-container > a {
+  width: 33.33333%;
+}
+
+@media (max-width:1000px){
+  .projects-container > a {
+    width: 50%;
+  }
+}
+
+@media (max-width:700px){
+  .projects-container > a {
+    width: 100%;
+  }
+}

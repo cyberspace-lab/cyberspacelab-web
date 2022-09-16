@@ -22,9 +22,7 @@ import {
 import { FaWordpress, FaVk } from "react-icons/fa"
 
 import Layout from "../components/layout"
-import BlogListHome from "../components/blog-list-home"
 import TeamListHome from "../components/team-list-home"
-import PublicationsListHome from "../components/publications-list-home"
 import Seo from "../components/seo"
 import Icons from "../util/socialmedia.json"
 
@@ -47,33 +45,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    posts: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { template: { eq: "blog-post" } } }
-      limit: 6
-    ) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            slug
-            title
-            isActive
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, width: 128, height: 128)
-              }
-            }
-          }
-        }
-      }
-    }
     members: allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___order] }
       filter: { frontmatter: { template: { eq: "team-member" } } }
-      limit: 6
+      limit: 4
     ) {
       edges {
         node {
@@ -85,26 +60,9 @@ export const pageQuery = graphql`
             description
             featuredImage {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, width: 64, height: 64)
+                gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400)
               }
             }
-          }
-        }
-      }
-    }
-    publications: allMarkdownRemark(
-      filter: { frontmatter: { template: { eq: "publication" } } }
-      limit: 6
-    ) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            slug
-            title
-            authors
           }
         }
       }
@@ -113,7 +71,7 @@ export const pageQuery = graphql`
 `
 
 const HomePage = ({ data }) => {
-  const { markdownRemark, posts, members, publications } = data // data.markdownRemark holds your post data
+  const { markdownRemark, members } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   const Image = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
@@ -372,97 +330,7 @@ const HomePage = ({ data }) => {
             </div>
     </section>
     
-    <section class="team-section">
-        <div class="auto-container">
-            <div class="sec-title">
-                <p>Sub Heading</p>
-                <h2>Heading About Team</h2>
-                <span class="separator"></span>
-            </div>
-            <div class="row clearfix">
-                <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-one wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/team/team-1.jpg" alt=""/></figure>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                </ul>
-                                <div class="link"><a href="team-details.html"><i class="fas fa-link"></i></a></div>
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="team-details.html">Member Title Here</a></h3>
-                                <span class="designation">Designation Here</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-one wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/team/team-2.jpg" alt=""/></figure>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                </ul>
-                                <div class="link"><a href="team-details.html"><i class="fas fa-link"></i></a></div>
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="team-details.html">Member Title Here</a></h3>
-                                <span class="designation">Designation Here</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-one wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/team/team-3.jpg" alt=""/></figure>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                </ul>
-                                <div class="link"><a href="team-details.html"><i class="fas fa-link"></i></a></div>
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="team-details.html">Member Title Here</a></h3>
-                                <span class="designation">Designation Here</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-one wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><img src="assets/images/team/team-4.jpg" alt=""/></figure>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                </ul>
-                                <div class="link"><a href="team-details.html"><i class="fas fa-link"></i></a></div>
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="team-details.html">Member Title Here</a></h3>
-                                <span class="designation">Designation Here</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <TeamListHome data={members} />
 
     <section class="faq-section">
         <div class="pattern-layer" style={{backgroundImage: `url("assets/images/shape/shape-8.png")`}}></div>
@@ -532,7 +400,7 @@ const HomePage = ({ data }) => {
         </div>
     </section>
     
-    <section class="clients-section">
+    <section class="clients-section" style={{display: "none"}}>
         <div class="auto-container">
             <div class="clients-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
                 <figure class="client-logo">
@@ -568,7 +436,7 @@ const HomePage = ({ data }) => {
             </div>
         </div>
     </section>
-    <TeamListHome data={members} />
+
     </Layout>
   )
 }

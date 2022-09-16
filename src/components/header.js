@@ -47,7 +47,7 @@ const Header = ({ children }) => (
                                 <li><a href="publications">Publications</a>
                                     
                                 </li>                              
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="contact">Contact Us</a></li>
                             </ul>
                         </div>
                     </nav>

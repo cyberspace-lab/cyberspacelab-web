@@ -23,7 +23,7 @@ export const teamListQuery = graphql`
             description
             featuredImage {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, width: 128, height: 128)
+                gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400)
               }
             }
           }

@@ -69,7 +69,13 @@ const Member = ({ data, pageContext }) => {
                         <div class="team-block-one">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-9.jpg" alt=""/></figure>
+                                    <figure class="image">
+                                        {Image != "" ? (
+                                            <GatsbyImage image={Image} alt=    {frontmatter.title + " - Featured image"}       className="featured-image" />
+                                        ) : (
+                                            <img src="assets/images/team/team-9.jpg" alt=""/>
+                                        )}
+                                    </figure>
                                     <ul class="social-links clearfix">
                                         <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
@@ -152,7 +158,7 @@ export const pageQuery = graphql`
         description
         featuredImage {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, width: 264, height: 264)
+            gatsbyImageData(layout: CONSTRAINED, width: 370, height: 470)
           }
         }
       }

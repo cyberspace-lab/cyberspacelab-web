@@ -8,7 +8,13 @@ const MemberCard = ({ data }) => (
                     <div class="team-block-one wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><img src="assets/images/team/team-6.jpg" alt=""/></figure>
+                                <figure class="image">   
+                                    {data.frontmatter.featuredImage ? (
+                                        <GatsbyImage image={data.frontmatter.featuredImage.childImageSharp.gatsbyImageData} alt= {data.frontmatter.title + " - Featured image"}       className="featured-image" />
+                                    ) : (
+                                        <img src="assets/images/team/team-6.jpg" alt=""/>
+                                    )}
+                                </figure>
                                 <ul class="social-links clearfix">
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
