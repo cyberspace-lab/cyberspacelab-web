@@ -8,7 +8,6 @@ featuredImage: ./../../assets/images/emt-thumb.jpg
 isActive: true
 ---
 
-
 Cílem projektu “Virtuální město” je vytvoření uceleného tréninkového SW v ekologicky validním prostředí virtuálního města, který umožní komplexní trénink kognitivních schopností u cílové skupiny zdravých seniorů. Aktivní zapojení vlastního pohybu během pohybu ve VR prostoru prezentovaném pomocí VR brýlí je klíčové pro intuitivní ovládání úlohy u populace s nízkou počítačovou gramotností. Realističnost VR prostředí pomůže usnadnit přenos osvojených strategií do reálného života.
 
 ![Vr city city](/assets/vr-vs-monitor-graf.jpg "Vr city city")
