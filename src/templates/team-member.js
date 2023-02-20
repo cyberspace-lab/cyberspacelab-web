@@ -133,27 +133,27 @@ export const pageQuery = graphql`
       }
     }
     posts: allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        filter: { frontmatter: { template: { eq: "blog-post" } } }
-        limit: 2
-      ) {
-        edges {
-          node {
-            id
-            excerpt(pruneLength: 250)
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              slug
-              title
-              isActive
-              featuredImage {
-                childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED, width: 370, height: 370)
-                }
+      sort: {frontmatter: {date: DESC}}
+      filter: { frontmatter: { template: { eq: "blog-post" } } }
+      limit: 2
+    ) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+            isActive
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED, width: 370, height: 370)
               }
             }
           }
         }
       }
+    }
   }
 `
