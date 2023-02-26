@@ -35,7 +35,7 @@ const Footer = () => (
                   <div class="row clearfix">
                       <div class="col-lg-12 col-md-12 col-sm-12 footer-column">
                           <div class="footer-widget logo-widget">
-                              <figure class="footer-logo"><Link to="/"><StaticImage src="/assets/images/logo-white.png" alt=""/></Link></figure>
+                              <figure class="footer-logo"><Link to="/"><StaticImage src="../assets/images/logo-white.png" alt=""/></Link></figure>
                               <div class="text">
                                   <p>Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est.</p>
                               </div>

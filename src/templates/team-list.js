@@ -49,7 +49,7 @@ class TeamIndex extends React.Component {
             "Stackrole base blog page " + currentPage + " of " + numPages
           }
         />
-    <section class="page-title" style={{ backgroundImage: `url("assets/images/background/page-title-2.jpg")` }}>
+    <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")` }}>
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">

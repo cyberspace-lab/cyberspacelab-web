@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql, Script } from "gatsby"
+import { useStaticQuery, graphql, Script, withPrefix} from "gatsby"
 
 import Header from "./header"
 import "../assets/css/animate.css"
@@ -34,27 +34,13 @@ const Layout = ({ children, className, props }) => {
 
   return (
     <div className="primary-container">
-      <Header>
-        <Script src="assets/js/jquery.js" />
-        <Script src="assets/js/popper.min.js"/>
-        <Script src="assets/js/bootstrap.min.js"/>
-        <Script src="assets/js/owl.js"/>
-        <Script src="assets/js/wow.js"/>
-        <Script src="assets/js/validation.js"/>
-        <Script src="assets/js/jquery.fancybox.js"/>
-        <Script src="assets/js/appear.js"/>
-        <Script src="assets/js/jquery.countTo.js"/>
-        <Script src="assets/js/scrollbar.js"/>
-        <Script src="assets/js/tilt.jquery.js"/>
-        <Script src="assets/js/jQuery.style.switcher.min.js"/>
-        <Script src="assets/js/script.js" />
-      </Header>
+      <Header/>
       <div class="mobile-menu">
         <div class="menu-backdrop"></div>
         <div class="close-btn"><i class="fas fa-times"></i></div>
         
         <nav class="menu-box">
-            <div class="nav-logo"><a href="index.html"><img src="assets/images/mobile-logo.png" alt="" title=""/></a></div>
+            <div class="nav-logo"><a href="index.html"><img src="/assets/images/mobile-logo.png" alt="" title=""/></a></div>
             <div class="menu-outer"></div>
             <div class="contact-info">
                 <h4>Contact Info</h4>
@@ -70,21 +56,24 @@ const Layout = ({ children, className, props }) => {
 
     {children}
     <Footer />
-    <Helmet>
-    
+    <Helmet defer={false}>
+      <Script id="jquery" type="text/javascript" src="./.assetasdaswds/js/jquery.js"/>
+      <Script id="popper" type="text/javascript" src={withPrefix("/assets/js/popper.min.js")}/>
+      <Script id="bootstrap" type="text/javascript" src={withPrefix("/assets/js/bootstrap.min.js")}/>
+      <Script id="owl" type="text/javascript" src={withPrefix("/assets/js/owl.js")}/>
+      <Script id="wow" type="text/javascript" src={withPrefix("/assets/js/wow.js")}/>
+      <Script id="validation" type="text/javascript" src={withPrefix("/assets/js/validation.js")}/>
+      <Script id="fancybox" type="text/javascript" src={withPrefix("/assets/js/jquery.fancybox.js")}/>
+      <Script id="appear" type="text/javascript" src={withPrefix("/assets/js/appear.js")}/>
+      <Script id="jquerycount" type="text/javascript" src={withPrefix("/assets/js/jquery.countTo.js")}/>
+      <Script id="scrollbar" type="text/javascript" src={withPrefix("/assets/js/scrollbar.js")}/>
+      <Script id="tilt" type="text/javascript" src={withPrefix("/assets/js/tilt.jquery.js")}/>
+      <Script id="styleswithc" type="text/javascript" src={withPrefix("/assets/js/jQuery.style.switcher.min.js")}/>
+      <Script id="myscript" type="text/javascript" src="/assets/js/script.js"/>
     </Helmet>
   </div>
   )
 }
-
-export function Head() {
-  return (
-    <>
-    
-  </>
-  )
-}
-
 export default Layout
 
 const layoutStyle = {

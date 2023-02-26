@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 const Header = ({ children }) => (
+
   <header class="main-header style-two style-four">
+
     <div class="header-top">
         <div class="auto-container">
             <div class="top-inner clearfix">
@@ -22,7 +23,7 @@ const Header = ({ children }) => (
         <div class="auto-container">
             <div class="outer-box clearfix">
                 <div class="logo-box pull-left">
-                    <figure class="logo"><a href="/"><StaticImage src="../assets/images/logo-white.png" width="250px" alt=""/></a></figure>
+                    <figure class="logo"><Link to="/"><img src="../assets/images/logo-white.png" width="250px" alt=""/></Link></figure>
                 </div>
                 <div class="menu-area pull-right">
                     <div class="mobile-nav-toggler">
@@ -36,7 +37,7 @@ const Header = ({ children }) => (
                                 <li><Link to="/">Home</Link></li> 
                                 <li><Link to="/about">About</Link></li>
                                 <li><Link to="/team">Team</Link></li>
-																<li><Link href="/blog">Project</Link></li>
+								<li><Link href="/blog">Project</Link></li>
                                 <li><Link href="/publications">Publications</Link></li>                              
                                 <li><Link href="/contact">Contact Us</Link></li>
                             </ul>
@@ -57,7 +58,7 @@ const Header = ({ children }) => (
         <div class="auto-container">
             <div class="outer-box clearfix">
                 <div class="logo-box pull-left">
-                    <figure class="logo"><a href="/"><StaticImage src="../assets/images/logo-white.png" width="250px" alt=""/></a></figure>
+                    <figure class="logo"><a href="/"><img src="/assets/images/logo-white.png" width="250px" alt=""/></a></figure>
                 </div>
                 <div class="menu-area pull-right">
                     <nav class="main-menu clearfix">

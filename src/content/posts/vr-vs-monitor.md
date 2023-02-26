@@ -1,6 +1,7 @@
 ---
 template: blog-post
 title: Porovnání imerzivní a neimerzivní virtuální reality v hodnocení paměťových schopností u seniorů
+shortname: ASD
 slug: /vr-vs-monitor
 date: 2020-05-13 12:46
 description: Studie věnující se vlivu imerze ve virtuální realitě na paměťový výkon stárnoucí populace

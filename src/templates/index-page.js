@@ -249,7 +249,7 @@ const HomePage = ({ data }) => {
                 <div class="col-lg-6 col-md-12 col-sm-12 video-column">
                     <div id="video_block_02">
                         <div class="video-inner">
-                            <figure class="image-box"><StaticImage src={"/assets/images/resource/about-2.jpg"} alt=""/></figure>
+                            <figure class="image-box"><img src="/assets/images/resource/about-2.jpg" alt=""/></figure>
                             <div class="icon-holder">
                                 <div class="icon-box">
                                     <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="fas fa-play"></i></a>
@@ -263,7 +263,7 @@ const HomePage = ({ data }) => {
     </section>
     
     <section class="service-style-two bg-color-1 centred">
-        <div class="pattern-layer" style={{ backgroundImage: `url("assets/images/shape/shape-2.png")` }}></div>
+        <div class="pattern-layer" style={{ backgroundImage: `url("/assets/images/shape/shape-2.png")` }}></div>
         <div class="auto-container">
             <div class="sec-title">
                 <p>Sub Heading</p>

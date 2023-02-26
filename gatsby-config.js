@@ -31,7 +31,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve : `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`, `png`, `avif`],
+          placeholder: `none`,
+        }
+      }
+    },
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -117,6 +125,5 @@ module.exports = {
       },
     },
     "gatsby-plugin-offline",
-    `gatsby-plugin-react-helmet`,
   ],
 }

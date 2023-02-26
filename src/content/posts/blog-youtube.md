@@ -1,6 +1,7 @@
 ---
 template: blog-post
 title: YouTube embeded example, very nice
+shortname: youtube
 slug: /blog-youtube
 date: 2017-01-01 12:00
 description: Exaple of embeded youtube video

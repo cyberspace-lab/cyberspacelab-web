@@ -31,7 +31,7 @@ const Post = ({ data, pageContext }) => {
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
                     <div class="content-box clearfix">
                         <div class="title pull-left">
-                            <h1>{frontmatter.slug}</h1>
+                            <h1>{frontmatter.title}</h1>
                         </div>
                     </div>
                 </div>
@@ -47,9 +47,9 @@ const Post = ({ data, pageContext }) => {
                             <div class="inner-box">
                                 <figure class="image-box" id="cstm2">
                                   {Image != "" ? (
-                                    <GatsbyImage image={Image} alt=    {frontmatter.title + " - Featured image"}       className="featured-image" />
+                                    <GatsbyImage image={Image} alt={frontmatter.title + " - Featured image"}       className="featured-image" />
                                   ) : (
-                                    <img src="assets/images/news/news-7.jpg" alt=""/>
+                                    <img src="/assets/images/news/news-7.jpg" alt=""/>
                                   )}
                                 </figure>
                                 <div class="lower-content">
@@ -63,9 +63,6 @@ const Post = ({ data, pageContext }) => {
                             </div>
                         </div>
                     </div>
-                       
-                        
-                        
                 </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
@@ -95,9 +92,6 @@ const Post = ({ data, pageContext }) => {
                                     </ul>
                             </div>
                         </div>
-                        
-                      
-                        
                     </div>
                 </div>
             </div>
@@ -119,6 +113,7 @@ export const pageQuery = graphql`
       date(formatString: "MMMM DD, YYYY")
       slug
       title
+      shortname
       description
       featuredImage {
         childImageSharp {

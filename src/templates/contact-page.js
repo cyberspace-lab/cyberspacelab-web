@@ -34,15 +34,14 @@ const Contact = ({ data }) => {
         title={frontmatter.title}
         description={frontmatter.title + " " + site.siteMetadata.title}
       />
-      <section class="page-title" style={{ backgroundImage: `url("assets/images/background/page-title-2.jpg")` }}>
+      <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")` }}>
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
                     <div class="content-box clearfix">
                         <div class="title pull-left">
                             <h1>Contact Us</h1>
-                        </div>
-                        
+                        </div>  
                     </div>
                 </div>
             </div>

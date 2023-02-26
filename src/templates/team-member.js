@@ -69,7 +69,7 @@ const Member = ({ data, pageContext }) => {
                                         {Image != "" ? (
                                             <GatsbyImage image={Image} alt={frontmatter.title + " - Featured image"} className="featured-image" />
                                         ) : (
-                                            <StaticImage src="/assets/images/team/team-9.jpg" alt=""/>
+                                            <StaticImage src="../assets/images/team/team-9.jpg" alt=""/>
                                         )}
                                     </figure>
                                     <ul class="social-links clearfix">
