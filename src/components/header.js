@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import {Link} from "gatsby"
 
 const Header = ({ children }) => (
   <header class="main-header style-two style-four">
@@ -7,7 +8,6 @@ const Header = ({ children }) => (
         <div class="auto-container">
             <div class="top-inner clearfix">
                 <div class="top-left pull-left clearfix">
-                    
                    <div class="text" style={{ marginBottom: "5px" }}><a  href="mailto:support@cyberlabspace.com" style= {{fontSize: "12px", color: "#fff" }}>support@cyberlabspace.com</a></div>
                 </div>
                 <ul class="top-right pull-right">
@@ -31,23 +31,13 @@ const Header = ({ children }) => (
                     </div>
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                           
-                                    <ul class="navigation clearfix">
-                                <li><a href="/">Home</a>
-                                </li> 
-                                <li><a href="about">About</a>
-                                    
-                                </li>
-                                <li><a href="team">Team</a>
-                                    
-                                </li>
-                                <li><a href="blog">Project</a>
-                                    
-                                </li>
-                                <li><a href="publications">Publications</a>
-                                    
-                                </li>                              
-                                <li><a href="contact">Contact Us</a></li>
+                            <ul class="navigation clearfix">
+                                <li><a href="/">Home</a></li> 
+                                <li><Link to="/about">About</Link></li>
+                                <li><Link to="/team">Team</Link></li>
+																<li><Link href="/blog">Project</Link></li>
+                                <li><Link href="/publications">Publications</Link></li>                              
+                                <li><Link href="/contact">Contact Us</Link></li>
                             </ul>
                         </div>
                     </nav>
@@ -84,6 +74,5 @@ const Header = ({ children }) => (
     </div>
   </header>
 )
-
 
 export default Header
