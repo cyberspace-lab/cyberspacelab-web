@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import {Link} from "gatsby"
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Header = ({ children }) => (
   <header class="main-header style-two style-four">
@@ -21,7 +22,7 @@ const Header = ({ children }) => (
         <div class="auto-container">
             <div class="outer-box clearfix">
                 <div class="logo-box pull-left">
-                    <figure class="logo"><a href="/"><img src="assets/images/logo-white.png" width="250px" alt=""></img></a></figure>
+                    <figure class="logo"><a href="/"><StaticImage src="../assets/images/logo-white.png" width="250px" alt=""/></a></figure>
                 </div>
                 <div class="menu-area pull-right">
                     <div class="mobile-nav-toggler">
@@ -32,7 +33,7 @@ const Header = ({ children }) => (
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li><a href="/">Home</a></li> 
+                                <li><Link to="/">Home</Link></li> 
                                 <li><Link to="/about">About</Link></li>
                                 <li><Link to="/team">Team</Link></li>
 																<li><Link href="/blog">Project</Link></li>
@@ -56,7 +57,7 @@ const Header = ({ children }) => (
         <div class="auto-container">
             <div class="outer-box clearfix">
                 <div class="logo-box pull-left">
-                    <figure class="logo"><a href="/"><img src="assets/images/logo-white.png" width="250px" alt=""></img></a></figure>
+                    <figure class="logo"><a href="/"><StaticImage src="../assets/images/logo-white.png" width="250px" alt=""/></a></figure>
                 </div>
                 <div class="menu-area pull-right">
                     <nav class="main-menu clearfix">

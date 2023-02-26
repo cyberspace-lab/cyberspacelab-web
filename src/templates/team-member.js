@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -27,7 +27,7 @@ const Member = ({ data, pageContext }) => {
         article={true}
       />
 
-    <section class="page-title" style={{ backgroundImage: `url("assets/images/background/page-title-2.jpg")` }}>
+    <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")` }}>
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
@@ -41,7 +41,6 @@ const Member = ({ data, pageContext }) => {
             </div>
         </div>
     </section>
-    
     <section class="team-details">
         <div class="auto-container">
             <div class="row clearfix">
@@ -59,8 +58,6 @@ const Member = ({ data, pageContext }) => {
                                 <li><span>Profession</span>Profession Details Goes Here <br />More Profession Details Goes Here <br />Profession Details.</li>
                             </ul>
                         </div>
-                        
-						
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 team-block right-column">
@@ -70,9 +67,9 @@ const Member = ({ data, pageContext }) => {
                                 <div class="image-box">
                                     <figure class="image">
                                         {Image != "" ? (
-                                            <GatsbyImage image={Image} alt= {frontmatter.title + " - Featured image"} className="featured-image" />
+                                            <GatsbyImage image={Image} alt={frontmatter.title + " - Featured image"} className="featured-image" />
                                         ) : (
-                                            <img src="assets/images/team/team-9.jpg" alt=""/>
+                                            <StaticImage src="/assets/images/team/team-9.jpg" alt=""/>
                                         )}
                                     </figure>
                                     <ul class="social-links clearfix">
@@ -90,7 +87,6 @@ const Member = ({ data, pageContext }) => {
             </div>
         </div>
     </section>
-
     <section class="team-details" id="Personal-Experience">
         <div class="auto-container">
             <div class="row clearfix">
@@ -100,10 +96,9 @@ const Member = ({ data, pageContext }) => {
                             <h3>Personal Experience</h3>
                             <div class="text" dangerouslySetInnerHTML={{ __html: html }}/>
                         </div>
-						<BlogListMember data={posts} />
+						        <BlogListMember data={posts} />
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
