@@ -58,23 +58,6 @@ module.exports = {
               iframeId: false, //Optional: if true, iframe's id will be set to what is provided after 'video:' (YouTube IFrame player API requires iframe id)
             },
           },
-          `remark-image-attributes`,
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1024,
-              showCaptions: true,
-              linkImagesToOriginal: false,
-              tracedSVG: true,
-              loading: "lazy",
-            },
-          },
-          {
-            resolve: `gatsby-remark-image-attributes`,
-            options: {
-              dataAttributes: true
-            }
-          },
           {
             resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
             options: {
@@ -124,8 +107,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `BrainVR`,
-        short_name: `Foundation`,
+        name: `Cyberspacelab`,
+        short_name: `Cyberspacelab`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
