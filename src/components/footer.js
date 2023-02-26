@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Footer = () => (
   <footer>
   <section class="newsletter-section bg-color-3">
-      <div class="pattern-layer" style={{ backgroundImage: `url("assets/images/shape/shape-7.png")` }}></div>
+      <div class="pattern-layer" style={{ backgroundImage: `url("/assets/images/shape/shape-7.png")` }}></div>
       <div class="auto-container">
           <div class="row clearfix">
               <div class="col-lg-5 col-md-12 col-sm-12 inner-column">
@@ -27,13 +29,13 @@ const Footer = () => (
 
   <section class="main-footer">
       <div class="footer-top">
-          <div class="pattern-layer" style={{ backgroundImage: `url("assets/images/shape/footer-bg.png")` }}></div>
+          <div class="pattern-layer" style={{ backgroundImage: `url("/assets/images/shape/footer-bg.png")` }}></div>
           <div class="auto-container">
               <div class="widget-section">
                   <div class="row clearfix">
-                      <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                      <div class="col-lg-12 col-md-12 col-sm-12 footer-column">
                           <div class="footer-widget logo-widget">
-                              <figure class="footer-logo"><a href="index.html"><img src="assets/images/logo-white.png" alt=""></img></a></figure>
+                              <figure class="footer-logo"><Link to="/"><StaticImage src="/assets/images/logo-white.png" alt=""/></Link></figure>
                               <div class="text">
                                   <p>Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est.</p>
                               </div>
@@ -43,11 +45,12 @@ const Footer = () => (
                                       <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
                                       <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
                                       <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                      <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                      {/*<li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>*/}
                                   </ul>
                               </div>
                           </div>
                       </div>
+                      {/*
                       <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
                           <div class="footer-widget links-widget" style={{marginLeft: "80px" }}>
                               <div class="widget-title">
@@ -78,25 +81,25 @@ const Footer = () => (
                                       </ul>
                               </div>
                           </div>
-                      </div>
-          <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
-          <div class="footer-widget links-widget">
-                          <div class="footer-widget post-widget">
-                              <div class="widget-title">
-                                  <h3>Recent Publications</h3>
-                              </div>
-                              <div class="widget-content">
-                                  <ul class="clearfix">
-                                      <li><a href="#">Year Heading 2000</a></li>
-                                      <li><a href="#">Year Heading 2000</a></li>
-                                      <li><a href="#">Year Heading 2000</a></li>
-                                      <li><a href="#">Year Heading 2000</a></li>
-                                     
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-          </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
+                    <div class="footer-widget links-widget">
+                        <div class="footer-widget post-widget">
+                            <div class="widget-title">
+                                <h3>Recent Publications</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="clearfix">
+                                    <li><Link href="">Year Heading 2000</Link></li>
+                                    <li><Link href="#">Year Heading 2000</Link></li>
+                                    <li><Link href="#">Year Heading 2000</Link></li>
+                                    <li><Link href="#">Year Heading 2000</Link></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+*/}
                   </div>
               </div>
           </div>

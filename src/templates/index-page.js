@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { graphql } from "gatsby"
+import {StaticImage} from "gatsby-plugin-image"
 import {
   RiFacebookBoxFill,
   RiTwitterFill,
@@ -195,7 +196,7 @@ const HomePage = ({ data }) => {
   return (
     <Layout>
       <Seo />
-    <section class="banner-style-four" style={{ backgroundImage: `url("assets/images/banner/banner.png")` }}>
+    <section class="banner-style-four" style={{ backgroundImage: `url("/assets/images/banner/banner.png")` }}>
         <div class="auto-container">
             <div class="row align-items-center clearfix">
                 <div class="col-xl-6 col-lg-12 col-md-12 offset-xl-3 content-column">
@@ -212,7 +213,7 @@ const HomePage = ({ data }) => {
     </section>
 	
     <section class="about-style-two">
-        <div class="pattern-layer" style={{ backgroundImage: `url("assets/images/shape/shape-6.png")`}}></div>
+        <div class="pattern-layer" style={{ backgroundImage: `url("/assets/images/shape/shape-6.png")`}}></div>
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
@@ -248,7 +249,7 @@ const HomePage = ({ data }) => {
                 <div class="col-lg-6 col-md-12 col-sm-12 video-column">
                     <div id="video_block_02">
                         <div class="video-inner">
-                            <figure class="image-box"><img src="assets/images/resource/about-2.jpg" alt=""/></figure>
+                            <figure class="image-box"><StaticImage src={"/assets/images/resource/about-2.jpg"} alt=""/></figure>
                             <div class="icon-holder">
                                 <div class="icon-box">
                                     <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="fas fa-play"></i></a>
@@ -331,11 +332,11 @@ const HomePage = ({ data }) => {
     <TeamListHome data={members} />
 
     <section class="faq-section">
-        <div class="pattern-layer" style={{backgroundImage: `url("assets/images/shape/shape-8.png")`}}></div>
+        <div class="pattern-layer" style={{backgroundImage: `url("/assets/images/shape/shape-8.png")`}}></div>
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                    <figure class="image-box wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms"><a href="assets/images/resource/faq-1.jpg" class="lightbox-image" data-fancybox="gallery"><img src="assets/images/resource/faq-1.jpg" alt=""/></a></figure>
+                    <figure class="image-box wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms"><a href="/assets/images/resource/faq-1.jpg" class="lightbox-image" data-fancybox="gallery"><StaticImage src="../assets/images/resource/faq-1.jpg" alt=""/></a></figure>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                     <div id="content_block_06">
