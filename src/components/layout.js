@@ -1,10 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql, Script } from "gatsby"
 
 import Header from "./header"
-
 import "../assets/css/animate.css"
 import "../assets/css/bootstrap.css"
 import "../assets/css/flaticon.css"
@@ -35,8 +34,21 @@ const Layout = ({ children, className, props }) => {
 
   return (
     <div className="primary-container">
-      <Header />
-
+      <Header>
+        <Script src="assets/js/jquery.js" />
+        <Script src="assets/js/popper.min.js"/>
+        <Script src="assets/js/bootstrap.min.js"/>
+        <Script src="assets/js/owl.js"/>
+        <Script src="assets/js/wow.js"/>
+        <Script src="assets/js/validation.js"/>
+        <Script src="assets/js/jquery.fancybox.js"/>
+        <Script src="assets/js/appear.js"/>
+        <Script src="assets/js/jquery.countTo.js"/>
+        <Script src="assets/js/scrollbar.js"/>
+        <Script src="assets/js/tilt.jquery.js"/>
+        <Script src="assets/js/jQuery.style.switcher.min.js"/>
+        <Script src="assets/js/script.js" />
+      </Header>
       <div class="mobile-menu">
         <div class="menu-backdrop"></div>
         <div class="close-btn"><i class="fas fa-times"></i></div>
@@ -56,26 +68,20 @@ const Layout = ({ children, className, props }) => {
         </nav>
     </div>
 
-      {children}
-      <Footer />
-      <Helmet>
-        <script src="assets/js/jquery.js" />
-        <script src="assets/js/popper.min.js"/>
-        <script src="assets/js/bootstrap.min.js"/>
-        <script src="assets/js/owl.js"/>
-        <script src="assets/js/wow.js"/>
-        <script src="assets/js/validation.js"/>
-        <script src="assets/js/jquery.fancybox.js"/>
-        <script src="assets/js/appear.js"/>
-        <script src="assets/js/jquery.countTo.js"/>
-        <script src="assets/js/scrollbar.js"/>
-        <script src="assets/js/tilt.jquery.js"/>
-        <script src="assets/js/jQuery.style.switcher.min.js"/>
+    {children}
+    <Footer />
+    <Helmet>
+    
+    </Helmet>
+  </div>
+  )
+}
 
-        <script src="assets/js/script.js" />
-      </Helmet>
-
-    </div>
+export function Head() {
+  return (
+    <>
+    
+  </>
   )
 }
 
