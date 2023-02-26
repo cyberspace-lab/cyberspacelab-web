@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -34,13 +33,11 @@ const Post = ({ data, pageContext }) => {
                         <div class="title pull-left">
                             <h1>{frontmatter.slug}</h1>
                         </div>
-                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <section class="blog-details sidebar-page-container">
         <div class="auto-container">
             <div class="row clearfix">
@@ -114,43 +111,43 @@ export default Post
 
 export const pageQuery = graphql`
   query BlogPostQuery($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      id
-      html
-      excerpt(pruneLength: 148)
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        slug
-        title
-        description
-        featuredImage {
-          childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, width: 770, height: 400)
-          }
+  markdownRemark(id: {eq: $id}) {
+    id
+    html
+    excerpt(pruneLength: 148)
+    frontmatter {
+      date(formatString: "MMMM DD, YYYY")
+      slug
+      title
+      description
+      featuredImage {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED, width: 770, height: 400)
         }
       }
     }
-    members: allMarkdownRemark(
-        sort: { order: ASC, fields: [frontmatter___order] }
-        filter: { frontmatter: { template: { eq: "team-member" } } }
-        limit: 2
-    ) {
-        edges {
-          node {
-            id
-            excerpt(pruneLength: 250)
-            frontmatter {
-              slug
-              title
-              description
-              featuredImage {
-                childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400)
-                }
-              }
+  }
+  members: allMarkdownRemark(
+    sort: {frontmatter: {order: ASC}}
+    filter: {frontmatter: {template: {eq: "team-member"}}}
+    limit: 2
+  ) {
+    edges {
+      node {
+        id
+        excerpt(pruneLength: 250)
+        frontmatter {
+          slug
+          title
+          description
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400)
             }
           }
         }
       }
+    }
   }
+}
 `

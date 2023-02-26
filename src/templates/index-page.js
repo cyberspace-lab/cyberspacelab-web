@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { RiArrowRightSLine } from "react-icons/ri"
+import { graphql } from "gatsby"
 import {
   RiFacebookBoxFill,
   RiTwitterFill,
@@ -28,7 +26,7 @@ import Icons from "../util/socialmedia.json"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    markdownRemark(id: {eq: $id}) {
       id
       html
       frontmatter {
@@ -46,8 +44,8 @@ export const pageQuery = graphql`
       }
     }
     members: allMarkdownRemark(
-      sort: { order: ASC, fields: [frontmatter___order] }
-      filter: { frontmatter: { template: { eq: "team-member" } } }
+      sort: {frontmatter: {order: ASC}}
+      filter: {frontmatter: {template: {eq: "team-member"}}}
       limit: 4
     ) {
       edges {
@@ -214,7 +212,7 @@ const HomePage = ({ data }) => {
     </section>
 	
     <section class="about-style-two">
-        <div class="pattern-layer" style={{ backgroundImage: `url("assets/images/shape/shape-6.png")` }}></div>
+        <div class="pattern-layer" style={{ backgroundImage: `url("assets/images/shape/shape-6.png")`}}></div>
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">

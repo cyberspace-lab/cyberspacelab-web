@@ -1,36 +1,35 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import MemberCard from "../components/member-card"
 import Seo from "../components/seo"
 
 export const teamListQuery = graphql`
-  query teamListQuery {
-    allMarkdownRemark(
-      sort: { order: ASC, fields: [frontmatter___order] }
-      filter: { frontmatter: { template: { eq: "team-member" } } }
-    ) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            slug
-            title
-            description
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400)
-              }
+query teamListQuery {
+  allMarkdownRemark(
+    sort: {frontmatter: {order: ASC}}
+    filter: {frontmatter: {template: {eq: "team-member"}}}
+  ) {
+    edges {
+      node {
+        id
+        excerpt(pruneLength: 250)
+        frontmatter {
+          slug
+          title
+          description
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400)
             }
           }
         }
       }
     }
   }
+}
 `
 
 class TeamIndex extends React.Component {

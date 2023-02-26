@@ -2,40 +2,36 @@
 import { jsx } from "theme-ui"
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
 import Layout from "../components/layout"
 import PostCard from "../components/post-card"
 import Seo from "../components/seo"
 
-
 export const blogListQuery = graphql`
-  query blogListQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { template: { eq: "blog-post" } } }
-    ) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            slug
-            title
-            isActive
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, width: 370, height: 370)
-              }
+ query blogListQuery {
+  allMarkdownRemark(
+    sort: {frontmatter: {date: DESC}}
+    filter: {frontmatter: {template: {eq: "blog-post"}}}
+  ) {
+    edges {
+      node {
+        id
+        excerpt(pruneLength: 250)
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          slug
+          title
+          isActive
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED, width: 370, height: 370)
             }
           }
         }
       }
     }
   }
+}
 `
-
-
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
