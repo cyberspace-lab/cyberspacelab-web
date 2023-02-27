@@ -57,19 +57,7 @@ const Layout = ({ children, className, props }) => {
     {children}
     <Footer />
     <Helmet defer={false}>
-      <Script id="jquery" type="text/javascript" src="./.assetasdaswds/js/jquery.js"/>
-      <Script id="popper" type="text/javascript" src={withPrefix("/assets/js/popper.min.js")}/>
-      <Script id="bootstrap" type="text/javascript" src={withPrefix("/assets/js/bootstrap.min.js")}/>
-      <Script id="owl" type="text/javascript" src={withPrefix("/assets/js/owl.js")}/>
-      <Script id="wow" type="text/javascript" src={withPrefix("/assets/js/wow.js")}/>
-      <Script id="validation" type="text/javascript" src={withPrefix("/assets/js/validation.js")}/>
-      <Script id="fancybox" type="text/javascript" src={withPrefix("/assets/js/jquery.fancybox.js")}/>
-      <Script id="appear" type="text/javascript" src={withPrefix("/assets/js/appear.js")}/>
-      <Script id="jquerycount" type="text/javascript" src={withPrefix("/assets/js/jquery.countTo.js")}/>
-      <Script id="scrollbar" type="text/javascript" src={withPrefix("/assets/js/scrollbar.js")}/>
-      <Script id="tilt" type="text/javascript" src={withPrefix("/assets/js/tilt.jquery.js")}/>
-      <Script id="styleswithc" type="text/javascript" src={withPrefix("/assets/js/jQuery.style.switcher.min.js")}/>
-      <Script id="myscript" type="text/javascript" src="/assets/js/script.js"/>
+
     </Helmet>
   </div>
   )
