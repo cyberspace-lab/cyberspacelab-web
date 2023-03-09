@@ -52,19 +52,6 @@ const SEO = ({ title, description, image, article }) => {
         <meta name="twitter:description" content={seo.description} />
       )}
       {seo.image && <meta name="twitter:image" content={seo.image} />}
-      <script id="jquery" type="text/javascript" src="/assets/js/jquery.js"/>
-      <script id="popper" type="text/javascript" src="/assets/js/popper.min.js"/>
-      <script id="bootstrap" type="text/javascript" src="/assets/js/bootstrap.min.js"/>
-      <script id="owl" type="text/javascript" src="/assets/js/owl.js"/>
-      <script id="wow" type="text/javascript" src="/assets/js/wow.js"/>
-      <script id="validation" type="text/javascript" src="/assets/js/validation.js"/>
-      <script id="fancybox" type="text/javascript" src="/assets/js/jquery.fancybox.js"/>
-      <script id="appear" type="text/javascript" src="/assets/js/appear.js"/>
-      <script id="jquerycount" type="text/javascript" src="/assets/js/jquery.countTo.js"/>
-      <script id="scrollbar" type="text/javascript" src="/assets/js/scrollbar.js"/>
-      <script id="tilt" type="text/javascript" src="/assets/js/tilt.jquery.js"/>
-      <script id="styleswithc" type="text/javascript" src="/assets/js/jQuery.style.switcher.min.js"/>
-      <script id="myscript" type="text/javascript" src="/assets/js/script.js"/>
     </Helmet>
   )
 }
