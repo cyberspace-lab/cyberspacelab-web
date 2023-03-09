@@ -26,7 +26,6 @@ const Footer = () => (
           </div>
       </div>
   </section>
-
   <section class="main-footer">
       <div class="footer-top">
           <div class="pattern-layer" style={{ backgroundImage: `url("/assets/images/shape/footer-bg.png")` }}></div>

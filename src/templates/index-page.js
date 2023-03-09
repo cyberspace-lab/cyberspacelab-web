@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { graphql } from "gatsby"
-import {StaticImage} from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 import {
   RiFacebookBoxFill,
   RiTwitterFill,
@@ -207,11 +207,9 @@ const HomePage = ({ data }) => {
                         <a style={{ textAlign: "center"}} class="main-button" href="#">Read More</a>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
-	
     <section class="about-style-two">
         <div class="pattern-layer" style={{ backgroundImage: `url("/assets/images/shape/shape-6.png")`}}></div>
         <div class="auto-container">

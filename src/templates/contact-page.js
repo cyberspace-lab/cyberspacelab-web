@@ -51,22 +51,15 @@ const Contact = ({ data }) => {
         <div class="auto-container">
             <div class="research-details-content">
                 <div class="upper-box">
-                    
                     <h3>Some Heading Here</h3>
                     <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, aliquam quaerat voluptatem.</p>
 				</div>
 				<div class="upper-box">
-                    
                     <h3>Some Heading Here</h3>
                     <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, aliquam quaerat voluptatem.</p>
 				</div>
 				<div class="upper-box">
-                    
-                   
-					
 				</div>
-                
-                
             </div>
         </div>
     </section>
