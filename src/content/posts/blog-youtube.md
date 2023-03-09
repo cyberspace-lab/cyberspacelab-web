@@ -1,10 +1,11 @@
 ---
 template: blog-post
 title: YouTube embeded example, very nice
+shortname: youtube
 slug: /blog-youtube
 date: 2017-01-01 12:00
 description: Exaple of embeded youtube video
-featuredImage: /assets/emt-thumb.jpg
+featuredImage: ./../../assets/images/emt-thumb.jpg
 isActive: true
 ---
 
@@ -13,20 +14,4 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam sapien sem, orn
 `video: https://www.youtube.com/watch?v=vo4pMVb0R6M`
 
 Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Maecenas aliquet accumsan leo. Phasellus rhoncus. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Praesent in mauris eu tortor porttitor accumsan. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Sed elit dui, pellentesque a, faucibus vel, interdum nec, diam. Et harum quidem rerum facilis est et expedita distinctio. Etiam commodo dui eget wisi. Pellentesque arcu.
-
-### Sponzoři
-<div class="sponsors">
-    <figure>
-        <img src="/assets/tacr.jpg" alt="TACR" title="Technologická agentura České republiky"/>
-        <figcaption>Technologická agentura České republiky</figcaption>
-    </figure>
-    <figure>
-        <img src= /assets/3lf.jpg alt="3lf" title="3. lékařská fakulta" >
-        <figcaption>3. lékařská fakulta</figcaption>
-    </figure>
-    <figure>
-        <img src= /assets/3lf.jpg alt="3lf" title="3. lékařská fakulta" >
-        <figcaption>3. lékařská fakulta</figcaption>
-    </figure>
-</div>
 

@@ -2,40 +2,37 @@
 import { jsx } from "theme-ui"
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
 import Layout from "../components/layout"
 import PostCard from "../components/post-card"
 import Seo from "../components/seo"
 
-
 export const blogListQuery = graphql`
-  query blogListQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { template: { eq: "blog-post" } } }
-    ) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            slug
-            title
-            isActive
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, width: 370, height: 370)
-              }
+ query blogListQuery {
+  allMarkdownRemark(
+    sort: {frontmatter: {date: DESC}}
+    filter: {frontmatter: {template: {eq: "blog-post"}}}
+  ) {
+    edges {
+      node {
+        id
+        excerpt(pruneLength: 250)
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          shortname
+          slug
+          title
+          isActive
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED, width: 370, height: 370)
             }
           }
         }
       }
     }
   }
+}
 `
-
-
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
@@ -50,6 +47,7 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
       .filter(edge => !!edge.node.frontmatter.date)
       .map(edge => <PostCard key={edge.node.id} data={edge.node} />)
+    
     let props = {
       isFirst,
       prevPage,
@@ -68,7 +66,7 @@ class BlogIndex extends React.Component {
             "Stackrole base blog page " + currentPage + " of " + numPages
           }
         />
-        <section class="page-title" style={{ backgroundImage: `url("assets/images/background/page-title-2.jpg")`}}>
+        <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")`}}>
             <div class="auto-container">
                 <div class="row clearfix">
                     <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
@@ -76,7 +74,6 @@ class BlogIndex extends React.Component {
                             <div class="title pull-left">
                                 <h1>Our Projects</h1>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -84,13 +81,12 @@ class BlogIndex extends React.Component {
         </section>
         <section class="project-section">
             <div class="auto-container">
-		        <div class="row clearfix">
+              <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 content-column">
                         <div id="content_block_01">
                             <div class="content-box">
                                 <div class="sec-title left">
-                                    <p>Our Projects</p>
-                                    <h2>Past Projects.</h2>
+                                    <h2>Current Projects.</h2>
                                     <span class="separator"></span>
                                 </div>
                             </div>
@@ -98,7 +94,7 @@ class BlogIndex extends React.Component {
                     </div>
                 </div>
                 <div class="projects-container">
-                    {posts}
+                  {posts}
                 </div>
             </div>
         </section>

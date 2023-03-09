@@ -8291,3 +8291,61 @@ h4 a{
   }
 }
 **/
+
+
+.project-block-one{
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 11%,89% 0)
+}
+
+.projects-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-block {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.projects-container > a {
+  width: 33.33333%;
+}
+
+@media (max-width:1000px){
+  .projects-container > a {
+    width: 50%;
+  }
+}
+
+@media (max-width:700px){
+  .projects-container > a {
+    width: 100%;
+  }
+}
+
+.team-list-blog{
+  justify-content: center;
+}
+
+.team-list-blog .team-block{
+  width: 40% ;
+  max-width: none;
+  flex: none;
+  margin-bottom: 25px;
+}
+
+@media (max-width:700px){
+  .team-list-blog .team-block{
+    width: 90% ;
+  }
+}
+
+.blog-list-member > a {
+  width: 50%;
+}
+
+@media (max-width:700px){
+  .blog-list-member > a {
+    width: 100%;
+  }
+}

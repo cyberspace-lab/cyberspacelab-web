@@ -1,10 +1,11 @@
 ---
 template: blog-post
 title: Porovnání imerzivní a neimerzivní virtuální reality v hodnocení paměťových schopností u seniorů
+shortname: ASD
 slug: /vr-vs-monitor
 date: 2020-05-13 12:46
 description: Studie věnující se vlivu imerze ve virtuální realitě na paměťový výkon stárnoucí populace
-featuredImage: /assets/vr-vs-monitor-thumb.jpg
+featuredImage: ./../../assets/images/emt-thumb.jpg
 isActive: true
 ---
 
@@ -16,16 +17,3 @@ V této studii jsme zkoumali rozdíly související s věkem mezi využítím vi
 ![Vr vs Monitor  Graf](/assets/vr-vs-monitor-graf.jpg  "vr vs monitor graf")
 
 Skupiny seniorů (N = 36) a mladých dospělých (N = 25) dokončili virtuální úkol v supermarketu pomocí monitoru počítače a virtuálních brýlí v náhodném pořadí. Naše výsledky ukazují, že výkon seniorů byl lepší při používání monitoru počítače. Schopnost vybavit si nákupní seznam ve skupině mladých dospělých zůstala stabilní bez ohledu na použitou platformu. Zdá se, že výkonnost participantů při použití virtuálních brýlí byla více ovlivněna únavou u obou skupin. Hodocení uživatelské přívětivosti se mezi těmito dvěma platformami nelišilo a vedlejší negativní účinky (tzv. kybernetická nevolnost) byly reportovány pouzě vyjímečně. To znamená, že imerzivní VR je dobře akceptovaná i u seniorské populace. Tato zjištění mohou mít význam zejména pro další využití virtuálních brýlí pro kognitivní diagnostiku a rehabilitaci. Článek s podrobnými výsledky lze nalézt níže.
-
-### Sponzoři
-<div class="sponsors">
-    <figure>
-        <img src="/assets/tacr.jpg" alt="TACR" title="Technologická agentura České republiky"/>
-        <figcaption>Technologická agentura České republiky</figcaption>
-    </figure>
-    <figure>
-        <img src= /assets/3lf.jpg alt="3lf" title="3. lékařská fakulta" >
-        <figcaption>3. lékařská fakulta</figcaption>
-    </figure>
-</div>
-

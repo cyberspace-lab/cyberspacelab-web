@@ -3,12 +3,6 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-const netlifyCmsPaths = {
-  resolve: `gatsby-plugin-netlify-cms-paths`,
-  options: {
-    cmsConfig: `/static/admin/config.yml`,
-  },
-}
 
 const settings = require("./src/util/site.json")
 
@@ -18,8 +12,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/static/assets/`,
         name: `assets`,
+        path: `${__dirname}/src/assets/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `staticAssets`,
+        path: `${__dirname}/static/assets/`,
       },
     },
     {
@@ -30,14 +31,21 @@ module.exports = {
       },
     },
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve : `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`, `png`, `avif`],
+          placeholder: `none`,
+        }
+      }
+    },
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         gfm: true,
         plugins: [
-          netlifyCmsPaths,
           {
             resolve: "gatsby-remark-embed-video",
             options: {
@@ -57,23 +65,6 @@ module.exports = {
               containerClass: "embedVideo-container", //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
               iframeId: false, //Optional: if true, iframe's id will be set to what is provided after 'video:' (YouTube IFrame player API requires iframe id)
             },
-          },
-          `remark-image-attributes`,
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1024,
-              showCaptions: true,
-              linkImagesToOriginal: false,
-              tracedSVG: true,
-              loading: "lazy",
-            },
-          },
-          {
-            resolve: `gatsby-remark-image-attributes`,
-            options: {
-              dataAttributes: true
-            }
           },
           {
             resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
@@ -114,7 +105,6 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-theme-ui",
-    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -125,8 +115,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `BrainVR`,
-        short_name: `Foundation`,
+        name: `Cyberspacelab`,
+        short_name: `Cyberspacelab`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
@@ -135,19 +125,5 @@ module.exports = {
       },
     },
     "gatsby-plugin-offline",
-    `gatsby-plugin-netlify`,
-    {
-      resolve: `gatsby-plugin-netlify`,
-      options: {
-        headers: {},
-        allPageHeaders: [],
-        mergeSecurityHeaders: true,
-        mergeLinkHeaders: true,
-        mergeCachingHeaders: true,
-        transformHeaders: (headers, path) => headers,
-        generateMatchPathRewrites: true,
-      },
-    },
-    `gatsby-plugin-react-helmet`,
   ],
 }

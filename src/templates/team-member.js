@@ -1,21 +1,20 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { Link, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
+import { graphql } from "gatsby"
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import BlogListMember from "../components/blog-list-member"
 
 
 const Member = ({ data, pageContext }) => {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { markdownRemark, posts } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
 
   const Image = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
     : ""
-  const { previous, next } = pageContext
 
   return (
     <Layout className="page member-page">
@@ -28,7 +27,7 @@ const Member = ({ data, pageContext }) => {
         article={true}
       />
 
-    <section class="page-title" style={{ backgroundImage: `url("assets/images/background/page-title-2.jpg")` }}>
+    <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")` }}>
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
@@ -42,7 +41,6 @@ const Member = ({ data, pageContext }) => {
             </div>
         </div>
     </section>
-    
     <section class="team-details">
         <div class="auto-container">
             <div class="row clearfix">
@@ -60,8 +58,6 @@ const Member = ({ data, pageContext }) => {
                                 <li><span>Profession</span>Profession Details Goes Here <br />More Profession Details Goes Here <br />Profession Details.</li>
                             </ul>
                         </div>
-                        
-						
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 team-block right-column">
@@ -69,7 +65,13 @@ const Member = ({ data, pageContext }) => {
                         <div class="team-block-one">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-9.jpg" alt=""/></figure>
+                                    <figure class="image">
+                                        {Image != "" ? (
+                                            <GatsbyImage image={Image} alt={frontmatter.title + " - Featured image"} className="featured-image" />
+                                        ) : (
+                                            <StaticImage src="../assets/images/team/team-9.jpg" alt=""/>
+                                        )}
+                                    </figure>
                                     <ul class="social-links clearfix">
                                         <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
@@ -85,7 +87,6 @@ const Member = ({ data, pageContext }) => {
             </div>
         </div>
     </section>
-
     <section class="team-details" id="Personal-Experience">
         <div class="auto-container">
             <div class="row clearfix">
@@ -95,42 +96,9 @@ const Member = ({ data, pageContext }) => {
                             <h3>Personal Experience</h3>
                             <div class="text" dangerouslySetInnerHTML={{ __html: html }}/>
                         </div>
-						<div class="lower-box">
-                            <h3>Projects</h3>
-                            <div class="row clearfix">
-                <div class="col-lg-4 col-md-6 col-sm-12 project-block">
-                    <div class="project-block-one wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="line-one"></div>
-                            <div class="line-two"></div>
-                            <figure class="image-box"><img src="assets/images/gallery/project-1.jpg" alt=""/></figure>
-                            <div class="content-box">
-                                <h3><a href="#">Project Title</a></h3>
-                                <span>Project Sub Details</span>
-                            </div>
-                        </div>
+						        <BlogListMember data={posts} />
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 project-block">
-                    <div class="project-block-one wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="line-one"></div>
-                            <div class="line-two"></div>
-                            <figure class="image-box"><img src="assets/images/gallery/project-2.jpg" alt=""/></figure>
-                            <div class="content-box">
-                                <h3><a href="#">Project Title</a></h3>
-                                <span>Project Sub Details</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                
             </div>
         </div>
     </section>
@@ -152,7 +120,30 @@ export const pageQuery = graphql`
         description
         featuredImage {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, width: 264, height: 264)
+            gatsbyImageData(layout: CONSTRAINED, width: 370, height: 470)
+          }
+        }
+      }
+    }
+    posts: allMarkdownRemark(
+      sort: {frontmatter: {date: DESC}}
+      filter: { frontmatter: { template: { eq: "blog-post" } } }
+      limit: 2
+    ) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+            isActive
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED, width: 370, height: 370)
+              }
+            }
           }
         }
       }

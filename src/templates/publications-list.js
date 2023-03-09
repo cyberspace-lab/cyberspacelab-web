@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PublicationCard from "../components/publication-card"
 import Seo from "../components/seo"
@@ -45,7 +44,7 @@ class PublicationsIndex extends React.Component {
             "Stackrole base blog page " + currentPage + " of " + numPages
           }
         />
-        <section class="page-title" style={{ backgroundImage: `url("assets/images/background/page-title-2.jpg")` }} >
+        <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")` }} >
       <div class="auto-container">
         <div class="row clearfix">
           <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">

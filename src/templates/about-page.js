@@ -23,7 +23,7 @@ const AboutPage = ({ data }) => {
   return (
     <Layout className="page">
       <Seo title={frontmatter.title} description={excerpt} />
-      <section class="page-title" style={{ backgroundImage: `url("assets/images/background/page-title-2.jpg")` }}>
+      <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")` }}>
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
@@ -31,7 +31,6 @@ const AboutPage = ({ data }) => {
                         <div class="title pull-left">
                             <h1>About Us</h1>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -43,8 +42,8 @@ const AboutPage = ({ data }) => {
                 <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                     <div id="image_block_01">
                         <div class="image-box">
-                            <div class="pattern-layer" style={{ backgroundImage: `url("assets/images/shape/shape-1.png")` }}></div>
-                            <figure class="image"><img src="assets/images/resource/about-1.jpg" alt=""/></figure>
+                            <div class="pattern-layer" style={{ backgroundImage: `url("/assets/images/shape/shape-1.png")` }}></div>
+                            <figure class="image"><img src="/assets/images/resource/about-1.jpg" alt=""/></figure>
                         </div>
                     </div>
                 </div>
