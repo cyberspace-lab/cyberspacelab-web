@@ -6,7 +6,19 @@ import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import BlogListMember from "../components/blog-list-member"
+import MemberSocialList from "../components/member-social-list"
 
+
+const SimpleList = ({ fields }) => {
+return (
+  fields.map(field => (
+    <div>
+      {field} <br />
+    </div>
+    )
+  )
+)
+}
 
 const Member = ({ data, pageContext }) => {
   const { markdownRemark, posts } = data // data.markdownRemark holds your post data
@@ -15,6 +27,8 @@ const Member = ({ data, pageContext }) => {
   const Image = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
     : ""
+
+  
 
   return (
     <Layout className="page member-page">
@@ -33,9 +47,8 @@ const Member = ({ data, pageContext }) => {
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
                     <div class="content-box clearfix">
                         <div class="title pull-left">
-                            <h1>Team Details</h1>
+                          <h1>Team Details</h1>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -52,10 +65,9 @@ const Member = ({ data, pageContext }) => {
                                 <p>{frontmatter.description}</p>
                             </div>
                             <ul class="list-item clearfix">
-                                <li><span>Expertise</span>Some Expertise <br />Some Expertise, Some Expertise</li>
-                                <li><span>Education</span>Some Education Here (19xx)<br />Some Major Education Here (19xx)</li>
-                                <li><span>Experience</span>15 years of Experience in This Field</li>
-                                <li><span>Profession</span>Profession Details Goes Here <br />More Profession Details Goes Here <br />Profession Details.</li>
+                              <li><span>Education</span><SimpleList fields={frontmatter.education} /></li>
+                              <li><span>Expertise</span><SimpleList fields={frontmatter.expertise} /></li>
+                              <li><span>Latest Papers</span><SimpleList fields={frontmatter.latestPapers} /></li>
                             </ul>
                         </div>
                     </div>
@@ -72,12 +84,7 @@ const Member = ({ data, pageContext }) => {
                                             <StaticImage src="../assets/images/team/team-9.jpg" alt=""/>
                                         )}
                                     </figure>
-                                    <ul class="social-links clearfix">
-                                        <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                    </ul>
+                                    <MemberSocialList social={frontmatter.social} />
                                 </div>
                             </div>
                         </div>
@@ -117,6 +124,17 @@ export const pageQuery = graphql`
       frontmatter {
         slug
         title
+        education
+        expertise
+        social {
+          twitter
+          facebook
+          instagram
+          web
+          linkedin
+          researchgate
+        }
+        latestPapers
         description
         featuredImage {
           childImageSharp {
