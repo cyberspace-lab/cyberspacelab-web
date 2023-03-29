@@ -5,7 +5,7 @@ import MemberCard from "./member-card"
 
 export default function TeamListBlog(props) {
   const data = props.data
-  const members = data.edges
+  const members = data
     .map(edge => <MemberCard key={edge.node.id} data={edge.node} />)
   return <MemberMaker data={members} />
 }

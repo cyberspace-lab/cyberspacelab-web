@@ -11,6 +11,9 @@ const Post = ({ data, pageContext }) => {
   const { markdownRemark, members } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
 
+  const filtredMembers = members.edges
+    .filter(edge => frontmatter.memberSlugs.includes(edge.node.frontmatter.slug))
+
   const Image = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
     : ""
@@ -59,7 +62,7 @@ const Post = ({ data, pageContext }) => {
                                     <div class="text" dangerouslySetInnerHTML={{ __html: html }}>
                                     </div>
 									 <h3 >Team Members</h3>
-                                     <TeamListBlog data={members} />
+                                     <TeamListBlog data={filtredMembers} />
                             </div>
                         </div>
                     </div>
@@ -114,6 +117,7 @@ export const pageQuery = graphql`
       slug
       title
       shortname
+      memberSlugs
       description
       featuredImage {
         childImageSharp {

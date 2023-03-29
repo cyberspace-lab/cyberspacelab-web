@@ -7,6 +7,7 @@ description: Turpis Magna
 education: ["University 1992", "University1993"]
 expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]
 latestPapers: ["paper1"]
+projectSlugs: ["/blog-youtube"]
 featuredImage: ./../../assets/images/team-member-hejtmy.jpg
 social:
   twitter: linkehere

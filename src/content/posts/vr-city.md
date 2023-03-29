@@ -4,6 +4,7 @@ title: Virtuální město pro trénink kognice u seniorů
 shortname: VR City
 slug: /vr-city
 date: 2019-05-13 12:46
+memberSlugs: ["/lukas-hejtmanek"]
 description: Vývoj uceleného tréninkového programu pro stárnoucí populaci za pomocí imerzivní virtuální reality
 featuredImage: ./../../assets/images/emt-thumb.jpg
 isActive: true

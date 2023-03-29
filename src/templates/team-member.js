@@ -28,7 +28,10 @@ const Member = ({ data, pageContext }) => {
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
     : ""
 
-  
+  const filtredPost = posts.edges
+    .filter(edge => frontmatter.projectSlugs.includes(edge.node.frontmatter.slug))
+
+  console.log(frontmatter.projectSlugs)
 
   return (
     <Layout className="page member-page">
@@ -103,7 +106,7 @@ const Member = ({ data, pageContext }) => {
                             <h3>Personal Experience</h3>
                             <div class="text" dangerouslySetInnerHTML={{ __html: html }}/>
                         </div>
-						        <BlogListMember data={posts} />
+						        <BlogListMember data={filtredPost} />
                     </div>
                 </div>
             </div>
@@ -136,6 +139,7 @@ export const pageQuery = graphql`
         }
         latestPapers
         description
+        projectSlugs
         featuredImage {
           childImageSharp {
             gatsbyImageData(layout: CONSTRAINED, width: 370, height: 470)
@@ -146,7 +150,7 @@ export const pageQuery = graphql`
     posts: allMarkdownRemark(
       sort: {frontmatter: {date: DESC}}
       filter: { frontmatter: { template: { eq: "blog-post" } } }
-      limit: 2
+      limit: 4
     ) {
       edges {
         node {
@@ -156,6 +160,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
+            shortname
             isActive
             featuredImage {
               childImageSharp {
