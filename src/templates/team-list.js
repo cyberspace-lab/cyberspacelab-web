@@ -50,7 +50,7 @@ class TeamIndex extends React.Component {
           }
         />
     <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")` }}>
-        <div class="auto-container">
+        <div class="auto-container ">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
                     <div class="content-box clearfix">
@@ -64,8 +64,8 @@ class TeamIndex extends React.Component {
         </div>
     </section>
     <section class="team-section team-page-section">
-        <div class="auto-container">
-          <div class="row clearfix">
+        <div class="auto-container members-page-pading-fix">
+          <div class="row clearfix members-page-flex-fix">
             {posts}
           </div>
         </div>

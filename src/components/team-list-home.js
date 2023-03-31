@@ -11,14 +11,14 @@ export default function TeamListHome(props) {
 }
 
 const MemberMaker = ({ data }) => (
-  <section class="team-section">
+  <section class="team-home-section">
     <div class="auto-container">
       <div class="sec-title">
         <p>Sub Heading</p>
         <h2>Heading About Team</h2>
         <span class="separator"></span>
       </div>
-      <div class="row clearfix">
+      <div class="row clearfix team-home-members-container">
         {data}
       </div>
     </div>

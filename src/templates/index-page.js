@@ -270,7 +270,7 @@ const HomePage = ({ data }) => {
             </div>
             <div class="row clearfix">
                 <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="service-block-two">
                         <div class="inner-box">
                             <div class="icon-box"><i class="flaticon-microscope"></i></div>
                             <h4><a href="#">Some Title</a></h4>
@@ -333,7 +333,7 @@ const HomePage = ({ data }) => {
         <div class="pattern-layer" style={{backgroundImage: `url("/assets/images/shape/shape-8.png")`}}></div>
         <div class="auto-container">
             <div class="row clearfix">
-                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column faq-image">
                     <figure class="image-box wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms"><a href="/assets/images/resource/faq-1.jpg" class="lightbox-image" data-fancybox="gallery"><StaticImage src="../assets/images/resource/faq-1.jpg" alt=""/></a></figure>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">

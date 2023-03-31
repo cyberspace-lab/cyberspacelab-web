@@ -1,12 +1,13 @@
 ---
 template: blog-post
-title: YouTube embeded example, very nice
-shortname: youtube
-slug: /blog-youtube
+title: Impact of VR forest on psychological wellbeing 
+shortname: Forest Benefits
+slug: /forest-benefits
 date: 2017-01-01 12:00
 memberSlugs: ["/lukas-hejtmanek"]
-description: Exaple of embeded youtube video
-featuredImage: ./../../assets/images/emt-thumb.jpg
+description: This project is about forest and calmness and repeated exposure and other stuff
+featuredImage: ./../../assets/images/forest-benefits-thumbnail.png
+featuredWideImage: ./../../assets/images/desk-games-thumbnail.png
 isActive: true
 ---
 

@@ -1,8 +1,8 @@
 ---
 template: team-member
-title: Viktorie Račková
-slug: /viktorie
-order: 2
+title: Oliver Kobián
+slug: /oliver-kobian
+order: 1
 description: Turpis Magna
 education: ["University 1992", "University1993"]
 expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]

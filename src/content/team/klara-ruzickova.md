@@ -1,8 +1,8 @@
 ---
 template: team-member
-title: Oliver Kobián
-slug: /oliver
-order: 10
+title: Klára Ružičková
+slug: /klara-ruzickova
+order: 3
 description: Turpis Magna
 education: ["University 1992", "University1993"]
 expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]

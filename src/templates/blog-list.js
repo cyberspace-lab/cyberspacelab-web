@@ -21,6 +21,7 @@ export const blogListQuery = graphql`
           shortname
           slug
           title
+          description
           isActive
           featuredImage {
             childImageSharp {
@@ -86,7 +87,7 @@ class BlogIndex extends React.Component {
                         <div id="content_block_01">
                             <div class="content-box">
                                 <div class="sec-title left">
-                                    <h2>Current Projects.</h2>
+                                    <h2>Ongoing Projects</h2>
                                     <span class="separator"></span>
                                 </div>
                             </div>

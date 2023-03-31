@@ -161,6 +161,7 @@ export const pageQuery = graphql`
             slug
             title
             shortname
+            description
             isActive
             featuredImage {
               childImageSharp {

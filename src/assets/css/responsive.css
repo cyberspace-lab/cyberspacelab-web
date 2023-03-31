@@ -157,7 +157,7 @@
 
 
 
-@media only screen and (max-width: 991px){
+@media only screen and (max-width: 1030px){
 
   .main-menu,
   .sticky-header,
@@ -688,7 +688,7 @@
   }
 
   .about-section #content_block_01 .content-box{
-    margin-left: 0px;
+    margin-left: 0px !important;
   }
 
   .experience-section #content_block_03 .content-box{
@@ -833,7 +833,7 @@
   }
 
   #image_block_01 .image-box{
-    padding: 0px;
+    padding: 0px !important;
   }
 
   .search-popup .search-form fieldset input[type="submit"]{

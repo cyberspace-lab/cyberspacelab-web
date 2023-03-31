@@ -1,12 +1,13 @@
 ---
 template: blog-post
-title: Porovnání imerzivní a neimerzivní virtuální reality v hodnocení paměťových schopností u seniorů
-shortname: ASD
-slug: /vr-vs-monitor
+title: Desk games as tool to measure cognitive abilites
+shortname: Desk Games
+slug: /desk-games
 date: 2020-05-13 12:46
 memberSlugs: ["/lukas-hejtmanek"]
-description: Studie věnující se vlivu imerze ve virtuální realitě na paměťový výkon stárnoucí populace
-featuredImage: ./../../assets/images/emt-thumb.jpg
+description: Desk games, Desk games, Desk games... everybody likes desk games and they can be benefical too
+featuredImage: ./../../assets/images/desk-games-thumbnail.png
+featuredWideImage: ./../../assets/images/desk-games-thumbnail.png
 isActive: true
 ---
 

@@ -1,8 +1,8 @@
 ---
 template: team-member
 title: Pavel Srp
-slug: /pavel
-order: 3
+slug: /pavel-srp
+order: 4
 description: Turpis Magna
 education: ["University 1992", "University1993"]
 expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]

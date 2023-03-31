@@ -1,12 +1,13 @@
 ---
 template: blog-post
-title: Virtuální město pro trénink kognice u seniorů
-shortname: VR City
-slug: /vr-city
-date: 2019-05-13 12:46
-memberSlugs: ["/lukas-hejtmanek"]
-description: Vývoj uceleného tréninkového programu pro stárnoucí populaci za pomocí imerzivní virtuální reality
-featuredImage: ./../../assets/images/emt-thumb.jpg
+title: Impact of movement method on navigation and spatial memory in virtual reality
+shortname: Movement Types
+slug: /movement-types
+date: 2022-05-13 12:46
+memberSlugs: ["/lukas-hejtmanek", "oliver-kobian"]
+description: We are trying to find how differnt types of mement methods in VR affect our ability to navigate
+featuredImage: ./../../assets/images/movement-types-thumbnail.png
+featuredWideImage: ./../../assets/images/desk-games-thumbnail.png
 isActive: true
 ---
 
