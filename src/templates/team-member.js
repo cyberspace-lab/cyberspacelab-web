@@ -60,7 +60,7 @@ const Member = ({ data, pageContext }) => {
     <section class="team-details">
         <div class="auto-container">
             <div class="row clearfix">
-                <div class="col-lg-8 col-md-12 col-sm-12 left-column">
+                <div class="col-lg-6 col-md-6 col-sm-12 left-column">
                     <div class="left-content">
                         <div class="upper-box">
                             <div class="title">
@@ -75,7 +75,7 @@ const Member = ({ data, pageContext }) => {
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12 col-sm-12 team-block right-column">
+                <div class="col-lg-6 col-md-6 col-sm-12 team-block right-column team-member-photo">
                     <div class="right-content">
                         <div class="team-block-one">
                             <div class="inner-box">
@@ -127,6 +127,11 @@ export const pageQuery = graphql`
       frontmatter {
         slug
         title
+        featuredImage {
+          childImageSharp {
+            gatsbyImageData(layout: CONSTRAINED, width: 370, height: 470)
+          }
+        }
         education
         expertise
         social {
@@ -140,11 +145,6 @@ export const pageQuery = graphql`
         latestPapers
         description
         projectSlugs
-        featuredImage {
-          childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, width: 370, height: 470)
-          }
-        }
       }
     }
     posts: allMarkdownRemark(

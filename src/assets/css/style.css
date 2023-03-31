@@ -7376,7 +7376,7 @@ h4 a{
 
 .team-details{
   position: relative;
-  padding: 120px 0px 110px 0px;
+  padding: 60px 15px 50px 15px;
 }
 
 .team-details .left-content h3{
@@ -8387,8 +8387,8 @@ h4 a{
 }
 
 .members-page-pading-fix{
-  padding-left: 19px;
-  padding-right: 40px !important;
+  padding-left: 40px;
+  padding-right: 60px !important;
 }
 
 .members-page-flex-fix{
@@ -8439,4 +8439,8 @@ h4 a{
   .page-title .content-box{
     margin-right: 0px
   }
+}
+
+.team-member-photo{
+  margin: 0 auto !important;
 }
