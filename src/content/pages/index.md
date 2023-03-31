@@ -2,9 +2,10 @@
 template: index-page
 slug: /
 title: Cyberspacelab
-tagline:  There is none atm.
+subtitle: Research group
+tagline: Faculty of Humanities, Charles University
 featuredImage:  ./../../assets/images/favicon.png
 cta:
-  ctaText: Více o nás
+  ctaText: About Us
   ctaLink: /about
 ---

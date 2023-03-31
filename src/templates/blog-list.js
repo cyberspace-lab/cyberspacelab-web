@@ -7,7 +7,7 @@ import PostCard from "../components/post-card"
 import Seo from "../components/seo"
 
 export const blogListQuery = graphql`
- query blogListQuery {
+ query blogListQuery($id: String!) {
   allMarkdownRemark(
     sort: {frontmatter: {date: DESC}}
     filter: {frontmatter: {template: {eq: "blog-post"}}}
@@ -30,6 +30,12 @@ export const blogListQuery = graphql`
           }
         }
       }
+    }
+  }
+  headPage: markdownRemark(id: {eq: $id}) {
+    id
+    frontmatter {
+      title
     }
   }
 }
@@ -62,10 +68,8 @@ class BlogIndex extends React.Component {
     return (
       <Layout className="blog-page">
         <Seo
-          title={"Blog — Page " + currentPage + " of " + numPages}
-          description={
-            "Stackrole base blog page " + currentPage + " of " + numPages
-          }
+          title={data.headPage.title}
+          description={data.headPage.description}
         />
         <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")`}}>
             <div class="auto-container">
