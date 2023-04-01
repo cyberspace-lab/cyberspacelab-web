@@ -114,6 +114,14 @@ export const pageQuery = graphql`
         frontmatter {
           slug
           title
+          social{
+            facebook
+            twitter
+            linkedin
+            instagram
+            web
+            researchgate
+          }
           description
           featuredImage {
             childImageSharp {
