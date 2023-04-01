@@ -14,8 +14,8 @@ const MemberMaker = ({ data }) => (
   <section class="team-home-section">
     <div class="auto-container">
       <div class="sec-title">
-        <p>Sub Heading</p>
-        <h2>Heading About Team</h2>
+        <p>Who are we?</p>
+        <h2>Lab members</h2>
         <span class="separator"></span>
       </div>
       <div class="row clearfix team-home-members-container">

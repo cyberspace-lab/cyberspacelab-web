@@ -6,6 +6,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import TeamListHome from "../components/team-list-home"
 import Seo from "../components/seo"
+import FaqAccordeon from "../components/faq-accordeon"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
@@ -16,6 +17,7 @@ export const pageQuery = graphql`
         title
         subtitle
         tagline
+        faq
         featuredImage {
           childImageSharp {
             gatsbyImageData(layout: CONSTRAINED, width: 264, height: 264)
@@ -199,62 +201,19 @@ const HomePage = ({ data }) => {
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-6 col-md-12 col-sm-12 image-column faq-image">
-                    <figure class="image-box wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms"><a href="/assets/images/resource/faq-1.jpg" class="lightbox-image" data-fancybox="gallery"><StaticImage src="../assets/images/resource/faq-1.jpg" alt=""/></a></figure>
+                    <figure class="image-box wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms"><a href="/assets/images/resource/faq-1.jpg" class="lightbox-image" data-fancybox="gallery">
+                        <StaticImage src="../assets/images/resource/faq-1.jpg" alt=""/></a>
+                    </figure>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                     <div id="content_block_06">
                         <div class="content-box">
                             <div class="sec-title left">
-                                <p>Sub Heading</p>
-                                <h2>Heading About FAQ</h2>
+                                <p>Most asked questions</p>
+                                <h2>FAQ</h2>
                                 <span class="separator"></span>
+                                <FaqAccordeon arr={frontmatter.faq}/>
                             </div>
-                            <ul class="accordion-box">
-                                <li class="accordion block">
-                                    <div class="acc-btn">
-                                        <div class="icon-outer"><i class="fas fa-plus"></i></div>
-                                        <h6>Some question goes here?</h6>
-                                    </div>
-                                    <div class="acc-content">
-                                        <div class="content">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion block active-block">
-                                    <div class="acc-btn active">
-                                        <div class="icon-outer"><i class="fas fa-plus"></i></div>
-                                        <h6>Some question goes here?</h6>
-                                    </div>
-                                    <div class="acc-content current">
-                                        <div class="content">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion block">
-                                     <div class="acc-btn">
-                                        <div class="icon-outer"><i class="fas fa-plus"></i></div>
-                                        <h6>Some question goes here?</h6>
-                                    </div>
-                                    <div class="acc-content">
-                                        <div class="content">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion block">
-                                     <div class="acc-btn">
-                                        <div class="icon-outer"><i class="fas fa-plus"></i></div>
-                                        <h6>Some question goes here?</h6>
-                                    </div>
-                                    <div class="acc-content">
-                                        <div class="content">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
