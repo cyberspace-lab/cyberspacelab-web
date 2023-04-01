@@ -51,46 +51,50 @@ const Contact = ({ data }) => {
 
       </section>
       <section class="contact-section">
-        <div class="auto-container">
-          <div class="row clearfix">
-            <div class="col-lg-8 col-md-12 col-sm-12 form-column">
-              <div class="auto-container">
-                <div class="research-details-content">
-                  <div class="upper-box">
-                    <h3>Some Heading Here</h3>
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, aliquam quaerat voluptatem.</p>
-                  </div>
-                  <div class="upper-box">
-                    <h3>Some Heading Here</h3>
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, aliquam quaerat voluptatem.</p>
-                  </div>
-                  <div class="upper-box">
-                  </div>
-                </div>
+        <section class="details">
+          <div class="auto-container">
+            <div class="research-details-content">
+              <div class="upper-box">
+                <h3>Some Heading Here</h3>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, aliquam quaerat voluptatem.</p>
+              </div>
+              <div class="upper-box">
+                <h3>Some Heading Here</h3>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, aliquam quaerat voluptatem.</p>
+              </div>
+              <div class="upper-box">
               </div>
             </div>
-            <div class="col-lg-4 col-md-12 col-sm-12 info-column">
+          </div>
+        </section>
+        <div class="auto-container">
+          <div class="row clearfix">
+            <div class="info-column">
               <div class="info-inner">
                 <div class="sec-title left">
-                  <p>Contact Info</p>
                   <h2>Contact With Us </h2>
-                  <span class="separator"></span>
                 </div>
                 <ul class="info-box clearfix">
                   <li>
                     <div class="icon-box"><i class="flaticon-call"></i></div>
-                    <h5>Phone No.</h5>
-                    <p><a href="tel:1800123456">(+1) 123 456 7890</a></p>
+                    <div className="info-box-text">
+                      <h5>Phone No.</h5>
+                      <p><a href="tel:1800123456">(+1) 123 456 7890</a></p>
+                    </div>
                   </li>
                   <li>
                     <div class="icon-box"><i class="flaticon-circular-clock"></i></div>
-                    <h5>Opening Hours</h5>
-                    <p>8:00 am - 6:00 pm</p>
+                    <div className="info-box-text">
+                      <h5>Opening Hours</h5>
+                      <p>8:00 am - 6:00 pm</p>
+                    </div>
                   </li>
                   <li>
                     <div class="icon-box"><i class="flaticon-worldwide"></i></div>
-                    <h5>Address</h5>
-                    <p>Location Goes Here.</p>
+                    <div className="info-box-text">
+                      <h5>Address</h5>
+                      <p>Location Goes Here.</p>
+                    </div>
                   </li>
                 </ul>
                 <div class="follow-box">
@@ -107,82 +111,6 @@ const Contact = ({ data }) => {
           </div>
         </div>
       </section>
-      <section class="google-map-section">
-        <div class="auto-container">
-          <div class="map-column">
-            <div class="google-map-area">
-              <div
-                class="google-map"
-                id="contact-google-map"
-                data-map-lat="50.116157520062195"
-                data-map-lng="14.443742606370192"
-                data-icon-path="assets/images/icons/map-marker.png"
-                data-map-title="Prague, Czech Republic"
-                data-map-zoom="12"
-                data-markers='{
-                            "marker-1": [50.116157520062195, -14.443742606370192, "<h4>Branch Office</h4><p>77/99 New York</p>","assets/images/shape/map-marker.png"]
-                        }'>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div className="wrapper" style={{ display: "none" }}>
-        <h1>{frontmatter.title}</h1>
-        <div
-          className="description"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-        <form
-          className="contact-form"
-          action="/thanks"
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <p className="formDescription">Nebo nám zanechte zprávu:</p>
-          <input type="hidden" name="form-name" value="contact" />
-          <p>
-            <label>
-              Jméno
-              <input type="text" name="name" required />
-            </label>
-          </p>
-          <p>
-            <label>
-              Email
-              <input type="email" name="email" required />
-            </label>
-          </p>
-          <p>
-            <label>
-              Předmět
-              <input type="text" name="subject" required />
-            </label>
-          </p>
-          <p>
-            <label>
-              Zpráva<textarea name="message" required></textarea>
-            </label>
-          </p>
-          <p className="text-align-right">
-            <button
-              className="button"
-              sx={{
-                variant: "variants.button",
-              }}
-              type="submit"
-            >
-              Poslat{" "}
-              <span className="icon -right">
-                <RiSendPlane2Line />
-              </span>
-            </button>
-          </p>
-        </form>
-      </div>
     </Layout>
   )
 }
