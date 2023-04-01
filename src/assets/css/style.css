@@ -306,6 +306,7 @@ img {
 
 .theme-btn.style-one:after{
   background: #e946ff;
+  background: linear-gradient(225deg, transparent 15px, #e946ff 0);
 }
 
 .theme-btn.style-two{
@@ -3638,13 +3639,13 @@ h3 a{
 }
 
 #content_block_05 .content-box .sec-title{
-  margin-bottom: 43px;
+  margin-bottom: 30px;
 }
 
 #content_block_05 .content-box .text{
   position: relative;
   display: block;
-  margin-bottom: 57px;
+  margin-bottom: 35px;
 }
 
 #content_block_05 .content-box .text p{
@@ -3664,17 +3665,18 @@ h3 a{
 #content_block_05 .content-box .inner-box .single-item{
   position: relative;
   display: inline-block;
-  float: left;
   width: 50%;
 }
 
 #content_block_05 .content-box .inner-box .single-item .box{
   position: relative;
-  padding: 0px 0px 0px 75px;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  align-items: center;
 }
 
 #content_block_05 .content-box .inner-box .single-item .box .icon-box{
-  position: absolute;
+  position: relative;
   left: 0px;
   top: 4px;
   font-size: 50px;
@@ -3687,7 +3689,8 @@ h3 a{
   font-size: 20px;
   line-height: 27px;
   font-weight: 500;
-  margin: 0px;
+  margin-top: 7px;
+  margin-left: 20px;
 }
 
 #content_block_05 .content-box .btn-box .theme-btn{
@@ -5369,7 +5372,7 @@ h4 a{
 
 .banner-style-four .content-box a:hover{
   color: #fff;
-  background: #e946ff;
+  background: linear-gradient(225deg, transparent 15px, #e946ff 0) !important;
 }
 
 .banner-style-four .form-inner{
@@ -8443,4 +8446,19 @@ h4 a{
 
 .team-member-photo{
   margin: 0 auto !important;
+}
+
+
+
+@media (max-width:510px){
+  #content_block_05 .content-box .inner-box .single-item{
+    display: block;
+    margin: 20px 0;
+    width: 100%
+  }
+
+  .btn-box{
+    margin: 40px;
+    text-align: center;
+  }
 }
