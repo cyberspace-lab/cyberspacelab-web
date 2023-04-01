@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import TeamListHome from "../components/team-list-home"
 import Seo from "../components/seo"
 import FaqAccordeon from "../components/faq-accordeon"
+import ServicesList from "../components/services-list"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
@@ -17,6 +18,7 @@ export const pageQuery = graphql`
         title
         subtitle
         tagline
+        description
         faq
         featuredImage {
           childImageSharp {
@@ -71,7 +73,7 @@ const HomePage = ({ data }) => {
                         <h2 style={{ textAlign: "center"}}>{frontmatter.subtitle}</h2>
                         <h1 style={{ textAlign: "center"}}>{frontmatter.title}</h1>
                         <p style={{ textAlign: "center"}}>{frontmatter.tagline}</p>
-                        <a style={{ textAlign: "center"}} class="main-button" href="">Projects</a>
+                        <Link to="/projects" style={{ textAlign: "center"}} class="main-button">Projects</Link>
                     </div>
                 </div>
             </div>
@@ -85,29 +87,30 @@ const HomePage = ({ data }) => {
                     <div id="content_block_05">
                         <div class="content-box">
                             <div class="sec-title left">
-                                <p>Sub Heading</p>
-                                <h2>Some About Heading.</h2>
+                                {/*<p>Our mission</p>*/}
+                                <h2>About Us</h2>
                                 <span class="separator"></span>
                             </div>
                             <div class="text">
-                                <p>Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est..</p>
-                                <p>Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim estExcepteur sint ocecat cupidatatnon.</p>
+                                {frontmatter.description}
                             </div>
                             <div class="inner-box clearfix">
                                 <div class="single-item">
                                     <div class="box">
-                                        <div class="icon-box"><i class="flaticon-molecular"></i></div>
-                                        <h4>Some Title</h4>
+                                        <div class="icon-box"><i class="flaticon-play"></i></div>
+                                        <h4>Virtual reality</h4>
                                     </div>
                                 </div>
                                 <div class="single-item">
                                     <div class="box">
-                                        <div class="icon-box"><i class="flaticon-molecular"></i></div>
-                                        <h4>Some Title</h4>
+                                        <div class="icon-box"><i class="flaticon-planet-earth"></i></div>
+                                        <h4>Spatial navigation</h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="btn-box"><a href="index.html" class="theme-btn style-one">More About Us</a></div>
+                            <div class="btn-box">
+                                <Link to="/about" class="theme-btn style-one">More About Us</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -115,85 +118,20 @@ const HomePage = ({ data }) => {
                     <div id="video_block_02">
                         <div class="video-inner">
                             <figure class="image-box"><img src="/assets/images/resource/about-2.jpg" alt=""/></figure>
+                            {/*
                             <div class="icon-holder">
                                 <div class="icon-box">
                                     <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="fas fa-play"></i></a>
                                 </div>
                             </div>
+                            */}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="service-style-two bg-color-1 centred">
-        <div class="pattern-layer" style={{ backgroundImage: `url("/assets/images/shape/shape-2.png")` }}></div>
-        <div class="auto-container">
-            <div class="sec-title">
-                <p>Sub Heading</p>
-                <h2>Heading About Services</h2>
-                <span class="separator"></span>
-            </div>
-            <div class="row clearfix">
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-microscope"></i></div>
-                            <h4><a href="#">Some Title</a></h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-microscope"></i></div>
-                            <h4><a href="#">Some Title</a></h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-microscope"></i></div>
-                            <h4><a href="#">Some Title</a></h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-microscope"></i></div>
-                            <h4><a href="#">Some Title</a></h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-microscope"></i></div>
-                            <h4><a href="#">Some Title</a></h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                    <div class="service-block-two wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="flaticon-microscope"></i></div>
-                            <h4><a href="#">Some Title</a></h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-    </section>
-    
+
     <TeamListHome data={members} />
 
     <section class="faq-section">
@@ -209,7 +147,7 @@ const HomePage = ({ data }) => {
                     <div id="content_block_06">
                         <div class="content-box">
                             <div class="sec-title left">
-                                <p>Most asked questions</p>
+                                {/*<p>Most asked questions</p>*/}
                                 <h2>FAQ</h2>
                                 <span class="separator"></span>
                                 <FaqAccordeon arr={frontmatter.faq}/>

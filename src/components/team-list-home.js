@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-
 import MemberCard from "./member-card"
 
 export default function TeamListHome(props) {
@@ -11,10 +10,10 @@ export default function TeamListHome(props) {
 }
 
 const MemberMaker = ({ data }) => (
-  <section class="team-home-section">
+  <section class="team-home-section bg-color-2 centered">
     <div class="auto-container">
       <div class="sec-title">
-        <p>Who are we?</p>
+        {/*<p>Who are we?</p>*/}
         <h2>Lab members</h2>
         <span class="separator"></span>
       </div>

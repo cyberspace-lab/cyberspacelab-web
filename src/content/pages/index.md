@@ -8,6 +8,10 @@ featuredImage:  ./../../assets/images/favicon.png
 cta:
   ctaText: About Us
   ctaLink: /about
+description: >
+  Our research group focuses on spatial navigation and virtual reality! We are a team of people from the field of cognitive psychology, neuroscience, and computer science, dedicated to exploring how humans navigate and interact with virtual environments.
+
+  Our research combines cutting-edge technology with rigorous scientific methodology to understand how virtual reality can be used to enhance spatial learning and cognitive performance.
 
 faq: [
   ["Can I do an internship or work-study program with your research group?", "Yes, we  offer internship and work-study opportunities for undergraduate and graduate students. Please check our website or contact us directly for more information about current opportunities."],
