@@ -5,8 +5,6 @@ const { Console } = require("console")
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  const blogList = path.resolve(`./src/templates/blog-list.js`)
-
   const teamList = path.resolve(`./src/templates/team-list.js`)
 
   const publicationsList = path.resolve(`./src/templates/publications-list.js`)
@@ -56,24 +54,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  //blog
-  createPage({
-    path: `/projects`,
-    component: blogList,
-  })
 
-  // team-members
-  createPage({
-    path: `/team`,
-    component: teamList
-  })
-
-  //publications
-  createPage({
-    path: `/publications`,
-    component: publicationsList,
-  })
-  
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {

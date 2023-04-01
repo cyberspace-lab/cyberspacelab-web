@@ -1,7 +1,7 @@
 ---
 template: about-page
 slug: /about
-title: O nás
+title: About us
 ---
 
 Naše skupina působí v Národním ústavu duševního zdraví (NUDZ) v Klecanech v rámci výzkumného programu VP3- Aplikované neurovědy a zobrazení mozku. Naše studie se orientují zejména na využití virtuálních technologií v neurobiologickém výzkumu. Cílem je vytvoření metod, které se pak uplatňují jednak v diagnostice a remediaci kognitivního deficitu u neuropsychiatrických poruch (např. schizofrenie a OCD) anebo v základním výzkumu zaměřeném na využití zobrazovacích metod (fMRI).

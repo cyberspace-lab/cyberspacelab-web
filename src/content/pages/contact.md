@@ -1,7 +1,9 @@
 ---
 template: contact-page
 slug: /contact
-title: Ozvěte se nám
+title: Contact us
+email: lukas.hejtmanek@cyberspacelab.cz
+address: Kampus Hybernská, Hybernská 1000, Praha, Czech Republic
 ---
 
 email: Iveta.Fajnerova@nudz.cz
