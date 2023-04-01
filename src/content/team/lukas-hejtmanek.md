@@ -8,7 +8,7 @@ education: ["University 1992", "University1993"]
 expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]
 latestPapers: ["paper1"]
 projectSlugs: ["/forest-benefits", "/movement-types", "/spatial-audio"]
-featuredImage: ./../../assets/images/team-member-hejtmy.jpg
+featuredImage: ./../../assets/images/incognito-thumbnail.png
 social:
   twitter: linkehere
   linkedin: linkhere

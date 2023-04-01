@@ -3967,7 +3967,7 @@ h4 a{
   left: 25px;
   bottom: -140px;
   width: 40px;
-  height: 138px;
+  /*height: 138px;*/
   text-align: center;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
@@ -8445,10 +8445,15 @@ h4 a{
 }
 
 .team-member-photo{
-  margin: 0 auto !important;
+  margin: 0 40px 0 auto !important;
 }
 
 
+@media (max-width:773px){
+  .team-member-photo{
+    margin: 0 auto !important;
+  }
+}
 
 @media (max-width:510px){
   #content_block_05 .content-box .inner-box .single-item{
@@ -8461,4 +8466,8 @@ h4 a{
     margin: 40px;
     text-align: center;
   }
+}
+
+.team-details .right-content .team-block-one .inner-box .image-box .social-links{
+  bottom: -10px;
 }
