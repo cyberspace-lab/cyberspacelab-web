@@ -19,6 +19,14 @@ query teamListQuery {
         frontmatter {
           slug
           title
+          social {
+            twitter
+            facebook
+            linkedin
+            instagram
+            web
+            researchgate
+          }
           description
           featuredImage {
             childImageSharp {
@@ -39,7 +47,6 @@ class TeamIndex extends React.Component {
 
     const posts = data.allMarkdownRemark.edges
       .map(edge => <MemberCard key={edge.node.id} data={edge.node} />)
-
 
     return (
       <Layout className="blog-page">

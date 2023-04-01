@@ -1,6 +1,6 @@
 import React from "react"
 
-const MemberSocialList = ({social}) => (
+const MemberSocialList = ( { social } ) => (
   <ul class="social-links clearfix">
     {social.twitter && <li><a href={social.twitter}><i class="fab fa-twitter"></i></a></li>}
     {social.facebook && <li><a href={social.facebook}><i class="fab fa-facebook-f"></i></a></li>}

@@ -2,10 +2,11 @@
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import MemberSocialList from "./member-social-list"
 
 const MemberCard = ({ data }) => (
     <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-        <a href={data.frontmatter.slug}>
+        <Link to={data.frontmatter.slug}>
         <div class="team-block-one wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
             <div class="inner-box">
                 <div class="image-box">
@@ -16,13 +17,10 @@ const MemberCard = ({ data }) => (
                             <img src="assets/images/team/team-6.jpg" alt="" />
                         )}
                     </figure>
-                    <ul class="social-links clearfix">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                    </ul>
-                    <div class="link"><a href={data.frontmatter.slug}><i class="fas fa-link"></i></a></div>
+                    <MemberSocialList social={data.frontmatter.social} />
+                    <div class="link">
+                        <a href={data.frontmatter.slug}><i class="fas fa-link"></i></a>
+                    </div>
                 </div>
                 <div class="lower-content">
                     <h3>{data.frontmatter.title}</h3>
@@ -30,7 +28,7 @@ const MemberCard = ({ data }) => (
                 </div>
             </div>
         </div>
-        </a>
+        </Link>
     </div>
 
 )
