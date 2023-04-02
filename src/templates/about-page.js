@@ -12,10 +12,32 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 140)
       frontmatter {
         title
+        description
+        aims
       }
     }
   }
 `
+
+const AimsBox = ({ aims }) => {
+    const interestsDiv = aims.map((aim, i) => 
+        <div class="single-item">
+            <div class="count-box">
+                <span>0{i+1}</span>
+            </div>
+            <div class="inner">
+                <h3>{aim[0]}</h3>
+                <p>{aim[1]}</p>
+            </div>
+        </div>
+    )
+    return(
+        <div class="inner-box">
+            {interestsDiv}
+        </div>
+    )
+}
+
 const AboutPage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
@@ -50,37 +72,10 @@ const AboutPage = ({ data }) => {
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                     <div id="content_block_01">
                         <div class="content-box">
-                            <div class="sec-title left">
-                                <p>Sub Title</p>
-                                <h2>Some About Heading.</h2>
-                                <span class="separator"></span>
-                            </div>
                             <div class="text">
-                                <p>Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est.</p>
+                                <p>{frontmatter.description}</p>
                               </div>
-                            <div class="inner-box">
-                                <div class="single-item">
-                                    <div class="count-box"><span>01</span></div>
-                                    <div class="inner">
-                                        <h3><a href="#">Some Title Here</a></h3>
-                                        <p>Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim.</p>
-                              </div>
-                                </div>
-                                <div class="single-item">
-                                    <div class="count-box"><span>02</span></div>
-                                    <div class="inner">
-                                        <h3><a href="#">Some Title Here</a></h3>
-                                        <p>Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim.</p>
-                              </div>
-                                </div>
-                                <div class="single-item">
-                                    <div class="count-box"><span>03</span></div>
-                                    <div class="inner">
-                                        <h3><a href="#">Some Title Here</a></h3>
-                                        <p>Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim.</p>
-                              </div>
-                                </div>
-                            </div>
+                        <AimsBox aims={frontmatter.aims} />
                         </div>
                     </div>
                 </div>

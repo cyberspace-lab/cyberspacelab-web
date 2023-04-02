@@ -14,6 +14,14 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 140)
       frontmatter {
         title
+        address
+        email
+        social{
+          facebook
+          twitter
+          linkedin
+          instagram
+        }
       }
     }
     site {
@@ -23,6 +31,17 @@ export const pageQuery = graphql`
     }
   }
 `
+
+const Social = ({ social }) => {
+  return(
+    <ul class="social-links clearfix">
+      <li><a href={social.facebook}><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href={social.twitter}><i class="fab fa-twitter"></i></a></li>
+      <li><a href={social.instagram}><i class="fab fa-instagram"></i></a></li>
+      <li><a href={social.linkedin}><i class="fab fa-linkedin"></i></a></li>
+    </ul>
+  )
+}
 
 const Contact = ({ data }) => {
   const { markdownRemark, site } = data // data.markdownRemark holds your post data
@@ -55,12 +74,7 @@ const Contact = ({ data }) => {
           <div class="auto-container">
             <div class="research-details-content">
               <div class="upper-box">
-                <h3>Some Heading Here</h3>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, aliquam quaerat voluptatem.</p>
-              </div>
-              <div class="upper-box">
-                <h3>Some Heading Here</h3>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, aliquam quaerat voluptatem.</p>
+                <div class="text" dangerouslySetInnerHTML={{ __html: html }}></div>
               </div>
               <div class="upper-box">
               </div>
@@ -72,9 +86,10 @@ const Contact = ({ data }) => {
             <div class="info-column">
               <div class="info-inner">
                 <div class="sec-title left">
-                  <h2>Contact With Us </h2>
+                  <h3>Contact information </h3>
                 </div>
                 <ul class="info-box clearfix">
+                    {/*
                   <li>
                     <div class="icon-box"><i class="flaticon-call"></i></div>
                     <div className="info-box-text">
@@ -82,29 +97,25 @@ const Contact = ({ data }) => {
                       <p><a href="tel:1800123456">(+1) 123 456 7890</a></p>
                     </div>
                   </li>
+                    */}
                   <li>
-                    <div class="icon-box"><i class="flaticon-circular-clock"></i></div>
+                    <div class="icon-box"><i class="flaticon-lab"></i></div>
                     <div className="info-box-text">
-                      <h5>Opening Hours</h5>
-                      <p>8:00 am - 6:00 pm</p>
+                      <h5>Email</h5>
+                      <p>{frontmatter.email}</p>
                     </div>
                   </li>
                   <li>
-                    <div class="icon-box"><i class="flaticon-worldwide"></i></div>
+                    <div class="icon-box"><i class="flaticon-marker"></i></div>
                     <div className="info-box-text">
                       <h5>Address</h5>
-                      <p>Location Goes Here.</p>
+                      <p>{frontmatter.address}</p>
                     </div>
                   </li>
                 </ul>
                 <div class="follow-box">
                   <h5>Follow Us:</h5>
-                  <ul class="social-links clearfix">
-                    <li><a href="contact.html"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="contact.html"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="contact.html"><i class="fab fa-google-plus-g"></i></a></li>
-                    <li><a href="contact.html"><i class="fab fa-pinterest-p"></i></a></li>
-                  </ul>
+                  <Social social={frontmatter.social} />
                 </div>
               </div>
             </div>

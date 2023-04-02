@@ -7,6 +7,63 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import TeamListBlog from "../components/team-list-blog"
 
+export const pageQuery = graphql`
+  query BlogPostQuery($id: String!) {
+  markdownRemark(id: {eq: $id}) {
+    id
+    html
+    excerpt(pruneLength: 148)
+    frontmatter {
+      date(formatString: "MMMM DD, YYYY")
+      slug
+      title
+      shortname
+      memberSlugs
+      description
+      featuredImage {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
+        }
+      }
+      featuredWideImage {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED, width: 1200, height: 400)
+        }
+      }
+    }
+  }
+  members: allMarkdownRemark(
+    sort: {frontmatter: {order: ASC}}
+    filter: {frontmatter: {template: {eq: "team-member"}}}
+  ) {
+    edges {
+      node {
+        id
+        excerpt(pruneLength: 250)
+        frontmatter {
+          slug
+          title
+          social{
+            facebook
+            twitter
+            linkedin
+            instagram
+            web
+            researchgate
+          }
+          description
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400)
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`
+
 const Post = ({ data, pageContext }) => {
   const { markdownRemark, members } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
@@ -78,59 +135,3 @@ const Post = ({ data, pageContext }) => {
 
 export default Post
 
-export const pageQuery = graphql`
-  query BlogPostQuery($id: String!) {
-  markdownRemark(id: {eq: $id}) {
-    id
-    html
-    excerpt(pruneLength: 148)
-    frontmatter {
-      date(formatString: "MMMM DD, YYYY")
-      slug
-      title
-      shortname
-      memberSlugs
-      description
-      featuredImage {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
-        }
-      }
-      featuredWideImage {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED, width: 1200, height: 400)
-        }
-      }
-    }
-  }
-  members: allMarkdownRemark(
-    sort: {frontmatter: {order: ASC}}
-    filter: {frontmatter: {template: {eq: "team-member"}}}
-  ) {
-    edges {
-      node {
-        id
-        excerpt(pruneLength: 250)
-        frontmatter {
-          slug
-          title
-          social{
-            facebook
-            twitter
-            linkedin
-            instagram
-            web
-            researchgate
-          }
-          description
-          featuredImage {
-            childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400)
-            }
-          }
-        }
-      }
-    }
-  }
-}
-`
