@@ -1878,7 +1878,7 @@ h3 a{
   position: relative;
   display: block;
   margin-top: 9px;
-  padding: 0px 40px 0px 55px;
+  padding: 0px 40px 0px 40px;
 }
 
 #image_block_01 .image-box .image img{
@@ -1934,7 +1934,7 @@ h3 a{
 }
 
 .about-section #content_block_01 .content-box{
-  margin-left: 55px;
+  margin-left: 0px;
 }
 
 #content_block_01 .content-box .text{
@@ -7145,10 +7145,11 @@ h4 a{
   line-height: 50px;
 }
 
-.research-details-content .upper-box h3{
+.research-details-content .upper-box h2{
   font-size: 30px;
   line-height: 40px;
   margin-bottom: 21px;
+  font-weight: 700;
 }
 
 .research-details-content .upper-box{
@@ -8183,7 +8184,7 @@ h4 a{
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   margin: 0 auto 40px auto;
 }
 
@@ -8219,6 +8220,7 @@ h4 a{
 
 .contact-section .info-inner .sec-title{
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .contact-section .info-inner .info-box{
@@ -8261,6 +8263,8 @@ h4 a{
 .contact-section .info-inner{
   position: relative;
   margin: 0;
+  max-width: 420px;
+
 }
 
 
@@ -8365,17 +8369,6 @@ h4 a{
 @media (max-width:700px){
   .blog-list-member > a {
     width: 100%;
-  }
-}
-
-@media (max-width:990px){
-  .faq-image {
-    display: flex;
-    justify-content: center;
-  }
-
-  .faq-section .image-box{
-    margin-right: 0px;
   }
 }
 
@@ -8532,3 +8525,29 @@ h4 a{
   }
 }
 
+.about-section .content-column{
+  padding: 0 40px 0 40px;
+}
+
+@media (max-width:990px){
+  .faq-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .faq-section .image-box{
+    margin-right: 0px;
+  }
+
+  .about-section .content-column{
+    padding: 0 20px 0 20px;
+  }
+}
+
+.dress-info-box .flaticon-marker::before{
+  padding-left: 10px;
+}
+
+.contact-section .info-inner .dress-info-box .icon-box{
+  margin-right: 10px !important;
+}

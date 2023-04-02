@@ -76,8 +76,6 @@ const Contact = ({ data }) => {
               <div class="upper-box">
                 <div class="text" dangerouslySetInnerHTML={{ __html: html }}></div>
               </div>
-              <div class="upper-box">
-              </div>
             </div>
           </div>
         </section>
@@ -105,7 +103,7 @@ const Contact = ({ data }) => {
                       <p>{frontmatter.email}</p>
                     </div>
                   </li>
-                  <li>
+                  <li className="dress-info-box">
                     <div class="icon-box"><i class="flaticon-marker"></i></div>
                     <div className="info-box-text">
                       <h5>Address</h5>
