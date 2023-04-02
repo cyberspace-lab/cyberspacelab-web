@@ -7378,7 +7378,9 @@ h4 a{
 
 .team-details{
   position: relative;
-  padding: 60px 15px 50px 15px;
+  padding: 50px 40px;
+  max-width: 1050px;
+  margin: auto;
 }
 
 .team-details .left-content h3{
@@ -7478,9 +7480,7 @@ h4 a{
   bottom: 0px;
 }
 
-.team-details .right-content .team-block-one{
-  margin-bottom: 55px;
-}
+
 
 .team-details .right-content #content_block_04 .form-inner{
   padding: 0px;
@@ -8380,7 +8380,7 @@ h4 a{
 }
 
 .team-block{
-  max-width: 305px;
+  max-width: 370px;
 }
 
 .team-home-members-container{
@@ -8444,7 +8444,7 @@ h4 a{
 }
 
 .team-member-photo{
-  margin: 0 40px 0 auto !important;
+  margin: 0 30px 0 auto !important;
 }
 
 
@@ -8525,3 +8525,10 @@ h4 a{
 .info-inner h2{
   text-align: center;
 }
+
+@media (max-width:900px){
+  .team-member-photo{
+    margin: 0 auto !important;
+  }
+}
+

@@ -30,7 +30,7 @@ query teamListQuery {
           description
           featuredImage {
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400)
+              gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400, transformOptions:{fit: COVER, cropFocus: CENTER})
             }
           }
         }
