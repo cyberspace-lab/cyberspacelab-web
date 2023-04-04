@@ -7,6 +7,8 @@ description: Turpis Magna
 education: ["University 1992", "University1993"]
 expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]
 latestPapers: ["paper1"]
+favoriteGames: ["Elden Ring", "Not Zelda"]
+hobbies: ["None"]
 projectSlugs: ["/spatial-audio"]
 featuredImage: ./../../assets/images/incognito-thumbnail.png
 social:

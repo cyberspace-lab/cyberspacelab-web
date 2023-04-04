@@ -6,7 +6,9 @@ order: 2
 description: Turpis Magna
 education: ["University 1992", "University1993"]
 expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]
-latestPapers: ["paper1"]
+favoriteGames: ["paper1"]
+hobbies: ["so many hobbies"]
+latestPapers: ["none"]
 projectSlugs: ["/gaming-experience"]
 featuredImage: ./../../assets/images/incognito-thumbnail.png
 social:

@@ -10,7 +10,7 @@ export const publicationsListQuery = graphql`
   query publicationsListQuery {
     allMarkdownRemark(
       filter: { frontmatter: { template: { eq: "publication" } } }
-      sort: { fields: frontmatter___date, order: DESC}
+      sort: { frontmatter: {date: DESC}}
     ) {
       edges {
         node {

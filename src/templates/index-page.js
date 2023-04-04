@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import TeamListHome from "../components/team-list-home"
 import Seo from "../components/seo"
 import FaqAccordeon from "../components/faq-accordeon"
-import ServicesList from "../components/services-list"
+//import ServicesList from "../components/services-list"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
