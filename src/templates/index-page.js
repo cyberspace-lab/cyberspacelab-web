@@ -123,18 +123,16 @@ const HomePage = ({ data }) => {
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 video-column">
-                    <div id="video_block_02">
-                        <div class="video-inner">
-                            <figure class="image-box"><img src="/assets/images/resource/about-2.jpg" alt=""/></figure>
-                            {/*
-                            <div class="icon-holder">
-                                <div class="icon-box">
-                                    <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="fas fa-play"></i></a>
-                                </div>
-                            </div>
-                            */}
+                    <figure class="image-box">
+                        <StaticImage src="../assets/images/pages/index/city-map.png" />
+                    </figure>
+                    {/*
+                    <div class="icon-holder">
+                        <div class="icon-box">
+                            <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="fas fa-play"></i></a>
                         </div>
                     </div>
+                    */}
                 </div>
             </div>
         </div>
@@ -147,9 +145,7 @@ const HomePage = ({ data }) => {
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-6 col-md-12 col-sm-12 image-column faq-image">
-                    <figure class="image-box wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms"><a href="/assets/images/resource/faq-1.jpg" class="lightbox-image" data-fancybox="gallery">
-                        <StaticImage src="../assets/images/resource/faq-1.jpg" alt=""/></a>
-                    </figure>
+                    <StaticImage src="../assets/images/pages/index/isometric.png" alt=""/>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                     <div id="content_block_06">
