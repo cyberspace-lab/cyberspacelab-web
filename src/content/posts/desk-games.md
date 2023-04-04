@@ -1,17 +1,18 @@
 ---
 template: blog-post
-title: Desk games as tool to measure cognitive abilites
-shortname: Desk Games
-slug: /desk-games
+title: Board games as tool to measure cognitive abilites
+shortname: board Games
+draft: true
+slug: /board-games
 date: 2020-05-13 12:46
 memberSlugs: ["/lukas-hejtmanek"]
-description: Desk games, Desk games, Desk games... everybody likes desk games and they can be benefical too
+description: Board games, Board games, Board games... everybody likes board games and they can be benefical too
 featuredImage: ./../../assets/images/desk-games-thumbnail.png
 featuredWideImage: ./../../assets/images/desk-games-thumbnail.png
 isActive: true
 ---
 
-Pokles paměti spojený s fyziologickým stárnutím a neurologickými poruchami souvisejícími s věkem má přímý dopad na kvalitu života seniorů. S demografickým stárnutím získává diagnostika kognitivních funkcí na důležitosti, jelikož včasná diagnóza může vést k efektivnějším kognitivním intervencím. Ve srovnání s klasickými přístupy tužka-papír by virtuální realita (VR) mohla nabídnout ekologicky validní nástroj pro hodnocení kognitivního deficitu a jeho následnou rehabilitaci. VR lze prezentovat s různou mírou imerze (míru pohlcení), která ovlinuje vnímanou míru přítomnosti ve virtuálním prostoru. VR tak lze prezentovat v méně imerzivní podobě, s využítím monitoru počítače, nebo s pokročilejšími technologiemi jako jsou virtuální brýle, které poskytují vysoce imerzivní zobrazení. Obě tyto VR platformy jsou spojeny s určitými výhodami a nevýhodami. Výsledky studií zaměřených na roli imerze při hodnocení kognitivního výkonu a využití imerzivní VR u stárnoucí populace jsou nejednoznačné.
+Pokles paměti spojený s fyziologickým stárnutím a neurologickými poruchami souvisejícími s věkem má přímý dopad na kvalitu života seniorů. S demografickým stárnutím získává diagnostika kognitivních funkcí na důležitosti, jelikož včasná diagnóza může vést k efektivnějším kognitivním intervencím. Ve srovnání s klasickými přístupy tužka-papír by virtuální realita (VR) mohla nabídnout ekologicky validní nástroj pro hodnocení kognitivního deficitu a jeho následnou rehabilitaci. VR lze prezentovat s různou mírou imerze (míru pohlcení), která ovlinuje vnímanou míru přítomnosti ve virtuálním prostoru. VR tak lze prezentovat v méně imerzivní podobě, s využítím monitoru počítače, nebo s pokročilejšími technologiemi jako jsocece brýle, které poskytují vysoce imerzivní zobrazení. Obě tyto VR platformy jsou spojeny s určitými výhodami a nevýhodami. Výsledky studií zaměřených na roli imerze při hodnocení kognitivního výkonu a využití imerzivní VR u stárnoucí populace jsou nejednoznačné.
 
 V této studii jsme zkoumali rozdíly související s věkem mezi využítím virtuálních brýlí a monitoru počítače k vyšetření paměti pomocí within-subject designu.
 
