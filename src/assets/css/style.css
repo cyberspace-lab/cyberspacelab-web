@@ -306,6 +306,7 @@ img {
 
 .theme-btn.style-one:after{
   background: #e946ff;
+  background: linear-gradient(225deg, transparent 15px, #e946ff 0);
 }
 
 .theme-btn.style-two{
@@ -493,7 +494,7 @@ img {
   line-height: 48px;
   font-weight: 700;
   color: #111;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   margin: 0px;
 }
 
@@ -508,9 +509,6 @@ img {
 
 .sec-title.left .separator{
   left: 40px;
-}
-section.details {
-    padding-top: 100px;
 }
 .sec-title .separator:before{
   position: absolute;
@@ -1860,7 +1858,7 @@ div#mCSB_1_container{
 
 .about-section{
   position: relative;
-  padding: 110px 0px 120px 0px;
+  padding: 60px 0px 60px 0px;
 }
 
 h3{
@@ -1880,7 +1878,7 @@ h3 a{
   position: relative;
   display: block;
   margin-top: 9px;
-  padding: 0px 40px 0px 55px;
+  padding: 0px 40px 0px 40px;
 }
 
 #image_block_01 .image-box .image img{
@@ -1936,7 +1934,7 @@ h3 a{
 }
 
 .about-section #content_block_01 .content-box{
-  margin-left: 55px;
+  margin-left: 0px;
 }
 
 #content_block_01 .content-box .text{
@@ -2862,7 +2860,7 @@ h3 a{
 
 .main-footer .footer-top{
   position: relative;
-  padding: 120px 0px 110px 0px;
+  padding: 50px 0px 50px 0px;
 }
 
 .main-footer .footer-top .pattern-layer{
@@ -2873,7 +2871,7 @@ h3 a{
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
 }
 
 .main-footer .footer-top .widget-section .logo-widget .footer-logo{
@@ -3625,7 +3623,7 @@ h3 a{
 
 .about-style-two{
   position: relative;
-  padding: 120px 0px;
+  padding: 60px 0px;
 }
 
 .about-style-two .pattern-layer{
@@ -3638,13 +3636,13 @@ h3 a{
 }
 
 #content_block_05 .content-box .sec-title{
-  margin-bottom: 43px;
+  margin-bottom: 10px;
 }
 
 #content_block_05 .content-box .text{
   position: relative;
   display: block;
-  margin-bottom: 57px;
+  margin-bottom: 35px;
 }
 
 #content_block_05 .content-box .text p{
@@ -3664,17 +3662,18 @@ h3 a{
 #content_block_05 .content-box .inner-box .single-item{
   position: relative;
   display: inline-block;
-  float: left;
   width: 50%;
 }
 
 #content_block_05 .content-box .inner-box .single-item .box{
   position: relative;
-  padding: 0px 0px 0px 75px;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  align-items: center;
 }
 
 #content_block_05 .content-box .inner-box .single-item .box .icon-box{
-  position: absolute;
+  position: relative;
   left: 0px;
   top: 4px;
   font-size: 50px;
@@ -3687,7 +3686,8 @@ h3 a{
   font-size: 20px;
   line-height: 27px;
   font-weight: 500;
-  margin: 0px;
+  margin-top: 7px;
+  margin-left: 20px;
 }
 
 #content_block_05 .content-box .btn-box .theme-btn{
@@ -3751,7 +3751,7 @@ h3 a{
 
 .service-style-two{
   position: relative;
-  padding: 110px 0px;
+  padding: 60px 0px;
 }
 
 .service-style-two .pattern-layer {
@@ -3935,12 +3935,12 @@ h4 a{
 
 /** team-section **/
 
-.team-section{
+.team-home-section{
   position: relative;
-  padding: 120px 0px;
+  padding: 60px 50px 50px 50px;
 }
 
-.team-section .sec-title{
+.team-home-section .sec-title{
   margin-bottom: 35px;
 }
 
@@ -3964,12 +3964,13 @@ h4 a{
   left: 25px;
   bottom: -140px;
   width: 40px;
-  height: 138px;
+  /*height: 138px;*/
   text-align: center;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   padding: 15px 5px 20px 5px;
   transition: all 500ms ease;
+  background-color: #3cf;
 }
 
 .team-block-one .inner-box:hover .image-box .social-links{
@@ -4037,7 +4038,7 @@ h4 a{
 
 .faq-section{
   position: relative;
-  padding: 120px 0px;
+  padding: 60px 0px;
 }
 
 .faq-section:before{
@@ -4778,11 +4779,10 @@ h4 a{
 
 .project-section{
   position: relative;
-  padding: 115px 0px 90px 0px;
+  padding: 50px 0px 90px 0px;
 }
 
 .project-section .sec-title{
-  width: 50%;
   margin: 0px;
 }
 
@@ -4814,7 +4814,7 @@ h4 a{
 .project-block-one .inner-box{
   position: relative;
   display: block;
-  background: #e946ff;
+  background: rgba(233, 70, 255, 0);
   overflow: hidden;
   text-align: center;
 }
@@ -5313,6 +5313,7 @@ h4 a{
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: 30;
 }
 
 .banner-style-four:before{
@@ -5370,7 +5371,7 @@ h4 a{
 
 .banner-style-four .content-box a:hover{
   color: #fff;
-  background: #e946ff;
+  background: linear-gradient(225deg, transparent 15px, #e946ff 0) !important;
 }
 
 .banner-style-four .form-inner{
@@ -6717,6 +6718,7 @@ h4 a{
   top: 0px;
   right: 0px;
   transform: skew(30deg);
+  background: #3cf;
 }
 
 .page-title .content-box .title h1{
@@ -7102,7 +7104,7 @@ h4 a{
 
 .research-details{
   position: relative;
-  padding: 120px 0px;
+  padding: 60px 0px;
 }
 
 .research-details-content .upper-box .image-box{
@@ -7143,10 +7145,11 @@ h4 a{
   line-height: 50px;
 }
 
-.research-details-content .upper-box h3{
+.research-details-content .upper-box h2{
   font-size: 30px;
   line-height: 40px;
   margin-bottom: 21px;
+  font-weight: 700;
 }
 
 .research-details-content .upper-box{
@@ -7376,7 +7379,9 @@ h4 a{
 
 .team-details{
   position: relative;
-  padding: 120px 0px 110px 0px;
+  padding: 50px 40px;
+  max-width: 1050px;
+  margin: auto;
 }
 
 .team-details .left-content h3{
@@ -7388,6 +7393,7 @@ h4 a{
 .team-details .left-content .upper-box .title p{
   font-size: 14px;
   margin: 0px;
+  color: #3cf;
 }
 
 .team-details .left-content .upper-box .title{
@@ -7414,6 +7420,7 @@ h4 a{
   position: absolute;
   left: 0px;
   top: 0px;
+  color: #3cf;
 }
 
 .team-details .left-content .upper-box{
@@ -7474,9 +7481,7 @@ h4 a{
   bottom: 0px;
 }
 
-.team-details .right-content .team-block-one{
-  margin-bottom: 55px;
-}
+
 
 .team-details .right-content #content_block_04 .form-inner{
   padding: 0px;
@@ -7500,7 +7505,7 @@ h4 a{
 
 .sidebar-page-container{
   position: relative;
-  padding: 120px 0px;
+  padding: 50px 0px;
 }
 
 .news-block-three .inner-box{
@@ -8126,7 +8131,7 @@ h4 a{
 
 .contact-section{
   position: relative;
-  padding: 115px 0px 120px 0px;
+  padding: 60px 0px 60px 0px;
 }
 
 .contact-section .form-inner .contact-form .form-group{
@@ -8177,9 +8182,10 @@ h4 a{
 
 .contact-section .info-inner .info-box li{
   position: relative;
-  display: block;
-  margin-bottom: 52px;
-  padding-left: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin: 0 auto 40px auto;
 }
 
 .contact-section .info-inner .info-box li:last-child{
@@ -8187,12 +8193,10 @@ h4 a{
 }
 
 .contact-section .info-inner .info-box li .icon-box{
-  position: absolute;
-  left: 0px;
-  top: 3px;
   font-size: 50px;
   line-height: 50px;
   color: #e946ff;
+  margin-right: 20px;
 }
 
 .contact-section .info-inner .info-box li h5{
@@ -8215,7 +8219,8 @@ h4 a{
 }
 
 .contact-section .info-inner .sec-title{
-  margin-bottom: 48px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .contact-section .info-inner .info-box{
@@ -8229,6 +8234,7 @@ h4 a{
   font-size: 18px;
   color: #222;
   margin-bottom: 26px;
+  text-align: center;
 }
 
 .contact-section .info-inner .follow-box .social-links li{
@@ -8256,7 +8262,9 @@ h4 a{
 
 .contact-section .info-inner{
   position: relative;
-  margin-left: 100px;
+  margin: 0;
+  max-width: 420px;
+
 }
 
 
@@ -8300,15 +8308,20 @@ h4 a{
 .projects-container{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .project-block {
   padding-left: 15px;
   padding-right: 15px;
+  max-width: 390px;
+  min-width: 310px;
 }
 
 .projects-container > a {
   width: 33.33333%;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width:1000px){
@@ -8340,12 +8353,201 @@ h4 a{
   }
 }
 
+.blog-list-member{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  align-items: center;
+  justify-content: center;
+}
+
 .blog-list-member > a {
-  width: 50%;
+  max-width: 370px;
 }
 
 @media (max-width:700px){
   .blog-list-member > a {
     width: 100%;
   }
+}
+
+.team-block{
+  max-width: 370px;
+}
+
+.team-home-members-container{
+  display: flex;
+  justify-content: center;
+}
+
+.members-page-pading-fix{
+  padding-left: 40px;
+  padding-right: 60px !important;
+}
+
+.members-page-flex-fix{
+  display: flex;
+  justify-content: center;
+}
+
+.project-block .image-box img{
+  z-index: -500 !important;
+}
+
+.projects-container > a:hover .inner-box{
+
+  background: rgba(233, 70, 255, 0.6) !important;
+  transition: 0.5s;
+}
+
+.project-block .lower-content .project-details{
+  color: #666666;
+}
+
+.team-list-blog .team-block{
+  max-width: 300px;
+  padding: 0 40px 0 20px ;
+}
+
+.project-member-list-heading{
+  margin-top: 30px;
+}
+
+.sidebar-page-container{
+  margin: 0 25px;
+}
+
+@media (max-width:750px){
+  .sidebar-page-container {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width:400px){
+  .sidebar-page-container {
+    margin: 0 5px;
+  }
+}
+
+@media (max-width:450px){
+  .page-title .content-box{
+    margin-right: 0px
+  }
+}
+
+.team-member-photo{
+  margin: 0 30px 0 auto !important;
+}
+
+
+@media (max-width:773px){
+  .team-member-photo{
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width:510px){
+  #content_block_05 .content-box .inner-box .single-item{
+    display: block;
+    margin: 20px 0;
+    width: 100%
+  }
+
+  .btn-box{
+    margin: 40px;
+    text-align: center;
+  }
+}
+
+.team-details .right-content .team-block-one .inner-box .image-box .social-links{
+  bottom: -10px;
+}
+
+/*texts*/
+@media (max-width:540px){
+  .banner-style-four .content-box h1{
+    font-size: 45px;
+    margin-bottom: 0px;
+  }
+
+  .banner-style-four .content-box h2{
+    font-size: 35px;
+    margin-bottom: 0px;
+  }
+
+  .banner-style-four .content-box p{
+    font-size: 15px;
+    margin-bottom: 50px;
+  }
+
+  .research-details-content .upper-box h3{
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+}
+
+.video-inner .image-box{
+  max-width: 536px;
+}
+
+@media (max-width:995px){
+  #video_block_02 .video-inner{
+    margin: 0px;
+    padding-left: 0px;
+  }
+  .video-inner .image-box{
+    margin: 0 auto;
+  }
+
+  #image_block_01 .image-box .image{
+    max-width: 500px;
+    margin: 0px auto;
+  }
+}
+
+.contact-section .info-column{
+  margin: 0 auto;
+}
+
+.follow-box .social-links{
+  display: flex;
+  justify-content: center;
+}
+
+.info-inner h2{
+  text-align: center;
+}
+
+@media (max-width:900px){
+  .team-member-photo{
+    margin: 0 auto !important;
+  }
+}
+
+.about-section .content-column{
+  padding: 0 40px 0 40px;
+}
+
+@media (max-width:990px){
+  .faq-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .faq-section .image-box{
+    margin-right: 0px;
+  }
+
+  .about-section .content-column{
+    padding: 0 20px 0 20px;
+  }
+}
+
+.dress-info-box .flaticon-marker::before{
+  padding-left: 10px;
+}
+
+.contact-section .info-inner .dress-info-box .icon-box{
+  margin-right: 10px !important;
 }

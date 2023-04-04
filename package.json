@@ -1,15 +1,12 @@
 {
-  "name": "@stackrole/gatsby-starter-foundation",
-  "description": "A starter to launch your blazing fast personal website and a blog, Built with Gatsby and Netlify CMS. Made with ❤ by Stackrole",
+  "name": "Cyberspacelabwebsite",
+  "description": "Website for research group Cyberspace lab",
   "version": "2.0.0",
-  "author": "Stackrole <stackrole@gmail.com>",
+  "author": "Lukáš Hejtmánek <lukas.hejtmanek@cyberspacelab.cz",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stackrole/gatsby-starter-foundation.git"
-  },
-  "bugs": {
-    "url": "https://github.com/stackrole/gatsby-starter-foundation/issues"
+    "url": "https://github.com/cyberspace_lab/web"
   },
   "scripts": {
     "build": "gatsby build --log-pages",

@@ -21,7 +21,7 @@ const PostCard = ({ data }) => (
             <h3>{data.frontmatter.shortname}</h3>
           </div>
 					<div class="lower-content" id="cstm1">
-            <span class="project-details">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</span>
+            <span class="project-details">{data.frontmatter.description}</span>
           </div>
         </div>
       </div>

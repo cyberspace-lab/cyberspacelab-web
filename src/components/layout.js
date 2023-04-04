@@ -26,11 +26,17 @@ const query = graphql`
     siteSearchIndex {
       index
     }
+    contact: markdownRemark(frontmatter: { template: { eq: "contact-page" } }) {
+      frontmatter {
+        address
+        email
+      }
+    }
   }
 `
 
 const Layout = ({ children, className, props }) => {
-  const { site, siteSearchIndex } = useStaticQuery(query)
+  const { site, siteSearchIndex, contact } = useStaticQuery(query)
   const { siteTitle } = site.siteMetadata
 
   useScript(withPrefix("assets/js/jquery.js"));
@@ -53,18 +59,20 @@ const Layout = ({ children, className, props }) => {
       <Header/>
       <div class="mobile-menu">
         <div class="menu-backdrop"></div>
-        <div class="close-btn"><i class="fas fa-times"></i></div>
+        <div class="close-btn">
+          <i class="fas fa-times"></i></div>
         <nav class="menu-box">
             <div class="nav-logo">
-              <a href="index.html"><img src="/assets/images/mobile-logo.png" alt="" title=""/></a>
+              <a href="index.html">
+                <img src="/assets/images/mobile-logo.png" alt="" title=""/>
+              </a>
             </div>
             <div class="menu-outer"></div>
             <div class="contact-info">
                 <h4>Contact Info</h4>
                 <ul>
-                    <li>Location Goes Here</li>
-                    <li><a href="tel:+8801682648101">(+1) 123 456 7890</a></li>
-                    <li><a href="mailto:support@cyberlabspace.com">support@cyberlabspace.com</a></li>
+                    <li>{contact.frontmatter.address}</li>
+                    <li><a href="mailto:{contact.frontmatter.email}">{contact.frontmatter.email}</a></li>
                 </ul>
             </div> 
         </nav>

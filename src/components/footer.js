@@ -4,52 +4,31 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 const Footer = () => (
-  <footer>
-  <section class="newsletter-section bg-color-3">
-      <div class="pattern-layer" style={{ backgroundImage: `url("/assets/images/shape/shape-7.png")` }}></div>
-      <div class="auto-container">
-          <div class="row clearfix">
-              <div class="col-lg-5 col-md-12 col-sm-12 inner-column">
-                  <div class="inner-box">
-                      <h2>Subscribe Newsletter</h2>
-                      <p>Stay in touch with us to get latest news and discount coupons</p>
-                  </div>
-              </div>
-              <div class="col-lg-7 col-md-12 col-sm-12 form-column">
-                  <form action="index.html" method="post" class="newsletter-form">
-                      <div class="form-group">
-                          <input type="email" name="email" placeholder="Enter Your Email" required=""></input>
-                          <button class="theme-btn style-one" type="submit">Subscribe!</button>
-                      </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-  </section>
-  <section class="main-footer">
-      <div class="footer-top">
-          <div class="pattern-layer" style={{ backgroundImage: `url("/assets/images/shape/footer-bg.png")` }}></div>
-          <div class="auto-container">
-              <div class="widget-section">
-                  <div class="row clearfix">
-                      <div class="col-lg-12 col-md-12 col-sm-12 footer-column">
-                          <div class="footer-widget logo-widget">
-                              <figure class="footer-logo"><Link to="/"><StaticImage src="../assets/images/logo-white.png" alt=""/></Link></figure>
-                              <div class="text">
-                                  <p>Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est.</p>
-                              </div>
-                              <div class="social-inner">
-                                  <h3>Follow Us:</h3>
-                                  <ul class="social-links clearfix">
-                                      <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                      <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                      <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                      {/*<li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>*/}
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                      {/*
+    <footer>
+        <section class="main-footer">
+            <div class="footer-top">
+                <div class="pattern-layer" style={{ backgroundImage: `url("/assets/images/shape/footer-bg.png")` }}></div>
+                <div class="auto-container">
+                    <div class="widget-section">
+                        <div class="row clearfix">
+                            <div class="col-lg-12 col-md-12 col-sm-12 footer-column">
+                                <div class="footer-widget logo-widget">
+                                    <figure class="footer-logo"><Link to="/"><StaticImage src="../assets/images/logo-white.png" alt="" /></Link></figure>
+                                    <div class="text">
+                                        <p>Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est.</p>
+                                    </div>
+                                    <div class="social-inner">
+                                        <h3>Follow Us:</h3>
+                                        <ul class="social-links clearfix">
+                                            <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
+                                            <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
+                                            {/*<li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>*/}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            {/*
                       <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
                           <div class="footer-widget links-widget" style={{marginLeft: "80px" }}>
                               <div class="widget-title">
@@ -99,19 +78,19 @@ const Footer = () => (
                     </div>
                     </div>
 */}
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="footer-bottom centred">
-          <div class="auto-container">
-              <div class="copyright">
-                  <p>Copyright &copy; 2022 Cyber Space Lab. All rights reserved.</p>
-              </div>
-          </div>
-      </div>
-  </section>
-  </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom centred">
+                <div class="auto-container">
+                    <div class="copyright">
+                        <p>Copyright &copy; 2022 Cyber Space Lab. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
 )
 
 export default Footer

@@ -6,7 +6,19 @@ import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import BlogListMember from "../components/blog-list-member"
+import MemberSocialList from "../components/member-social-list"
 
+
+const SimpleList = ({ fields }) => {
+return (
+  fields.map(field => (
+    <div>
+      {field} <br />
+    </div>
+    )
+  )
+)
+}
 
 const Member = ({ data, pageContext }) => {
   const { markdownRemark, posts } = data // data.markdownRemark holds your post data
@@ -15,6 +27,11 @@ const Member = ({ data, pageContext }) => {
   const Image = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
     : ""
+
+  const filtredPost = posts.edges
+    .filter(edge => frontmatter.projectSlugs.includes(edge.node.frontmatter.slug))
+
+  console.log(frontmatter.projectSlugs)
 
   return (
     <Layout className="page member-page">
@@ -33,9 +50,8 @@ const Member = ({ data, pageContext }) => {
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
                     <div class="content-box clearfix">
                         <div class="title pull-left">
-                            <h1>Team Details</h1>
+                          <h1>{frontmatter.title}</h1>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -44,23 +60,22 @@ const Member = ({ data, pageContext }) => {
     <section class="team-details">
         <div class="auto-container">
             <div class="row clearfix">
-                <div class="col-lg-8 col-md-12 col-sm-12 left-column">
+                <div class="col-lg-6 col-md-6 col-sm-12 left-column">
                     <div class="left-content">
                         <div class="upper-box">
                             <div class="title">
-                                <h3>{frontmatter.title}</h3>
-                                <p>{frontmatter.description}</p>
+                                <h2>{frontmatter.description}</h2>
                             </div>
                             <ul class="list-item clearfix">
-                                <li><span>Expertise</span>Some Expertise <br />Some Expertise, Some Expertise</li>
-                                <li><span>Education</span>Some Education Here (19xx)<br />Some Major Education Here (19xx)</li>
-                                <li><span>Experience</span>15 years of Experience in This Field</li>
-                                <li><span>Profession</span>Profession Details Goes Here <br />More Profession Details Goes Here <br />Profession Details.</li>
+                              <li><span>Education</span><SimpleList fields={frontmatter.education} /></li>
+                              <li><span>Expertise</span><SimpleList fields={frontmatter.expertise} /></li>
+                              <li><span>Favorite Games</span><SimpleList fields={frontmatter.favoriteGames}/></li>
+                              <li><span>Hobbies</span><SimpleList fields={frontmatter.hobbies}/></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12 col-sm-12 team-block right-column">
+                <div class="col-lg-6 col-md-6 col-sm-12 team-block right-column team-member-photo">
                     <div class="right-content">
                         <div class="team-block-one">
                             <div class="inner-box">
@@ -72,12 +87,7 @@ const Member = ({ data, pageContext }) => {
                                             <StaticImage src="../assets/images/team/team-9.jpg" alt=""/>
                                         )}
                                     </figure>
-                                    <ul class="social-links clearfix">
-                                        <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="index-2.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                    </ul>
+                                    <MemberSocialList social={frontmatter.social} />
                                 </div>
                             </div>
                         </div>
@@ -93,10 +103,9 @@ const Member = ({ data, pageContext }) => {
                 <div class="col-lg-12 col-md-12 col-sm-12 left-column">
                     <div class="left-content">
                         <div class="lower-box">
-                            <h3>Personal Experience</h3>
-                            <div class="text" dangerouslySetInnerHTML={{ __html: html }}/>
+                          <div class="text" dangerouslySetInnerHTML={{ __html: html }}/>
                         </div>
-						        <BlogListMember data={posts} />
+						        <BlogListMember data={filtredPost} />
                     </div>
                 </div>
             </div>
@@ -117,18 +126,32 @@ export const pageQuery = graphql`
       frontmatter {
         slug
         title
-        description
         featuredImage {
           childImageSharp {
             gatsbyImageData(layout: CONSTRAINED, width: 370, height: 470)
           }
         }
+        education
+        expertise
+        hobbies
+        favoriteGames
+        social {
+          twitter
+          facebook
+          instagram
+          web
+          linkedin
+          researchgate
+        }
+        latestPapers
+        description
+        projectSlugs
       }
     }
     posts: allMarkdownRemark(
       sort: {frontmatter: {date: DESC}}
       filter: { frontmatter: { template: { eq: "blog-post" } } }
-      limit: 2
+      limit: 4
     ) {
       edges {
         node {
@@ -138,6 +161,8 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
+            shortname
+            description
             isActive
             featuredImage {
               childImageSharp {

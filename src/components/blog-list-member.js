@@ -5,7 +5,7 @@ import PostCard from "./post-card"
 
 export default function BlogListMember(props) {
   const data = props.data
-  const posts = data.edges
+  const posts = data
     .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => <PostCard key={edge.node.id} data={edge.node} />)
   return <PostMaker data={posts} />

@@ -19,10 +19,18 @@ query teamListQuery {
         frontmatter {
           slug
           title
+          social {
+            twitter
+            facebook
+            linkedin
+            instagram
+            web
+            researchgate
+          }
           description
           featuredImage {
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400)
+              gatsbyImageData(layout: CONSTRAINED, width: 270, height: 400, transformOptions:{fit: COVER, cropFocus: CENTER})
             }
           }
         }
@@ -40,32 +48,27 @@ class TeamIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
       .map(edge => <MemberCard key={edge.node.id} data={edge.node} />)
 
-
     return (
       <Layout className="blog-page">
         <Seo
-          title={"Blog — Page " + currentPage + " of " + numPages}
-          description={
-            "Stackrole base blog page " + currentPage + " of " + numPages
-          }
+          title="Team"
         />
     <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")` }}>
-        <div class="auto-container">
+        <div class="auto-container ">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
                     <div class="content-box clearfix">
                         <div class="title pull-left">
-                            <h1>Our Team</h1>
+                          <h1>Our Team</h1>
                         </div>
-                       
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <section class="team-section team-page-section">
-        <div class="auto-container">
-          <div class="row clearfix">
+        <div class="auto-container members-page-pading-fix">
+          <div class="row clearfix members-page-flex-fix">
             {posts}
           </div>
         </div>
