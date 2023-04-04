@@ -50,7 +50,7 @@ const Member = ({ data, pageContext }) => {
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
                     <div class="content-box clearfix">
                         <div class="title pull-left">
-                          <h1>Team Details</h1>
+                          <h1>{frontmatter.title}</h1>
                         </div>
                     </div>
                 </div>
@@ -64,13 +64,13 @@ const Member = ({ data, pageContext }) => {
                     <div class="left-content">
                         <div class="upper-box">
                             <div class="title">
-                                <h3>{frontmatter.title}</h3>
-                                <p>{frontmatter.description}</p>
+                                <h2>{frontmatter.description}</h2>
                             </div>
                             <ul class="list-item clearfix">
                               <li><span>Education</span><SimpleList fields={frontmatter.education} /></li>
                               <li><span>Expertise</span><SimpleList fields={frontmatter.expertise} /></li>
-                              <li><span>Latest Papers</span><SimpleList fields={frontmatter.latestPapers} /></li>
+                              <li><span>Favorite Games</span><SimpleList fields={frontmatter.favoriteGames}/></li>
+                              <li><span>Hobbies</span><SimpleList fields={frontmatter.hobbies}/></li>
                             </ul>
                         </div>
                     </div>
@@ -103,8 +103,7 @@ const Member = ({ data, pageContext }) => {
                 <div class="col-lg-12 col-md-12 col-sm-12 left-column">
                     <div class="left-content">
                         <div class="lower-box">
-                            <h3>Personal Experience</h3>
-                            <div class="text" dangerouslySetInnerHTML={{ __html: html }}/>
+                          <div class="text" dangerouslySetInnerHTML={{ __html: html }}/>
                         </div>
 						        <BlogListMember data={filtredPost} />
                     </div>
@@ -134,6 +133,8 @@ export const pageQuery = graphql`
         }
         education
         expertise
+        hobbies
+        favoriteGames
         social {
           twitter
           facebook

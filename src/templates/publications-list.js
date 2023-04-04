@@ -10,6 +10,7 @@ export const publicationsListQuery = graphql`
   query publicationsListQuery {
     allMarkdownRemark(
       filter: { frontmatter: { template: { eq: "publication" } } }
+      sort: { fields: frontmatter___date, order: DESC}
     ) {
       edges {
         node {
@@ -17,9 +18,12 @@ export const publicationsListQuery = graphql`
           excerpt(pruneLength: 250)
           frontmatter {
             date(formatString: "YYYY, MM")
+            category
+            journal
             slug
             title
             authors
+            url
           }
         }
       }
@@ -62,7 +66,7 @@ class PublicationsIndex extends React.Component {
     <section class="research-details"> 
       <div class="auto-container">
         <div class="research-details-content">
-          {posts}
+          { posts }
 				</div>
       </div>
     </section>

@@ -10,7 +10,7 @@ export const blogListQuery = graphql`
  query blogListQuery($id: String!) {
   allMarkdownRemark(
     sort: {frontmatter: {date: DESC}}
-    filter: {frontmatter: {template: {eq: "blog-post"}}}
+    filter: {frontmatter: {template: {eq: "blog-post"}, draft: {ne: true}}}
   ) {
     edges {
       node {
