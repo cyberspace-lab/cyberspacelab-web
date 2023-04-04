@@ -3,8 +3,8 @@ template: team-member
 title: Lukáš Hejtmánek
 slug: /lukas-hejtmanek
 order: 0
-description: Vedoucí skupiny
-education: ["Masters Psychology 2014", "Ph.D. Neuroscience, 2021"]
+description: Principal investigator
+education: ["MS Psychology, 2014", "Ph.D. Neuroscience, 2020"]
 expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]
 latestPapers: ["paper1"]
 favoriteGames: ["Witcher 3", "Bioshock: Infinite"]

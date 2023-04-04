@@ -2,19 +2,18 @@
 template: team-member
 title: Oliver Kobián
 slug: /oliver-kobian
-order: 1
-description: Turpis Magna
-education: ["University 1992", "University1993"]
-expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]
-latestPapers: ["paper1"]
+order: 6
+description: Graduate Student
+education: ["Bachelor Liberal Arts and Humanities 2022"]
+expertise: ["Virtual reality", "Locomotion methods in VR"]
+latestPapers: [""]
+favoriteGames: ["Witcher 3", "Dota2", "Skyrim"]
 projectSlugs: ["/movement-types"]
 featuredImage: ./../../assets/images/incognito-thumbnail.png
+hobbies: [
+ "Curling", "Video games", "Reading"]
 social:
-  twitter: linkehere
-  linkedin: linkhere
-  facebook: linkhere
-  researchgate: asda
+  facebook: https://www.facebook.com/oliver.kobian/
 ---
 
-Vedoucí skupiny Virtuální reality v neurokognitivních vědách vystudovala psychologii a neurobiologii. V NUDZ se věnuje zejména vývoji aplikací ve virtuální realitě a jejich využití při vyšetřování a tréninku kognitivních funkcí, ale také při zobrazování mozkové aktivity během jejich řešení. Kromě NUDZ působí také na 3. lékařské fakultě UK a ve Fyziologickém ústavu AV ČR.
-
+Something about them
