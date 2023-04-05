@@ -7,14 +7,14 @@ date: 2022-05-13 12:46
 memberSlugs: ["/lukas-hejtmanek", "oliver-kobian"]
 description: We are trying to find how differnt types of mement methods in VR affect our ability to navigate
 featuredImage: ./../../assets/images/movement-types-thumbnail.png
-featuredWideImage: ./../../assets/images/desk-games-thumbnail.png
+featuredWideImage: ./../../assets/images/movement-types-thumbnail.png
 isActive: true
 ---
 
-Cílem projektu “Virtuální město” je vytvoření uceleného tréninkového SW v ekologicky validním prostředí virtuálního města, který umožní komplexní trénink kognitivních schopností u cílové skupiny zdravých seniorů. Aktivní zapojení vlastního pohybu během pohybu ve VR prostoru prezentovaném pomocí VR brýlí je klíčové pro intuitivní ovládání úlohy u populace s nízkou počítačovou gramotností. Realističnost VR prostředí pomůže usnadnit přenos osvojených strategií do reálného života.
+This project deals with locomotion methods in virtual reality. It focuses on the impact of these methods on navigation and spatial memory. VR locomotion methods or VR locomotion are different ways of moving in a virtual environment. Many movement methods cause disorientation or even nausea. Therefore, choosing the appropriate locomotion method is an important aspect of any study using VR.
 
-![Vr city city](/assets/vr-vs-monitor-graf.jpg "Vr city city")
+The project started as my bachelor’s thesis. Two locomotion methods (teleportation and teleportation with optic flow) were compared by an experiment in virtual apartments. In the first part, the task was to navigate in the apartments and find assigned objects. In the second part of the experiment, the task was to point to the positions of these objects in an empty environment with only one reference point. The other part of the procedure was conducted using questionnaires that focus on VR motion sickness and VR locomotion method preference.
 
-Virtuální město je tvořeno několika komplexními úlohami určenými k tréninku dlouhodobé i krátkodobé paměti, plánování a dalších exekutivních funkcí, navigace, pozornosti, psychomotorického tempa či vizuomotorické koordinace. Senioři mohou tyto funkce trénovat pomocí každodenních aktivit jako je plánování denních úkolů např. cesty k lékaři, nakupování, plácání otravných much v kuchyni či výletu do zábavního parku. V roce 2020 byly prototypy těchto úloh otestovány u více než 60 seniorů a setkaly se s pozitivním ohlasem z hlediska jednoduchosti ovládání i zábavnosti úloh.
+The results showed a significant difference only in the time required to complete the first part of the experiment, which focused on navigation skills – teleportation with optical flow has proven to be faster. Differences in traveled distance, spatial memory, VR sickness and preference of locomotion method from the results were not proven.
 
-Projekt je financován Technologickou agenturou ČR v rámci projektu č. TL01000309.
+We plan to expand on this knowledge in my diploma thesis. The same locomotion methods will be examined but the environments will change. We plan to implement small scale and large scale environments and also empty and full environments. We want to find out if and how the different types of environments will affect the navigation and spatial memory in virtual memory.
