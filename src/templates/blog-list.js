@@ -61,18 +61,18 @@ class BlogIndex extends React.Component {
           title={data.headPage.title}
           description={data.headPage.description}
         />
-        <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")`}}>
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
-                        <div class="content-box clearfix">
-                            <div class="title pull-left">
-                                <h1>Our Projects</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/prague_eerie.png")` }}>
+          <div class="auto-container">
+              <div class="row clearfix">
+                  <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
+                      <div class="content-box clearfix">
+                          <div class="title pull-left">
+                              <h1>Our Projects</h1>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
         </section>
         <section class="project-section">
             <div class="auto-container">

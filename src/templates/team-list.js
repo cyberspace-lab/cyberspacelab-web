@@ -53,7 +53,7 @@ class TeamIndex extends React.Component {
         <Seo
           title="Team"
         />
-    <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")` }}>
+    <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/prague_ominous.png")` }}>
         <div class="auto-container ">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">

@@ -14,7 +14,6 @@ import "../assets/css/responsive.css"
 import "../assets/css/style.css"
 import "../assets/css/switcher-style.css"
 import Footer from "./footer"
-import Search from "../components/search"
 
 const query = graphql`
   query LayoutQuery {
@@ -36,8 +35,7 @@ const query = graphql`
 `
 
 const Layout = ({ children, className, props }) => {
-  const { site, siteSearchIndex, contact } = useStaticQuery(query)
-  const { siteTitle } = site.siteMetadata
+  const { site, contact } = useStaticQuery(query)
 
   useScript(withPrefix("assets/js/jquery.js"));
   useScript(withPrefix("assets/js/jquery.js"));

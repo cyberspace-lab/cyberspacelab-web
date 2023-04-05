@@ -8,7 +8,6 @@ import Seo from "../components/seo"
 import BlogListMember from "../components/blog-list-member"
 import MemberSocialList from "../components/member-social-list"
 
-
 const SimpleList = ({ fields }) => {
 return (
   fields.map(field => (
@@ -44,7 +43,7 @@ const Member = ({ data, pageContext }) => {
         article={true}
       />
 
-    <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/page-title-2.jpg")` }}>
+    <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/prague_ominous.png")` }}>
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
@@ -64,7 +63,7 @@ const Member = ({ data, pageContext }) => {
                     <div class="left-content">
                         <div class="upper-box">
                             <div class="title">
-                                <h2>{frontmatter.description}</h2>
+                              <h2>{frontmatter.description}</h2>
                             </div>
                             <ul class="list-item clearfix">
                               <li><span>Education</span><SimpleList fields={frontmatter.education} /></li>
@@ -81,10 +80,10 @@ const Member = ({ data, pageContext }) => {
                             <div class="inner-box">
                                 <div class="image-box">
                                     <figure class="image">
-                                        {Image != "" ? (
-                                            <GatsbyImage image={Image} alt={frontmatter.title + " - Featured image"} className="featured-image" />
+                                        {Image !== "" ? (
+                                          <GatsbyImage image={Image} alt={frontmatter.title + " - Featured image"} className="featured-image" />
                                         ) : (
-                                            <StaticImage src="../assets/images/team/team-9.jpg" alt=""/>
+                                          <StaticImage src="../assets/images/incognito-thumbnail.png" alt=""/>
                                         )}
                                     </figure>
                                     <MemberSocialList social={frontmatter.social} />

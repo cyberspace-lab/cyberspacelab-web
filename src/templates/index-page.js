@@ -137,9 +137,7 @@ const HomePage = ({ data }) => {
             </div>
         </div>
     </section>
-
     <TeamListHome data={members} />
-
     <section class="faq-section">
         <div class="pattern-layer" style={{backgroundImage: `url("/assets/images/shape/shape-8.png")`}}></div>
         <div class="auto-container">

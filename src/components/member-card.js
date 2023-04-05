@@ -30,7 +30,6 @@ const MemberCard = ({ data }) => (
         </div>
         </Link>
     </div>
-
 )
 
 export default MemberCard
