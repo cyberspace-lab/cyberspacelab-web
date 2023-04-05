@@ -21,6 +21,12 @@ const query = graphql`
       siteMetadata {
         siteTitle: title
         footerText
+        social {
+          facebook
+          twitter
+          instagram
+          linkedin
+        }
       }
     }
     siteSearchIndex {
@@ -35,8 +41,9 @@ const query = graphql`
   }
 `
 
-const Layout = ({ children, className, props }) => {
+const Layout = ({ children }) => {
   const { contact } = useStaticQuery(query)
+  const { site } = useStaticQuery(query)
 
   useScript(withPrefix("assets/js/jquery.js"));
   useScript(withPrefix("assets/js/jquery.js"));
@@ -78,7 +85,7 @@ const Layout = ({ children, className, props }) => {
     </div>
 
     {children}
-    <Footer />
+    <Footer data = {site.siteMetadata}/>
     <Helmet defer={false}>
     </Helmet>
   </div>

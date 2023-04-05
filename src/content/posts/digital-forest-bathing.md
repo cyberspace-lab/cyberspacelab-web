@@ -5,7 +5,7 @@ shortname: Digital Forest Bathing
 slug: /digital-forest-bathing
 date: 2017-01-01 12:00
 memberSlugs: ["/lukas-hejtmanek"]
-description: This project is about forest therapy using digital twins of forests presented in virtual reality.
+description: Forest therapy using digital twins of forests presented in virtual reality
 featuredImage: ./../../assets/images/forest-benefits-thumbnail.png
 featuredWideImage: ./../../assets/images/forest-benefits-thumbnail.png
 isActive: true

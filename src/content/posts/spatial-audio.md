@@ -1,20 +1,22 @@
 ---
 template: blog-post
-title: Depending on movent type our perception of spatial
-shortname: Spatial Audio
-slug: /spatial-audio
-date: 2020-05-13 12:46
-memberSlugs: ["/lukas-hejtmanek", "/pavel-srp", "/oliver-kobian", "/viktorie-rackova", "/klara-ruzickova"]
-description: Depending on movent type our perception of spatial audio in VE can be different
-featuredImage: ./../../assets/images/spatial-sound-thumbnail.png
-featuredWideImage: ./../../assets/images/desk-games-thumbnail.png
+title: Impact of movement type on navigation by sound in VR
+shortname: Spatial sound navigation
+slug: /Spatial-sound-navigation
+date: 2022-01-01 12:00
+memberSlugs: ["/pavel-srp"]
+description: How different methods of movement in VR affect our ability of navigate by sound
+featuredImage: ./../../assets/images/projects/spatial-audio-navigation-thumbnail-narrow.png
+featuredWideImage: ./../../assets/images/projects/spatial-audio-navigation-thumbnail-wide.png
 isActive: true
 ---
 
-Pokles paměti spojený s fyziologickým stárnutím a neurologickými poruchami souvisejícími s věkem má přímý dopad na kvalitu života seniorů. S demografickým stárnutím získává diagnostika kognitivních funkcí na důležitosti, jelikož včasná diagnóza může vést k efektivnějším kognitivním intervencím. Ve srovnání s klasickými přístupy tužka-papír by virtuální realita (VR) mohla nabídnout ekologicky validní nástroj pro hodnocení kognitivního deficitu a jeho následnou rehabilitaci. VR lze prezentovat s různou mírou imerze (míru pohlcení), která ovlinuje vnímanou míru přítomnosti ve virtuálním prostoru. VR tak lze prezentovat v méně imerzivní podobě, s využítím monitoru počítače, nebo s pokročilejšími technologiemi jako jsou virtuální brýle, které poskytují vysoce imerzivní zobrazení. Obě tyto VR platformy jsou spojeny s určitými výhodami a nevýhodami. Výsledky studií zaměřených na roli imerze při hodnocení kognitivního výkonu a využití imerzivní VR u stárnoucí populace jsou nejednoznačné.
+In VR, navigation by sound can be a new and interesting new way to guide and navigate users through virtual environments. However, the impact of different movement types on navigation by sound has not been thoroughly studied. This question might be quite important as many users are experiencing VR seated as there is often not enough space. Current literature seems to indicate that there is a strong connection between our ability to localize sounds and proprioceptive information from one's own bodies. We have therefore hypothesized that our ability to navigate by sound will be hindered when we lack information about one's own movement.
 
-V této studii jsme zkoumali rozdíly související s věkem mezi využítím virtuálních brýlí a monitoru počítače k vyšetření paměti pomocí within-subject designu.
+In order to test our hypothesis, we created a version of the Morris water maze, in which participants search for a hidden goal area while being surrounded by spatial audio from three different sources. Participants are required to memorize the location of the goal area in relation to the audio sources and then repeatedly locate it from different starting positions. The participants were completing this task in three different styles of movement, each with varying levels of information about their own movements. Types of movements were:
 
-![Vr vs Monitor  Graf](/assets/vr-vs-monitor-graf.jpg  "vr vs monitor graf")
+ - Free walking
+ - Seated; turning on a swivel chair and moving by joystick
+ - Seated; turning and moving by two joysticks
 
-Skupiny seniorů (N = 36) a mladých dospělých (N = 25) dokončili virtuální úkol v supermarketu pomocí monitoru počítače a virtuálních brýlí v náhodném pořadí. Naše výsledky ukazují, že výkon seniorů byl lepší při používání monitoru počítače. Schopnost vybavit si nákupní seznam ve skupině mladých dospělých zůstala stabilní bez ohledu na použitou platformu. Zdá se, že výkonnost participantů při použití virtuálních brýlí byla více ovlivněna únavou u obou skupin. Hodocení uživatelské přívětivosti se mezi těmito dvěma platformami nelišilo a vedlejší negativní účinky (tzv. kybernetická nevolnost) byly reportovány pouzě vyjímečně. To znamená, že imerzivní VR je dobře akceptovaná i u seniorské populace. Tato zjištění mohou mít význam zejména pro další využití virtuálních brýlí pro kognitivní diagnostiku a rehabilitaci. Článek s podrobnými výsledky lze nalézt níže.
+We have successfully completed testing on 32 participants and the project is now in the stage of analyzing results, with preliminary results showing there was not as strong an impact by loss of proprioceptive information as expected. More results are soon to be added.

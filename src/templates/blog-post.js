@@ -107,7 +107,7 @@ const Post = ({ data, pageContext }) => {
                 <div class="news-block-three">
                   <div class="inner-box">
                     <figure class="image-box" id="cstm2">
-                      {Image != "" ? (
+                      {Image !== "" ? (
                         <GatsbyImage image={Image} alt={frontmatter.title + " - Featured image"} className="featured-image" />
                       ) : (
                         <img src="/assets/images/news/news-7.jpg" alt="" />
@@ -119,7 +119,7 @@ const Post = ({ data, pageContext }) => {
                       <h3>{frontmatter.title}</h3>
                       <div class="text" dangerouslySetInnerHTML={{ __html: html }}>
                       </div>
-                      <h3 className="project-member-list-heading">Team Members</h3>
+                      <h3 className="project-member-list-heading">Who's working on it?</h3>
                       <TeamListBlog data={filtredMembers} />
                     </div>
                   </div>
