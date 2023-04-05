@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { graphql } from "gatsby"
-import { RiSendPlane2Line } from "react-icons/ri"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -27,6 +26,12 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        social {
+          facebook
+          twitter
+          linkedin
+          instagram
+        }
       }
     }
   }
@@ -113,7 +118,7 @@ const Contact = ({ data }) => {
                 </ul>
                 <div class="follow-box">
                   <h5>Follow Us:</h5>
-                  <Social social={frontmatter.social} />
+                  <Social social={site.siteMetadata.social} />
                 </div>
               </div>
             </div>

@@ -6,7 +6,14 @@
     "siteUrl": "https://cyberspacelab.cz",
     "image": "",
     "iconimage": "/assets/icon.png",
-    "twitterUsername": "@cyberspacelabeng"
+    "twitterUsername": "@cyberspacelabeng",
+    "footerText": "",
+    "social": {
+      "twitter": "https://twitter.com/cyberspacelabcz",
+      "facebook": "https://www.facebook.com/profile.php?id=100090876787762",
+      "instagram": "https://www.instagram.com/cyberspacelab",
+      "linkedin": "https://www.linkedin.com/company/93281920"
+    }
   },
   "ga": "UA-XXXXXXXXX-X"
 }

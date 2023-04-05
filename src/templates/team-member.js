@@ -27,10 +27,8 @@ const Member = ({ data, pageContext }) => {
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
     : ""
 
-  const filtredPost = posts.edges
-    .filter(edge => frontmatter.projectSlugs.includes(edge.node.frontmatter.slug))
-
-  console.log(frontmatter.projectSlugs)
+  const filtredPost = posts.edges.length == 0 ? [] : 
+    posts.edges.filter(edge => frontmatter.projectSlugs.includes(edge.node.frontmatter.slug))
 
   return (
     <Layout className="page member-page">

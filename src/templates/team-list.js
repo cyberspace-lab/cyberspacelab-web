@@ -43,8 +43,6 @@ query teamListQuery {
 class TeamIndex extends React.Component {
   render() {
     const { data } = this.props
-    const { currentPage, numPages } = this.props.pageContext
-
     const posts = data.allMarkdownRemark.edges
       .map(edge => <MemberCard key={edge.node.id} data={edge.node} />)
 

@@ -1,22 +1,21 @@
 ---
 template: team-member
-title: Klára Ružičková
+title: Klára Růžičková
 slug: /klara-ruzickova
-order: 3
-description: Turpis Magna
-education: ["University 1992", "University1993"]
-expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]
-latestPapers: ["paper1"]
-hobbies: ["so many hobbies"]
-favoriteGames: ["League of Legends"]
-projectSlugs: ["/forest-benefits"]
+order: 5
+description: Undergraduate student
+education: ["Working on it :)"]
+expertise: ["Virtual reality"]
+favoriteGames: ["Pokemon Brilliant Diamond", "Teamfight Tactics", "World of Warcraft"]
+projectSlugs: []
 featuredImage: ./../../assets/images/incognito-thumbnail.png
+hobbies: [
+  "Video games and Board games",
+  "Trying new foods", 
+  "Learning Korean"]
 social:
-  twitter: linkehere
-  linkedin: linkhere
-  facebook: linkhere
-  researchgate: asda
+  facebook: https://www.facebook.com/klara.k.ruzickova/
 ---
+I am currently pursuing my Bachelor's degree in Humanities at Charles University. My love for psychology developed during my high school days where I studied Social Welfare and I found myself gravitating towards the subject. My passion for the field has only grown stronger as I continue to delve deeper into the intricacies of the human mind.
 
-Vedoucí skupiny Virtuální reality v neurokognitivních vědách vystudovala psychologii a neurobiologii. V NUDZ se věnuje zejména vývoji aplikací ve virtuální realitě a jejich využití při vyšetřování a tréninku kognitivních funkcí, ale také při zobrazování mozkové aktivity během jejich řešení. Kromě NUDZ působí také na 3. lékařské fakultě UK a ve Fyziologickém ústavu AV ČR.
-
+Apart from my academic pursuits, I spent a year studying Korean at a language school before starting to work on my degree, which may highlight my passion for exploring different cultures and languages. When I am not studying, I like to unwind by playing video and board games as I finds it as a great way to relax and have fun with friends and family.

@@ -1,22 +1,23 @@
 ---
 template: team-member
-title: Viktorie Račková
+title: Viktorie Račková 
 slug: /viktorie-rackova
-order: 2
-description: Turpis Magna
-education: ["University 1992", "University1993"]
-expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]
-favoriteGames: ["paper1"]
-hobbies: ["so many hobbies"]
-latestPapers: ["none"]
-projectSlugs: ["/gaming-experience"]
-featuredImage: ./../../assets/images/incognito-thumbnail.png
+order: 1
+description: Graduate research assistant 
+education: ["Bachelor Liberal Arts and Humanities, 2022"]
+expertise: ["Questionnaires", "Writing", "Video games"] 
+latestPapers: 
+favoriteGames: ["Stray", "Firewatch", "Red Dead Redemption 2"]
+projectSlugs: []
+featuredImage: ../../assets/images/team/viky.JPG
+hobbies: [
+  "Video games ", 
+  "Movies",
+  "Trying to find time for reading as well"]
 social:
-  twitter: linkehere
-  linkedin: linkhere
-  facebook: linkhere
-  researchgate: asda
+  facebook: https://www.facebook.com/viky.rackova/
 ---
-
-Vedoucí skupiny Virtuální reality v neurokognitivních vědách vystudovala psychologii a neurobiologii. V NUDZ se věnuje zejména vývoji aplikací ve virtuální realitě a jejich využití při vyšetřování a tréninku kognitivních funkcí, ale také při zobrazování mozkové aktivity během jejich řešení. Kromě NUDZ působí také na 3. lékařské fakultě UK a ve Fyziologickém ústavu AV ČR.
-
+I am a first-year master's student of Theoretical and Research psychology at the Faculty of Humanities, Charles University in Prague. My main focus is the gaming experience and its influence on human behavior and cognition, especially navigation. 
+Before I started writing my bachelor's thesis, I had no idea that I could combine my hobby of playing video games with psychological scientific research. Thanks to my thesis supervisor and our principal investigator, Lukáš Hejtmánek, I was able to do a bachelor's thesis on a topic I know and am interested in. I investigated the influence of gaming experience on navigation skills in virtual reality. 
+I am currently expanding this research as part of my thesis, where we are trying to create a standardized questionnaire, a good methodological tool, that would provide us with a detailed profile of the video game player experience. We are now in the first part of its development.
+Video games are getting more popular every day and that is why I believe that researching their effect on human life is more than important these days.

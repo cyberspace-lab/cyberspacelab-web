@@ -2,20 +2,20 @@
 template: team-member
 title: Oliver Kobián
 slug: /oliver-kobian
-order: 6
+order: 3
 description: Graduate Student
 education: ["Bachelor Liberal Arts and Humanities 2022"]
 expertise: ["Virtual reality", "Locomotion methods in VR"]
 latestPapers: [""]
 favoriteGames: ["Witcher 3", "Dota2", "Skyrim"]
 projectSlugs: ["/movement-types"]
-featuredImage: ./../../assets/images/incognito-thumbnail.png
+featuredImage: ./../../assets/images/team/oliver.png
 hobbies: [
  "Curling", "Video games", "Reading"]
 social:
   facebook: https://www.facebook.com/oliver.kobian/
 ---
 
-I am a  graduate student at the Faculty of Humanities, Charles University in Prague. My field of study is Theoretical and Experimental Psychology. I am currently in the first year. In my bachelor’s thesis I examined locomotion methods in virtual reality and how they affect navigation and spatial memory which is also my current project and theme for my diploma thesis. In my diploma thesis we plan to follow up on the previous thesis and expand our knowledge about locomotion methods and navigation in virtual reality in various types of environments.
+I am a graduate student at the Faculty of Humanities, Charles University in Prague. My field of study is Theoretical and Experimental Psychology. I am currently in the first year. In my bachelor’s thesis I examined locomotion methods in virtual reality and how they affect navigation and spatial memory which is also my current project and theme for my diploma thesis. In my diploma thesis we plan to follow up on the previous thesis and expand our knowledge about locomotion methods and navigation in virtual reality in various types of environments.
 
 I also love playing video games which is where my passion for virtual reality comes from. Other than that I play curling competitively and with my team we are currently in the czech extraleague.

@@ -7,7 +7,7 @@ email: lukas.hejtmanek@cyberspacelab.cz
 address: Kampus Hybernská, Hybernská 1000, Praha, Czech Republic
 
 social:
-  twitter: https://twitter.com/cyberspacelab
+  twitter: https://twitter.com/cyberspace_lab
   facebook: https://www.facebook.com/cyberspacelab
   linkedin: https://www.linkedin.com/company/cyberspacelab
   instagram: https://www.instagram.com/cyberspacelab

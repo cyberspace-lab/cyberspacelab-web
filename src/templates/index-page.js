@@ -66,7 +66,7 @@ export const pageQuery = graphql`
 
 const HomePage = ({ data }) => {
   const { markdownRemark, members } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter } = markdownRemark
   const Image = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
     : ""
@@ -160,7 +160,7 @@ const HomePage = ({ data }) => {
             </div>
         </div>
     </section>
-    
+    {/*}
     <section class="clients-section" style={{display: "none"}}>
         <div class="auto-container">
             <div class="clients-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
@@ -197,6 +197,7 @@ const HomePage = ({ data }) => {
             </div>
         </div>
     </section>
+    */}
 
     </Layout>
   )

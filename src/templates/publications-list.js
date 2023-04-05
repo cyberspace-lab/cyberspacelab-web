@@ -35,7 +35,6 @@ class PublicationsIndex extends React.Component {
   render() {
     const { data } = this.props
     const { currentPage, numPages } = this.props.pageContext
-    const blogSlug = "/publications/"
 
     const posts = data.allMarkdownRemark.edges
       .map(edge => <PublicationCard key={edge.node.id} data={edge.node} />)

@@ -9,15 +9,15 @@ expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]
 latestPapers: ["paper1"]
 favoriteGames: ["Witcher 3", "Bioshock: Infinite"]
 projectSlugs: ["/forest-benefits", "/movement-types", "/spatial-audio"]
-featuredImage: ./../../assets/images/incognito-thumbnail.png
+featuredImage: ./../../assets/images/team/lukas.png
 hobbies: [
   "Preventing children accidents at home", 
   "Installing new software",
   "Boardgames and video games"]
 social:
   twitter: https://twitter.com/hejtmy_
-  facebook: linkhere
-  researchgate: asda
+  linkedin: https://www.linkedin.com/in/lukashejtmanek/
+  researchgate: https://www.researchgate.net/profile/Lukas-Hejtmanek
 ---
 
 I am an assistant professor at the Faculty of Humanities, Charles University in Prague and a researcher at the Institute of Psychology, Academy of Sciences of the Czech Republic. I am an avid fan of video games as a medium for psychological research and a true believer in virtual reality.

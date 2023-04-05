@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Footer = () => (
+const Footer = (data) => (
     <footer>
         <section class="main-footer">
             <div class="footer-top">
@@ -13,16 +13,18 @@ const Footer = () => (
                         <div class="row clearfix">
                             <div class="col-lg-12 col-md-12 col-sm-12 footer-column">
                                 <div class="footer-widget logo-widget">
-                                    <figure class="footer-logo"><Link to="/"><StaticImage src="../assets/images/logo-white.png" alt="" /></Link></figure>
+                                    <figure class="footer-logo">
+                                        <Link to="/"><StaticImage src="../assets/images/logo-white.png" alt="" /></Link>
+                                    </figure>
                                     <div class="text">
-                                        <p>Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est Excepteur sint ocecat cupidatatnon proi dent sunt in culpa quiofficia deserunt mollit anim est.</p>
+                                        <p>{data.text}</p>
                                     </div>
                                     <div class="social-inner">
                                         <h3>Follow Us:</h3>
                                         <ul class="social-links clearfix">
-                                            <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
-                                            <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://www.facebook.com/profile.php?id=100090876787762"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="https://twitter.com/cyberspacelabcz"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://instagram.com/cyberspacelab"><i class="fab fa-instagram"></i></a></li>
                                             {/*<li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>*/}
                                         </ul>
                                     </div>

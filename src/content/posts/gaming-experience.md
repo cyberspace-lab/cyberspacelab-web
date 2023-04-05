@@ -1,20 +1,18 @@
 ---
 template: blog-post
 title: Gaming experince is important
-shortname: Gaming Expirience
+shortname: Gaming Experience
 slug: /gaming-experience
 date: 2020-05-13 12:46
-memberSlugs: ["/lukas-hejtmanek", "/viktorie-rackova"]
-description: Gaming experince is important, because reasons, very important reasons
+memberSlugs: ["/viktorie-rackova"]
+description: Creating a video game questionnaire and investigating gaming experience on cognition
 featuredImage: ./../../assets/images/game-expirience-thumbnail.png
-featuredWideImage: ./../../assets/images/desk-games-thumbnail.png
+featuredWideImage: ./../../assets/images/game-expirience-thumbnail.png
 isActive: true
 ---
 
-Pokles paměti spojený s fyziologickým stárnutím a neurologickými poruchami souvisejícími s věkem má přímý dopad na kvalitu života seniorů. S demografickým stárnutím získává diagnostika kognitivních funkcí na důležitosti, jelikož včasná diagnóza může vést k efektivnějším kognitivním intervencím. Ve srovnání s klasickými přístupy tužka-papír by virtuální realita (VR) mohla nabídnout ekologicky validní nástroj pro hodnocení kognitivního deficitu a jeho následnou rehabilitaci. VR lze prezentovat s různou mírou imerze (míru pohlcení), která ovlinuje vnímanou míru přítomnosti ve virtuálním prostoru. VR tak lze prezentovat v méně imerzivní podobě, s využítím monitoru počítače, nebo s pokročilejšími technologiemi jako jsou virtuální brýle, které poskytují vysoce imerzivní zobrazení. Obě tyto VR platformy jsou spojeny s určitými výhodami a nevýhodami. Výsledky studií zaměřených na roli imerze při hodnocení kognitivního výkonu a využití imerzivní VR u stárnoucí populace jsou nejednoznačné.
+Playing games is popular all over the world, across different age groups. At the same time, it has been proven in many studies that playing games has positive consequences on many areas of human life. Research shows that playing games can improve cognitive functions such as visual attention, visual short-term memory, processing speed, and mental rotation. However, most research is plagued by a number of methodological problems. One of these problems is the fact that researchers often do not take into account individual aspects of gaming, such as participants' gaming history, gaming platforms, or genres of video games. These aspects can have an impact on many cognitive skills.
 
-V této studii jsme zkoumali rozdíly související s věkem mezi využítím virtuálních brýlí a monitoru počítače k vyšetření paměti pomocí within-subject designu.
+Based on the research of previous studies, it seems that this is where the core of the research problem lies, as researchers often use outdated or oversimplified questionnaires. However, the video game industry is developing every day, the aspects of playing games are more complex, and we cannot be satisfied with the conventional division of games into action, racing etc.
 
-![Vr vs Monitor  Graf](/assets/vr-vs-monitor-graf.jpg  "vr vs monitor graf")
-
-Skupiny seniorů (N = 36) a mladých dospělých (N = 25) dokončili virtuální úkol v supermarketu pomocí monitoru počítače a virtuálních brýlí v náhodném pořadí. Naše výsledky ukazují, že výkon seniorů byl lepší při používání monitoru počítače. Schopnost vybavit si nákupní seznam ve skupině mladých dospělých zůstala stabilní bez ohledu na použitou platformu. Zdá se, že výkonnost participantů při použití virtuálních brýlí byla více ovlivněna únavou u obou skupin. Hodocení uživatelské přívětivosti se mezi těmito dvěma platformami nelišilo a vedlejší negativní účinky (tzv. kybernetická nevolnost) byly reportovány pouzě vyjímečně. To znamená, že imerzivní VR je dobře akceptovaná i u seniorské populace. Tato zjištění mohou mít význam zejména pro další využití virtuálních brýlí pro kognitivní diagnostiku a rehabilitaci. Článek s podrobnými výsledky lze nalézt níže.
+The current project aism to design and validate of a game questionnaire that could be used in research where video game experience could affect the participant's cognitive performance in behavioral experiments.

@@ -3,16 +3,19 @@ import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
 const Header = ({ children }) => (
+    
     <header class="main-header style-two style-four">
         <div class="header-top">
             <div class="auto-container">
                 <div class="top-inner clearfix">
                     <div class="top-left pull-left clearfix">
-                        <div class="text" style={{ marginBottom: "5px" }}><a href="mailto:support@cyberlabspace.com" style={{ fontSize: "12px", color: "#fff" }}>support@cyberlabspace.com</a></div>
+                        <div class="text" style={{ marginBottom: "5px" }}>
+                            <a href="mailto:research@cyberlabspace.com" style={{ fontSize: "12px", color: "#fff" }}>research@cyberlabspace.com</a></div>
                     </div>
                 </div>
             </div>
         </div>
+        
         <div class="header-lower">
             <div class="auto-container">
                 <div class="outer-box clearfix">

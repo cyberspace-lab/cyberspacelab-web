@@ -3,19 +3,21 @@ template: team-member
 title: Pavel Srp
 slug: /pavel-srp
 order: 4
-description: Turpis Magna
-education: ["University 1992", "University1993"]
-expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]
-latestPapers: ["paper1"]
-favoriteGames: ["Elden Ring", "Not Zelda"]
-hobbies: ["None"]
-projectSlugs: ["/spatial-audio"]
-featuredImage: ./../../assets/images/incognito-thumbnail.png
+description: Graduate soon to be
+education: ["SPÅ SE Liberec", "UK FHS (ongoing)"]
+expertise: ["Programing", "Virtual reality", "Unity 3D", "Data science"]
+latestPapers: ["not yet"]
+favoriteGames: ["The Legend of Zelda: Breath of the Wild", "Rain World", "Outer Wilds", "Tunic"]
+projectSlugs: ["/spatial-audio-navigation"]
+featuredImage: ./../../assets/images/team/pavel-srp-thumbnail.jpg
+hobbies: [
+  "Playing video games", 
+  "Trying to do visual and audio stuff",
+  "Boardgames and video games"]
 social:
-  twitter: https://www.facebook.com/
-  linkedin: linkhere
-  facebook: https://www.facebook.com/
-  researchgate: asda
+  facebook: https://cs-cz.facebook.com/pavel.srp.3
 ---
 
-Vedoucí skupiny Virtuální reality v neurokognitivních vědách vystudovala psychologii a neurobiologii. V NUDZ se věnuje zejména vývoji aplikací ve virtuální realitě a jejich využití při vyšetřování a tréninku kognitivních funkcí, ale také při zobrazování mozkové aktivity během jejich řešení. Kromě NUDZ působí také na 3. lékařské fakultě UK a ve Fyziologickém ústavu AV ČR.
+I used to study IT at secondary school and was planning to continue to do so at university. But after a while I found out that humans are a bit more interesting subject than computers, so I went to try study humanities with a focus on psychology. Still, I enjoy using technology, so I try my best to fuse IT and psychology together. Now I am undergraduate student at Faculty of Humanities, Charles University. I am now in my 4th year just trying finish my bachelor thesis.
+
+My current line of research is focused on spatial audio and how it interacts with navigation, specifically how it all connects to different types of movements in VR. In my real time i really enjoy learning about artificial neural networks and new gaming technology. I really enjoy single player videogames with interesting stories, mechanics and words.
