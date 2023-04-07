@@ -17,7 +17,9 @@ const MemberCard = ({ data }) => (
                             <img src="assets/images/team/team-6.jpg" alt="" />
                         )}
                     </figure>
-                    <MemberSocialList social={data.frontmatter.social} />
+                    {data.frontmatter.social &&
+                        <MemberSocialList social={data.frontmatter.social} />
+                    }
                     <div class="link">
                         <a href={data.frontmatter.slug}><i class="fas fa-link"></i></a>
                     </div>

@@ -57,7 +57,7 @@ class TeamIndex extends React.Component {
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
                     <div class="content-box clearfix">
                         <div class="title pull-left">
-                          <h1>Our Team</h1>
+                          <h1>Lab members</h1>
                         </div>
                     </div>
                 </div>

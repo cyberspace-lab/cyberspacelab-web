@@ -64,10 +64,18 @@ const Member = ({ data, pageContext }) => {
                               <h2>{frontmatter.description}</h2>
                             </div>
                             <ul class="list-item clearfix">
-                              <li><span>Education</span><SimpleList fields={frontmatter.education} /></li>
-                              <li><span>Expertise</span><SimpleList fields={frontmatter.expertise} /></li>
+                              {frontmatter.edcuation && 
+                                <li><span>Education</span><SimpleList fields={frontmatter.education} /></li>
+                              }
+                              {frontmatter.expertise &&
+                                <li><span>Expertise</span><SimpleList fields={frontmatter.expertise} /></li>
+                              }
+                              {frontmatter.favoriteGames &&
                               <li><span>Favorite Games</span><SimpleList fields={frontmatter.favoriteGames}/></li>
+                              }
+                              {frontmatter.hobbies &&
                               <li><span>Hobbies</span><SimpleList fields={frontmatter.hobbies}/></li>
+                              }
                             </ul>
                         </div>
                     </div>
@@ -84,7 +92,9 @@ const Member = ({ data, pageContext }) => {
                                           <StaticImage src="../assets/images/incognito-thumbnail.png" alt=""/>
                                         )}
                                     </figure>
-                                    <MemberSocialList social={frontmatter.social} />
+                                    {frontmatter.social &&
+                                      <MemberSocialList social={frontmatter.social} />
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -102,7 +112,9 @@ const Member = ({ data, pageContext }) => {
                         <div class="lower-box">
                           <div class="text" dangerouslySetInnerHTML={{ __html: html }}/>
                         </div>
-						        <BlogListMember data={filtredPost} />
+                        {filtredPost.length > 0 &&
+						              <BlogListMember data={filtredPost} />
+                        }
                     </div>
                 </div>
             </div>
