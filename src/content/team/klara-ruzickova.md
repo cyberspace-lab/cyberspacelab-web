@@ -1,14 +1,14 @@
 ---
 template: team-member
 title: Klára Růžičková
-slug: /klara-ruzickova
-order: 5
+slug: /team/klara-ruzickova
+order: 11
 description: Undergraduate student
 education: ["Working on it :)"]
 expertise: ["Virtual reality"]
 favoriteGames: ["Pokemon Brilliant Diamond", "Teamfight Tactics", "World of Warcraft"]
 projectSlugs: []
-featuredImage: ./../../assets/images/incognito-thumbnail.png
+featuredImage: ./../../assets/images/team/klara.JPEG
 hobbies: [
   "Video games and Board games",
   "Trying new foods", 

@@ -2,7 +2,7 @@
 template: index-page
 published: false
 slug: /dummy
-title: Cyberspacelab
+title: CyberspaceLab
 tagline:  There is none atm.
 faq: []
 description: None

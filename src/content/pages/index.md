@@ -1,7 +1,7 @@
 ---
 template: index-page
 slug: /
-title: Cyberspacelab
+title: CyberspaceLab
 subtitle: Research group
 tagline: Faculty of Humanities, Charles University
 featuredImage:  ./../../assets/images/favicon.png
@@ -10,7 +10,6 @@ cta:
   ctaLink: /about
 description: >
   Our research group focuses on spatial navigation and virtual reality! We are a team of people from the field of cognitive psychology, neuroscience, and computer science, dedicated to exploring how humans navigate and interact with virtual environments.
-
   Our research combines cutting-edge technology with rigorous scientific methodology to understand how virtual reality can be used to enhance spatial learning and cognitive performance.
 
 faq: [

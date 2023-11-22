@@ -1,10 +1,10 @@
 ---
 template: team-member
 title: Pavel Srp
-slug: /pavel-srp
+slug: /team/pavel-srp
 order: 4
-description: Graduate soon to be
-education: ["SPÅ SE Liberec", "UK FHS (ongoing)"]
+description: Graduate student
+education: ["Bachelor Liberal Arts and Humanities, 2023"]
 expertise: ["Programing", "Virtual reality", "Unity 3D", "Data science"]
 latestPapers: ["not yet"]
 favoriteGames: ["The Legend of Zelda: Breath of the Wild", "Rain World", "Outer Wilds", "Tunic"]

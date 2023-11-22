@@ -6,7 +6,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   const teamList = path.resolve(`./src/templates/team-list.js`)
-
   const publicationsList = path.resolve(`./src/templates/publications-list.js`)
 
   const result = await graphql(`
@@ -53,8 +52,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
-
-
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {

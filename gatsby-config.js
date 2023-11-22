@@ -115,8 +115,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Cyberspacelab`,
-        short_name: `Cyberspacelab`,
+        name: `CyberspaceLab`,
+        short_name: `CyberspaceLab`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,

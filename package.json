@@ -1,12 +1,12 @@
 {
-  "name": "Cyberspacelabwebsite",
-  "description": "Website for research group Cyberspace lab",
+  "name": "CyberspaceLabwebsite",
+  "description": "Website for research group CyberspaceLab",
   "version": "2.0.0",
   "author": "Lukáš Hejtmánek <lukas.hejtmanek@cyberspacelab.cz",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cyberspace_lab/web"
+    "url": "https://github.com/cyberspace-lab/cyberspacelab-web"
   },
   "scripts": {
     "build": "gatsby build --log-pages",
