@@ -9,7 +9,7 @@ expertise: ["Questionnaires", "Writing", "Video games"]
 latestPapers: 
 favoriteGames: ["Stray", "Firewatch", "Red Dead Redemption 2"]
 projectSlugs: []
-featuredImage: ../../assets/images/team/viky.jpg
+featuredImage: ./../../assets/images/team/viky.jpg
 hobbies: [
   "Video games ", 
   "Movies",
