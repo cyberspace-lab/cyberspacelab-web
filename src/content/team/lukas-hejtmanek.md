@@ -9,7 +9,7 @@ expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]
 latestPapers: ["paper1"]
 favoriteGames: ["Witcher 3", "Bioshock: Infinite", "Cyberpunk 2077"]
 projectSlugs: ["/forest-benefits", "/movement-types", "/spatial-audio"]
-featuredImage: ./../../assets/images/team/lukas.png
+featuredImage: ./../../assets/images/team/lukas.JPG
 hobbies: [
   "Preventing children accidents at home", 
   "Installing new software",

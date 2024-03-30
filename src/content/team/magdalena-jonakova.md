@@ -7,7 +7,7 @@ description: Undergraduate student
 education: ["Still loading …"]
 projectSlugs: []
 favoriteGames: ["Genshin Impact", "Hades", "Far Cry Primal", "GRID"]
-featuredImage: ./../../assets/images/team/magda-jonakova.jpg
+featuredImage: ./../../assets/images/team/magda.jpg
 hobbies: [
   "Video games", "Formula 1", "Sports & fitness", "Pet parenting"]
 ---

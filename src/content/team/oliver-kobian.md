@@ -9,7 +9,7 @@ expertise: ["Virtual reality", "Locomotion methods in VR"]
 latestPapers: [""]
 favoriteGames: ["Witcher 3", "Dota2", "Skyrim"]
 projectSlugs: ["/movement-types"]
-featuredImage: ./../../assets/images/team/oliver-new.jpg
+featuredImage: ./../../assets/images/team/Oliver.jpg
 hobbies: [
  "Curling", "Video games", "Reading"]
 social:

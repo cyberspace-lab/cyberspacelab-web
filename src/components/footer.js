@@ -37,7 +37,7 @@ const Footer = ({data}) => (
             <div class="footer-bottom centred">
                 <div class="auto-container">
                     <div class="copyright">
-                        <p>Copyright &copy; 2023 Cyber Space Lab. All rights reserved.</p>
+                        <p>Copyright &copy; 2024 CyberspaceLab. All rights reserved.</p>
                     </div>
                 </div>
             </div>

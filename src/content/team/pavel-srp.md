@@ -9,7 +9,7 @@ expertise: ["Programing", "Virtual reality", "Unity 3D", "Data science"]
 latestPapers: ["not yet"]
 favoriteGames: ["The Legend of Zelda: Breath of the Wild", "Rain World", "Outer Wilds", "Tunic"]
 projectSlugs: ["/spatial-audio-navigation"]
-featuredImage: ./../../assets/images/team/pavel-srp-thumbnail.jpg
+featuredImage: ./../../assets/images/team/pavel.jpg
 hobbies: [
   "Playing video games", 
   "Trying to do visual and audio stuff",

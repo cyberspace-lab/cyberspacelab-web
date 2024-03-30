@@ -124,7 +124,7 @@ const HomePage = ({ data }) => {
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 video-column">
                     <figure class="image-box">
-                        <StaticImage src="../assets/images/pages/index/city-map.png" />
+                        <StaticImage src = "../assets/images/pages/index/team2.jpg" />
                     </figure>
                     {/*
                     <div class="icon-holder">

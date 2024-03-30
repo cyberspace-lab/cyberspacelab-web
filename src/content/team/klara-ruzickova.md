@@ -8,7 +8,7 @@ education: ["Working on it :)"]
 expertise: ["Virtual reality"]
 favoriteGames: ["Pokemon Brilliant Diamond", "Teamfight Tactics", "World of Warcraft"]
 projectSlugs: []
-featuredImage: ./../../assets/images/team/klara.JPEG
+featuredImage: ./../../assets/images/team/klara.jpg
 hobbies: [
   "Video games and Board games",
   "Trying new foods", 
