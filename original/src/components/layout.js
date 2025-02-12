@@ -66,10 +66,11 @@ const Layout = ({ children }) => {
       <div class="mobile-menu">
         <div class="menu-backdrop"></div>
         <div class="close-btn">
-          <i class="fas fa-times"></i></div>
+          <i class="fas fa-times"></i>
+        </div>
         <nav class="menu-box">
             <div class="nav-logo">
-              <a href="index.html">
+              <a href="/">
                 <img src="/assets/images/mobile-logo.png" alt="" title=""/>
               </a>
             </div>
@@ -88,7 +89,7 @@ const Layout = ({ children }) => {
     <Footer data = {site.siteMetadata}/>
     <Helmet defer={false}>
     </Helmet>
-  </div>
+    </div>
   )
 }
 export default Layout
