@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.vue';
+---
+
+<Layout title="Welcome to Your Site">
+  <Header client:load />
+  <main>
+    <h1>Welcome to Your Site</h1>
+    <p>This is your new Astro site with Vue components!</p>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+</style> 
