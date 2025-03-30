@@ -1,6 +1,7 @@
 ---
 title: Klára Růžičková
 order: 11
+role: former
 slug: klara-ruzickova
 description: Undergraduate student
 education: ["Working on it :)"]

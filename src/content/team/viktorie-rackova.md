@@ -3,17 +3,14 @@ template: team-member
 title: Viktorie Račková 
 slug: viktorie-rackova
 order: 1
-description: Graduate student, Research assistant 
-education: ["Bachelor Liberal Arts and Humanities, 2022"]
+role: core
+description: Ph.D. candidate
+education: ["Theoretical and experimental psychology 2024", "Bachelor Liberal Arts and Humanities 2022"]
 expertise: ["Questionnaires", "Writing", "Video games"] 
-latestPapers: 
 favoriteGames: ["Stray", "Firewatch", "Red Dead Redemption 2"]
 projectSlugs: []
 featuredImage: /assets/images/team/viky.JPG
-hobbies: [
-  "Video games ", 
-  "Movies",
-  "Trying to find time for reading as well"]
+hobbies: [ "Video games ", "Movies", "Trying to find time for reading as well"]
 social:
   facebook: https://www.facebook.com/viky.rackova/
 ---

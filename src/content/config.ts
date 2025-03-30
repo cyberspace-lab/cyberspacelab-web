@@ -9,6 +9,7 @@ export const collections = {
       title: z.string(),
       order: z.number(),
       slug: z.string(),
+      role: z.string(),
       education: z.array(z.string()),
       expertise: z.array(z.string()).optional(),
       hobbies: z.array(z.string()),

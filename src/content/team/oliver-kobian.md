@@ -2,12 +2,13 @@
 title: Oliver Kobián
 slug: oliver-kobian
 order: 3
-description: Graduate student
-education: ["Bachelor Liberal Arts and Humanities 2022"]
+role: core
+description: Ph.D. candidate
+education: ["Theoretical and experimental psychology 2024", "Bachelor Liberal Arts and Humanities 2022"]
 expertise: ["Virtual reality", "Locomotion methods in VR"]
 latestPapers: [""]
 favoriteGames: ["Witcher 3", "Dota2", "Skyrim"]
-projectSlugs: ["/movement-types"]
+projectSlugs: ["movement-types"]
 featuredImage: /assets/images/team/Oliver.jpg
 hobbies: [
  "Curling", "Video games", "Reading"]

@@ -2,8 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import PublicationCard from '../../components/PublicationCard.vue';
 import { getCollection } from 'astro:content';
-
 const publications = await getCollection('publications');
+
+publications.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 ---
 
 <Layout title="Our Publications">

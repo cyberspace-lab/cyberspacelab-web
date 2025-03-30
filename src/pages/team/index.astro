@@ -7,6 +7,7 @@ import TeamList from '../../components/TeamList.vue';
 const teamMembers = await getCollection('team');
 
 const sortedMembers = teamMembers
+  .filter((member) => member.data.role !== 'former')
   .sort((a, b) => a.data.order - b.data.order);
 ---
 

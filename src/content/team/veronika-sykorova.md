@@ -3,6 +3,7 @@ template: team-member
 title: Veronika Sýkorová
 slug: veronika-sykorova
 order: 12
+role: edge
 description: Undergraduate student
 education: ["Ongoing"]
 expertise: ["Not afraid of numbers"]

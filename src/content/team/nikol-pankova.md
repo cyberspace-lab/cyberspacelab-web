@@ -2,6 +2,7 @@
 title: Nikol Pánková
 order: 23
 slug: nikol-pankova
+role: former
 description: Undergraduate student
 education: ["Still loading …"]
 projectSlugs: []
