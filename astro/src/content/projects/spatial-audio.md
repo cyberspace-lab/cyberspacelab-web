@@ -1,14 +1,14 @@
 ---
-template: blog-post
 title: Impact of movement type on navigation by sound in VR
 shortname: Spatial sound navigation
-slug: /Spatial-sound-navigation
+slug: spatial-sound-navigation
 date: 2022-01-01 12:00
-memberSlugs: ["/pavel-srp"]
+memberSlugs: ["pavel-srp"]
 description: How different methods of movement in VR affect our ability of navigate by sound
-featuredImage: ./../../assets/images/projects/spatial-audio-navigation-thumbnail-narrow.png
-featuredWideImage: ./../../assets/images/projects/spatial-audio-navigation-thumbnail-wide.png
+featuredImage: /assets/images/projects/spatial-audio-navigation-thumbnail-narrow.png
+featuredWideImage: /assets/images/projects/spatial-audio-navigation-thumbnail-wide.png
 isActive: true
+draft: false
 ---
 
 In VR, navigation by sound can be a new and interesting new way to guide and navigate users through virtual environments. However, the impact of different movement types on navigation by sound has not been thoroughly studied. This question might be quite important as many users are experiencing VR seated as there is often not enough space. Current literature seems to indicate that there is a strong connection between our ability to localize sounds and proprioceptive information from one's own bodies. We have therefore hypothesized that our ability to navigate by sound will be hindered when we lack information about one's own movement.

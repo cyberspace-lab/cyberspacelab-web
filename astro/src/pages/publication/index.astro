@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Publication from '../../components/Publication.vue';
+import { getCollection } from 'astro:content';
+
+// Get the slug from the URL
+export async function getStaticPaths() {
+  const publications = await getCollection('publications');
+  return publications.map((publication, index) => ({
+    params: { slug: publication.slug },
+    props: { 
+      publication,
+      previous: index > 0 ? publications[index - 1] : null,
+      next: index < publications.length - 1 ? publications[index + 1] : null
+    },
+  }));
+}
+
+const { publication, previous, next } = Astro.props;
+const { Content } = await publication.render();
+---
+
+<Layout 
+  title={publication.data.title}
+  description={publication.data.abstrakt}
+  article={true}
+>
+  <Publication 
+    client:load
+    publication={publication}
+    previous={previous ? { 
+      title: previous.data.title,
+      slug: `/publication/${previous.slug}`
+    } : null}
+    next={next ? { 
+      title: next.data.title,
+      slug: `/publication/${next.slug}`
+    } : null}
+  >
+    <Content />
+  </Publication>
+</Layout> 

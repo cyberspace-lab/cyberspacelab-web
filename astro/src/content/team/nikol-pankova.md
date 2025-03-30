@@ -1,10 +1,10 @@
 ---
 title: Nikol Pánková
-slug: nikol-pankova
 order: 23
+slug: nikol-pankova
 description: Undergraduate student
 education: ["Still loading …"]
-projectSlugs: [""]
+projectSlugs: []
 favoriteGames: ["Last of Us", "Red Dead Redemption 2", "World of Warcraft"]
 featuredImage: /assets/images/team/nikol-pankova.jpg
 hobbies: ["Video games", "Reading"]

@@ -1,13 +1,13 @@
 ---
-template: blog-post
 title: Impact of digital forests on psychological well-being 
 shortname: Digital Forest Bathing
-slug: /digital-forest-bathing
+slug: digital-forest-bathing
 date: 2017-01-01 12:00
-memberSlugs: ["/lukas-hejtmanek"]
+memberSlugs: ["lukas-hejtmanek"]
 description: Forest therapy using digital twins of forests presented in virtual reality
-featuredImage: ./../../assets/images/forest-benefits-thumbnail.png
-featuredWideImage: ./../../assets/images/forest-benefits-thumbnail.png
+featuredImage: /assets/images/projects/forest-benefits-thumbnail.png
+featuredWideImage: /assets/images/projects/forest-benefits-thumbnail.png
+draft: false
 isActive: true
 ---
 

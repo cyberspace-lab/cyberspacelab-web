@@ -1,0 +1,120 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+// Get the slug from the URL
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+// Get the project data
+const { project } = Astro.props;
+const { Content } = await project.render();
+
+// Get all team members to filter project members
+const teamMembers = await getCollection('team');
+const projectMembers = teamMembers.filter(member => 
+  project.data.memberSlugs.includes(member.slug)
+);
+---
+
+<Layout 
+  title={project.data.title}
+  description={project.data.description}
+  image={project.data.featuredWideImage}
+  article={true}
+>
+  <section class="page-title">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
+          <div class="content-box clearfix">
+            <div class="title pull-left">
+              <h1>{project.data.shortname}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-details sidebar-page-container">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="content-side">
+          <div class="blog-details-content">
+            <div class="news-block-three">
+              <div class="inner-box">
+                <figure class="image-box" id="cstm2">
+                  {project.data.featuredWideImage ? (
+                    <img 
+                      src={project.data.featuredWideImage} 
+                      alt={`${project.data.title} - Featured image`}
+                      class="featured-image"
+                    />
+                  ) : (
+                    <img src="/assets/images/news/news-7.jpg" alt="" />
+                  )}
+                </figure>
+                <div class="lower-content">
+                  <h3>{project.data.title}</h3>
+                  <div class="text">
+                    <Content />
+                  </div>
+                  {projectMembers.length > 0 && (
+                    <>
+                      <h3 class="project-member-list-heading">Who's working on it?</h3>
+                      <div class="team-list-blog">
+                        {projectMembers.map(member => (
+                          <div class="team-member">
+                            {member.data.featuredImage && (
+                              <img 
+                                src={member.data.featuredImage} 
+                                alt={member.data.title}
+                                class="member-image"
+                              />
+                            )}
+                            <div class="member-info">
+                              <h4>{member.data.title}</h4>
+                              <p>{member.data.description}</p>
+                              {member.data.social && (
+                                <ul class="social-links">
+                                  {member.data.social.twitter && (
+                                    <li><a href={member.data.social.twitter} target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+                                  )}
+                                  {member.data.social.facebook && (
+                                    <li><a href={member.data.social.facebook} target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a></li>
+                                  )}
+                                  {member.data.social.linkedin && (
+                                    <li><a href={member.data.social.linkedin} target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
+                                  )}
+                                  {member.data.social.instagram && (
+                                    <li><a href={member.data.social.instagram} target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+                                  )}
+                                  {member.data.social.web && (
+                                    <li><a href={member.data.social.web} target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i></a></li>
+                                  )}
+                                  {member.data.social.researchgate && (
+                                    <li><a href={member.data.social.researchgate} target="_blank" rel="noopener noreferrer"><i class="fab fa-researchgate"></i></a></li>
+                                  )}
+                                </ul>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -25,5 +25,34 @@ export const collections = {
         researchgate: z.string().optional()
       }).optional(),
     })
+  }),
+  projects: defineCollection({
+    loader: glob({pattern: "**/*.md", base: "./src/content/projects"}),
+    schema: z.object({
+      title: z.string(),
+      shortname: z.string(),
+      draft: z.boolean(),
+      slug: z.string(),
+      date: z.string(),
+      memberSlugs: z.array(z.string()),
+      description: z.string(),
+      featuredImage: z.string().optional(),
+      featuredWideImage: z.string().optional(),
+      isActive: z.boolean(),
+    })
+  }),
+  publications: defineCollection({
+    loader: glob({pattern: "**/*.md", base: "./src/content/publications"}),
+    schema: z.object({
+      title: z.string(),
+      slug: z.string(),
+      date: z.string(),
+      authors: z.string(),
+      authorsSlug: z.array(z.string()).optional(),
+      category: z.string(),
+      journal: z.string(),
+      url: z.string(),
+      abstrakt: z.string().optional(),
+    })
   })
 }; 

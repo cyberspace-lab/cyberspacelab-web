@@ -1,9 +1,9 @@
 ---
-template: publication
 title: "Forest digital twin as a relaxation environment: A pilot study"
-slug: /2022-forest-bathing-pilot
+slug: 2022-forest-bathing-pilot
 date: 2022-11
 authors: Hejtmánek, L., Hůla, M., Herrová, A., & Surový, P.
+authorsSlug: ["lukas-hejtmanek"]
 category: Publication
 journal: Frontiers in Virtual Reality
 url: https://doi.org/10.3389/frvir.2022.1033708

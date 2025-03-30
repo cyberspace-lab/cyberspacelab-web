@@ -55,7 +55,7 @@ defineProps({
               </li>
             </ul>
             <div class="link">
-              <a :href="data.slug">
+              <a :href="`/team/${data.slug}`">
                 <i class="fas fa-link"></i>
               </a>
             </div>

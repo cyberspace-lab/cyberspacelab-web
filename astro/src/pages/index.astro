@@ -3,13 +3,13 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import TeamListHome from '../components/TeamListHome.vue';
 import FaqAccordeon from '../components/FaqAccordeon.vue';
-import siteConfig from '../config';
 import { Image } from 'astro:assets';
 
 // Get members, sort by order, and limit to 4
 const members = await getCollection('team', ({ data }) => {
   return data;
 });
+
 
 const sortedMembers = members
   .sort((a, b) => a.data.order - b.data.order)
@@ -22,7 +22,7 @@ const sortedMembers = members
     social: member.data.social,
     featuredImage: member.data.featuredImage
   }));
-
+console.log(sortedMembers[0]);
 
 const frontmatter = {
   title: "Welcome",

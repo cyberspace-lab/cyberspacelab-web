@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Get the about page content
+const aboutContent = await getCollection('about');
+const about = aboutContent[0]; // Assuming there's only one about page
+
+// Aims component
+const AimsBox = ({ aims }) => {
+  return (
+    <div class="inner-box">
+      {aims.map((aim, i) => (
+        <div class="single-item">
+          <div class="count-box">
+            <span>0{i+1}</span>
+          </div>
+          <div class="inner">
+            <h3>{aim[0]}</h3>
+            <p>{aim[1]}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const { Content } = await about.render();
+---
+
+<Layout 
+  title={about.data.title} 
+  description={about.data.description}
+>
+  <section class="page-title" style="background-image: url('/assets/images/background/tron_prague_wide.png')">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
+          <div class="content-box clearfix">
+            <div class="title pull-left">
+              <h1>About Us</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+          <div id="image_block_01">
+            <div class="image-box">
+              <img 
+                src={about.data.aboutImage} 
+                alt="About CyberspaceLab"
+                class="about-image"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+          <div id="content_block_01">
+            <div class="content-box">
+              <div class="text">
+                <p>{about.data.description}</p>
+              </div>
+              <AimsBox aims={about.data.aims} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

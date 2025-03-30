@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import MemberCard from '../../components/MemberCard.vue';
+
+// Get all team members from the collection and sort by order
+const teamMembers = await getCollection('team');
+
+const sortedMembers = teamMembers
+  .sort((a, b) => a.data.order - b.data.order)
+  .map(member => ({
+    id: member.id,
+    slug: member.data.slug,
+    title: member.data.title,
+    description: member.data.description,
+    social: member.data.social,
+    featuredImage: member.data.featuredImage
+  }));
+---
+
+<Layout title="Team">
+  <section class="page-title" style="background-image: url('/assets/images/background/prague_ominous.png')">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
+          <div class="content-box clearfix">
+            <div class="title pull-left">
+              <h1>Lab members</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section team-page-section">
+    <div class="auto-container members-page-pading-fix">
+      <div class="row clearfix members-page-flex-fix">
+        {sortedMembers.map(member => (
+          <MemberCard data={member} />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
