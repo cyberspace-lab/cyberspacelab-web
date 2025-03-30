@@ -7,8 +7,7 @@ import siteConfig from '../config';
 import { Image } from 'astro:assets';
 
 // Get members, sort by order, and limit to 4
-const members = await getCollection('members', ({ data }) => {
-  // return all members
+const members = await getCollection('team', ({ data }) => {
   return data;
 });
 
@@ -29,7 +28,8 @@ const frontmatter = {
   title: "Welcome",
   subtitle: "Welcome",
   tagline: "Welcome",
-  description: "Welcome",
+  description: `Our research group focuses on spatial navigation and virtual reality! We are a team of people from the field of cognitive psychology, neuroscience, and computer science, dedicated to exploring how humans navigate and interact with virtual environments.
+  Our research combines cutting-edge technology with rigorous scientific methodology to understand how virtual reality can be used to enhance spatial learning and cognitive performance.`,   
 faq: [
   ["Can I do an internship or work-study program with your research group?", "Yes, we  offer internship and work-study opportunities for undergraduate and graduate students. Please contact us directly for more information about current opportunities."],
   ["What skills or qualifications do I need to work with your research group?", "We welcome students from a variety of backgrounds and disciplines, including psychology, neuroscience, computer science, engineering, and more. Strong analytical skills, attention to detail, and an interest in spatial navigation and virtual reality are all important for success."],
@@ -68,20 +68,6 @@ faq: [
                             </div>
                             <div class="text">
                                 {frontmatter.description}
-                            </div>
-                            <div class="inner-box clearfix">
-                                <div class="single-item">
-                                    <div class="box">
-                                        <div class="icon-box"><i class="flaticon-play"></i></div>
-                                        <h4>Virtual reality</h4>
-                                    </div>
-                                </div>
-                                <div class="single-item">
-                                    <div class="box">
-                                        <div class="icon-box"><i class="flaticon-planet-earth"></i></div>
-                                        <h4>Spatial navigation</h4>
-                                    </div>
-                                </div>
                             </div>
                             <div class="btn-box">
                                 <a href="/about" class="theme-btn style-one">More About Us</a>

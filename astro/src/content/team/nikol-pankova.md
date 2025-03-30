@@ -1,13 +1,12 @@
 ---
-template: team-member
 title: Nikol Pánková
-slug: /team/nikol-pankova
+slug: nikol-pankova
 order: 23
 description: Undergraduate student
 education: ["Still loading …"]
 projectSlugs: [""]
 favoriteGames: ["Last of Us", "Red Dead Redemption 2", "World of Warcraft"]
-featuredImage: ./../../assets/images/team/nikol-pankova.jpg
+featuredImage: /assets/images/team/nikol-pankova.jpg
 hobbies: ["Video games", "Reading"]
 ----
 

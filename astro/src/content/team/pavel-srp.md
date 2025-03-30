@@ -1,7 +1,6 @@
 ---
-template: team-member
 title: Pavel Srp
-slug: /team/pavel-srp
+slug: pavel-srp
 order: 4
 description: Graduate student
 education: ["Bachelor Liberal Arts and Humanities, 2023"]
@@ -9,7 +8,7 @@ expertise: ["Programing", "Virtual reality", "Unity 3D", "Data science"]
 latestPapers: ["not yet"]
 favoriteGames: ["The Legend of Zelda: Breath of the Wild", "Rain World", "Outer Wilds", "Tunic"]
 projectSlugs: ["/spatial-audio-navigation"]
-featuredImage: ./../../assets/images/team/pavel.jpg
+featuredImage: /assets/images/team/pavel.jpg
 hobbies: [
   "Playing video games", 
   "Trying to do visual and audio stuff",

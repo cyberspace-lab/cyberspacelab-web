@@ -2,7 +2,6 @@
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 import siteConfig from '../config';
-import '../assets/css/style.css';
 import "../assets/css/animate.css"
 import "../assets/css/bootstrap.css"
 import "../assets/css/flaticon.css"
@@ -78,7 +77,7 @@ const seo = {
 
   <body>
     <div class="primary-container">
-      <Header client:load />
+      <Header client:visible/>
       <div class="mobile-menu">
         <div class="menu-backdrop"></div>
         <div class="close-btn">
@@ -100,11 +99,13 @@ const seo = {
           </div> 
         </nav>
       </div>
+      
       <slot />
       <Footer data={siteConfig.meta}/>
     </div>
   </body>
 </html>
+
 <script is:inline src="/assets/js/jquery.js"></script>
 <script is:inline src="/assets/js/popper.min.js"></script>
 <script is:inline src="/assets/js/bootstrap.min.js"></script>
@@ -118,24 +119,3 @@ const seo = {
 <script is:inline src="/assets/js/tilt.jquery.js"></script>
 <script is:inline src="/assets/js/jQuery.style.switcher.min.js"></script>
 <script is:inline src="/assets/js/script.js"></script>
-
-<style is:global>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  :root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-  }
-  
-  html {
-    font-family: system-ui, sans-serif;
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-  }
-</style>

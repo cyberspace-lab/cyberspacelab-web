@@ -1,7 +1,6 @@
 ---
-template: team-member
 title: Oliver Kobián
-slug: /team/oliver-kobian
+slug: oliver-kobian
 order: 3
 description: Graduate student
 education: ["Bachelor Liberal Arts and Humanities 2022"]
@@ -9,7 +8,7 @@ expertise: ["Virtual reality", "Locomotion methods in VR"]
 latestPapers: [""]
 favoriteGames: ["Witcher 3", "Dota2", "Skyrim"]
 projectSlugs: ["/movement-types"]
-featuredImage: ./../../assets/images/team/Oliver.jpg
+featuredImage: /assets/images/team/Oliver.jpg
 hobbies: [
  "Curling", "Video games", "Reading"]
 social:

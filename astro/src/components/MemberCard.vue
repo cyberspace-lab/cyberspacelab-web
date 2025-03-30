@@ -11,7 +11,7 @@ defineProps({
 
 <template>
   <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-    <a :href="data.slug">
+    <a :href="`/team/${data.slug}`">
       <div 
         class="team-block-one wow fadeInUp" 
         data-wow-delay="200ms" 
@@ -69,3 +69,31 @@ defineProps({
     </a>
   </div>
 </template>
+
+<style scoped>
+.image-box figure {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  /* Force aspect ratio */
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.image-box figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures images cover the area without distortion */
+  object-position: center; /* Centers the image */
+}
+
+/* Optional: Add a transition for smooth loading */
+.image-box figure img {
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Add hover effect */
+.image-box figure:hover img {
+  transform: scale(1.05);
+}
+</style> 

@@ -46,7 +46,6 @@ const Layout = ({ children }) => {
   const { site } = useStaticQuery(query)
 
   useScript(withPrefix("assets/js/jquery.js"));
-  useScript(withPrefix("assets/js/jquery.js"));
   useScript(withPrefix("assets/js/popper.min.js"));
   useScript(withPrefix("assets/js/bootstrap.min.js"));
   useScript(withPrefix("assets/js/owl.js"));
@@ -83,12 +82,11 @@ const Layout = ({ children }) => {
                 </ul>
             </div> 
         </nav>
-    </div>
+      </div>
 
     {children}
     <Footer data = {site.siteMetadata}/>
-    <Helmet defer={false}>
-    </Helmet>
+    <Helmet defer={false}></Helmet>
     </div>
   )
 }

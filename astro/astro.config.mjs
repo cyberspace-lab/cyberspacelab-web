@@ -5,7 +5,8 @@ import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   integrations: [vue(), tailwind(), mdx()],
-  site: 'https://yourdomain.com',
+  content: {collections: ['team']},
+  site: 'https://cyberspacelab.cz',
   base: '/',
   markdown: {
     shikiConfig: {

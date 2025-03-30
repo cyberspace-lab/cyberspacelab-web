@@ -1,0 +1,146 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+
+export async function getStaticPaths() {
+  const teamMembers = await getCollection('team');
+  
+  return teamMembers.map(member => ({
+    params: { slug: member.data.slug },
+    props: { member: member }  // Pass just the slug as a prop
+  }));
+}
+
+// Get the member data using getEntry
+const { member } = Astro.props;
+const { Content } = await render(member); 
+---
+
+<Layout title={member.data.title}>
+  <section class="page-title" style={{ backgroundImage: `url("/assets/images/background/prague_ominous.png")` }}>
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
+          <div class="content-box clearfix">
+            <div class="title pull-left">
+              <h1>{member.data.title}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-details">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="col-lg-6 col-md-6 col-sm-12 left-column">
+          <div class="left-content">
+            <div class="upper-box">
+              <div class="title">
+                <h2>{member.data.description}</h2>
+              </div>
+              <ul class="list-item clearfix">
+                {member.data.education && (
+                  <li>
+                    <span>Education</span>
+                    {member.data.education.map(field => (
+                      <div>{field}<br /></div>
+                    ))}
+                  </li>
+                )}
+                {member.data.expertise && (
+                  <li>
+                    <span>Expertise</span>
+                    {member.data.expertise.map(field => (
+                      <div>{field}<br /></div>
+                    ))}
+                  </li>
+                )}
+                {member.data.favoriteGames && (
+                  <li>
+                    <span>Favorite Games</span>
+                    {member.data.favoriteGames.map(field => (
+                      <div>{field}<br /></div>
+                    ))}
+                  </li>
+                )}
+                {member.data.hobbies && (
+                  <li>
+                    <span>Hobbies</span>
+                    {member.data.hobbies.map(field => (
+                      <div>{field}<br /></div>
+                    ))}
+                  </li>
+                )}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 team-block right-column team-member-photo">
+          <div class="right-content">
+            <div class="team-block-one">
+              <div class="inner-box">
+                <div class="image-box">
+                  <figure class="image">
+                    {member.data.featuredImage ? (
+                      <Image 
+                        src={member.data.featuredImage} 
+                        alt={`${member.data.title} - Featured image`}
+                        width={370}
+                        height={470}
+                        class="featured-image"
+                      />
+                    ) : (
+                      <Image 
+                        src="/assets/images/incognito-thumbnail.png"
+                        alt="Default profile"
+                        width={370}
+                        height={470}
+                      />
+                    )}
+                  </figure>
+                  {member.data.social && (
+                    <ul class="social-links clearfix">
+                      {member.data.social.twitter && (
+                        <li><a href={member.data.social.twitter}><i class="fab fa-twitter"></i></a></li>
+                      )}
+                      {member.data.social.facebook && (
+                        <li><a href={member.data.social.facebook}><i class="fab fa-facebook-f"></i></a></li>
+                      )}
+                      {member.data.social.linkedin && (
+                        <li><a href={member.data.social.linkedin}><i class="fab fa-linkedin-in"></i></a></li>
+                      )}
+                      {member.data.social.researchgate && (
+                        <li><a href={member.data.social.researchgate}><i class="fab fa-researchgate"></i></a></li>
+                      )}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-details" id="Personal-Experience">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 left-column">
+          <div class="left-content">
+            <div class="lower-box">
+              <div class="text">
+                <Content />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

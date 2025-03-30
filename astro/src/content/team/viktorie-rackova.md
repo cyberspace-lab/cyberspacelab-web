@@ -1,7 +1,7 @@
 ---
 template: team-member
 title: Viktorie Račková 
-slug: /team/viktorie-rackova
+slug: viktorie-rackova
 order: 1
 description: Graduate student, Research assistant 
 education: ["Bachelor Liberal Arts and Humanities, 2022"]
@@ -9,7 +9,7 @@ expertise: ["Questionnaires", "Writing", "Video games"]
 latestPapers: 
 favoriteGames: ["Stray", "Firewatch", "Red Dead Redemption 2"]
 projectSlugs: []
-featuredImage: ./../../assets/images/team/viky.JPG
+featuredImage: /assets/images/team/viky.JPG
 hobbies: [
   "Video games ", 
   "Movies",

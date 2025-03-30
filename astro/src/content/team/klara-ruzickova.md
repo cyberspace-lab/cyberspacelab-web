@@ -1,7 +1,7 @@
 ---
 title: Klára Růžičková
 order: 11
-slug: /team/klara-ruzickova
+slug: klara-ruzickova
 description: Undergraduate student
 education: ["Working on it :)"]
 expertise: ["Virtual reality"]

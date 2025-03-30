@@ -1,7 +1,5 @@
 (function($) {
 	
-	"use strict";
-	
 	//Update Header Style and Scroll to Top
 	function headerStyle() {
 		if($('.main-header').length){
@@ -20,7 +18,6 @@
 	
 	headerStyle();
 
-
 	//Submenu Dropdown Toggle
 	if($('.main-header li.dropdown ul').length){
 		$('.main-header .navigation li.dropdown').append('<div class="dropdown-btn"><span class="fas fa-angle-down"></span></div>');
@@ -29,9 +26,7 @@
 
 	//Mobile Nav Hide Show
 	if($('.mobile-menu').length){
-		
 		$('.mobile-menu .menu-box').mCustomScrollbar();
-		
 		var mobileMenuContent = $('.main-header .menu-area .main-menu').html();
 		$('.mobile-menu .menu-box .menu-outer').append(mobileMenuContent);
 		$('.sticky-header .main-menu').append(mobileMenuContent);
@@ -55,8 +50,6 @@
 			$('body').removeClass('mobile-menu-visible');
 		});
 	}
-
-
 	// Scroll to a Specific Div
 	if($('.scroll-to-target').length){
 		$(".scroll-to-target").on('click', function() {
