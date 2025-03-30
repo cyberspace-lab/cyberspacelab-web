@@ -1,6 +1,3 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
-
-# Remove this section if it exists in your current config
-[plugins] 
+command = "npm run build"
+publish = "dist"
