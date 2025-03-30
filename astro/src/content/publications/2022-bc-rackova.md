@@ -1,5 +1,6 @@
 ---
 title: Effect of video game experience on navigation skills in virtual reality
+type: Bachelor Thesis
 slug: 2022-bc-rackova
 date: 2022-09
 authors: Račková, Viktorie

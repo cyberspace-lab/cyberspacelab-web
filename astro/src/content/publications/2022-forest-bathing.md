@@ -1,5 +1,6 @@
 ---
 title: "Forest digital twin as a relaxation environment: A pilot study"
+type: Manuscript
 slug: 2022-forest-bathing-pilot
 date: 2022-11
 authors: Hejtmánek, L., Hůla, M., Herrová, A., & Surový, P.

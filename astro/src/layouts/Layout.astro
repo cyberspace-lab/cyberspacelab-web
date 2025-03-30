@@ -77,7 +77,7 @@ const seo = {
 
   <body>
     <div class="primary-container">
-      <Header client:load />
+      <Header client:visible />
 
       <div class="mobile-menu">
         <div class="menu-backdrop"></div>
@@ -107,6 +107,8 @@ const seo = {
   </body>
 </html>
 
+
+<!-- Replace your script import section with these traditional script tags -->
 <script is:inline src="/assets/js/jquery.js"></script>
 <script is:inline src="/assets/js/popper.min.js"></script>
 <script is:inline src="/assets/js/bootstrap.min.js"></script>
@@ -119,4 +121,6 @@ const seo = {
 <script is:inline src="/assets/js/scrollbar.js"></script>
 <script is:inline src="/assets/js/tilt.jquery.js"></script>
 <script is:inline src="/assets/js/jQuery.style.switcher.min.js"></script>
+
+<!-- Load your custom script last -->
 <script is:inline src="/assets/js/script.js"></script>

@@ -45,6 +45,7 @@ export const collections = {
     loader: glob({pattern: "**/*.md", base: "./src/content/publications"}),
     schema: z.object({
       title: z.string(),
+      type: z.string(),
       slug: z.string(),
       date: z.string(),
       authors: z.string(),

@@ -1,5 +1,6 @@
 ---
 title: Effect of locomotion method on navigation and spatial memory in virtual reality
+type: Bachelor Thesis
 slug: 2022-bc-kobian
 date: 2022-09
 authors: Kobián, O.

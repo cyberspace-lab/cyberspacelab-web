@@ -1,5 +1,5 @@
 (function($) {
-  
+	
 	//Update Header Style and Scroll to Top
 	function headerStyle() {
 		if($('.main-header').length){

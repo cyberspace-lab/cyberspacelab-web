@@ -21,13 +21,13 @@
                         </figure>
                     </div>
                     <div class="menu-area pull-right">
-                        <div class="mobile-nav-toggler" @click="toggleMobileMenu">
+                        <div class="mobile-nav-toggler">
                             <i class="icon-bar"></i>
                             <i class="icon-bar"></i>
                             <i class="icon-bar"></i>
                         </div>
                         <nav class="main-menu navbar-expand-md navbar-light">
-                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                            <div class="navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/about">About</a></li>

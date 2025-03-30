@@ -1,42 +1,33 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Publication from '../../components/Publication.vue';
+import PublicationCard from '../../components/PublicationCard.vue';
 import { getCollection } from 'astro:content';
 
-// Get the slug from the URL
-export async function getStaticPaths() {
-  const publications = await getCollection('publications');
-  return publications.map((publication, index) => ({
-    params: { slug: publication.slug },
-    props: { 
-      publication,
-      previous: index > 0 ? publications[index - 1] : null,
-      next: index < publications.length - 1 ? publications[index + 1] : null
-    },
-  }));
-}
-
-const { publication, previous, next } = Astro.props;
-const { Content } = await publication.render();
+const publications = await getCollection('publications');
 ---
 
-<Layout 
-  title={publication.data.title}
-  description={publication.data.abstrakt}
-  article={true}
->
-  <Publication 
-    client:load
-    publication={publication}
-    previous={previous ? { 
-      title: previous.data.title,
-      slug: `/publication/${previous.slug}`
-    } : null}
-    next={next ? { 
-      title: next.data.title,
-      slug: `/publication/${next.slug}`
-    } : null}
-  >
-    <Content />
-  </Publication>
+<Layout title="Our Publications">
+  <section class="page-title" style="background-image: url('/assets/images/background/prague_ominous.png')">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
+          <div class="content-box clearfix">
+            <div class="title pull-left">
+              <h1>Our Publications</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="research-details">
+    <div class="auto-container">
+      <div class="research-details-content">
+        {publications.map((pub) => (
+          <PublicationCard publication={pub} />
+        ))}
+      </div>
+    </div>
+  </section>
 </Layout> 
