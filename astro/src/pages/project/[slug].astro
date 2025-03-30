@@ -1,24 +1,24 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection, getEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 // Get the slug from the URL
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
   return projects.map(project => ({
-    params: { slug: project.slug },
+    params: { slug: project.data.slug },
     props: { project },
   }));
 }
 
 // Get the project data
 const { project } = Astro.props;
-const { Content } = await project.render();
+const { Content } = await render(project);
 
 // Get all team members to filter project members
 const teamMembers = await getCollection('team');
-const projectMembers = teamMembers.filter(member => 
-  project.data.memberSlugs.includes(member.slug)
+const projectMembers = teamMembers.filter(member =>
+  project.data.memberSlugs.includes(member.data.slug)
 );
 ---
 

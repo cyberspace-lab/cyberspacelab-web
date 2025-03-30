@@ -10,7 +10,6 @@ const members = await getCollection('team', ({ data }) => {
   return data;
 });
 
-
 const sortedMembers = members
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 4)
@@ -22,7 +21,6 @@ const sortedMembers = members
     social: member.data.social,
     featuredImage: member.data.featuredImage
   }));
-console.log(sortedMembers[0]);
 
 const frontmatter = {
   title: "Welcome",

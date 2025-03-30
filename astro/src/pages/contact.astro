@@ -1,37 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-
-// Get the contact page content
-const contactContent = await getCollection('contact');
-const contact = contactContent[0]; // Assuming there's only one contact page
-
-// Social component
-const Social = ({ social }) => {
-  return (
-    <ul class="social-links clearfix">
-      {social.facebook && (
-        <li><a href={social.facebook} target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
-      )}
-      {social.twitter && (
-        <li><a href={social.twitter} target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
-      )}
-      {social.instagram && (
-        <li><a href={social.instagram} target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
-      )}
-      {social.linkedin && (
-        <li><a href={social.linkedin} target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
-      )}
-    </ul>
-  );
-};
-
-const { Content } = await contact.render();
+import * as contact from '../content/contact.md';
+import {Content as ContactContent} from '../content/contact.md';
+import { render } from 'astro:content';
 ---
 
 <Layout 
-  title={contact.data.title} 
-  description={`${contact.data.title} - CyberspaceLab`}
+  title={contact.frontmatter.title} 
+  description={`${contact.frontmatter.title} - CyberspaceLab`}
 >
   <section class="page-title" style="background-image: url('/assets/images/banner/banner.png')">
     <div class="auto-container">
@@ -53,7 +29,7 @@ const { Content } = await contact.render();
         <div class="research-details-content">
           <div class="upper-box">
             <div class="text">
-              <Content />
+              <ContactContent />
             </div>
           </div>
         </div>
@@ -72,21 +48,17 @@ const { Content } = await contact.render();
                 <div class="icon-box"><i class="flaticon-lab"></i></div>
                 <div class="info-box-text">
                   <h5>Email</h5>
-                  <p>{contact.data.email}</p>
+                  <p>{contact.frontmatter.email}</p>
                 </div>
               </li>
               <li class="dress-info-box">
                 <div class="icon-box"><i class="flaticon-marker"></i></div>
                 <div class="info-box-text">
                   <h5>Address</h5>
-                  <p>{contact.data.address}</p>
+                  <p>{contact.frontmatter.address}</p>
                 </div>
               </li>
             </ul>
-            <div class="follow-box">
-              <h5>Follow Us:</h5>
-              <Social social={contact.data.social} />
-            </div>
           </div>
         </div>
       </div>
