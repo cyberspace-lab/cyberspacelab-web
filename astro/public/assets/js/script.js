@@ -50,6 +50,7 @@
 			$('body').removeClass('mobile-menu-visible');
 		});
 	}
+
 	// Scroll to a Specific Div
 	if($('.scroll-to-target').length){
 		$(".scroll-to-target").on('click', function() {
@@ -154,7 +155,6 @@
 			}
 		});
 	}
-
 
 
 	//Accordion Box
