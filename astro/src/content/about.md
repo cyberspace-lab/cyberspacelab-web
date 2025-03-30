@@ -3,8 +3,7 @@ title: About us
 slug: about
 aims: [["Spatial navigation", "Investigating the behavioral mechanisms and correlates of spatial navigation and transfer of knowledge between virtual and real worlds"], 
 ["Spatial cognition", "Advancing our understanding of spatial cognition and developing solutions for enhancing spatial learning and performance."],
-["Virtual reality", "Exploring the potential of virtual reality to study psychological processes, primarily human cognition, but also emotions and well-being as well as psychopatology"],
-["Gaming", "Investigating video gaming and gamers to understand the psychological mechanisms underlying the experience of playing video games and the effects of video games on players"]]
+["Virtual reality", "Exploring the potential of virtual reality to study psychological processes, primarily human cognition, but also emotions and well-being as well as psychopatology"], ["Gaming", "Investigating video gaming and gamers to understand the psychological mechanisms underlying the experience of playing video games and the effects of video games on players"]]
 background: /assets/images/background/prague_pink_wide.png
 aboutImage: /assets/images/pages/about/neon_prague.png
 ---
