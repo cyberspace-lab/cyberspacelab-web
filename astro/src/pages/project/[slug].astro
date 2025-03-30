@@ -1,8 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
-
-// Get the slug from the URL
+import TeamList from '../../components/TeamList.vue';
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
   return projects.map(project => ({
@@ -11,15 +10,15 @@ export async function getStaticPaths() {
   }));
 }
 
-// Get the project data
 const { project } = Astro.props;
 const { Content } = await render(project);
 
-// Get all team members to filter project members
 const teamMembers = await getCollection('team');
 const projectMembers = teamMembers.filter(member =>
   project.data.memberSlugs.includes(member.data.slug)
 );
+
+console.log("there is ", projectMembers.length);
 ---
 
 <Layout 
@@ -66,48 +65,8 @@ const projectMembers = teamMembers.filter(member =>
                     <Content />
                   </div>
                   {projectMembers.length > 0 && (
-                    <>
                       <h3 class="project-member-list-heading">Who's working on it?</h3>
-                      <div class="team-list-blog">
-                        {projectMembers.map(member => (
-                          <div class="team-member">
-                            {member.data.featuredImage && (
-                              <img 
-                                src={member.data.featuredImage} 
-                                alt={member.data.title}
-                                class="member-image"
-                              />
-                            )}
-                            <div class="member-info">
-                              <h4>{member.data.title}</h4>
-                              <p>{member.data.description}</p>
-                              {member.data.social && (
-                                <ul class="social-links">
-                                  {member.data.social.twitter && (
-                                    <li><a href={member.data.social.twitter} target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
-                                  )}
-                                  {member.data.social.facebook && (
-                                    <li><a href={member.data.social.facebook} target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a></li>
-                                  )}
-                                  {member.data.social.linkedin && (
-                                    <li><a href={member.data.social.linkedin} target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
-                                  )}
-                                  {member.data.social.instagram && (
-                                    <li><a href={member.data.social.instagram} target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
-                                  )}
-                                  {member.data.social.web && (
-                                    <li><a href={member.data.social.web} target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i></a></li>
-                                  )}
-                                  {member.data.social.researchgate && (
-                                    <li><a href={member.data.social.researchgate} target="_blank" rel="noopener noreferrer"><i class="fab fa-researchgate"></i></a></li>
-                                  )}
-                                </ul>
-                              )}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </>
+                      <TeamList members={projectMembers}/>
                   )}
                 </div>
               </div>

@@ -18,7 +18,7 @@ defineProps({
       </div>
       <div class="row clearfix team-home-members-container">
         <MemberCard 
-          v-for="member in data" 
+          v-for="member in data"
           :key="member.id" 
           :data="member"
         />
