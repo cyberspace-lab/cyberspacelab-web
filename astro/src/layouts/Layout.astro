@@ -1,82 +1,141 @@
 ---
 import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
+import siteConfig from '../config';
+import '../assets/css/style.css';
+import "../assets/css/animate.css"
+import "../assets/css/bootstrap.css"
+import "../assets/css/flaticon.css"
+import "../assets/css/font-awesome-all.css"
+import "../assets/css/jquery.fancybox.min.css"
+import "../assets/css/responsive.css"
+import "../assets/css/style.css"
+import "../assets/css/switcher-style.css"
 
 interface Props {
   title: string;
   description?: string;
   image?: string;
   type?: string;
-  address?: string;
-  email?: string;
+  article?: boolean;
 }
 
 const { 
   title, 
-  description = "",
-  image = '/social-image.jpg',
+  description = siteConfig.meta.description,
+  image = siteConfig.meta.image,
   type = 'website',
-  address = 'Kampus Hybernská, Praha',
-  email = 'contact@example.com'
+  article = false
 } = Astro.props;
 
-declare global {
-  interface ImportMetaEnv {
-    PUBLIC_SITE_URL: string;
-  }
+const canonicalURL = new URL(Astro.url.pathname, siteConfig.meta.siteUrl);
+const seo = {
+  title: title || siteConfig.meta.title,
+  description: description || siteConfig.meta.description,
+  image: `${siteConfig.meta.siteUrl}${image || siteConfig.meta.image}`,
+  url: canonicalURL,
 }
-
-const canonicalURL = new URL(Astro.url.pathname, import.meta.env.PUBLIC_SITE_URL);
 ---
-<div className="primary-container">
-  <Header/>
-  <div class="mobile-menu">
-    <div class="menu-backdrop"></div>
-    <div class="close-btn">
-      <i class="fas fa-times"></i>
-    </div>
-    <nav class="menu-box">
-        <div class="nav-logo">
-          <a href="/">
-            <img src="/assets/images/mobile-logo.png" alt="" title=""/>
-          </a>
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="icon" type="image/svg+xml" href={siteConfig.meta.iconimage} />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{seo.title}</title>
+    <meta name="description" content={seo.description} />
+    <meta name="image" content={seo.image} />
+    
+    <!-- Alternate Languages -->
+    <link rel="alternate" href={seo.url} hreflang="en-us" />
+    <link rel="alternate" href={seo.url} hreflang="en" />
+    <link rel="alternate" href={seo.url} hreflang="x-default" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={article ? 'article' : type} />
+    <meta property="og:url" content={seo.url} />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:description" content={seo.description} />
+    <meta property="og:image" content={seo.image} />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    {siteConfig.meta.twitterUsername && (
+      <meta name="twitter:creator" content={siteConfig.meta.twitterUsername} />
+    )}
+    <meta name="twitter:title" content={seo.title} />
+    <meta name="twitter:description" content={seo.description} />
+    <meta name="twitter:image" content={seo.image} />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+
+  <body>
+    <div class="primary-container">
+      <Header client:load />
+      <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn">
+          <i class="fas fa-times"></i>
         </div>
-        <div class="menu-outer"></div>
-        <div class="contact-info">
+        <nav class="menu-box">
+          <div class="nav-logo">
+            <a href="/">
+              <img src="/assets/images/mobile-logo.png" alt={siteConfig.meta.title} title={siteConfig.meta.title}/>
+            </a>
+          </div>
+          <div class="menu-outer"></div>
+          <div class="contact-info">
             <h4>Contact Info</h4>
             <ul>
-                <li>{address}</li>
-                <li><a href="mailto:{$email}">{email}</a></li>
+              <li>{siteConfig.contact.address}</li>
+              <li><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></li>
             </ul>
-        </div> 
-    </nav>
-</div>
-
-
-
+          </div> 
+        </nav>
+      </div>
+      <slot />
+      <Footer data={siteConfig.meta}/>
+    </div>
+  </body>
+</html>
+<script is:inline src="/assets/js/jquery.js"></script>
+<script is:inline src="/assets/js/popper.min.js"></script>
+<script is:inline src="/assets/js/bootstrap.min.js"></script>
+<script is:inline src="/assets/js/owl.js"></script>
+<script is:inline src="/assets/js/wow.js"></script>
+<script is:inline src="/assets/js/validation.js"></script>
+<script is:inline src="/assets/js/jquery.fancybox.js"></script>
+<script is:inline src="/assets/js/appear.js"></script>
+<script is:inline src="/assets/js/jquery.countTo.js"></script>
+<script is:inline src="/assets/js/scrollbar.js"></script>
+<script is:inline src="/assets/js/tilt.jquery.js"></script>
+<script is:inline src="/assets/js/jQuery.style.switcher.min.js"></script>
+<script is:inline src="/assets/js/script.js"></script>
 
 <style is:global>
-  @import '../assets/css/animate.css';
-  @import '../assets/css/bootstrap.css';
-  @import '../assets/css/flaticon.css';
-  @import '../assets/css/font-awesome-all.css';
-  @import '../assets/css/jquery.fancybox.min.css';
-  @import '../assets/css/responsive.css';
-  @import '../assets/css/style.css';
-  @import '../assets/css/switcher-style.css';
-</style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 
-<script>
-  import '../assets/js/jquery.js';
-  import '../assets/js/popper.min.js';
-  import '../assets/js/bootstrap.min.js';
-  import '../assets/js/owl.js';
-  import '../assets/js/wow.js';
-  import '../assets/js/validation.js';
-  import '../assets/js/jquery.fancybox.js';
-  import '../assets/js/appear.js';
-  import '../assets/js/jquery.countTo.js';
-  import '../assets/js/scrollbar.js';
-  import '../assets/js/tilt.jquery.js';
-  import '../assets/js/jQuery.style.switcher.min.js';
-  import '../assets/js/script.js';
-</script>
+  :root {
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+  }
+  
+  html {
+    font-family: system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+</style>

@@ -7,7 +7,6 @@ import Layout from "../components/layout"
 import TeamListHome from "../components/team-list-home"
 import Seo from "../components/seo"
 import FaqAccordeon from "../components/faq-accordeon"
-//import ServicesList from "../components/services-list"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
@@ -160,45 +159,6 @@ const HomePage = ({ data }) => {
             </div>
         </div>
     </section>
-    {/*}
-    <section class="clients-section" style={{display: "none"}}>
-        <div class="auto-container">
-            <div class="clients-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                <figure class="client-logo">
-                    <a href="#"><img src="assets/images/clients/brand-1.png" alt="Awesome Image"/></a>
-                    <div class="overlay-box">
-                        <a href="#"><img src="assets/images/clients/overlay-brand-1.png" alt="Awesome Image"/></a>    
-                    </div>
-                </figure>
-                <figure class="client-logo">
-                    <a href="#"><img src="assets/images/clients/brand-2.png" alt="Awesome Image"/></a>
-                    <div class="overlay-box">
-                        <a href="#"><img src="assets/images/clients/overlay-brand-2.png" alt="Awesome Image"/></a>    
-                    </div>
-                </figure>
-                <figure class="client-logo">
-                    <a href="#"><img src="assets/images/clients/brand-3.png" alt="Awesome Image"/></a>
-                    <div class="overlay-box">
-                        <a href="#"><img src="assets/images/clients/overlay-brand-3.png" alt="Awesome Image"/></a>    
-                    </div>
-                </figure>
-                <figure class="client-logo">
-                    <a href="#"><img src="assets/images/clients/brand-4.png" alt="Awesome Image"/></a>
-                    <div class="overlay-box">
-                        <a href="#"><img src="assets/images/clients/overlay-brand-4.png" alt="Awesome Image"/></a>    
-                    </div>
-                </figure>
-                <figure class="client-logo">
-                    <a href="#"><img src="assets/images/clients/brand-5.png" alt="Awesome Image"/></a>
-                    <div class="overlay-box">
-                        <a href="#"><img src="assets/images/clients/overlay-brand-5.png" alt="Awesome Image"/></a>    
-                    </div>
-                </figure>
-            </div>
-        </div>
-    </section>
-    */}
-
     </Layout>
   )
 }

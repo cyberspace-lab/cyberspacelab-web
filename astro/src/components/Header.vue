@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4">
       <nav class="flex items-center justify-between h-16">
         <a href="/" class="text-xl font-bold">
-          Logo
+          {{ siteConfig.meta.title }}
         </a>
         
         <div class="hidden md:flex items-center space-x-8">
@@ -42,6 +42,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import siteConfig from '../config'
 
 const menuItems = [
   { label: 'Home', path: '/' },
