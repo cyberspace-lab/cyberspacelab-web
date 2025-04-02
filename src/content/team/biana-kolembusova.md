@@ -2,7 +2,7 @@
 title: Biana Kolembusova
 order: 10
 slug: "biana-kolembusova"
-role: present
+role: draft
 description: Undergraduate student
 education: ["Ongoing ..."]
 expertise: ["Comming soon!"]

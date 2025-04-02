@@ -2,7 +2,7 @@
 title: Lukáš Hejtmánek
 order: 0
 slug: "lukas-hejtmanek"
-role: present
+role: active
 description: Principal investigator
 education: ["MS Psychology, 2014", "Ph.D. Neuroscience, 2020"]
 expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]

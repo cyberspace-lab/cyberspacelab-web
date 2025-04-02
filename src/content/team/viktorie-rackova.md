@@ -3,7 +3,7 @@ template: team-member
 title: Viktorie Račková 
 slug: viktorie-rackova
 order: 1
-role: core
+role: active
 description: Ph.D. candidate
 education: ["Theoretical and experimental psychology 2024", "Bachelor Liberal Arts and Humanities 2022"]
 expertise: ["Questionnaires", "Writing", "Video games"] 

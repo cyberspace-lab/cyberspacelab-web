@@ -2,7 +2,7 @@
 title: Oliver Kobián
 slug: oliver-kobian
 order: 3
-role: core
+role: active
 description: Ph.D. candidate
 education: ["Theoretical and experimental psychology 2024", "Bachelor Liberal Arts and Humanities 2022"]
 expertise: ["Virtual reality", "Locomotion methods in VR"]

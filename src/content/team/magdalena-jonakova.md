@@ -3,7 +3,7 @@ template: team-member
 title: Magdalena Jonáková
 slug: magdalena-jonakova
 order: 21
-role: former
+role: past
 description: Undergraduate student
 education: ["Still loading …"]
 projectSlugs: []

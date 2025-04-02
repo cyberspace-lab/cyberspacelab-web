@@ -12,9 +12,9 @@ export const collections = {
       role: z.string(),
       education: z.array(z.string()),
       expertise: z.array(z.string()).optional(),
-      hobbies: z.array(z.string()),
-      favoriteGames: z.array(z.string()),
-      projectSlugs: z.array(z.string()),
+      hobbies: z.array(z.string()).optional(),
+      favoriteGames: z.array(z.string()).optional(),
+      projectSlugs: z.array(z.string()).optional(),
       featuredImage: z.string().optional(),
       description: z.string(),
       social: z.object({
