@@ -1,7 +1,7 @@
 <script setup>
 import MemberCard from './MemberCard.vue';
 
-defineProps({
+const props = defineProps({
   data: {
     type: Object,
     required: true
@@ -18,7 +18,7 @@ defineProps({
       </div>
       <div class="row clearfix team-home-members-container">
         <MemberCard 
-          v-for="member in data"
+          v-for="member in props.data"
           :key="member.id" 
           :data="member"
         />

@@ -7,19 +7,7 @@ const props = defineProps({
 });
 
 const newsData = props.data.data
-import { ref, onMounted } from 'vue';
-import { getImageUrl } from '../utils/images';
-const imageSrc = ref('');
 
-onMounted(async () => {
-  if (newsData.featuredImage) {
-    try {
-      imageSrc.value = await getImageUrl(newsData.featuredImage);
-    } catch (error) {
-      console.error("Error loading image:", error);
-    }
-  }
-});
 </script>
 <template>
   <div class="news-block full-width-banner">
@@ -29,15 +17,9 @@ onMounted(async () => {
           <div class="image-container">
             <figure class="image-box">
               <img 
-                v-if="imageSrc"
-                :src="imageSrc"
+                :src="newsData.featuredImage"
                 :alt="`${newsData.title} - Featured image`"
                 class="featured-image"
-              />
-              <img 
-                v-else
-                src="/assets/images/news/news-7.jpg"
-                alt=""
               />
             </figure>
           </div>

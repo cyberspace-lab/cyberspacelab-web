@@ -11,14 +11,13 @@ export async function getStaticPaths() {
 }
 
 const teamMembers = await getCollection('team');
-const authors = teamMembers.filter(member =>
-  news.data.authors.includes(member.data.slug)
-);
 
 const { news } = Astro.props;
 const { Content } = await render(news);
 const newsData = news.data;
-
+const authors = teamMembers.filter(member =>
+  newsData.authors.includes(member.data.slug)
+);
 ---
 
 <Layout 
@@ -44,7 +43,8 @@ const newsData = news.data;
   <section class="blog-details sidebar-page-container">
     <div class="auto-container">
       <div class="row clearfix">
-        <div class="content-side">
+        <!-- Main Content Column -->
+        <div class="col-lg-8 col-md-12 col-sm-12 content-side">
           <div class="blog-details-content">
             <div class="news-block-three">
               <div class="inner-box">
@@ -64,16 +64,59 @@ const newsData = news.data;
                   <div class="text">
                     <Content />
                   </div>
-                  {authors.length > 0 && (
-                      <h3 class="project-member-list-heading">Who's working on it?</h3>
-                      <TeamList members={authors}/>
-                  )}
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- Sidebar Column -->
+        {authors.length > 0 && (
+          <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+            <div class="sidebar">
+              <div class="sidebar-widget authors-widget">
+                <div class="widget-title">
+                  <h3>Authors</h3>
+                </div>
+                <div class="authors-box">
+                  <TeamList members={authors} layout="sidebar" client:load />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   </section>
+
+  <style>
+  .sidebar-widget {
+    position: relative;
+    margin-bottom: 40px;
+    background: #ffffff;
+    padding: 25px;
+    border: none;
+  }
+
+  .widget-title {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .widget-title h3 {
+    font-size: 24px;
+    line-height: 1.2em;
+    color: #222222;
+    font-weight: 600;
+  }
+
+  .authors-box {
+    position: relative;
+  }
+
+  @media (max-width: 991px) {
+    .sidebar-side {
+      margin-top: 40px;
+    }
+  }
+  </style>
 </Layout>

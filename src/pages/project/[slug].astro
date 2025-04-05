@@ -17,14 +17,15 @@ const teamMembers = await getCollection('team');
 const projectMembers = teamMembers.filter(member =>
   project.data.memberSlugs.includes(member.data.slug)
 );
+const projectData = project.data;
 
 console.log("there is ", projectMembers.length);
 ---
 
 <Layout 
-  title={project.data.title}
-  description={project.data.description}
-  image={project.data.featuredWideImage}
+  title={projectData.title}
+  description={projectData.description}
+  image={projectData.featuredWideImage}
   article={true}
 >
   <section class="page-title">
@@ -33,7 +34,7 @@ console.log("there is ", projectMembers.length);
         <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
           <div class="content-box clearfix">
             <div class="title pull-left">
-              <h1>{project.data.shortname}</h1>
+              <h1>{projectData.shortname}</h1>
             </div>
           </div>
         </div>
@@ -49,10 +50,10 @@ console.log("there is ", projectMembers.length);
             <div class="news-block-three">
               <div class="inner-box">
                 <figure class="image-box" id="cstm2">
-                  {project.data.featuredWideImage ? (
+                  {projectData.featuredWideImage ? (
                     <img 
-                      src={project.data.featuredWideImage} 
-                      alt={`${project.data.title} - Featured image`}
+                      src={projectData.featuredWideImage} 
+                      alt={`${projectData.title} - Featured image`}
                       class="featured-image"
                     />
                   ) : (
@@ -60,13 +61,13 @@ console.log("there is ", projectMembers.length);
                   )}
                 </figure>
                 <div class="lower-content">
-                  <h3>{project.data.title}</h3>
+                  <h3>{projectData.title}</h3>
                   <div class="text">
                     <Content />
                   </div>
                   {projectMembers.length > 0 && (
                       <h3 class="project-member-list-heading">Who's working on it?</h3>
-                      <TeamList members={projectMembers}/>
+                      <TeamList members={projectMembers} layout="grid" />
                   )}
                 </div>
               </div>
