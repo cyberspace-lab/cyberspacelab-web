@@ -56,5 +56,18 @@ export const collections = {
       url: z.string(),
       abstrakt: z.string().optional(),
     })
+  }),
+  news: defineCollection({
+    loader: glob({pattern: "**/*.md", base: "./src/content/news"}),
+    schema: z.object({
+      title: z.string(),
+      slug: z.string(),
+      //date in format YYYY-MM-DD
+      date: z.date(),
+      description: z.string(),
+      featuredImage: z.string().optional(),
+      authors: z.array(z.string()).optional(),
+      tags: z.array(z.string()).optional()
+    })
   })
 }; 

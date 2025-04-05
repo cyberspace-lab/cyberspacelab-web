@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import NewsCard from '../../components/NewsCard.vue';
+const news = await getCollection('news', ({ data }) => {
+  return !data.draft;
+});
+
+// Sort projects by date
+const sortedNews = news.sort((a, b) => 
+  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+)
+---
+
+<Layout title="News">
+  <section class="page-title" style="background-image: url('/assets/images/background/prague_eerie.png')">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
+          <div class="content-box clearfix">
+            <div class="title pull-left">
+              <h1>News</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="auto-container">
+      <div class="row clearfix">
+      </div>
+      <div class="news-container">
+        {sortedNews.map(news => (
+          <NewsCard data={news} client:load />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

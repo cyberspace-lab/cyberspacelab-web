@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+import TeamList from '../../components/TeamList.vue';
+export async function getStaticPaths() {
+  const news = await getCollection('news');
+  return news.map(news => ({
+    params: { slug: news.data.slug },
+    props: { news },
+  }));
+}
+
+const teamMembers = await getCollection('team');
+const authors = teamMembers.filter(member =>
+  news.data.authors.includes(member.data.slug)
+);
+
+const { news } = Astro.props;
+const { Content } = await render(news);
+const newsData = news.data;
+
+---
+
+<Layout 
+  title={newsData.title}
+  description={newsData.description}
+  image={newsData.featuredWideImage}
+  article={true}
+>
+  <section class="page-title">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
+          <div class="content-box clearfix">
+            <div class="title pull-left">
+              <h1>{newsData.title}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-details sidebar-page-container">
+    <div class="auto-container">
+      <div class="row clearfix">
+        <div class="content-side">
+          <div class="blog-details-content">
+            <div class="news-block-three">
+              <div class="inner-box">
+                <figure class="image-box" id="cstm2">
+                  {newsData.featuredWideImage ? (
+                    <img 
+                      src={newsData.featuredWideImage} 
+                      alt={`${newsData.title} - Featured image`}
+                      class="featured-image"
+                    />
+                  ) : (
+                    <img src="/assets/images/news/news-7.jpg" alt="" />
+                  )}
+                </figure>
+                <div class="lower-content">
+                  <h3>{newsData.title}</h3>
+                  <div class="text">
+                    <Content />
+                  </div>
+                  {authors.length > 0 && (
+                      <h3 class="project-member-list-heading">Who's working on it?</h3>
+                      <TeamList members={authors}/>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
