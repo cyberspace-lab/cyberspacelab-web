@@ -40,7 +40,7 @@ const projectData = props.data.data
 <style scoped>
 .image-box {
   width: 400px;
-  height: 300px;
+  height: 320px;
   overflow: hidden;
 }
 

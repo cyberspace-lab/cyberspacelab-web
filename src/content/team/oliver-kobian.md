@@ -16,6 +16,8 @@ social:
   facebook: https://www.facebook.com/oliver.kobian/
 ---
 
-I am a graduate student at the Faculty of Humanities, Charles University in Prague. My field of study is Theoretical and Experimental Psychology. I am currently in the first year. In my bachelor’s thesis I examined locomotion methods in virtual reality and how they affect navigation and spatial memory which is also my current project and theme for my diploma thesis. In my diploma thesis we plan to follow up on the previous thesis and expand our knowledge about locomotion methods and navigation in virtual reality in various types of environments.
+I am a fresh graduate of the master’s program Theoretical and experimental psychology at Faculty of Humanities in Prague. And I will be pursuing a doctorate in psychology.
 
-I also love playing video games which is where my passion for virtual reality comes from. Other than that I play curling competitively and with my team we are currently in the czech extraleague.
+In my previous studies I focused on locomotion methods in Virtual reality and how they affect navigation and spatial memory and also how the navigated environment can affect navigation and spatial memory. In my disertation I will study the transfer of knowledge from VR to reality and how immersion and presence can affect this transfer.
+
+I love playing video games which is where my passion for virtual reality comes from. Other than that I play curling competitively and with my team we are currently in the czech extraleague. In curling i am currently the head coach of a junior team. In this semestr I also teach social psychology at PVSPS.

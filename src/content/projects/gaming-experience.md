@@ -5,8 +5,8 @@ slug: gaming-experience
 date: 2020-05-13 12:46
 memberSlugs: ["viktorie-rackova"]
 description: Creating a video game questionnaire and investigating gaming experience on cognition
-featuredImage: /assets/images/projects/game-expirience-thumbnail.png
-featuredWideImage: /assets/images/projects/game-expirience-thumbnail.png
+featuredImage: /assets/images/projects/gaming-experience/thumbnail.png
+featuredWideImage: /assets/images/projects/gaming-experience/thumbnail.png
 draft: false
 isActive: true
 ---

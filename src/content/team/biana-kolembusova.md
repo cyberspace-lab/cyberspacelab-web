@@ -2,17 +2,13 @@
 title: Biana Kolembusova
 order: 10
 slug: "biana-kolembusova"
-role: draft
+role: active
 description: Undergraduate student
 education: ["Ongoing ..."]
 expertise: ["Comming soon!"]
 favoriteGames: ["Disco Elysium"]
 featuredImage: /assets/images/team/biana-k.jpg
 hobbies: [ "Listening to music", "Digital art", "Reading"]
-social:
-  twitter: https://twitter.com/hejtmy_
-  linkedin: https://www.linkedin.com/in/lukashejtmanek/
-  researchgate: https://www.researchgate.net/profile/Lukas-Hejtmanek
 ---
 
 I am a third-year bachelor’s student at the Faculty of Humanities, Charles University. I am currently working on my bachelor’s thesis, “Navigation in zero-g spaces while standing or laying down,” which focuses on the influence of body position on navigation in a virtual reality environment that simulates the lack of gravitational force on the International Space Station, with Lukáš Hejtmánek as my supervisor.

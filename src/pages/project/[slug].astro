@@ -51,13 +51,18 @@ console.log("there is ", projectMembers.length);
               <div class="inner-box">
                 <figure class="image-box" id="cstm2">
                   {projectData.featuredWideImage ? (
-                    <img 
-                      src={projectData.featuredWideImage} 
-                      alt={`${projectData.title} - Featured image`}
-                      class="featured-image"
-                    />
+                  <img 
+                    src={projectData.featuredWideImage} 
+                    alt={`${projectData.title} - Featured image`}
+                    class="featured-image"
+                    style="height: 240px; object-fit: cover; width: 100%;"
+                  />
                   ) : (
-                    <img src="/assets/images/news/news-7.jpg" alt="" />
+                  <img 
+                    src="/assets/images/news/news-7.jpg" 
+                    alt="" 
+                    style="height: 240px; object-fit: cover; width: 100%;"
+                  />
                   )}
                 </figure>
                 <div class="lower-content">
