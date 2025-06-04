@@ -36,6 +36,10 @@
                                     <li><a href="/project">Projects</a></li>
                                     <li><a href="/publication">Publications</a></li>
                                     <li><a href="/contact">Contact Us</a></li>
+                                    <li><a href="https://www.instagram.com/cyberspacelab">
+                                        <i class="fab fa-instagram"></i>
+                                        <span class="sr-only">Instagram</span></a>
+                                    </li>
                                 </ul>
                             </div>
                         </nav>

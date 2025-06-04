@@ -37,7 +37,7 @@ const props = defineProps({
       <div class="footer-bottom centred">
           <div class="auto-container">
               <div class="copyright">
-                  <p>Copyright &copy; 2024 CyberspaceLab. All rights reserved.</p>
+                  <p>Copyright &copy; 2025 CyberspaceLab. All rights reserved.</p>
               </div>
           </div>
       </div>
