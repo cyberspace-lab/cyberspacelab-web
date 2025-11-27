@@ -3,7 +3,7 @@ title: Pavel Srp
 slug: pavel-srp
 order: 4
 role: active
-description: Graduate student
+description: Ph.D. candidate
 education: ["Bachelor Liberal Arts and Humanities, 2023"]
 expertise: ["Programing", "Virtual reality", "Unity 3D", "Data science"]
 latestPapers: ["not yet"]

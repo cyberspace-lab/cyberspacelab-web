@@ -7,8 +7,7 @@ description: Undergraduate student
 education: ["Ongoing ..."]
 expertise: ["Comming soon!"]
 featuredImage: /assets/images/team/julia-u.jpg
-hobbies: ["Learning new skills (from languages to programming)",
-"Board games and movies", "Reading"]
+hobbies: ["Learning new skills (from languages to programming)", "Board games and movies", "Reading"]
 ---
 
 I am currently in my third year of the bachelor’s programme in Humanities and Social Sciences at the Faculty of Humanities, Charles University in Prague.

@@ -2,7 +2,7 @@
 title: Vendula Alexandrovičová
 order: 32
 slug: "vendula-alexandrovicova"
-role: active
+role: past
 description: Intern
 education: ["Ongoing ..."]
 expertise: ["Comming soon!"]
