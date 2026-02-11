@@ -5,13 +5,12 @@ const props = defineProps({
     required: true
   }
 });
-console.log(props.data.data);
 const projectData = props.data.data
 </script>
 <template>
   <a :href="`/project/${projectData.slug}`">
     <div class="project-block">
-      <div class="project-block-one wow fadeInUp" data-wow-delay="300ms"data-wow-duration="1500ms">
+      <div class="project-block-one wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
         <div class="inner-box">
           <div class="line-one"></div>
           <div class="line-two"></div>

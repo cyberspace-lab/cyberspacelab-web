@@ -56,7 +56,28 @@ defineProps({
   height: 60px;
   overflow: hidden;
   flex-shrink: 0;
+  border-radius: 50%;
 }
 
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
+.member-link:hover .member-info h4 {
+  color: var(--theme-color, #0d6efd);
+}
+
+.member-info h4 {
+  margin: 0 0 2px;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.member-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #777;
+}
 </style>

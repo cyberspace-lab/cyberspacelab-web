@@ -1,5 +1,4 @@
 ---
-template: team-member
 title: Veronika Sýkorová
 slug: veronika-sykorova
 order: 12
@@ -7,9 +6,8 @@ role: active
 description: Undergraduate student
 education: ["Ongoing"]
 expertise: ["Not afraid of numbers"]
-latestPapers: []
 favoriteGames: ["Night in the Woods", "Skyrim", "Elden Ring"]
-projectSlugs: [""]
+projectSlugs: []
 featuredImage: /assets/images/team/veronika-sykorova.jpg
 hobbies: ["Video games and Dungeons & Dragons", "Baking", "Reading and cat parenting"]
 ---

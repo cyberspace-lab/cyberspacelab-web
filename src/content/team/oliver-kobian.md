@@ -6,7 +6,6 @@ role: active
 description: Ph.D. candidate
 education: ["Theoretical and experimental psychology 2024", "Bachelor Liberal Arts and Humanities 2022"]
 expertise: ["Virtual reality", "Locomotion methods in VR"]
-latestPapers: [""]
 favoriteGames: ["Skyrim", "Civilization V", "Witcher 3"]
 projectSlugs: ["movement-types"]
 featuredImage: /assets/images/team/Oliver.jpg

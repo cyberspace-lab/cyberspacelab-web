@@ -5,10 +5,9 @@ order: 4
 role: active
 description: Ph.D. candidate
 education: ["Bachelor Liberal Arts and Humanities, 2023"]
-expertise: ["Programing", "Virtual reality", "Unity 3D", "Data science"]
-latestPapers: ["not yet"]
+expertise: ["Programming", "Virtual reality", "Unity 3D", "Data science"]
 favoriteGames: ["The Legend of Zelda: Breath of the Wild", "Rain World", "Outer Wilds", "Tunic"]
-projectSlugs: ["/spatial-audio-navigation"]
+projectSlugs: ["spatial-sound-navigation"]
 featuredImage: /assets/images/team/pavel.jpg
 hobbies: [
   "Playing video games", 

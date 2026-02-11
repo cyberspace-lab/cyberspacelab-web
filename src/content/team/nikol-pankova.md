@@ -9,7 +9,7 @@ projectSlugs: []
 favoriteGames: ["Last of Us", "Red Dead Redemption 2", "World of Warcraft"]
 featuredImage: /assets/images/team/nikol-pankova.jpg
 hobbies: ["Video games", "Reading"]
-----
+---
 
 Since high school I've been very interested in psychology and now I have the opportunity to get closer to it thanks to the Cyberspace lab. 
 

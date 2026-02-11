@@ -5,8 +5,9 @@ slug: "biana-kolembusova"
 role: active
 description: Undergraduate student
 education: ["Ongoing ..."]
-expertise: ["Comming soon!"]
+expertise: ["Coming soon!"]
 favoriteGames: ["Disco Elysium"]
+projectSlugs: ["space-psychology-zero-g"]
 featuredImage: /assets/images/team/biana-k.jpg
 hobbies: [ "Listening to music", "Digital art", "Reading"]
 ---

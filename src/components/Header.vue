@@ -5,7 +5,7 @@
                 <div class="top-inner clearfix">
                     <div class="top-left pull-left clearfix">
                         <div class="text" style="marginBottom:5px">
-                            <a href="mailto:research@cyberlabspace.com" style="fontSize:12px;color:#fff">research@cyberlabspace.com</a>
+                            <a href="mailto:research@cyberspacelab.cz" style="fontSize:12px;color:#fff">research@cyberspacelab.cz</a>
                         </div>
                     </div>
                 </div>

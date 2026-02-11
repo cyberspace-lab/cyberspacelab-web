@@ -19,7 +19,6 @@ const projectMembers = teamMembers.filter(member =>
 );
 const projectData = project.data;
 
-console.log("there is ", projectMembers.length);
 ---
 
 <Layout 
@@ -28,7 +27,7 @@ console.log("there is ", projectMembers.length);
   image={projectData.featuredWideImage}
   article={true}
 >
-  <section class="page-title">
+  <section class="page-title" style={projectData.featuredWideImage ? { backgroundImage: `url("${projectData.featuredWideImage}")` } : projectData.featuredImage ? { backgroundImage: `url("${projectData.featuredImage}")` } : {}}>
     <div class="auto-container">
       <div class="row clearfix">
         <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
@@ -72,7 +71,7 @@ console.log("there is ", projectMembers.length);
                   </div>
                   {projectMembers.length > 0 && (
                       <h3 class="project-member-list-heading">Who's working on it?</h3>
-                      <TeamList members={projectMembers} layout="grid" />
+                      <TeamList members={projectMembers} layout="sidebar" />
                   )}
                 </div>
               </div>

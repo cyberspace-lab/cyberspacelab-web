@@ -5,7 +5,8 @@ slug: "julia-urs"
 role: active
 description: Undergraduate student
 education: ["Ongoing ..."]
-expertise: ["Comming soon!"]
+expertise: ["Coming soon!"]
+projectSlugs: ["immersive-environment-education"]
 featuredImage: /assets/images/team/julia-u.jpg
 hobbies: ["Learning new skills (from languages to programming)", "Board games and movies", "Reading"]
 ---

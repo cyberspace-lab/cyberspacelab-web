@@ -5,7 +5,7 @@ slug: "vendula-alexandrovicova"
 role: past
 description: Intern
 education: ["Ongoing ..."]
-expertise: ["Comming soon!"]
+expertise: ["Coming soon!"]
 favoriteGames: ["Mass effect trilogy", "The last of us I", "Stray", "Sally face"]
 featuredImage: /assets/images/team/vendula-a.jpg
 hobbies: [ "discovering new indie horror games", "painting", "crafting jewelry"]

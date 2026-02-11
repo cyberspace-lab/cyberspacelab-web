@@ -1,6 +1,5 @@
 ---
-template: team-member
-title: Viktorie Račková 
+title: Viktorie Račková
 slug: viktorie-rackova
 order: 1
 role: active
@@ -8,7 +7,7 @@ description: Ph.D. candidate
 education: ["Theoretical and experimental psychology 2024", "Bachelor Liberal Arts and Humanities 2022"]
 expertise: ["Questionnaires", "Writing", "Video games"] 
 favoriteGames: ["Kingdom Come: Deliverance II", "Firewatch", "Red Dead Redemption 2"]
-projectSlugs: []
+projectSlugs: ["gaming-profiles", "gaming-experience"]
 featuredImage: /assets/images/team/viky.JPG
 hobbies: [ "Video games ", "Movies", "Squeezing reading into my schedule"]
 social:

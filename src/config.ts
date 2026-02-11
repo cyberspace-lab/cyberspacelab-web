@@ -17,7 +17,7 @@ export const siteConfig = {
   },
   contact: {
     address: "Kampus Hybernská, Praha",
-    email: "contact@example.com"
+    email: "research@cyberspacelab.cz"
   },
   analytics: {
     ga: "UA-XXXXXXXXX-X"

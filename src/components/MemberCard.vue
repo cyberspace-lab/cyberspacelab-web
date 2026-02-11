@@ -53,8 +53,8 @@ defineProps({
                 </a>
               </li>
             </ul>
-            <div class="link">
-              <a :href="`/team/${data.slug}`">
+            <div v-if="!data.data.social" class="link">
+              <a :href="`/team/${data.data.slug}`">
                 <i class="fas fa-link"></i>
               </a>
             </div>

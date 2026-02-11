@@ -15,7 +15,13 @@ export async function getStaticPaths() {
 
 // Get the member data using getEntry
 const { member } = Astro.props;
-const { Content } = await render(member); 
+const { Content } = await render(member);
+
+// Get projects this member is associated with
+const allProjects = await getCollection('projects', ({ data }) => !data.draft);
+const memberProjects = allProjects.filter(project =>
+  project.data.memberSlugs.includes(member.data.slug)
+);
 ---
 
 <Layout title={member.data.title}>
@@ -72,6 +78,14 @@ const { Content } = await render(member);
                     <span>Hobbies</span>
                     {member.data.hobbies.map(field => (
                       <div>{field}<br /></div>
+                    ))}
+                  </li>
+                )}
+                {memberProjects.length > 0 && (
+                  <li>
+                    <span>Projects</span>
+                    {memberProjects.map(project => (
+                      <div><a href={`/project/${project.data.slug}`}>{project.data.shortname}</a></div>
                     ))}
                   </li>
                 )}
