@@ -1,0 +1,18 @@
+---
+title: Impact of movement type on navigation by sound in VR
+shortname: Spatial sound navigation
+slug: spatial-sound-navigation
+date: 2022-01-01 12:00
+memberSlugs: ["pavel-srp"]
+description: How different methods of movement in VR affect our ability of navigate by sound
+isActive: true
+draft: false
+---
+
+In VR, navigation by sound can be a new and interesting new way to guide and navigate users through virtual environments. However, the impact of different movement types on navigation by sound has not been thoroughly studied.
+
+
+In order to test our hypothesis, we created a version of the Morris water maze, in which participants search for a hidden goal area while being surrounded by spatial audio from three different sources. Participants are required to memorize the location of the goal area in relation to the audio sources and then repeatedly locate it from different starting positions.
+
+
+We have successfully completed testing on 32 participants and the project is now in the stage of analyzing results, with preliminary results showing there was not as strong an impact by loss of proprioceptive information as expected.

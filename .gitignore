@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # Astro specific
 .astro/
+
+# Notion sync manifest
+scripts/.sync-manifest.json

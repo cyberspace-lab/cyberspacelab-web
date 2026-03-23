@@ -7,10 +7,11 @@ description: Intern
 education: ["Ongoing ..."]
 expertise: ["Coming soon!"]
 favoriteGames: ["Mass effect trilogy", "The last of us I", "Stray", "Sally face"]
-featuredImage: /assets/images/team/vendula-a.jpg
-hobbies: [ "discovering new indie horror games", "painting", "crafting jewelry"]
+featuredImage: /assets/images/team/vendula-alexandrovicova.jpg
+hobbies: ["discovering new indie horror games", "painting", "crafting jewelry"]
 ---
 
-I originally studied graphic design and illustration, but over time I realized that psychology is the field where I truly belong. I’m especially interested in personality assessment and how personality traits relate to video game preferences and behavior. I’m also interested in how gaming can affect empathy and other cognitive and emotional processes.
+I originally studied graphic design and illustration, but over time I realized that psychology is the field where I truly belong. I'm especially interested in personality assessment and how personality traits relate to video game preferences and behavior. I'm also interested in how gaming can affect empathy and other cognitive and emotional processes.
 
-I’m currently a second-year student at the Faculty of Humanities and assisting with research as an intern.
+
+I'm currently a second-year student at the Faculty of Humanities and assisting with research as an intern.
