@@ -6,7 +6,7 @@ role: active
 description: Undergraduate student
 education: ["Ongoing ..."]
 expertise: ["Coming soon!"]
-favoriteGames: ["Hollow Knight: Silksong", "Mewgenics", "Teamfight Tactics", "Bloons TD 6"]
+favoriteGames: ["Hollow Knight: Silksong", "Mewgenics", "Teamfight Tactics", "Bloons TD 6", "CookieRun: Kingdom"]
 projectSlugs: ["Movement in VR"]
 featuredImage: /assets/images/team/lukas.JPG
 hobbies: ["Digital art"]
