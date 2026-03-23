@@ -5,6 +5,7 @@ slug: gaming-experience
 date: 2020-05-13 12:00
 memberSlugs: ["viktorie-rackova"]
 description: Investigating gaming experience on cognition
+featuredImage: /assets/images/projects/gaming-experience/thumbnail.png
 isActive: true
 draft: false
 ---

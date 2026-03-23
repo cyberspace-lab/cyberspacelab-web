@@ -5,6 +5,7 @@ slug: space-psychology-zero-g
 date: 2022-05-13 12:00
 memberSlugs: ["lukas-hejtmanek", "biana-kolembusova"]
 description: We are trying to find how differnt types of movement methods in VR affect our ability to navigate
+featuredImage: /assets/images/projects/space-psychology-zero-g/thumbnail.png
 isActive: true
 draft: false
 ---

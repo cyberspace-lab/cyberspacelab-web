@@ -5,6 +5,7 @@ slug: movement-types
 date: 2022-05-13 12:00
 memberSlugs: ["oliver-kobian"]
 description: We are trying to find how differnt types of movement methods in VR affect our ability to navigate
+featuredImage: /assets/images/projects/movement-types/thumbnail.png
 isActive: true
 draft: false
 ---

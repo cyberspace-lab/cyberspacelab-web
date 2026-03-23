@@ -23,7 +23,28 @@ npm run preview      # Preview production build locally
 
 # Astro CLI
 npm run astro        # Access Astro commands
+
+# Notion Sync (requires .env with NOTION_API_KEY)
+npm run sync                  # Sync all collections from Notion
+npm run sync:team             # Sync only team members
+npm run sync:projects         # Sync only projects
+npm run sync:publications     # Sync only publications
 ```
+
+## Notion Content Sync
+
+Content for team, projects, and publications is managed in Notion and synced to markdown files via `npm run sync`. The sync script fetches from three Notion databases under the "Web information" page, downloads images, and generates `.md` files matching the Astro Content Collections schemas.
+
+**Setup**: Copy `.env.example` to `.env` and add your `NOTION_API_KEY`. The Notion integration must have access to the three databases.
+
+**Workflow**: Edit content in Notion → run `npm run sync` → review git diff → commit → deploy.
+
+**Notion databases**:
+- Team DB: `2a460768e59080b48a5fec76d9714e56`
+- Projects DB: `32c60768e59080f2a214c93dcfb9f190`
+- Publications DB: `2d9897a7996a44d494bfbc52b042d7df`
+
+News articles remain as hand-written markdown in `src/content/news/`.
 
 ## Architecture
 

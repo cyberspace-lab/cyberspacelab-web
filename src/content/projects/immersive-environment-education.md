@@ -5,6 +5,7 @@ slug: immersive-environment-education
 date: 2022-05-13 12:00
 memberSlugs: ["julia-urs"]
 description: We are trying to find how to best use immersive technologies to communicate climate change and environmental issues.
+featuredImage: /assets/images/projects/immersive-environment-education/thumbnail.png
 isActive: true
 draft: false
 ---

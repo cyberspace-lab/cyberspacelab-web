@@ -5,6 +5,7 @@ slug: spatial-sound-navigation
 date: 2022-01-01 12:00
 memberSlugs: ["pavel-srp"]
 description: How different methods of movement in VR affect our ability of navigate by sound
+featuredImage: /assets/images/projects/spatial-sound-navigation/thumbnail.png
 isActive: true
 draft: false
 ---
