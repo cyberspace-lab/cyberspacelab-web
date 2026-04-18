@@ -3,7 +3,7 @@ title: Viktorie Račková
 order: 1
 slug: "viktorie-rackova"
 role: active
-description: Ph.D. candidate
+level: Ph.D. candidate
 education: ["Theoretical and experimental psychology 2024", "Bachelor Liberal Arts and Humanities 2022"]
 expertise: ["Questionnaires", "Writing", "Video games"]
 favoriteGames: ["Kingdom Come: Deliverance II", "Firewatch", "Red Dead Redemption 2"]
@@ -11,7 +11,7 @@ projectSlugs: ["gaming-profiles", "gaming-experience"]
 featuredImage: /assets/images/team/viktorie-rackova.jpg
 hobbies: ["Video games", "Movies", "Squeezing reading into my schedule"]
 social:
-  facebook: https://www.facebook.com/viky.rackova/
+  facebook: "https://www.facebook.com/viky.rackova/"
 ---
 
 I recently completed my master's degree in Theoretical and Research Psychology at the Faculty of Humanities, Charles University in Prague. My research focuses on the gaming experience and its influence on human behavior and cognition.

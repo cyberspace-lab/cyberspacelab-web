@@ -1,16 +1,16 @@
 ---
 title: Klára Růžičková
-order: 11
+order: 99
 slug: "klara-ruzickova"
 role: past
-description: Undergraduate student
+level: Undergraduate student
 education: ["Working on it :)"]
 expertise: ["Virtual reality"]
 favoriteGames: ["Pokemon Brilliant Diamond", "Teamfight Tactics", "World of Warcraft"]
 featuredImage: /assets/images/team/klara-ruzickova.jpg
 hobbies: ["Video games and Board games", "Trying new foods", "Learning Korean"]
 social:
-  facebook: https://www.facebook.com/klara.k.ruzickova/
+  facebook: "https://www.facebook.com/klara.k.ruzickova/"
 ---
 
 I am currently pursuing my Bachelor's degree in Humanities at Charles University. My love for psychology developed during my high school days where I studied Social Welfare and I found myself gravitating towards the subject. My passion for the field has only grown stronger as I continue to delve deeper into the intricacies of the human mind.

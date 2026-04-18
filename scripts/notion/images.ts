@@ -3,16 +3,23 @@ import path from "path";
 import https from "https";
 import http from "http";
 import { fileURLToPath } from "url";
+import sharp from "sharp";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, "../..");
 const PUBLIC_DIR = path.join(ROOT_DIR, "public");
 const MANIFEST_PATH = path.join(ROOT_DIR, "scripts", ".sync-manifest.json");
 
+const MAX_WIDTH = 1600;
+const JPEG_QUALITY = 80;
+const PNG_QUALITY = 80;
+const WEBP_QUALITY = 80;
+
 interface ManifestEntry {
   notionPageId: string;
   localPath: string;
   lastEdited: string;
+  optimized?: boolean;
   hash?: string;
 }
 
@@ -89,6 +96,46 @@ function getExtensionFromUrl(url: string): string {
 }
 
 /**
+ * Optimize an image in-place using sharp.
+ * Resizes if wider than MAX_WIDTH and compresses based on format.
+ */
+async function optimizeImage(filePath: string): Promise<void> {
+  const ext = path.extname(filePath).toLowerCase();
+  if ([".svg", ".gif"].includes(ext)) return;
+
+  const buffer = fs.readFileSync(filePath);
+  const meta = await sharp(buffer).metadata();
+
+  let pipeline = sharp(buffer);
+  if (meta.width && meta.width > MAX_WIDTH) {
+    pipeline = pipeline.resize(MAX_WIDTH);
+  }
+
+  // sharp can't overwrite input directly, write to temp then rename
+  const tmpPath = filePath + ".tmp";
+
+  if ([".jpg", ".jpeg"].includes(ext)) {
+    await pipeline.jpeg({ quality: JPEG_QUALITY, mozjpeg: true }).toFile(tmpPath);
+  } else if (ext === ".png") {
+    await pipeline.png({ quality: PNG_QUALITY }).toFile(tmpPath);
+  } else if (ext === ".webp") {
+    await pipeline.webp({ quality: WEBP_QUALITY }).toFile(tmpPath);
+  } else if (ext === ".avif") {
+    await pipeline.avif({ quality: WEBP_QUALITY }).toFile(tmpPath);
+  } else {
+    // Unknown raster format — just resize if needed
+    await pipeline.toFile(tmpPath);
+  }
+
+  const originalSize = buffer.length;
+  const optimizedSize = fs.statSync(tmpPath).size;
+  fs.renameSync(tmpPath, filePath);
+
+  const saved = ((1 - optimizedSize / originalSize) * 100).toFixed(1);
+  console.log(`    Optimized: ${(originalSize / 1024).toFixed(0)}KB → ${(optimizedSize / 1024).toFixed(0)}KB (${saved}% smaller)`);
+}
+
+/**
  * Download a Notion image and save to the public assets directory.
  * Returns the path to use in frontmatter (relative to site root).
  */
@@ -103,16 +150,6 @@ export async function downloadNotionImage(
   const m = loadManifest();
   const key = `${category}/${slug}/${filename}`;
 
-  // Check manifest for cached version
-  const existing = m.images[key];
-  if (existing && existing.lastEdited === lastEdited) {
-    // Check if local file still exists
-    const fullPath = path.join(PUBLIC_DIR, existing.localPath);
-    if (fs.existsSync(fullPath)) {
-      return existing.localPath;
-    }
-  }
-
   const ext = getExtensionFromUrl(url);
   const localFilename = filename.includes(".") ? filename : `${filename}${ext}`;
 
@@ -126,14 +163,29 @@ export async function downloadNotionImage(
   }
 
   const fullPath = path.join(PUBLIC_DIR, localPath);
+
+  // Check manifest for cached version
+  const existing = m.images[key];
+  if (existing && existing.lastEdited === lastEdited && fs.existsSync(fullPath)) {
+    // File is cached but may not be optimized yet
+    if (!existing.optimized) {
+      console.log(`  Optimizing existing image: ${localPath}`);
+      await optimizeImage(fullPath);
+      existing.optimized = true;
+    }
+    return existing.localPath;
+  }
+
   console.log(`  Downloading image: ${localPath}`);
   await downloadFile(url, fullPath);
+  await optimizeImage(fullPath);
 
   // Update manifest
   m.images[key] = {
     notionPageId: pageId,
     localPath,
     lastEdited,
+    optimized: true,
   };
 
   return localPath;
@@ -164,6 +216,7 @@ export async function downloadInlineImage(
   fs.mkdirSync(path.dirname(fullPath), { recursive: true });
   console.log(`  Downloading inline image: ${localPath}`);
   await downloadFile(url, fullPath);
+  await optimizeImage(fullPath);
 
   return localPath;
 }

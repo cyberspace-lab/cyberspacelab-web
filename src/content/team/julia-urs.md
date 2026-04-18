@@ -1,10 +1,10 @@
 ---
 title: Julia Urs
-order: 12
+order: 22
 slug: "julia-urs"
 role: active
-description: Undergraduate student
-education: ["Ongoing ..."]
+level: Undergraduate student
+education: ["Still loading …"]
 expertise: ["Coming soon!"]
 projectSlugs: ["immersive-environment-education"]
 featuredImage: /assets/images/team/julia-urs.jpg

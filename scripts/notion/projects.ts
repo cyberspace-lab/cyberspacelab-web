@@ -7,6 +7,7 @@ import { downloadNotionImage } from "./images.js";
 import {
   pageToMarkdown,
   richTextToPlain,
+  multiSelectToArray,
   selectToString,
   checkboxValue,
   dateToString,
@@ -40,14 +41,7 @@ async function processProjectPage(
   const draft = checkboxValue(props.draft?.checkbox);
   const isActive = checkboxValue(props.IsActive?.checkbox);
 
-  // memberSlugs: stored as comma-separated text
-  const memberSlugsRaw = richTextToPlain(props.memberSlugs?.rich_text);
-  const memberSlugs = memberSlugsRaw
-    ? memberSlugsRaw
-        .split(",")
-        .map((s: string) => s.trim())
-        .filter((s: string) => s.length > 0)
-    : [];
+  const memberSlugs = multiSelectToArray(props.memberSlugs?.multi_select);
 
   // Featured images
   let featuredImage: string | null = null;

@@ -3,7 +3,7 @@ title: Lukáš Hejtmánek
 order: 0
 slug: "lukas-hejtmanek"
 role: active
-description: Principal investigator
+level: Principal investigator
 education: ["MS Psychology, 2014", "Ph.D. Neuroscience, 2020"]
 expertise: ["Virtual reality", "Unity 3D", "Unreal Engine", "Data science"]
 favoriteGames: ["Witcher 3", "Bioshock: Infinite", "Cyberpunk 2077"]
@@ -11,9 +11,9 @@ projectSlugs: ["digital-forest-bathing", "movement-types", "spatial-sound-naviga
 featuredImage: /assets/images/team/lukas-hejtmanek.jpg
 hobbies: ["Preventing children accidents at home", "Installing and uninstalling new software", "Boardgames and video games"]
 social:
-  twitter: https://twitter.com/hejtmy_
-  linkedin: https://www.linkedin.com/in/lukashejtmanek/
-  researchgate: https://www.researchgate.net/profile/Lukas-Hejtmanek
+  twitter: "https://twitter.com/hejtmy_"
+  linkedin: "https://www.linkedin.com/in/lukashejtmanek/"
+  researchgate: "https://www.researchgate.net/profile/Lukas-Hejtmanek"
 ---
 
 I am currently the head of the department of psychology and life sciences at the Faculty of Humanities, Charles University in Prague and a researcher at the Institute of Psychology, Academy of Sciences of the Czech Republic. I am an avid fan of video games as a medium for psychological research and a true believer in virtual reality.

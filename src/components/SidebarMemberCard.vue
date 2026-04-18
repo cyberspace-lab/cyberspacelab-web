@@ -28,7 +28,7 @@ defineProps({
         </div>
         <div class="member-info">
           <h4>{{ data.data.title }}</h4>
-          <p>{{ data.data.description }}</p>
+          <p>{{ data.data.level }}</p>
         </div>
       </div>
     </a>

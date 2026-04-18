@@ -61,7 +61,7 @@ defineProps({
           </div>
           <div class="lower-content">
             <h3>{{ data.data.title }}</h3>
-            <span class="designation">{{ data.data.description }}</span>
+            <span class="designation">{{ data.data.level }}</span>
           </div>
         </div>
       </div>

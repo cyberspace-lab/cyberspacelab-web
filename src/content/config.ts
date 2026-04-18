@@ -16,7 +16,7 @@ export const collections = {
       favoriteGames: z.array(z.string()).optional(),
       projectSlugs: z.array(z.string()).optional(),
       featuredImage: z.string().optional(),
-      description: z.string(),
+      level: z.string(),
       social: z.object({
         twitter: z.string().optional(),
         facebook: z.string().optional(),

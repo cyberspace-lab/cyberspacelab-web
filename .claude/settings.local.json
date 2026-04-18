@@ -5,7 +5,8 @@
       "mcp__98dbef7d-c7c8-4703-bdc1-8424b4078eb2__notion-update-data-source",
       "mcp__98dbef7d-c7c8-4703-bdc1-8424b4078eb2__notion-update-page",
       "Bash(npx tsx:*)",
-      "Bash(echo \"EXIT: $?\")"
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(node -e 'const fs=require\\('\\\\''fs'\\\\''\\); const yaml=require\\('\\\\''js-yaml'\\\\''\\); const c=fs.readFileSync\\('\\\\''__TRACKED_VAR__'\\\\'','\\\\''utf8'\\\\''\\); const m=c.match\\(/^---\\\\n\\([\\\\s\\\\S]*?\\)\\\\n---/\\); if\\(m\\) try{yaml.load\\(m[1]\\)}catch\\(e\\){console.log\\('\\\\''__TRACKED_VAR__:'\\\\'',e.message\\)}')"
     ]
   }
 }

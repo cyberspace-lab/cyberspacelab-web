@@ -1,9 +1,9 @@
 ---
 title: Nikol Pánková
-order: 23
+order: 99
 slug: "nikol-pankova"
 role: past
-description: Undergraduate student
+level: Undergraduate student
 education: ["Still loading …"]
 favoriteGames: ["Last of Us", "Red Dead Redemption 2", "World of Warcraft"]
 featuredImage: /assets/images/team/nikol-pankova.jpg

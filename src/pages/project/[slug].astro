@@ -49,17 +49,17 @@ const projectData = project.data;
             <div class="news-block-three">
               <div class="inner-box">
                 <figure class="image-box" id="cstm2">
-                  {projectData.featuredWideImage ? (
-                  <img 
-                    src={projectData.featuredWideImage} 
+                  {(projectData.featuredWideImage || projectData.featuredImage) ? (
+                  <img
+                    src={projectData.featuredWideImage || projectData.featuredImage}
                     alt={`${projectData.title} - Featured image`}
                     class="featured-image"
                     style="height: 240px; object-fit: cover; width: 100%;"
                   />
                   ) : (
-                  <img 
-                    src="/assets/images/news/news-7.jpg" 
-                    alt="" 
+                  <img
+                    src="/assets/images/news/news-7.jpg"
+                    alt=""
                     style="height: 240px; object-fit: cover; width: 100%;"
                   />
                   )}

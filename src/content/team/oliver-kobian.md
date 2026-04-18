@@ -3,15 +3,13 @@ title: Oliver Kobián
 order: 3
 slug: "oliver-kobian"
 role: active
-description: Ph.D. candidate
+level: Ph.D. candidate
 education: ["Theoretical and experimental psychology 2024", "Bachelor Liberal Arts and Humanities 2022"]
 expertise: ["Virtual reality", "Locomotion methods in VR"]
 favoriteGames: ["Skyrim", "Civilization V", "Witcher 3"]
 projectSlugs: ["movement-types"]
 featuredImage: /assets/images/team/oliver-kobian.jpg
 hobbies: ["Curling", "Video games", "Reading"]
-social:
-  facebook: https://www.facebook.com/oliver.kobian/
 ---
 
 I am currently in my first year at the Ph.D. program of General Anthropology at the Faculty of Humanities, Charles University. My dissertation is titled "Presence and immersion in virtual environments and how they influence the transfer of knowledge and skills into reality.”

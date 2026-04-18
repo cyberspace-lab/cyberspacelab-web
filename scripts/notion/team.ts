@@ -36,7 +36,7 @@ async function processTeamPage(page: PageObjectResponse): Promise<TeamMember> {
   const title = richTextToPlain(props.title?.title);
   const order = numberValue(props.order?.number);
   const role = selectToString(props.role?.select);
-  const description = richTextToPlain(props.description?.rich_text);
+  const level = selectToString(props.level?.select);
   const education = richTextToArray(props.education?.rich_text);
   const hobbies = richTextToArray(props.hobbies?.rich_text);
   const expertise = multiSelectToArray(props.expertise?.multi_select);
@@ -80,7 +80,7 @@ async function processTeamPage(page: PageObjectResponse): Promise<TeamMember> {
     order,
     slug,
     role,
-    description,
+    level,
     education,
     expertise,
     hobbies,

@@ -1,10 +1,11 @@
 ---
 title: Magdalena Jonáková
-order: 21
+order: 11
 slug: "magdalena-jonakova"
 role: active
-description: Undergraduate student
-education: ["Still loading …"]
+level: Graduate student
+education: ["Bachelor Liberal Arts and Humanities, 2025"]
+expertise: ["Virtual reality", "Not afraid of numbers"]
 favoriteGames: ["Genshin Impact", "Hades", "Far Cry Primal", "GRID"]
 featuredImage: /assets/images/team/magdalena-jonakova.jpg
 hobbies: ["Video games", "Formula 1", "Sports & fitness", "Pet parenting"]

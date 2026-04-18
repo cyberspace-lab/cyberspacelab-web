@@ -1,7 +1,7 @@
 ---
 title: CyberspaceLab
 subtitle: Research Group
-institution: ["Faculty of humanities, Charles University", "Institute of Psychology, Czech Academy of Sciences"]
+institution: ["Faculty of Humanities, Charles University", "Institute of Psychology, Czech Academy of Sciences"]
 description: "Our research group focuses on spatial navigation and virtual reality! We are a team of people from the field of cognitive psychology, neuroscience, and computer science, dedicated to exploring how humans navigate and interact with virtual environments.
 Our research combines cutting-edge technology with rigorous scientific methodology to understand how virtual reality can be used to enhance spatial learning and cognitive performance."
 faq: [

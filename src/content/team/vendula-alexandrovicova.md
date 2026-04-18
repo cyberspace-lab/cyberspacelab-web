@@ -1,9 +1,9 @@
 ---
 title: Vendula Alexandrovičová
-order: 32
+order: 99
 slug: "vendula-alexandrovicova"
 role: past
-description: Intern
+level: Intern
 education: ["Ongoing ..."]
 expertise: ["Coming soon!"]
 favoriteGames: ["Mass effect trilogy", "The last of us I", "Stray", "Sally face"]

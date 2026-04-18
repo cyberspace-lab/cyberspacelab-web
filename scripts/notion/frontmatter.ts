@@ -45,7 +45,7 @@ export function serializeTeamFrontmatter(data: {
   order: number;
   slug: string;
   role: string;
-  description: string;
+  level: string;
   education: string[];
   expertise: string[];
   hobbies: string[];
@@ -58,8 +58,8 @@ export function serializeTeamFrontmatter(data: {
   fm += `title: ${yamlString(data.title)}\n`;
   fm += `order: ${data.order}\n`;
   fm += `slug: "${data.slug}"\n`;
-  fm += `role: ${data.role}\n`;
-  fm += `description: ${yamlString(data.description)}\n`;
+  fm += `role: ${yamlString(data.role)}\n`;
+  fm += `level: ${yamlString(data.level)}\n`;
   fm += `education: ${yamlStringArray(data.education)}\n`;
   if (data.expertise.length > 0) {
     fm += `expertise: ${yamlStringArray(data.expertise)}\n`;
@@ -83,7 +83,7 @@ export function serializeTeamFrontmatter(data: {
   if (socialEntries.length > 0) {
     fm += "social:\n";
     for (const [key, value] of socialEntries) {
-      fm += `  ${key}: ${value}\n`;
+      fm += `  ${key}: ${yamlString(value!)}\n`;
     }
   }
   fm += "---\n";

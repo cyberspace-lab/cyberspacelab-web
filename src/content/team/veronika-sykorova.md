@@ -1,10 +1,10 @@
 ---
 title: Veronika Sýkorová
-order: 12
+order: 22
 slug: "veronika-sykorova"
 role: active
-description: Undergraduate student
-education: ["Ongoing"]
+level: Undergraduate student
+education: ["Still loading …"]
 expertise: ["Not afraid of numbers"]
 favoriteGames: ["Night in the Woods", "Skyrim", "Elden Ring"]
 featuredImage: /assets/images/team/veronika-sykorova.jpg

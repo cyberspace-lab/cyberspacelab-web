@@ -3,7 +3,7 @@ export interface TeamMember {
   order: number;
   slug: string;
   role: string;
-  description: string;
+  level: string;
   education: string[];
   expertise: string[];
   hobbies: string[];
