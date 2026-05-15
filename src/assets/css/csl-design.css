@@ -230,7 +230,7 @@ body::after {
 
 .csl-display {
   font-family: var(--csl-font-display);
-  font-size: clamp(56px, 11vw, 132px);
+  font-size: clamp(36px, 11vw, 132px);
   line-height: 0.92;
   letter-spacing: 0.02em;
 }
@@ -535,6 +535,11 @@ body::after {
 .csl-hero-title {
   margin: 12px 0 24px;
   display: flex; flex-direction: column; align-items: center; gap: 4px;
+  max-width: 100%;
+}
+.csl-hero-title .csl-display-grad {
+  display: block;
+  max-width: 100%;
 }
 .csl-hero-sub {
   font-family: var(--csl-font-display);
@@ -562,6 +567,15 @@ body::after {
   line-height: 1.55;
 }
 .csl-hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 420px) {
+  .csl-hero-title {
+    letter-spacing: 0;
+  }
+  .csl-hero-sub {
+    letter-spacing: 0.36em;
+  }
+}
 
 /* ============================================================
    HEADER
@@ -679,8 +693,6 @@ body::after {
   background: var(--csl-deep);
   border: 1px solid var(--csl-line);
   display: block;
-  text-decoration: none;
-  cursor: pointer;
   transition: transform var(--csl-dur-2) var(--csl-ease), box-shadow var(--csl-dur-2) var(--csl-ease), border-color var(--csl-dur-2) var(--csl-ease);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
 }
@@ -691,6 +703,12 @@ body::after {
 }
 [data-theme="light"] .csl-member-card:hover {
   box-shadow: var(--csl-glow-cyan), 0 8px 24px rgba(20,8,46,0.08);
+}
+
+.csl-member-card-inner {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .csl-member-portrait {
@@ -728,7 +746,7 @@ body::after {
   background: repeating-linear-gradient(0deg, rgba(140,0,212,0.04) 0 1px, transparent 1px 3px);
 }
 
-.csl-member-body { padding: 18px 18px 22px; }
+.csl-member-body { padding: 18px 18px 10px; }
 .csl-member-body h3 {
   margin: 0;
   font-family: var(--csl-font-heading);
@@ -745,7 +763,7 @@ body::after {
   color: var(--csl-cyan);
 }
 .csl-member-tags { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
-.csl-member-socials { display: flex; gap: 10px; margin-top: 10px; }
+.csl-member-socials { display: flex; gap: 10px; padding: 0 18px 18px; }
 .csl-member-social-link {
   color: var(--csl-fg-3);
   text-decoration: none;

@@ -38,7 +38,7 @@ const alumni = teamMembers
       </div>
       <div class="csl-grid-4">
         {active.map((member: any) => (
-          <MemberCard data={member} client:visible />
+          <MemberCard data={member} />
         ))}
       </div>
     </div>
@@ -57,7 +57,7 @@ const alumni = teamMembers
         </div>
         <div class="csl-grid-4">
           {alumni.map((member: any) => (
-            <MemberCard data={member} client:visible />
+            <MemberCard data={member} />
           ))}
         </div>
       </div>

@@ -29,3 +29,5 @@ pnpm-debug.log*
 
 # Notion sync manifest
 scripts/.sync-manifest.json
+
+.playwright-mcp/
