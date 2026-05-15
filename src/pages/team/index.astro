@@ -1,32 +1,67 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import TeamList from '../../components/TeamList.vue';
+import MemberCard from '../../components/MemberCard.vue';
 
-// Get all team members from the collection and sort by order
 const teamMembers = await getCollection('team');
-
-const sortedMembers = teamMembers
-  .filter((member) => member.data.role == 'active')
-  .sort((a, b) => a.data.order - b.data.order);
+const active = teamMembers
+  .filter((m: any) => m.data.role === 'active')
+  .sort((a: any, b: any) => a.data.order - b.data.order);
+const alumni = teamMembers
+  .filter((m: any) => m.data.role !== 'active')
+  .sort((a: any, b: any) => a.data.order - b.data.order);
 ---
 
-<Layout title="Team">
-  <section class="page-title" style="background-image: url('/assets/images/background/prague_ominous.png')">
-    <div class="auto-container">
-      <div class="row clearfix">
-        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
-          <div class="content-box clearfix">
-            <div class="title pull-left">
-              <h1>Lab members</h1>
-            </div>
-          </div>
+<Layout title="Team · CyberspaceLab">
+
+  <!-- Roster header -->
+  <div class="csl-page-hero" style="background-image: url('/assets/images/background/prague_ominous.png'); background-size: cover; background-position: center;">
+    <div class="csl-page-hero-bg" style="background: linear-gradient(180deg, rgba(5,1,15,0.45) 0%, rgba(5,1,15,0.82) 100%);"></div>
+    <div class="csl-container csl-page-hero-inner">
+      <div class="csl-eyebrow" style="margin-bottom: 10px;">// Roster</div>
+      <h1 style="font-family: var(--csl-font-heading); font-size: clamp(40px, 6vw, 72px); margin: 0 0 12px; color: var(--csl-fg-1);">The Team</h1>
+      <span style="font-family: var(--csl-font-mono); font-size: 13px; letter-spacing: 0.16em; color: var(--csl-cyan);">
+        {active.length} ACTIVE · {alumni.length} ALUMNI
+      </span>
+    </div>
+  </div>
+
+  <!-- Active members -->
+  <section class="csl-section">
+    <div class="csl-container">
+      <div class="csl-section-head">
+        <div class="csl-eyebrow" style="margin-bottom: 12px;">// Current members</div>
+        <div class="csl-section-title">
+          <h2>Active researchers</h2>
+          <div class="csl-bar"></div>
         </div>
+      </div>
+      <div class="csl-grid-4">
+        {active.map((member: any) => (
+          <MemberCard data={member} client:visible />
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="team-section team-page-section">
-    <TeamList members={sortedMembers}/>
-  </section>
+  <!-- Alumni -->
+  {alumni.length > 0 && (
+    <section class="csl-section alt">
+      <div class="csl-container">
+        <div class="csl-section-head">
+          <div class="csl-eyebrow" style="margin-bottom: 12px;">// Alumni</div>
+          <div class="csl-section-title">
+            <h2>Former members</h2>
+            <div class="csl-bar"></div>
+          </div>
+        </div>
+        <div class="csl-grid-4">
+          {alumni.map((member: any) => (
+            <MemberCard data={member} client:visible />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
 </Layout>

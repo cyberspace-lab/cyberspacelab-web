@@ -1,65 +1,34 @@
 <script setup>
 const props = defineProps({
-  data: {
-    type: Object,
-    required: true
-  }
+  data: { type: Object, required: true }
 });
-const projectData = props.data.data
+const d = props.data.data;
 </script>
+
 <template>
-  <a :href="`/project/${projectData.slug}`">
-    <div class="project-block">
-      <div class="project-block-one wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-        <div class="inner-box">
-          <div class="line-one"></div>
-          <div class="line-two"></div>
-          <figure class="image-box">
-            <img 
-              v-if="projectData.featuredImage"
-              :src="projectData.featuredImage"
-              :alt="`${projectData.title} - Featured image`"
-              className="featured-image"
-            />
-            <img 
-              v-else
-              src="assets/images/news/news-7.jpg"
-              alt=""
-            />
-          </figure>
-          <div class="content-box" id="cstm">
-            <h3>{{projectData.shortname}}</h3>
-          </div>
-        </div>
+  <a :href="`/project/${d.slug}`" class="csl-project-card">
+    <div class="csl-project-img">
+      <img
+        v-if="d.featuredImage"
+        :src="d.featuredImage"
+        :alt="d.title"
+      />
+      <img
+        v-else
+        src="/assets/images/background/tron_prague_wide.png"
+        alt=""
+      />
+      <div class="csl-project-img-tint" />
+    </div>
+
+    <div class="csl-project-body">
+      <div class="csl-project-tags">
+        <span class="csl-tag" :class="d.isActive ? 'cyan' : 'violet'">
+          {{ d.isActive ? 'ACTIVE' : 'COMPLETED' }}
+        </span>
       </div>
+      <h3>{{ d.shortname || d.title }}</h3>
+      <p v-if="d.description">{{ d.description }}</p>
     </div>
   </a>
 </template>
-
-<style scoped>
-.image-box {
-  width: 400px;
-  height: 320px;
-  overflow: hidden;
-}
-
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.project-block {
-  max-width: 400px;
-}
-
-.project-block-one {
-  height: 100%;
-}
-
-.inner-box {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-</style>

@@ -1,67 +1,60 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import * as contact from '../content/contact.md';
-import {Content as ContactContent} from '../content/contact.md';
-import { render } from 'astro:content';
+import { Content as ContactContent } from '../content/contact.md';
 ---
 
-<Layout 
-  title={contact.frontmatter.title} 
-  description={`${contact.frontmatter.title} - CyberspaceLab`}
+<Layout
+  title={contact.frontmatter.title + ' · CyberspaceLab'}
+  description={`${contact.frontmatter.title} — CyberspaceLab`}
 >
-  <section class="page-title" style="background-image: url('/assets/images/banner/banner.png')">
-    <div class="auto-container">
-      <div class="row clearfix">
-        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
-          <div class="content-box clearfix">
-            <div class="title pull-left">
-              <h1>Contact Us</h1>
+
+  <!-- Page hero -->
+  <div class="csl-page-hero">
+    <div class="csl-page-hero-bg"></div>
+    <div class="csl-container csl-page-hero-inner">
+      <div class="csl-eyebrow" style="margin-bottom: 10px;">// Get in touch</div>
+      <h1 style="font-family: var(--csl-font-heading); font-size: clamp(40px, 6vw, 72px); margin: 0; color: var(--csl-fg-1);">Contact us</h1>
+    </div>
+  </div>
+
+  <section class="csl-section">
+    <div class="csl-container">
+      <div class="csl-contact-grid">
+
+        <!-- Body content (for students / general) -->
+        <div class="csl-prose" style="max-width: none;">
+          <ContactContent />
+        </div>
+
+        <!-- Info panel -->
+        <aside class="csl-contact-info">
+          <div>
+            <h4>Email</h4>
+            <p><a href={`mailto:${contact.frontmatter.email}`} style="color: var(--csl-cyan); text-decoration: none;">{contact.frontmatter.email}</a></p>
+          </div>
+          <div>
+            <h4>Address</h4>
+            <p style="font-size: 15px; color: var(--csl-fg-2);">{contact.frontmatter.address}</p>
+          </div>
+          <div>
+            <h4>Social</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+              {contact.frontmatter.social?.twitter && (
+                <a href={contact.frontmatter.social.twitter} class="csl-footer-link" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+              )}
+              {contact.frontmatter.social?.instagram && (
+                <a href={contact.frontmatter.social.instagram} class="csl-footer-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+              )}
+              {contact.frontmatter.social?.linkedin && (
+                <a href={contact.frontmatter.social.linkedin} class="csl-footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              )}
             </div>
           </div>
-        </div>
+        </aside>
+
       </div>
     </div>
   </section>
 
-  <section class="contact-section">
-    <section class="details">
-      <div class="auto-container">
-        <div class="research-details-content">
-          <div class="upper-box">
-            <div class="text">
-              <ContactContent />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="auto-container">
-      <div class="row clearfix">
-        <div class="info-column">
-          <div class="info-inner">
-            <div class="sec-title left">
-              <h3>Contact information</h3>
-            </div>
-            <ul class="info-box clearfix">
-              <li>
-                <div class="icon-box"><i class="flaticon-lab"></i></div>
-                <div class="info-box-text">
-                  <h5>Email</h5>
-                  <p>{contact.frontmatter.email}</p>
-                </div>
-              </li>
-              <li class="dress-info-box">
-                <div class="icon-box"><i class="flaticon-marker"></i></div>
-                <div class="info-box-text">
-                  <h5>Address</h5>
-                  <p>{contact.frontmatter.address}</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </Layout>

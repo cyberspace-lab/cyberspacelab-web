@@ -2,33 +2,29 @@
 import Layout from '../../layouts/Layout.astro';
 import PublicationCard from '../../components/PublicationCard.vue';
 import { getCollection } from 'astro:content';
-const publications = await getCollection('publications');
 
-publications.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+const publications = await getCollection('publications');
+publications.sort((a: any, b: any) => new Date(b.data.date as string).getTime() - new Date(a.data.date as string).getTime());
 ---
 
-<Layout title="Our Publications">
-  <section class="page-title" style="background-image: url('/assets/images/background/prague_ominous.png')">
-    <div class="auto-container">
-      <div class="row clearfix">
-        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
-          <div class="content-box clearfix">
-            <div class="title pull-left">
-              <h1>Our Publications</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<Layout title="Publications · CyberspaceLab">
 
-  <section class="research-details">
-    <div class="auto-container">
-      <div class="research-details-content">
-        {publications.map((pub) => (
-          <PublicationCard publication={pub} />
+  <div class="csl-page-hero" style="background-image: url('/assets/images/background/prague_ominous.png'); background-size: cover; background-position: center;">
+    <div class="csl-page-hero-bg"></div>
+    <div class="csl-container csl-page-hero-inner">
+      <div class="csl-eyebrow" style="margin-bottom: 10px;">// Output · Research</div>
+      <h1 style="font-family: var(--csl-font-heading); font-size: clamp(40px, 6vw, 72px); margin: 0; color: var(--csl-fg-1);">Publications</h1>
+    </div>
+  </div>
+
+  <section class="csl-section">
+    <div class="csl-container">
+      <div class="csl-grid-pub">
+        {publications.map(pub => (
+          <PublicationCard publication={pub} client:visible />
         ))}
       </div>
     </div>
   </section>
-</Layout> 
+
+</Layout>

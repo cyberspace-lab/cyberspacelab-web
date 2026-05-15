@@ -1,104 +1,31 @@
 <script setup>
 const props = defineProps({
-  data: {
-    type: Object,
-    required: true
-  }
+  data: { type: Object, required: true }
 });
+const d = props.data.data;
 
-const newsData = props.data.data
-
+function formatDate(date) {
+  if (!date) return '';
+  try {
+    return new Date(date).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' });
+  } catch { return ''; }
+}
 </script>
+
 <template>
-  <div class="news-block full-width-banner">
-    <a :href="`/news/${newsData.slug}`">
-      <div class="news-block-one wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-        <div class="inner-box">
-          <div class="image-container">
-            <figure class="image-box">
-              <img 
-                :src="newsData.featuredImage"
-                :alt="`${newsData.title} - Featured image`"
-                class="featured-image"
-              />
-            </figure>
-          </div>
-          <div class="content-box">
-            <h2 class="news-title">{{newsData.title}}</h2>
-            <p class="news-description">{{newsData.description}}</p>
-          </div>
-        </div>
-      </div>
-    </a>
-  </div>
+  <a :href="`/news/${d.slug}`" class="csl-news-card">
+    <div class="csl-news-img">
+      <img
+        v-if="d.featuredImage"
+        :src="d.featuredImage"
+        :alt="d.title"
+      />
+      <div class="csl-news-img-tint" />
+    </div>
+    <div class="csl-news-body">
+      <div class="csl-news-date">{{ formatDate(d.date) }}</div>
+      <h3>{{ d.title }}</h3>
+      <p v-if="d.description" class="csl-news-desc">{{ d.description }}</p>
+    </div>
+  </a>
 </template>
-
-<style scoped>
-.full-width-banner {
-  width: 100%;
-  margin-bottom: 1.5rem;
-}
-
-.news-block-one {
-  width: 100%;
-}
-
-.inner-box {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.image-container {
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.image-box {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  margin: 0;
-}
-
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.content-box {
-  padding: 0.5rem 0;
-  text-align: center;
-}
-
-.news-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.news-description {
-  font-size: 1rem;
-  line-height: 1.4;
-  color: #666;
-}
-
-@media (min-width: 768px) {
-  .inner-box {
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .image-container {
-    width: 33.333%;
-    margin-bottom: 0;
-    margin-right: 1.5rem;
-  }
-  
-  .content-box {
-    width: 66.667%;
-    text-align: left;
-  }
-}
-</style>
