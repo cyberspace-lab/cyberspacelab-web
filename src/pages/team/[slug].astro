@@ -118,7 +118,7 @@ const initials = d.title.split(' ').map((w: string) => w[0]).slice(0, 2).join(''
 <style>
 /* ── Section shell ─────────────────────────────────────────── */
 .member-profile {
-  padding: 72px 0 96px;
+  padding: 56px 0 72px;
 }
 
 /* ── Top block: portrait | bio ─────────────────────────────── */
@@ -260,13 +260,15 @@ const initials = d.title.split(' ').map((w: string) => w[0]).slice(0, 2).join(''
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 720px) {
+  .member-profile { padding: 32px 0 48px; }
   .member-top {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 20px;
+    margin-bottom: 32px;
   }
   .member-portrait-frame {
     aspect-ratio: 1 / 1;
-    max-width: 260px;
+    max-width: 200px;
   }
   .member-socials {
     flex-direction: row;
@@ -275,5 +277,8 @@ const initials = d.title.split(' ').map((w: string) => w[0]).slice(0, 2).join(''
   .member-socials .csl-btn {
     width: auto;
   }
+}
+@media (max-width: 480px) {
+  .member-portrait-frame { max-width: 160px; }
 }
 </style>

@@ -345,10 +345,17 @@ body::after {
 
 .csl-section {
   position: relative;
-  padding: 96px 0;
+  padding: 72px 0;
 }
 .csl-section.alt {
   background: linear-gradient(180deg, transparent 0%, rgba(28,13,63,0.4) 50%, transparent 100%);
+}
+
+@media (max-width: 860px) {
+  .csl-section { padding: 48px 0; }
+}
+@media (max-width: 620px) {
+  .csl-section { padding: 32px 0; }
 }
 
 [data-theme="light"] .csl-section.alt {
@@ -359,12 +366,17 @@ body::after {
    SECTION TITLE
    ============================================================ */
 
-.csl-section-head { margin-bottom: 32px; }
+.csl-section-head { margin-bottom: 24px; }
 .csl-section-title {
   display: flex;
   align-items: center;
   gap: 18px;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 620px) {
+  .csl-section-head { margin-bottom: 16px; }
+  .csl-section-title { margin-bottom: 18px; }
 }
 .csl-section-title h2 {
   margin: 0;
@@ -477,8 +489,15 @@ body::after {
 
 .csl-hero {
   position: relative;
-  padding: 96px 0 120px;
+  padding: 72px 0 88px;
   overflow: hidden;
+}
+
+@media (max-width: 860px) {
+  .csl-hero { padding: 52px 0 64px; }
+}
+@media (max-width: 620px) {
+  .csl-hero { padding: 40px 0 52px; }
 }
 .csl-hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
 .csl-hero-bg img {
@@ -571,44 +590,22 @@ body::after {
 }
 
 .csl-main-nav {
-  display: flex; gap: 28px; margin-left: auto; flex-wrap: wrap;
+  display: flex; gap: 28px; flex-wrap: wrap;
   align-items: center;
-  list-style: none; margin-top: 0; margin-bottom: 0; padding: 0;
+  list-style: none; margin: 0; padding: 0;
 }
 
-/* Mobile nav toggle */
+/* Mobile nav toggle — styles handled by Header.vue scoped styles */
 .csl-mobile-toggle {
-  display: none;
   background: none; border: 0; cursor: pointer;
   flex-direction: column; gap: 5px;
   padding: 8px;
-  margin-left: auto;
 }
 .csl-mobile-toggle span {
   display: block;
-  width: 24px; height: 2px;
+  width: 22px; height: 2px;
   background: var(--csl-fg-1);
   transition: all var(--csl-dur-2) var(--csl-ease);
-}
-
-@media (max-width: 860px) {
-  .csl-mobile-toggle { display: flex; }
-  .csl-main-nav {
-    position: fixed;
-    inset: 62px 0 0 0;
-    background: rgba(5,1,15,0.96);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 32px;
-    gap: 20px;
-    transform: translateX(100%);
-    transition: transform var(--csl-dur-3) var(--csl-ease);
-    margin-left: 0;
-    z-index: 99;
-    backdrop-filter: blur(18px);
-  }
-  [data-theme="light"] .csl-main-nav { background: rgba(251,250,255,0.96); }
-  .csl-main-nav.open { transform: translateX(0); }
 }
 
 /* ============================================================
@@ -619,8 +616,8 @@ body::after {
   position: relative;
   border-top: 1px solid var(--csl-line);
   background: linear-gradient(180deg, transparent 0%, rgba(28,13,63,0.5) 100%);
-  padding: 64px 0 0;
-  margin-top: 64px;
+  padding: 48px 0 0;
+  margin-top: 48px;
 }
 [data-theme="light"] .csl-footer {
   background: linear-gradient(180deg, transparent 0%, rgba(240,236,255,0.5) 100%);
@@ -1049,9 +1046,16 @@ body::after {
 
 .csl-page-hero {
   position: relative;
-  padding: 72px 0 56px;
+  padding: 52px 0 40px;
   overflow: hidden;
   border-bottom: 1px solid var(--csl-line);
+}
+
+@media (max-width: 860px) {
+  .csl-page-hero { padding: 36px 0 28px; }
+}
+@media (max-width: 620px) {
+  .csl-page-hero { padding: 28px 0 22px; }
 }
 .csl-page-hero-bg {
   position: absolute; inset: 0;
@@ -1158,5 +1162,12 @@ p {
   .csl-layout-sidebar,
   .csl-layout-aside {
     grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+@media (max-width: 620px) {
+  .csl-layout-sidebar,
+  .csl-layout-aside {
+    gap: 20px;
   }
 }

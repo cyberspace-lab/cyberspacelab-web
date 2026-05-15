@@ -33,7 +33,7 @@ const completed = sortedProjects.filter(p => !p.data.isActive);
               <div class="csl-bar"></div>
             </div>
           </div>
-          <div class="csl-grid-3" style="margin-bottom: 72px;">
+          <div class="csl-grid-3" style="margin-bottom: 48px;">
             {active.map(project => (
               <ProjectCard data={project} client:visible />
             ))}
@@ -61,3 +61,9 @@ const completed = sortedProjects.filter(p => !p.data.isActive);
   </section>
 
 </Layout>
+
+<style>
+@media (max-width: 620px) {
+  .csl-grid-3[style] { margin-bottom: 28px !important; }
+}
+</style>
