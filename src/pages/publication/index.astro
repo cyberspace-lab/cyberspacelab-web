@@ -1,10 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PublicationCard from '../../components/PublicationCard.vue';
+import PublicationsFilter from '../../components/PublicationsFilter.vue';
 import { getCollection } from 'astro:content';
 
 const publications = await getCollection('publications');
 publications.sort((a: any, b: any) => new Date(b.data.date as string).getTime() - new Date(a.data.date as string).getTime());
+
+const types = [...new Set(publications.map((p: any) => p.data.type as string))].sort();
 ---
 
 <Layout title="Publications · CyberspaceLab">
@@ -19,11 +21,7 @@ publications.sort((a: any, b: any) => new Date(b.data.date as string).getTime() 
 
   <section class="csl-section">
     <div class="csl-container">
-      <div class="csl-grid-pub">
-        {publications.map(pub => (
-          <PublicationCard publication={pub} client:visible />
-        ))}
-      </div>
+      <PublicationsFilter publications={publications} types={types} client:load />
     </div>
   </section>
 
