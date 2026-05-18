@@ -1,84 +1,101 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
-import TeamList from '../../components/TeamList.vue';
+
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
-  return projects.map(project => ({
+  return projects.map((project: any) => ({
     params: { slug: project.data.slug },
     props: { project },
   }));
 }
 
-const { project } = Astro.props;
+const { project } = Astro.props as any;
 const { Content } = await render(project);
 
 const teamMembers = await getCollection('team');
-const projectMembers = teamMembers.filter(member =>
+const projectMembers = teamMembers.filter((member: any) =>
   project.data.memberSlugs.includes(member.data.slug)
 );
-const projectData = project.data;
-
+const d = project.data;
 ---
 
-<Layout 
-  title={projectData.title}
-  description={projectData.description}
-  image={projectData.featuredWideImage}
+<Layout
+  title={`${d.shortname || d.title} · CyberspaceLab`}
+  description={d.description}
+  image={d.featuredWideImage || d.featuredImage}
   article={true}
 >
-  <section class="page-title" style={projectData.featuredWideImage ? { backgroundImage: `url("${projectData.featuredWideImage}")` } : projectData.featuredImage ? { backgroundImage: `url("${projectData.featuredImage}")` } : {}}>
-    <div class="auto-container">
-      <div class="row clearfix">
-        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
-          <div class="content-box clearfix">
-            <div class="title pull-left">
-              <h1>{projectData.shortname}</h1>
-            </div>
+
+  <!-- Hero banner -->
+  <div
+    class="csl-page-hero"
+    style={`background-image: url('${d.featuredWideImage || d.featuredImage || "/assets/images/background/tron_prague_wide.png"}'); background-size: cover; background-position: center;`}
+  >
+    <div class="csl-page-hero-bg" style="background: linear-gradient(180deg, rgba(5,1,15,0.55) 0%, rgba(5,1,15,0.85) 100%);"></div>
+    <div class="csl-container csl-page-hero-inner">
+      <div class="csl-eyebrow" style="margin-bottom: 10px;">// Project</div>
+      <h1 style="font-family: var(--csl-font-heading); font-size: clamp(32px, 5vw, 64px); margin: 0 0 12px; color: var(--csl-fg-1);">
+        {d.shortname || d.title}
+      </h1>
+      <span class="csl-tag" class:list={[d.isActive ? 'cyan' : 'violet']}>
+        {d.isActive ? 'ACTIVE' : 'COMPLETED'}
+      </span>
+    </div>
+  </div>
+
+  <section class="csl-section">
+    <div class="csl-container">
+      <div class="csl-layout-aside">
+
+        <!-- Main content -->
+        <div>
+          {d.title !== d.shortname && (
+            <p class="csl-eyebrow" style="color: var(--csl-fg-3); margin-bottom: 24px; font-size: 15px; letter-spacing: 0.05em; text-transform: none; font-family: var(--csl-font-body);">
+              {d.title}
+            </p>
+          )}
+          <div class="csl-prose">
+            <Content />
           </div>
         </div>
+
+        <!-- Sidebar -->
+        <aside>
+          <!-- Project image -->
+          {d.featuredImage && (
+            <div style="margin-bottom: 24px; overflow: hidden; border: 1px solid var(--csl-line); clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);">
+              <img src={d.featuredImage} alt={d.title} style="width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover;" />
+            </div>
+          )}
+
+          <!-- Team on this project -->
+          {projectMembers.length > 0 && (
+            <div class="csl-panel" style="padding: 20px; border-radius: var(--csl-r-2);">
+              <div class="csl-eyebrow" style="margin-bottom: 16px;">// Team members</div>
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+                {projectMembers.map((member: any) => (
+                  <a href={`/team/${member.data.slug}`} style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                    <div style="width: 44px; height: 44px; overflow: hidden; flex-shrink: 0; border: 1px solid var(--csl-line-strong); background: var(--csl-panel);">
+                      {member.data.featuredImage
+                        ? <img src={member.data.featuredImage} alt={member.data.title} style="width: 100%; height: 100%; object-fit: cover; object-position: center top;" />
+                        : <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--csl-font-display); font-size: 16px; color: var(--csl-cyan);">{(member.data.title as string).split(' ').map((w: string) => w[0]).slice(0,2).join('')}</div>
+                      }
+                    </div>
+                    <div>
+                      <div style="font-family: var(--csl-font-heading); font-size: 14px; font-weight: 600; color: var(--csl-fg-1);">{member.data.title}</div>
+                      <div style="font-family: var(--csl-font-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--csl-fg-3); text-transform: uppercase;">{member.data.level || member.data.role}</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </aside>
+
       </div>
     </div>
   </section>
 
-  <section class="blog-details sidebar-page-container">
-    <div class="auto-container">
-      <div class="row clearfix">
-        <div class="content-side">
-          <div class="blog-details-content">
-            <div class="news-block-three">
-              <div class="inner-box">
-                <figure class="image-box" id="cstm2">
-                  {(projectData.featuredWideImage || projectData.featuredImage) ? (
-                  <img
-                    src={projectData.featuredWideImage || projectData.featuredImage}
-                    alt={`${projectData.title} - Featured image`}
-                    class="featured-image"
-                    style="height: 240px; object-fit: cover; width: 100%;"
-                  />
-                  ) : (
-                  <img
-                    src="/assets/images/news/news-7.jpg"
-                    alt=""
-                    style="height: 240px; object-fit: cover; width: 100%;"
-                  />
-                  )}
-                </figure>
-                <div class="lower-content">
-                  <h3>{projectData.title}</h3>
-                  <div class="text">
-                    <Content />
-                  </div>
-                  {projectMembers.length > 0 && (
-                      <h3 class="project-member-list-heading">Who's working on it?</h3>
-                      <TeamList members={projectMembers} layout="sidebar" />
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </Layout>
+

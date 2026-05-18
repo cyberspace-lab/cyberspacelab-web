@@ -3,88 +3,119 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import TeamListHome from '../components/TeamListHome.vue';
 import FaqAccordeon from '../components/FaqAccordeon.vue';
-import { Image } from 'astro:assets';
 
-const members = await getCollection('team', ({ data }) => {
-  return data;
-});
-
+const members = await getCollection('team');
 const sortedMembers = members
-  .sort((a, b) => a.data.order - b.data.order)
-  .slice(0, 4)
+  .sort((a: any, b: any) => a.data.order - b.data.order)
+  .slice(0, 4);
+
 import * as page from '../content/index.md';
 ---
 
 <Layout title="CyberspaceLab">
-    <section class="banner-style-four" style={{ backgroundImage: `url("../assets/images/banner/banner.png")` }}>
-        <div class="auto-container">
-            <div class="row align-items-center clearfix">
-                <div class="col-xl-6 col-lg-12 col-md-12 offset-xl-3 content-column">
-                    <div class="content-box" style={{ textAlign: "center"}}>
-                        <h2 style={{ textAlign: "center"}}>{page.frontmatter.subtitle}</h2>
-                        <h1 style={{ textAlign: "center"}}>{page.frontmatter.title}</h1>
-                        {page.frontmatter.institution.map(institution => 
-                          <p style={{ textAlign: "center", marginTop: "2px", marginBottom: "20px"}}>{institution}</p>
-                        )}
-                        <a href="/project" style={{ textAlign: "center"}} class="main-button">Projects</a>
-                        <br/>
-                    </div>
-                </div>
-            </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="csl-hero">
+    <div class="csl-hero-bg">
+      <img src="/assets/images/banner/synthwave_banner.png" alt="" />
+      <div class="csl-hero-grid"></div>
+      <div class="csl-hero-gradient"></div>
+    </div>
+    <div class="csl-container csl-hero-inner">
+      <div class="csl-eyebrow" style="margin-bottom: 16px;">// Research Group · est. Prague</div>
+      <h1 class="csl-hero-title csl-display">
+        <span class="csl-display-grad">CYBERSPACE</span>
+        <span class="csl-hero-sub">LAB</span>
+      </h1>
+      <p class="csl-hero-byline">
+        Faculty of Humanities, Charles University<br />
+        Institute of Psychology, Czech Academy of Sciences
+      </p>
+      <p class="csl-hero-blurb">
+        We study how humans navigate, learn, and feel inside virtual worlds —
+        with VR headsets, video games, and rigorous psychometrics.
+      </p>
+      <div class="csl-hero-cta">
+        <a href="/project" class="csl-btn">Projects</a>
+        <a href="/about" class="csl-btn ghost">About the lab →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MISSION ===== -->
+  <section class="csl-section">
+    <div class="csl-container">
+      <div class="csl-section-head">
+        <div class="csl-eyebrow" style="margin-bottom: 12px;">// 01 · Mission</div>
+        <div class="csl-section-title">
+          <h2>What we do</h2>
+          <div class="csl-bar"></div>
         </div>
-    </section>
-    <section class="about-style-two">
-        <div class="pattern-layer" style={{ backgroundImage: `url("../assets/images/shape/shape-6.png")`}}></div>
-        <div class="auto-container">
-            <div class="row clearfix">
-                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                    <div id="content_block_05">
-                        <div class="content-box">
-                            <div class="sec-title left">
-                                <h2>About Us</h2>
-                                <span class="separator"></span>
-                            </div>
-                            <div class="text">
-                                {page.frontmatter.description}
-                            </div>
-                            <div class="btn-box">
-                                <a href="/about" class="theme-btn style-one">More About Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--
-                <div class="col-lg-6 col-md-12 col-sm-12 video-column">
-                    <figure class="image-box">
-                        <Image src={"/assets/images/pages/index/team2.jpg"} alt="" width={500} height={500}/> 
-                    </figure>
-                </div>
-              -->
-            </div>
+      </div>
+      <div class="csl-about-grid">
+        <div>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--csl-fg-2); margin-top: 0;">
+            Our research group focuses on <strong style="color: var(--csl-cyan);">spatial navigation</strong> and <strong style="color: var(--csl-magenta);">virtual reality</strong>. We are cognitive psychologists, neuroscientists, and computer scientists exploring how humans navigate and interact with virtual environments.
+          </p>
+          <p style="font-size: 17px; line-height: 1.6; color: var(--csl-fg-2);">
+            We combine cutting-edge technology with rigorous scientific methodology to understand how virtual reality can be used to enhance spatial learning, cognitive performance, and well-being.
+          </p>
+          <a href="/about" class="csl-btn ghost" style="margin-top: 12px;">More About Us →</a>
         </div>
-    </section>
-    
-    <TeamListHome data={sortedMembers}  />
-    
-    <section class="faq-section">
-        <div class="pattern-layer" style={{backgroundImage: `url("/assets/images/shape/shape-8.png")`}}></div>
-        <div class="auto-container">
-            <div class="row clearfix">
-                <div class="col-lg-6 col-md-12 col-sm-12 image-column faq-image">
-                    <Image src={"/assets/images/pages/index/isometric.png"} alt="" width={500} height={500}/>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                    <div id="content_block_06">
-                        <div class="content-box">
-                            <div class="sec-title left">
-                                <h2>FAQ</h2>
-                                <span class="separator"></span>
-                                <FaqAccordeon arr={page.frontmatter.faq}/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="csl-about-img">
+          <img src="/assets/images/pages/about/neon_prague.png" alt="Neon Prague" />
         </div>
-    </section>
-</Layout> 
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM ===== -->
+  <TeamListHome data={sortedMembers} client:visible />
+
+  <!-- ===== FAQ ===== -->
+  <section class="csl-section alt">
+    <div class="csl-container">
+      <div class="csl-faq-grid">
+        <div>
+          <div class="csl-section-head">
+            <div class="csl-eyebrow" style="margin-bottom: 12px;">// 04 · FAQ</div>
+            <div class="csl-section-title">
+              <h2>Common questions</h2>
+              <div class="csl-bar"></div>
+            </div>
+          </div>
+          <FaqAccordeon arr={page.frontmatter.faq} client:visible />
+        </div>
+        <div class="csl-about-img csl-faq-img">
+          <img src="/assets/images/pages/index/isometric.png" alt="Isometric Prague" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.csl-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.csl-faq-img {
+  aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 980px) {
+  .csl-about-grid {
+    grid-template-columns: 1fr;
+  }
+  .csl-faq-grid {
+    grid-template-columns: 1fr;
+  }
+  .csl-about-img,
+  .csl-faq-img {
+    display: none;
+  }
+}
+</style>

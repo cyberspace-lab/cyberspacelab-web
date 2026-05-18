@@ -2,44 +2,29 @@
 import { ref } from 'vue';
 
 const props = defineProps({
-  arr: {
-    type: Array,
-    required: true
-  }
+  arr: { type: Array, required: true }
 });
 
 const activeIndex = ref(-1);
 
-const toggleAccordion = (index) => {
-  activeIndex.value = activeIndex.value === index ? -1 : index;
-};
+function toggle(i) {
+  activeIndex.value = activeIndex.value === i ? -1 : i;
+}
 </script>
 
 <template>
-  <ul class="accordion-box">
-    <li 
-      v-for="(field, index) in arr" 
-      :key="index"
-      class="accordion block"
+  <div class="csl-faq">
+    <div
+      v-for="(item, i) in arr"
+      :key="i"
+      class="csl-faq-item"
+      :class="{ open: activeIndex === i }"
     >
-      <div 
-        class="acc-btn"
-        :class="{ 'active': activeIndex === index }"
-        @click="toggleAccordion(index)"
-      >
-        <div class="icon-outer">
-          <i :class="activeIndex === index ? 'fas fa-minus' : 'fas fa-plus'"></i>
-        </div>
-        <h6>{{ field[0] }}</h6>
-      </div>
-      <div 
-        class="acc-content"
-        :class="{ 'active': activeIndex === index }"
-      >
-        <div class="content">
-          <p>{{ field[1] }}</p>
-        </div>
-      </div>
-    </li>
-  </ul>
+      <button class="csl-faq-q" @click="toggle(i)">
+        <span>{{ item[0] }}</span>
+        <span class="csl-faq-glyph" aria-hidden="true">{{ activeIndex === i ? '−' : '+' }}</span>
+      </button>
+      <div v-if="activeIndex === i" class="csl-faq-a">{{ item[1] }}</div>
+    </div>
+  </div>
 </template>

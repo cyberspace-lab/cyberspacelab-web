@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
-import TeamList from '../../components/TeamList.vue';
+
 export async function getStaticPaths() {
   const news = await getCollection('news');
   return news.map(news => ({
@@ -18,105 +18,177 @@ const newsData = news.data;
 const authors = teamMembers.filter(member =>
   newsData.authors.includes(member.data.slug)
 );
+
+const dateStr = newsData.date
+  ? new Date(newsData.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null;
 ---
 
-<Layout 
+<Layout
   title={newsData.title}
   description={newsData.description}
   image={newsData.featuredWideImage}
   article={true}
 >
-  <section class="page-title">
-    <div class="auto-container">
-      <div class="row clearfix">
-        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
-          <div class="content-box clearfix">
-            <div class="title pull-left">
-              <h1>{newsData.title}</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="blog-details sidebar-page-container">
-    <div class="auto-container">
-      <div class="row clearfix">
-        <!-- Main Content Column -->
-        <div class="col-lg-8 col-md-12 col-sm-12 content-side">
-          <div class="blog-details-content">
-            <div class="news-block-three">
-              <div class="inner-box">
-                <figure class="image-box" id="cstm2">
-                  {newsData.featuredWideImage ? (
-                    <img 
-                      src={newsData.featuredWideImage} 
-                      alt={`${newsData.title} - Featured image`}
-                      class="featured-image"
-                    />
-                  ) : (
-                    <img src="/assets/images/news/news-7.jpg" alt="" />
-                  )}
-                </figure>
-                <div class="lower-content">
-                  <h3>{newsData.title}</h3>
-                  <div class="text">
-                    <Content />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Sidebar Column -->
-        {authors.length > 0 && (
-          <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-            <div class="sidebar">
-              <div class="sidebar-widget authors-widget">
-                <div class="widget-title">
-                  <h3>Authors</h3>
-                </div>
-                <div class="authors-box">
-                  <TeamList members={authors} layout="sidebar" client:load />
-                </div>
-              </div>
-            </div>
+  <!-- Hero banner -->
+  {newsData.featuredWideImage && (
+    <div
+      class="csl-page-hero news-hero"
+      style={`background-image: url('${newsData.featuredWideImage}'); background-size: cover; background-position: center;`}
+    >
+      <div class="csl-page-hero-bg" style="background: linear-gradient(180deg, rgba(5,1,15,0.45) 0%, rgba(5,1,15,0.85) 100%);"></div>
+      <div class="csl-container csl-page-hero-inner">
+        <div class="csl-eyebrow" style="margin-bottom: 10px;">// News</div>
+        <h1 class="news-hero-title">{newsData.title}</h1>
+        {dateStr && <div class="news-hero-date">{dateStr}</div>}
+        {newsData.tags && newsData.tags.length > 0 && (
+          <div class="news-hero-tags">
+            {newsData.tags.map((tag: string) => <span class="csl-tag">{tag}</span>)}
           </div>
         )}
       </div>
     </div>
+  )}
+
+  {!newsData.featuredWideImage && (
+    <div class="csl-page-hero">
+      <div class="csl-page-hero-bg"></div>
+      <div class="csl-container csl-page-hero-inner">
+        <div class="csl-eyebrow" style="margin-bottom: 10px;">// News</div>
+        <h1 style="font-family: var(--csl-font-heading); font-size: clamp(28px, 5vw, 56px); margin: 0 0 10px; color: var(--csl-fg-1);">{newsData.title}</h1>
+        {dateStr && <div class="news-hero-date">{dateStr}</div>}
+      </div>
+    </div>
+  )}
+
+  <section class="csl-section">
+    <div class="csl-container">
+      <div class="news-layout">
+
+        <!-- Main content -->
+        <div class="news-content">
+          {newsData.description && (
+            <p class="news-lede">{newsData.description}</p>
+          )}
+          <div class="csl-prose">
+            <Content />
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        {authors.length > 0 && (
+          <aside class="news-sidebar">
+            <div class="csl-panel" style="padding: 20px;">
+              <div class="csl-eyebrow" style="margin-bottom: 16px;">// Authors</div>
+              <div class="news-authors">
+                {authors.map((member: any) => (
+                  <a href={`/team/${member.data.slug}`} class="news-author-row">
+                    <div class="news-author-avatar">
+                      {member.data.featuredImage
+                        ? <img src={member.data.featuredImage} alt={member.data.title} />
+                        : <div class="news-author-initials">{(member.data.title as string).split(' ').map((w: string) => w[0]).slice(0,2).join('')}</div>
+                      }
+                    </div>
+                    <div>
+                      <div class="news-author-name">{member.data.title}</div>
+                      <div class="news-author-role">{member.data.level || member.data.role}</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </aside>
+        )}
+
+      </div>
+    </div>
   </section>
 
-  <style>
-  .sidebar-widget {
-    position: relative;
-    margin-bottom: 40px;
-    background: #ffffff;
-    padding: 25px;
-    border: none;
-  }
-
-  .widget-title {
-    position: relative;
-    margin-bottom: 20px;
-  }
-
-  .widget-title h3 {
-    font-size: 24px;
-    line-height: 1.2em;
-    color: #222222;
-    font-weight: 600;
-  }
-
-  .authors-box {
-    position: relative;
-  }
-
-  @media (max-width: 991px) {
-    .sidebar-side {
-      margin-top: 40px;
-    }
-  }
-  </style>
 </Layout>
+
+<style>
+.news-hero { min-height: 260px; display: flex; flex-direction: column; justify-content: flex-end; }
+.news-hero-title {
+  font-family: var(--csl-font-heading);
+  font-size: clamp(28px, 5vw, 56px);
+  margin: 0 0 10px;
+  color: #f5f1ff;
+  line-height: 1.1;
+}
+.news-hero-date {
+  font-family: var(--csl-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: rgba(200,185,240,0.8);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.news-hero-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Layout */
+.news-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Lede / intro paragraph */
+.news-lede {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--csl-fg-2);
+  border-left: 3px solid var(--csl-cyan);
+  padding-left: 18px;
+  margin-bottom: 28px;
+}
+
+/* Sidebar authors */
+.news-authors { display: flex; flex-direction: column; gap: 14px; }
+.news-author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.news-author-avatar {
+  width: 44px; height: 44px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid var(--csl-line-strong);
+  background: var(--csl-panel);
+}
+.news-author-avatar img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+}
+.news-author-initials {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--csl-font-display);
+  font-size: 15px;
+  color: var(--csl-cyan);
+}
+.news-author-name {
+  font-family: var(--csl-font-heading);
+  font-size: 14px; font-weight: 600;
+  color: var(--csl-fg-1);
+}
+.news-author-role {
+  font-family: var(--csl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--csl-fg-3);
+  text-transform: uppercase;
+}
+.news-author-row:hover .news-author-name { color: var(--csl-cyan); }
+
+@media (max-width: 860px) {
+  .news-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .news-sidebar { order: -1; }
+}
+</style>

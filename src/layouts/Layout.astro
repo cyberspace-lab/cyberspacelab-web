@@ -2,14 +2,7 @@
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 import siteConfig from '../config';
-import "../assets/css/animate.css"
-import "../assets/css/bootstrap.css"
-import "../assets/css/flaticon.css"
-import "../assets/css/font-awesome-all.css"
-import "../assets/css/jquery.fancybox.min.css"
-import "../assets/css/responsive.css"
-import "../assets/css/style.css"
-import "../assets/css/switcher-style.css"
+import "../assets/css/csl-design.css"
 
 interface Props {
   title: string;
@@ -19,8 +12,8 @@ interface Props {
   article?: boolean;
 }
 
-const { 
-  title, 
+const {
+  title,
   description = siteConfig.meta.description,
   image = siteConfig.meta.image,
   type = 'website',
@@ -41,26 +34,26 @@ const seo = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="icon" type="image/svg+xml" href={siteConfig.meta.iconimage} />
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    
+
     <!-- Primary Meta Tags -->
     <title>{seo.title}</title>
     <meta name="description" content={seo.description} />
     <meta name="image" content={seo.image} />
-    
+
     <!-- Alternate Languages -->
     <link rel="alternate" href={seo.url} hreflang="en-us" />
     <link rel="alternate" href={seo.url} hreflang="en" />
     <link rel="alternate" href={seo.url} hreflang="x-default" />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={article ? 'article' : type} />
     <meta property="og:url" content={seo.url} />
     <meta property="og:title" content={seo.title} />
     <meta property="og:description" content={seo.description} />
     <meta property="og:image" content={seo.image} />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     {siteConfig.meta.twitterUsername && (
@@ -70,57 +63,22 @@ const seo = {
     <meta name="twitter:description" content={seo.description} />
     <meta name="twitter:image" content={seo.image} />
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Theme init — runs before paint to prevent flash -->
+    <script is:inline>
+      try {
+        var t = localStorage.getItem("csl-theme");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch(e) {}
+    </script>
   </head>
 
   <body>
     <div class="primary-container">
-      <Header client:visible />
-
-      <div class="mobile-menu">
-        <div class="menu-backdrop"></div>
-        <div class="close-btn">
-          <i class="fas fa-times"></i>
-        </div>
-        <nav class="menu-box">
-          <div class="nav-logo">
-            <a href="/">
-              <img src="/assets/images/mobile-logo.png" alt={siteConfig.meta.title} title={siteConfig.meta.title}/>
-            </a>
-          </div>
-          <div class="menu-outer"></div>
-          <div class="contact-info">
-            <h4>Contact Info</h4>
-            <ul>
-              <li>{siteConfig.contact.address}</li>
-              <li><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></li>
-            </ul>
-          </div> 
-        </nav>
-      </div>
-      
+      <Header client:load />
       <slot />
-      <Footer data={siteConfig.meta}/>
+      <Footer data={siteConfig.meta} client:visible />
     </div>
   </body>
 </html>
-
-
-<!-- Replace your script import section with these traditional script tags -->
-<script is:inline src="/assets/js/jquery.js"></script>
-<script is:inline src="/assets/js/popper.min.js"></script>
-<script is:inline src="/assets/js/bootstrap.min.js"></script>
-<script is:inline src="/assets/js/owl.js"></script>
-<script is:inline src="/assets/js/wow.js"></script>
-<script is:inline src="/assets/js/validation.js"></script>
-<script is:inline src="/assets/js/jquery.fancybox.js"></script>
-<script is:inline src="/assets/js/appear.js"></script>
-<script is:inline src="/assets/js/jquery.countTo.js"></script>
-<script is:inline src="/assets/js/scrollbar.js"></script>
-<script is:inline src="/assets/js/tilt.jquery.js"></script>
-<script is:inline src="/assets/js/jQuery.style.switcher.min.js"></script>
-
-<!-- Load your custom script last -->
-<script is:inline src="/assets/js/script.js"></script>

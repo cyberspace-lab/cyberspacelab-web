@@ -1,98 +1,65 @@
 <script setup>
-defineProps({
-  data: {
-    type: Object,
-    required: true
-  }
+const props = defineProps({
+  data: { type: Object, required: true }
 });
 
+const ACCENT_COLORS = ['var(--csl-cyan)', 'var(--csl-magenta)', 'var(--csl-violet)', 'var(--csl-hot-pink)'];
+
+function accentFor(slug) {
+  let hash = 0;
+  for (const ch of (slug || '')) hash = (hash * 31 + ch.charCodeAt(0)) & 0xffffffff;
+  return ACCENT_COLORS[Math.abs(hash) % ACCENT_COLORS.length];
+}
+
+function initials(name) {
+  return (name || '')
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map(w => w[0].toUpperCase())
+    .join('');
+}
+
+const d = props.data.data;
+const accent = accentFor(d.slug);
+const memberInitials = initials(d.title);
 </script>
 
 <template>
-  <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-    <a :href="`/team/${data.data.slug}`">
-      <div 
-        class="team-block-one wow fadeInUp" 
-        data-wow-delay="200ms" 
-        data-wow-duration="1500ms"
-      >
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image">
-              <img 
-                v-if="data.data.featuredImage"
-                :src="data.data.featuredImage"
-                :alt="`${data.data.title} - Featured image`"
-                className="featured-image"
-              />
-              <img 
-                v-else
-                src="/assets/images/team/team-6.jpg" 
-                alt=""
-              />
-            </figure>
-            <ul v-if="data.data.social" class="social-links clearfix">
-              <li v-if="data.data.social.twitter">
-                <a :href="data.data.social.twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li v-if="data.data.social.facebook">
-                <a :href="data.data.social.facebook">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li v-if="data.data.social.linkedin">
-                <a :href="data.data.social.linkedin">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-              <li v-if="data.data.social.researchgate">
-                <a :href="data.data.social.researchgate">
-                  <i class="fab fa-researchgate"></i>
-                </a>
-              </li>
-            </ul>
-            <div v-if="!data.data.social" class="link">
-              <a :href="`/team/${data.data.slug}`">
-                <i class="fas fa-link"></i>
-              </a>
-            </div>
-          </div>
-          <div class="lower-content">
-            <h3>{{ data.data.title }}</h3>
-            <span class="designation">{{ data.data.level }}</span>
-          </div>
+  <div class="csl-member-card">
+    <a :href="`/team/${d.slug}`" class="csl-member-card-inner">
+      <div class="csl-member-portrait" :style="{ borderColor: accent }">
+        <img
+          v-if="d.featuredImage"
+          :src="d.featuredImage"
+          :alt="d.title"
+        />
+        <div
+          v-else
+          class="csl-member-initials"
+          :style="{ color: accent, textShadow: `0 0 18px ${accent}` }"
+        >{{ memberInitials }}</div>
+        <div class="csl-member-scan" />
+      </div>
+
+      <div class="csl-member-body">
+        <h3>{{ d.title }}</h3>
+        <div class="csl-member-level" :style="{ color: accent }">{{ d.level || d.role }}</div>
+
+        <div v-if="d.education && d.education.length" class="csl-member-tags">
+          <span
+            v-for="tag in d.education.slice(0, 2)"
+            :key="tag"
+            class="csl-tag"
+          >{{ tag }}</span>
         </div>
       </div>
     </a>
+
+    <div v-if="d.social" class="csl-member-socials">
+      <a v-if="d.social.twitter"     class="csl-member-social-link" :href="d.social.twitter"     target="_blank" rel="noopener noreferrer">TW</a>
+      <a v-if="d.social.linkedin"    class="csl-member-social-link" :href="d.social.linkedin"    target="_blank" rel="noopener noreferrer">LI</a>
+      <a v-if="d.social.researchgate" class="csl-member-social-link" :href="d.social.researchgate" target="_blank" rel="noopener noreferrer">RG</a>
+    </div>
   </div>
 </template>
-
-<style scoped>
-.image-box figure {
-  position: relative;
-  margin: 0;
-  width: 100%;
-  /* Force aspect ratio */
-  aspect-ratio: 3/4;
-  overflow: hidden;
-}
-
-.image-box figure img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* This ensures images cover the area without distortion */
-  object-position: center; /* Centers the image */
-}
-
-/* Optional: Add a transition for smooth loading */
-.image-box figure img {
-  transition: transform 0.3s ease;
-}
-
-/* Optional: Add hover effect */
-.image-box figure:hover img {
-  transform: scale(1.05);
-}
-</style> 

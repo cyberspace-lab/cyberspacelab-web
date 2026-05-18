@@ -5,8 +5,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#0070f3',
+        primary:   '#0070f3',
         secondary: '#ff0080',
+        'csl-cyan':    '#00f0ff',
+        'csl-violet':  '#b300ff',
+        'csl-magenta': '#ff0080',
+        'csl-amber':   '#ffb347',
+        'csl-void':    '#05010f',
+        'csl-midnight':'#0a0420',
+        'csl-deep':    '#14082e',
+        'csl-panel':   '#1c0d3f',
       },
       typography: {
         DEFAULT: {

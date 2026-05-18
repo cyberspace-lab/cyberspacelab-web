@@ -2,51 +2,68 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import ProjectCard from '../../components/ProjectCard.vue';
-// Get all projects from the collection
-const projects = await getCollection('projects', ({ data }) => {
-  return !data.draft;
-});
 
-// Sort projects by date
-const sortedProjects = projects.sort((a, b) => 
-  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-)
+const projects = await getCollection('projects', ({ data }) => !data.draft);
+const sortedProjects = projects.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+const active = sortedProjects.filter(p => p.data.isActive);
+const completed = sortedProjects.filter(p => !p.data.isActive);
 ---
 
-<Layout title="Our Projects">
-  <section class="page-title" style="background-image: url('/assets/images/background/prague_eerie.png')">
-    <div class="auto-container">
-      <div class="row clearfix">
-        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
-          <div class="content-box clearfix">
-            <div class="title pull-left">
-              <h1>Our Projects</h1>
+<Layout title="Projects · CyberspaceLab">
+
+  <!-- Page hero -->
+  <div class="csl-page-hero" style="background-image: url('/assets/images/background/prague_eerie.png'); background-size: cover; background-position: center;">
+    <div class="csl-page-hero-bg"></div>
+    <div class="csl-container csl-page-hero-inner">
+      <div class="csl-eyebrow" style="margin-bottom: 10px;">// Active research</div>
+      <h1 style="font-family: var(--csl-font-heading); font-size: clamp(40px, 6vw, 72px); margin: 0; color: var(--csl-fg-1);">Projects</h1>
+    </div>
+  </div>
+
+  <section class="csl-section">
+    <div class="csl-container">
+      {active.length > 0 && (
+        <>
+          <div class="csl-section-head">
+            <div class="csl-eyebrow" style="margin-bottom: 12px;">// Ongoing</div>
+            <div class="csl-section-title">
+              <h2>Active projects</h2>
+              <div class="csl-bar"></div>
             </div>
           </div>
-        </div>
-      </div>
+          <div class="csl-grid-3" style="margin-bottom: 48px;">
+            {active.map(project => (
+              <ProjectCard data={project} client:visible />
+            ))}
+          </div>
+        </>
+      )}
+
+      {completed.length > 0 && (
+        <>
+          <div class="csl-section-head">
+            <div class="csl-eyebrow" style="margin-bottom: 12px;">// Completed</div>
+            <div class="csl-section-title">
+              <h2>Past projects</h2>
+              <div class="csl-bar"></div>
+            </div>
+          </div>
+          <div class="csl-grid-3">
+            {completed.map(project => (
+              <ProjectCard data={project} client:visible />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   </section>
 
-  <section class="project-section">
-    <div class="auto-container">
-      <div class="row clearfix">
-        <div class="col-lg-12 col-md-12 col-sm-12 content-column">
-          <div id="content_block_01">
-            <div class="content-box">
-              <div class="sec-title left">
-                <h2>Ongoing Projects</h2>
-                <span class="separator"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="projects-container">
-        {sortedProjects.map(project => (
-          <ProjectCard data={project} />
-        ))}
-      </div>
-    </div>
-  </section>
 </Layout>
+
+<style>
+@media (max-width: 620px) {
+  .csl-grid-3[style] { margin-bottom: 28px !important; }
+}
+</style>

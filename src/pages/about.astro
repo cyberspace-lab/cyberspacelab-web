@@ -1,52 +1,62 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import * as about from '../content/about.md';
-import {Content as AboutContent} from '../content/about.md';
-import AimsBox from '../components/BulletPointBox.vue';
+import { Content as AboutContent } from '../content/about.md';
 ---
-<Layout 
-  title={about.frontmatter.title} 
+
+<Layout
+  title={about.frontmatter.title + ' · CyberspaceLab'}
   description={about.frontmatter.description}
 >
-  <section class="page-title" style="background-image: url('/assets/images/background/tron_prague_wide.png')">
-    <div class="auto-container">
-      <div class="row clearfix">
-        <div class="col-lg-8 col-md-12 col-sm-12 content-column" id="cstmmobiletitle">
-          <div class="content-box clearfix">
-            <div class="title pull-left">
-              <h1>About Us</h1>
-            </div>
+
+  <!-- Page hero -->
+  <div class="csl-page-hero" style="background-image: url('/assets/images/background/tron_prague_wide.png'); background-size: cover; background-position: center;">
+    <div class="csl-page-hero-bg" style="background: linear-gradient(180deg, rgba(5,1,15,0.45) 0%, rgba(5,1,15,0.82) 100%);"></div>
+    <div class="csl-container csl-page-hero-inner">
+      <div class="csl-eyebrow" style="margin-bottom: 10px;">// About the lab</div>
+      <h1 style="font-family: var(--csl-font-heading); font-size: clamp(40px, 6vw, 72px); margin: 0; color: var(--csl-fg-1);">
+        We are <span style="color: var(--csl-magenta);">CyberspaceLab</span>.
+      </h1>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <section class="csl-section">
+    <div class="csl-container">
+      <div class="csl-about-grid">
+        <div>
+          <div class="csl-prose">
+            <AboutContent />
           </div>
+          <a href="/contact" class="csl-btn ghost" style="margin-top: 24px;">Get in touch →</a>
+        </div>
+        <div class="csl-about-img">
+          <img src={about.frontmatter.aboutImage} alt="CyberspaceLab neon Prague" />
         </div>
       </div>
     </div>
   </section>
-  <section class="about-section">
-    <div class="auto-container">
-      <div class="row clearfix">
-        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-          <div id="image_block_01">
-            <div class="image-box">
-              <img 
-                src={about.frontmatter.aboutImage} 
-                alt="About CyberspaceLab"
-                class="about-image"
-              />
-            </div>
-          </div>
+
+  <!-- Research aims -->
+  <section class="csl-section alt">
+    <div class="csl-container">
+      <div class="csl-section-head">
+        <div class="csl-eyebrow" style="margin-bottom: 12px;">// Research aims</div>
+        <div class="csl-section-title">
+          <h2>What we study</h2>
+          <div class="csl-bar"></div>
         </div>
-        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-          <div id="content_block_01">
-            <div class="content-box">
-              <div class="text">
-                <AboutContent />
-              </div>
-              
-              <AimsBox aims={about.frontmatter.aims} />
-            </div>
+      </div>
+      <div class="csl-about-aims">
+        {about.frontmatter.aims.map((aim: string[], i: number) => (
+          <div class="csl-about-aim">
+            <div class="csl-eyebrow" style="margin-bottom: 6px; color: var(--csl-violet);">// 0{i + 1}</div>
+            <h4>{aim[0]}</h4>
+            <p>{aim[1]}</p>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
+
 </Layout>
