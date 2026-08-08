@@ -4,7 +4,7 @@ type: Bachelor Thesis
 slug: 2022-bc-rackova
 date: 2022-09
 authors: Račková, Viktorie
-authorsSlug: ["viktorie-rackova"]
+authorsSlug: ["viktorie-marcinkova"]
 category: Bachelor thesis
 journal: Faculty of Humanities, Charles University
 url: https://dspace.cuni.cz/handle/20.500.11956/177754

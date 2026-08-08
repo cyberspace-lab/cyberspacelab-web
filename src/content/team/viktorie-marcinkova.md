@@ -1,14 +1,14 @@
 ---
-title: Viktorie Račková
+title: Viktorie Marcinková
 order: 1
-slug: "viktorie-rackova"
+slug: "viktorie-marcinkova"
 role: active
 level: Ph.D. candidate
 education: ["Theoretical and experimental psychology 2024", "Bachelor Liberal Arts and Humanities 2022"]
 expertise: ["Questionnaires", "Writing", "Video games"]
 favoriteGames: ["Kingdom Come: Deliverance II", "Firewatch", "Red Dead Redemption 2"]
 projectSlugs: ["gaming-profiles", "gaming-experience"]
-featuredImage: /assets/images/team/viktorie-rackova.jpg
+featuredImage: /assets/images/team/viktorie-marcinkova.jpg
 hobbies: ["Video games", "Movies", "Squeezing reading into my schedule"]
 social:
   facebook: "https://www.facebook.com/viky.rackova/"

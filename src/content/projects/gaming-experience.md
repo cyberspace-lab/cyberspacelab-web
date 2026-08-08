@@ -3,7 +3,7 @@ title: Video gaming experience and how it affects cognition
 shortname: Gaming Experience
 slug: gaming-experience
 date: 2020-05-13 12:00
-memberSlugs: ["viktorie-rackova"]
+memberSlugs: ["viktorie-marcinkova"]
 description: Investigating gaming experience on cognition
 featuredImage: /assets/images/projects/gaming-experience/thumbnail.png
 isActive: true

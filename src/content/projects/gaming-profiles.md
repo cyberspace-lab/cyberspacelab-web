@@ -3,7 +3,7 @@ title: Gaming profiles and typology
 shortname: Gaming profiles
 slug: gaming-profiles
 date: 2020-05-13 12:00
-memberSlugs: ["viktorie-rackova"]
+memberSlugs: ["viktorie-marcinkova"]
 description: Creating a video game questionnaire defining player typologies and gaming motivations
 featuredImage: /assets/images/projects/gaming-profiles/thumbnail.png
 isActive: true

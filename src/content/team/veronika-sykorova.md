@@ -2,7 +2,7 @@
 title: Veronika Sýkorová
 order: 22
 slug: "veronika-sykorova"
-role: active
+role: past
 level: Undergraduate student
 education: ["Still loading …"]
 expertise: ["Not afraid of numbers"]
