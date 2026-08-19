@@ -3,6 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { notion, DB_IDS, getDataSourceId } from "./client.js";
 import { serializePublicationFrontmatter } from "./frontmatter.js";
+import { resetPublicDir } from "./images.js";
 import {
   pageToMarkdown,
   richTextToPlain,
@@ -71,8 +72,15 @@ function writePublicationFile(pub: Publication): void {
   const frontmatter = serializePublicationFrontmatter(pub);
   const content = pub.body ? `${frontmatter}\n${pub.body}\n` : frontmatter;
   const filePath = path.join(CONTENT_DIR, `${pub.slug}.md`);
-  fs.mkdirSync(CONTENT_DIR, { recursive: true });
   fs.writeFileSync(filePath, content, "utf-8");
+}
+
+/** Delete every markdown file in the publications content dir. */
+function clearMarkdownFiles(): void {
+  fs.mkdirSync(CONTENT_DIR, { recursive: true });
+  for (const f of fs.readdirSync(CONTENT_DIR)) {
+    if (f.endsWith(".md")) fs.rmSync(path.join(CONTENT_DIR, f));
+  }
 }
 
 export async function syncPublications(): Promise<number> {
@@ -83,8 +91,17 @@ export async function syncPublications(): Promise<number> {
     return 0;
   }
 
+  // Live Notion call — throws before any deletion if auth/connectivity fails.
   const dataSourceId = await getDataSourceId(DB_IDS.publications);
-  let count = 0;
+
+  // Purge previously-synced inline assets so removed publications leave no
+  // orphans. Everything is re-downloaded fresh below.
+  resetPublicDir("content/publications");
+
+  // Fetch + process every page first; a query failure aborts before markdown
+  // is touched, so we never rewrite from a partial fetch.
+  const pubs: Publication[] = [];
+  let skipped = 0;
   let cursor: string | undefined = undefined;
 
   do {
@@ -98,10 +115,10 @@ export async function syncPublications(): Promise<number> {
       if (page.object !== "page" || !("properties" in page)) continue;
       try {
         const pub = await processPublicationPage(page as PageObjectResponse);
-        writePublicationFile(pub);
-        count++;
+        pubs.push(pub);
         console.log(`  ✓ ${pub.slug}`);
       } catch (err) {
+        skipped++;
         console.error(`  ✗ Error processing page ${page.id}:`, err);
       }
     }
@@ -109,6 +126,15 @@ export async function syncPublications(): Promise<number> {
     cursor = response.has_more ? (response.next_cursor ?? undefined) : undefined;
   } while (cursor);
 
-  console.log(`Publications sync complete: ${count} publications\n`);
-  return count;
+  // All pages fetched — replace the markdown set wholesale.
+  clearMarkdownFiles();
+  for (const pub of pubs) writePublicationFile(pub);
+
+  if (skipped > 0) {
+    console.warn(
+      `  ⚠ ${skipped} publication page(s) skipped due to errors — review the git diff before committing, as their markdown was removed.`
+    );
+  }
+  console.log(`Publications sync complete: ${pubs.length} publications\n`);
+  return pubs.length;
 }

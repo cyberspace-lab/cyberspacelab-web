@@ -8,42 +8,21 @@ import sharp from "sharp";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, "../..");
 const PUBLIC_DIR = path.join(ROOT_DIR, "public");
-const MANIFEST_PATH = path.join(ROOT_DIR, "scripts", ".sync-manifest.json");
 
 const MAX_WIDTH = 1600;
 const JPEG_QUALITY = 80;
 const PNG_QUALITY = 80;
 const WEBP_QUALITY = 80;
 
-interface ManifestEntry {
-  notionPageId: string;
-  localPath: string;
-  lastEdited: string;
-  optimized?: boolean;
-  hash?: string;
-}
-
-interface Manifest {
-  images: Record<string, ManifestEntry>;
-}
-
-let manifest: Manifest | null = null;
-
-function loadManifest(): Manifest {
-  if (manifest) return manifest;
-  try {
-    const raw = fs.readFileSync(MANIFEST_PATH, "utf-8");
-    manifest = JSON.parse(raw);
-    return manifest!;
-  } catch {
-    manifest = { images: {} };
-    return manifest;
-  }
-}
-
-export function saveManifest(): void {
-  const m = loadManifest();
-  fs.writeFileSync(MANIFEST_PATH, JSON.stringify(m, null, 2));
+/**
+ * Recursively delete a directory (relative to /public) and recreate it empty.
+ * Used to purge previously-synced assets before a fresh sync so that renamed
+ * or removed Notion pages don't leave orphaned images behind.
+ */
+export function resetPublicDir(relPath: string): void {
+  const full = path.join(PUBLIC_DIR, relPath);
+  fs.rmSync(full, { recursive: true, force: true });
+  fs.mkdirSync(full, { recursive: true });
 }
 
 /**
@@ -143,13 +122,8 @@ export async function downloadNotionImage(
   url: string,
   category: string,
   slug: string,
-  filename: string,
-  pageId: string,
-  lastEdited: string
+  filename: string
 ): Promise<string> {
-  const m = loadManifest();
-  const key = `${category}/${slug}/${filename}`;
-
   const ext = getExtensionFromUrl(url);
   const localFilename = filename.includes(".") ? filename : `${filename}${ext}`;
 
@@ -164,29 +138,10 @@ export async function downloadNotionImage(
 
   const fullPath = path.join(PUBLIC_DIR, localPath);
 
-  // Check manifest for cached version
-  const existing = m.images[key];
-  if (existing && existing.lastEdited === lastEdited && fs.existsSync(fullPath)) {
-    // File is cached but may not be optimized yet
-    if (!existing.optimized) {
-      console.log(`  Optimizing existing image: ${localPath}`);
-      await optimizeImage(fullPath);
-      existing.optimized = true;
-    }
-    return existing.localPath;
-  }
-
+  // Always download + re-optimize a fresh copy (no caching).
   console.log(`  Downloading image: ${localPath}`);
   await downloadFile(url, fullPath);
   await optimizeImage(fullPath);
-
-  // Update manifest
-  m.images[key] = {
-    notionPageId: pageId,
-    localPath,
-    lastEdited,
-    optimized: true,
-  };
 
   return localPath;
 }

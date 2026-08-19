@@ -12,7 +12,6 @@
 import { syncTeam } from "./notion/team.js";
 import { syncProjects } from "./notion/projects.js";
 import { syncPublications } from "./notion/publications.js";
-import { saveManifest } from "./notion/images.js";
 
 const args = process.argv.slice(2);
 const collectionIndex = args.indexOf("--collection");
@@ -42,9 +41,6 @@ async function main() {
     if (!collection || collection === "publications") {
       totalSynced += await syncPublications();
     }
-
-    // Save the image download manifest
-    saveManifest();
 
     console.log(`=== Done: ${totalSynced} items synced ===`);
   } catch (err) {

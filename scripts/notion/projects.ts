@@ -3,7 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { notion, DB_IDS, getDataSourceId } from "./client.js";
 import { serializeProjectFrontmatter } from "./frontmatter.js";
-import { downloadNotionImage } from "./images.js";
+import { downloadNotionImage, resetPublicDir } from "./images.js";
 import {
   pageToMarkdown,
   richTextToPlain,
@@ -54,9 +54,7 @@ async function processProjectPage(
         thumbUrl,
         "projects",
         slug,
-        "thumbnail",
-        page.id,
-        page.last_edited_time
+        "thumbnail"
       );
     } catch (err) {
       console.warn(`  Warning: Failed to download thumbnail for ${slug}:`, err);
@@ -70,9 +68,7 @@ async function processProjectPage(
         wideUrl,
         "projects",
         slug,
-        "banner",
-        page.id,
-        page.last_edited_time
+        "banner"
       );
     } catch (err) {
       console.warn(`  Warning: Failed to download banner for ${slug}:`, err);
@@ -103,8 +99,15 @@ function writeProjectFile(project: Project): void {
     ? `${frontmatter}\n${project.body}\n`
     : frontmatter;
   const filePath = path.join(CONTENT_DIR, `${project.slug}.md`);
-  fs.mkdirSync(CONTENT_DIR, { recursive: true });
   fs.writeFileSync(filePath, content, "utf-8");
+}
+
+/** Delete every markdown file in the projects content dir. */
+function clearMarkdownFiles(): void {
+  fs.mkdirSync(CONTENT_DIR, { recursive: true });
+  for (const f of fs.readdirSync(CONTENT_DIR)) {
+    if (f.endsWith(".md")) fs.rmSync(path.join(CONTENT_DIR, f));
+  }
 }
 
 export async function syncProjects(): Promise<number> {
@@ -115,8 +118,18 @@ export async function syncProjects(): Promise<number> {
     return 0;
   }
 
+  // Live Notion call — throws before any deletion if auth/connectivity fails.
   const dataSourceId = await getDataSourceId(DB_IDS.projects);
-  let count = 0;
+
+  // Purge previously-synced project images/inline assets so renamed/removed
+  // projects leave no orphans. Everything is re-downloaded fresh below.
+  resetPublicDir("assets/images/projects");
+  resetPublicDir("content/projects");
+
+  // Fetch + process every page first; a query failure aborts before markdown
+  // is touched, so we never rewrite from a partial fetch.
+  const projects: Project[] = [];
+  let skipped = 0;
   let cursor: string | undefined = undefined;
 
   do {
@@ -130,10 +143,10 @@ export async function syncProjects(): Promise<number> {
       if (page.object !== "page" || !("properties" in page)) continue;
       try {
         const project = await processProjectPage(page as PageObjectResponse);
-        writeProjectFile(project);
-        count++;
+        projects.push(project);
         console.log(`  ✓ ${project.slug}`);
       } catch (err) {
+        skipped++;
         console.error(`  ✗ Error processing page ${page.id}:`, err);
       }
     }
@@ -141,6 +154,15 @@ export async function syncProjects(): Promise<number> {
     cursor = response.has_more ? (response.next_cursor ?? undefined) : undefined;
   } while (cursor);
 
-  console.log(`Projects sync complete: ${count} projects\n`);
-  return count;
+  // All pages fetched — replace the markdown set wholesale.
+  clearMarkdownFiles();
+  for (const project of projects) writeProjectFile(project);
+
+  if (skipped > 0) {
+    console.warn(
+      `  ⚠ ${skipped} project page(s) skipped due to errors — review the git diff before committing, as their markdown was removed.`
+    );
+  }
+  console.log(`Projects sync complete: ${projects.length} projects\n`);
+  return projects.length;
 }

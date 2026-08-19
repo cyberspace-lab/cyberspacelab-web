@@ -3,7 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { notion, DB_IDS, getDataSourceId } from "./client.js";
 import { serializeTeamFrontmatter } from "./frontmatter.js";
-import { downloadNotionImage } from "./images.js";
+import { downloadNotionImage, resetPublicDir } from "./images.js";
 import {
   pageToMarkdown,
   richTextToPlain,
@@ -59,14 +59,7 @@ async function processTeamPage(page: PageObjectResponse): Promise<TeamMember> {
   const imageUrl = filePropertyUrl(props.featuredImage?.files);
   if (imageUrl) {
     try {
-      featuredImage = await downloadNotionImage(
-        imageUrl,
-        "team",
-        slug,
-        slug,
-        page.id,
-        page.last_edited_time
-      );
+      featuredImage = await downloadNotionImage(imageUrl, "team", slug, slug);
     } catch (err) {
       console.warn(`  Warning: Failed to download image for ${slug}:`, err);
     }
@@ -96,8 +89,15 @@ function writeTeamFile(member: TeamMember): void {
   const frontmatter = serializeTeamFrontmatter(member);
   const content = member.body ? `${frontmatter}\n${member.body}\n` : frontmatter;
   const filePath = path.join(CONTENT_DIR, `${member.slug}.md`);
-  fs.mkdirSync(CONTENT_DIR, { recursive: true });
   fs.writeFileSync(filePath, content, "utf-8");
+}
+
+/** Delete every markdown file in the team content dir. */
+function clearMarkdownFiles(): void {
+  fs.mkdirSync(CONTENT_DIR, { recursive: true });
+  for (const f of fs.readdirSync(CONTENT_DIR)) {
+    if (f.endsWith(".md")) fs.rmSync(path.join(CONTENT_DIR, f));
+  }
 }
 
 export async function syncTeam(): Promise<number> {
@@ -108,8 +108,20 @@ export async function syncTeam(): Promise<number> {
     return 0;
   }
 
+  // Resolving the data source is a live Notion call — if auth/connectivity is
+  // broken it throws here, before we delete anything.
   const dataSourceId = await getDataSourceId(DB_IDS.team);
-  let count = 0;
+
+  // Purge previously-synced team images so renamed/removed members leave no
+  // orphans. Every image is re-downloaded fresh below.
+  resetPublicDir("assets/images/team");
+  resetPublicDir("content/team");
+
+  // Fetch + process every page first. A query failure mid-pagination throws
+  // and aborts before any markdown is touched, so we never rewrite from a
+  // partial fetch.
+  const members: TeamMember[] = [];
+  let skipped = 0;
   let cursor: string | undefined = undefined;
 
   do {
@@ -123,10 +135,10 @@ export async function syncTeam(): Promise<number> {
       if (page.object !== "page" || !("properties" in page)) continue;
       try {
         const member = await processTeamPage(page as PageObjectResponse);
-        writeTeamFile(member);
-        count++;
+        members.push(member);
         console.log(`  ✓ ${member.slug}`);
       } catch (err) {
+        skipped++;
         console.error(`  ✗ Error processing page ${page.id}:`, err);
       }
     }
@@ -134,6 +146,15 @@ export async function syncTeam(): Promise<number> {
     cursor = response.has_more ? (response.next_cursor ?? undefined) : undefined;
   } while (cursor);
 
-  console.log(`Team sync complete: ${count} members\n`);
-  return count;
+  // All pages fetched — replace the markdown set wholesale.
+  clearMarkdownFiles();
+  for (const member of members) writeTeamFile(member);
+
+  if (skipped > 0) {
+    console.warn(
+      `  ⚠ ${skipped} team page(s) skipped due to errors — review the git diff before committing, as their markdown was removed.`
+    );
+  }
+  console.log(`Team sync complete: ${members.length} members\n`);
+  return members.length;
 }
