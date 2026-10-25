@@ -1,6 +1,5 @@
 ---
 title: Kateřina Hohlová
-order: 30
 slug: "katerina-hohlova"
 role: active
 level: Intern

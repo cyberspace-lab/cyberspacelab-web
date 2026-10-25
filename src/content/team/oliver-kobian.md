@@ -1,6 +1,5 @@
 ---
 title: Oliver Kobián
-order: 3
 slug: "oliver-kobian"
 role: active
 level: Ph.D. candidate

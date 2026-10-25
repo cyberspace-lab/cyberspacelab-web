@@ -1,6 +1,5 @@
 ---
 title: Elezaveta Muchová
-order: 30
 slug: "elezaveta-muchova"
 role: active
 level: Intern

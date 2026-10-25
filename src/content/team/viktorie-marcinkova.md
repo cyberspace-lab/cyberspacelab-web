@@ -1,6 +1,5 @@
 ---
 title: Viktorie Marcinková
-order: 1
 slug: "viktorie-marcinkova"
 role: active
 level: Ph.D. candidate

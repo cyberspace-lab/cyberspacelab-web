@@ -1,6 +1,5 @@
 ---
 title: Anastasiia Boldyrieva
-order: 25
 slug: "anastasiia-boldyrieva"
 role: active
 level: Undergraduate student

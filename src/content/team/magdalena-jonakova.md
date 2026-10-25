@@ -1,6 +1,5 @@
 ---
 title: Magdalena Jonáková
-order: 11
 slug: "magdalena-jonakova"
 role: active
 level: Graduate student

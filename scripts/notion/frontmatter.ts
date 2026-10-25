@@ -42,7 +42,6 @@ function yamlBlockScalar(text: string): string {
 
 export function serializeTeamFrontmatter(data: {
   title: string;
-  order: number;
   slug: string;
   role: string;
   level: string;
@@ -56,7 +55,6 @@ export function serializeTeamFrontmatter(data: {
 }): string {
   let fm = "---\n";
   fm += `title: ${yamlString(data.title)}\n`;
-  fm += `order: ${data.order}\n`;
   fm += `slug: "${data.slug}"\n`;
   fm += `role: ${yamlString(data.role)}\n`;
   fm += `level: ${yamlString(data.level)}\n`;

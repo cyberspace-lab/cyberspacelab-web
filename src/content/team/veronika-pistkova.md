@@ -1,6 +1,5 @@
 ---
 title: Veronika Píšťková
-order: 30
 slug: "veronika-pistkova"
 role: active
 level: Intern

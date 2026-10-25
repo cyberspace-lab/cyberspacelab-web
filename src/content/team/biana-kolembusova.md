@@ -1,6 +1,5 @@
 ---
 title: Biana Kolembusova
-order: 23
 slug: "biana-kolembusova"
 role: active
 level: Undergraduate student

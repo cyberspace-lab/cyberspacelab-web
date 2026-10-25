@@ -1,6 +1,5 @@
 ---
 title: Vendula Alexandrovičová
-order: 99
 slug: "vendula-alexandrovicova"
 role: past
 level: Intern

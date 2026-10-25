@@ -1,6 +1,5 @@
 ---
 title: Klára Růžičková
-order: 99
 slug: "klara-ruzickova"
 role: past
 level: Undergraduate student

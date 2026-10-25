@@ -1,6 +1,5 @@
 ---
 title: Veronika Sýkorová
-order: 22
 slug: "veronika-sykorova"
 role: past
 level: Undergraduate student

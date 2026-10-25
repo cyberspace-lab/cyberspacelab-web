@@ -7,7 +7,6 @@ export const collections = {
     loader: glob({pattern: "**/*.md", base: "./src/content/team"}),
     schema: z.object({
       title: z.string(),
-      order: z.number(),
       slug: z.string(),
       role: z.string(),
       education: z.array(z.string()),

@@ -1,6 +1,5 @@
 ---
 title: Anna Gärtnerová
-order: 26
 slug: "anna-gartnerova"
 role: active
 level: Undergraduate student

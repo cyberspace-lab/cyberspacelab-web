@@ -1,6 +1,5 @@
 ---
 title: Dagmar Jánská
-order: 30
 slug: "dagmar-janska"
 role: active
 level: Intern

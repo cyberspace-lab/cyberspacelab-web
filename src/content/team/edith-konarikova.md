@@ -1,6 +1,5 @@
 ---
 title: Edith Koňaříková
-order: 30
 slug: "edith-konarikova"
 role: active
 level: Intern

@@ -1,6 +1,5 @@
 ---
 title: Julia Urs
-order: 22
 slug: "julia-urs"
 role: active
 level: Undergraduate student

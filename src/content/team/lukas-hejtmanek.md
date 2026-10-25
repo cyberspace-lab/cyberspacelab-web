@@ -1,6 +1,5 @@
 ---
 title: Lukáš Hejtmánek
-order: 0
 slug: "lukas-hejtmanek"
 role: active
 level: Principal investigator

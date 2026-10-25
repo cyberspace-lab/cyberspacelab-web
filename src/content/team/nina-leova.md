@@ -1,6 +1,5 @@
 ---
 title: Nina Leová
-order: 25
 slug: "nina-leova"
 role: active
 level: Undergraduate student

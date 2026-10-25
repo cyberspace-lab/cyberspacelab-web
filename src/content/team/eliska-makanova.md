@@ -1,6 +1,5 @@
 ---
 title: Eliška Makáňová
-order: 30
 slug: "eliska-makanova"
 role: active
 level: Intern

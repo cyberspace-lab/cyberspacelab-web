@@ -1,6 +1,5 @@
 ---
 title: Pavel Srp
-order: 4
 slug: "pavel-srp"
 role: active
 level: Ph.D. candidate

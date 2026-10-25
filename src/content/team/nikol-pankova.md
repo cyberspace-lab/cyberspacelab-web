@@ -1,6 +1,5 @@
 ---
 title: Nikol Pánková
-order: 99
 slug: "nikol-pankova"
 role: past
 level: Undergraduate student
