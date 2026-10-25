@@ -1,6 +1,5 @@
 export interface TeamMember {
   title: string;
-  order: number;
   slug: string;
   role: string;
   level: string;

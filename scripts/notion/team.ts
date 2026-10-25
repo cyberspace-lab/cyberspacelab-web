@@ -10,7 +10,6 @@ import {
   richTextToArray,
   multiSelectToArray,
   selectToString,
-  numberValue,
   filePropertyUrl,
 } from "./markdown.js";
 import type { TeamMember } from "./types.js";
@@ -34,7 +33,6 @@ async function processTeamPage(page: PageObjectResponse): Promise<TeamMember> {
 
   // Extract properties
   const title = richTextToPlain(props.title?.title);
-  const order = numberValue(props.order?.number);
   const role = selectToString(props.role?.select);
   const level = selectToString(props.level?.select);
   const education = richTextToArray(props.education?.rich_text);
@@ -70,7 +68,6 @@ async function processTeamPage(page: PageObjectResponse): Promise<TeamMember> {
 
   return {
     title,
-    order,
     slug,
     role,
     level,
